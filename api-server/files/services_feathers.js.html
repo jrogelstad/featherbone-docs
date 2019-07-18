@@ -1,0 +1,2380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>services\feathers.js - Featherbone Server</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-server.png" title="Featherbone Server"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Client.html">Client</a></li>
+                                <li><a href="../classes/Connection.html">Connection</a></li>
+                                <li><a href="../classes/Database.html">Database</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/Money.html">Money</a></li>
+                                <li><a href="../classes/Services.API.html">Services.API</a></li>
+                                <li><a href="../classes/Services.CRUD.html">Services.CRUD</a></li>
+                                <li><a href="../classes/Services.Currency.html">Services.Currency</a></li>
+                                <li><a href="../classes/Services.Events.html">Services.Events</a></li>
+                                <li><a href="../classes/Services.Exporter.html">Services.Exporter</a></li>
+                                <li><a href="../classes/Services.Feathers.html">Services.Feathers</a></li>
+                                <li><a href="../classes/Services.Importer.html">Services.Importer</a></li>
+                                <li><a href="../classes/Services.Installer.html">Services.Installer</a></li>
+                                <li><a href="../classes/Services.Packager.html">Services.Packager</a></li>
+                                <li><a href="../classes/Services.Profile.html">Services.Profile</a></li>
+                                <li><a href="../classes/Services.Role.html">Services.Role</a></li>
+                                <li><a href="../classes/Services.Routes.html">Services.Routes</a></li>
+                                <li><a href="../classes/Services.Services.html">Services.Services</a></li>
+                                <li><a href="../classes/Services.Settings.html">Services.Settings</a></li>
+                                <li><a href="../classes/Services.Tools.html">Services.Tools</a></li>
+                                <li><a href="../classes/Services.Workbooks.html">Services.Workbooks</a></li>
+                                <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/User.html">User</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/API.html">API</a></li>
+                                <li><a href="../modules/CRUD.html">CRUD</a></li>
+                                <li><a href="../modules/Currency.html">Currency</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/Events.html">Events</a></li>
+                                <li><a href="../modules/Feathers.html">Feathers</a></li>
+                                <li><a href="../modules/Installer.html">Installer</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/Packager.html">Packager</a></li>
+                                <li><a href="../modules/Profile.html">Profile</a></li>
+                                <li><a href="../modules/Role.html">Role</a></li>
+                                <li><a href="../modules/Routes.html">Routes</a></li>
+                                <li><a href="../modules/Settings.html">Settings</a></li>
+                                <li><a href="../modules/Tools.html">Tools</a></li>
+                                <li><a href="../modules/Workbooks.html">Workbooks</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: services\feathers.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint node, this*/
+/**
+    @module Feathers
+*/
+(function (exports) {
+    &quot;use strict&quot;;
+
+    const {Database} = require(&quot;../database&quot;);
+    const {Tools} = require(&quot;./tools&quot;);
+    const {Settings} = require(&quot;./settings&quot;);
+    const f = require(&quot;../../common/core&quot;);
+
+    const db = new Database();
+    const settings = new Settings();
+    const tools = new Tools();
+    const formats = tools.formats;
+
+    const reserved = [
+        &quot;ALL&quot;,
+        &quot;ANALYSE&quot;,
+        &quot;ANALYZE&quot;,
+        &quot;AND&quot;,
+        &quot;ANY&quot;,
+        &quot;ARRAY&quot;,
+        &quot;AS&quot;,
+        &quot;ASC&quot;,
+        &quot;ASYMMETRIC&quot;,
+        &quot;AUTHORIZATION&quot;,
+        &quot;BINARY&quot;,
+        &quot;BOTH&quot;,
+        &quot;CASE&quot;,
+        &quot;CAST&quot;,
+        &quot;CHECK&quot;,
+        &quot;COLLATE&quot;,
+        &quot;COLLATION&quot;,
+        &quot;COLUMN&quot;,
+        &quot;CONCURRENTLY&quot;,
+        &quot;CONSTRAINT&quot;,
+        &quot;CREATE&quot;,
+        &quot;CROSS&quot;,
+        &quot;CURRENT_CATALOG&quot;,
+        &quot;CURRENT_DATE&quot;,
+        &quot;CURRENT_ROLE&quot;,
+        &quot;CURRENT_SCHEMA&quot;,
+        &quot;CURRENT_TIME&quot;,
+        &quot;CURRENT_TIMESTAMP&quot;,
+        &quot;CURRENT_USER&quot;,
+        &quot;DEFAULT&quot;,
+        &quot;DEFERRABLE&quot;,
+        &quot;DESC&quot;,
+        &quot;DISTINCT&quot;,
+        &quot;DO&quot;,
+        &quot;ELSE&quot;,
+        &quot;END&quot;,
+        &quot;EXCEPT&quot;,
+        &quot;FALSE&quot;,
+        &quot;FETCH&quot;,
+        &quot;FOR&quot;,
+        &quot;FOREIGN&quot;,
+        &quot;FREEZE&quot;,
+        &quot;FROM&quot;,
+        &quot;FULL&quot;,
+        &quot;GRANT&quot;,
+        &quot;GROUP&quot;,
+        &quot;HAVING&quot;,
+        &quot;ILIKE&quot;,
+        &quot;IN&quot;,
+        &quot;INITIALLY&quot;,
+        &quot;INNER&quot;,
+        &quot;INTERSECT&quot;,
+        &quot;INTO&quot;,
+        &quot;IS&quot;,
+        &quot;ISNULL&quot;,
+        &quot;JOIN&quot;,
+        &quot;LATERAL&quot;,
+        &quot;LEADING&quot;,
+        &quot;LEFT&quot;,
+        &quot;LIKE&quot;,
+        &quot;LIMIT&quot;,
+        &quot;LOCALTIME&quot;,
+        &quot;LOCALTIMESTAMP&quot;,
+        &quot;MONEY&quot;,
+        &quot;NATURAL&quot;,
+        &quot;NOT&quot;,
+        &quot;NOTNULL&quot;,
+        &quot;NULL&quot;,
+        &quot;OFFSET&quot;,
+        &quot;ON&quot;,
+        &quot;ONLY&quot;,
+        &quot;OR&quot;,
+        &quot;ORDER&quot;,
+        &quot;OUTER&quot;,
+        &quot;OVERLAPS&quot;,
+        &quot;PLACING&quot;,
+        &quot;PRIMARY&quot;,
+        &quot;REFERENCES&quot;,
+        &quot;RETURNING&quot;,
+        &quot;RIGHT&quot;,
+        &quot;SELECT&quot;,
+        &quot;SESSION_USER&quot;,
+        &quot;SIMILAR&quot;,
+        &quot;SOME&quot;,
+        &quot;SYMMETRIC&quot;,
+        &quot;TABLE&quot;,
+        &quot;TABLESAMPLE&quot;,
+        &quot;THEN&quot;,
+        &quot;TO&quot;,
+        &quot;TRAILING&quot;,
+        &quot;TRUE&quot;,
+        &quot;UNION&quot;,
+        &quot;UNIQUE&quot;,
+        &quot;USER&quot;,
+        &quot;USING&quot;,
+        &quot;VARIADIC&quot;,
+        &quot;VERBOSE&quot;,
+        &quot;WHEN&quot;,
+        &quot;WHERE&quot;,
+        &quot;WINDOW&quot;,
+        &quot;WITH&quot;
+    ];
+
+    /**
+        Feather management service.
+
+        @class Feathers
+        @constructor
+        @namespace Services
+    */
+    exports.Feathers = function () {
+        // ..........................................................
+        // PRIVATE
+        //
+
+        let that = {};
+
+        function createView(obj) {
+            let parent;
+            let alias;
+            let type;
+            let view;
+            let sub;
+            let col;
+            let feather;
+            let props;
+            let keys;
+            let afterGetFeather;
+            let name = obj.name;
+            let execute = obj.execute !== false;
+            let dropFirst = obj.dropFirst;
+            let table = name.toSnakeCase();
+            let args = [&quot;_&quot; + table, &quot;_pk&quot;];
+            let cols = [&quot;%I&quot;];
+            let sql = &quot;&quot;;
+            let client = obj.client;
+
+            afterGetFeather = function (resp) {
+                feather = resp;
+                props = feather.properties;
+                keys = Object.keys(props);
+
+                keys.forEach(function (key) {
+                    let clause;
+
+                    alias = key.toSnakeCase();
+
+                    /* Handle discriminator */
+                    if (key === &quot;objectType&quot;) {
+                        cols.push(&quot;%s&quot;);
+                        clause = &quot;to_camel_case(tableoid::regclass::text) AS &quot;;
+                        clause += alias;
+                        args.push(clause);
+
+                        /* Handle relations */
+                    } else if (typeof props[key].type === &quot;object&quot;) {
+                        type = props[key].type;
+                        parent = (
+                            props[key].inheritedFrom
+                            ? props[key].inheritedFrom.toSnakeCase()
+                            : table
+                        );
+
+                        /* Handle to many */
+                        if (type.parentOf) {
+                            sub = &quot;ARRAY(SELECT %I FROM %I &quot;;
+                            sub += &quot;WHERE %I.%I = %I._pk &quot;;
+                            sub += &quot;AND NOT %I.is_deleted ORDER BY %I._pk) &quot;;
+                            sub += &quot;AS %I&quot;;
+                            view = &quot;_&quot;;
+                            view += props[key].type.relation.toSnakeCase();
+                            col = &quot;_&quot; + type.parentOf.toSnakeCase();
+                            col += &quot;_&quot; + parent + &quot;_pk&quot;;
+                            args = args.concat([
+                                view,
+                                view,
+                                view,
+                                col,
+                                table,
+                                view,
+                                view,
+                                alias
+                            ]);
+
+                            /* Handle to one */
+                        } else if (!type.childOf) {
+                            col = &quot;_&quot; + key.toSnakeCase() + &quot;_&quot;;
+                            col += props[key].type.relation.toSnakeCase();
+                            col += &quot;_pk&quot;;
+                            sub = &quot;(SELECT %I FROM %I WHERE %I._pk = %I) &quot;;
+                            sub += &quot;AS %I&quot;;
+
+                            if (props[key].type.properties) {
+                                view = &quot;_&quot; + parent + &quot;$&quot; + key.toSnakeCase();
+                            } else {
+                                view = &quot;_&quot;;
+                                view += props[key].type.relation.toSnakeCase();
+                            }
+
+                            args = args.concat([view, view, view, col, alias]);
+                        } else {
+                            sub = &quot;_&quot; + key.toSnakeCase() + &quot;_&quot;;
+                            sub += type.relation.toSnakeCase() + &quot;_pk&quot;;
+                        }
+
+                        cols.push(sub);
+
+                        /* Handle regular types */
+                    } else {
+                        cols.push(&quot;%I&quot;);
+                        args.push(alias);
+                    }
+                });
+
+                args.push(table);
+
+                if (dropFirst) {
+                    sql = &quot;DROP VIEW IF EXISTS %I CASCADE;&quot;;
+                    sql = sql.format([&quot;_&quot; + table]);
+                }
+
+                sql += &quot;CREATE OR REPLACE VIEW %I AS SELECT &quot; + cols.join(&quot;,&quot;);
+                sql += &quot; FROM %I;&quot;;
+                sql = sql.format(args);
+
+                // If execute, run the sql now
+                if (execute) {
+                    client.query(sql, function (err) {
+                        if (err) {
+                            obj.callback(err);
+                            return;
+                        }
+
+                        obj.callback(null, true);
+                        return;
+                    });
+                }
+
+                // Otherwise send the sql back
+                obj.callback(null, sql);
+            };
+
+            that.getFeather({
+                client: client,
+                data: {
+                    name: obj.name
+                }
+            }).then(afterGetFeather).catch(obj.callback);
+        }
+
+        function propagateViews(obj) {
+            let cprops;
+            let catalog;
+            let afterGetCatalog;
+            let afterCreateView;
+            let name = obj.name;
+            let statements = obj.statements || [];
+            let level = obj.level || 0;
+            let sql = &quot;&quot;;
+            let client = obj.client;
+
+            afterGetCatalog = function (resp) {
+                catalog = resp;
+                createView({
+                    name: name,
+                    client: client,
+                    callback: afterCreateView,
+                    dropFirst: true,
+                    execute: false
+                });
+            };
+
+            afterCreateView = function (err, resp) {
+                let keys;
+                let next;
+                let propagateUp;
+                let functions = [];
+                let i = 0;
+
+                if (err) {
+                    obj.callback(err);
+                    return;
+                }
+
+                statements.push({
+                    level: level,
+                    sql: resp
+                });
+
+                // Callback to process functions sequentially
+                next = function (err, resp) {
+                    let o;
+
+                    if (err) {
+                        obj.callback(err);
+                        return;
+                    }
+
+                    // Responses that are result of createView get appended
+                    if (typeof resp === &quot;string&quot;) {
+                        statements.push({
+                            level: level,
+                            sql: resp
+                        });
+                    }
+
+                    // Iterate to next function to build statement
+                    o = functions[i];
+                    i += 1;
+
+                    if (o) {
+                        o.func(o.payload);
+                        return;
+                    }
+
+                    // Only top level will actually execute statements
+                    if (level &gt; 0) {
+                        obj.callback(null, true);
+                        return;
+                    }
+
+                    // If here then ready to execute
+                    // Sort by level
+                    statements.sort(function (a, b) {
+                        if (a.level === b.level || a.level &lt; b.level) {
+                            return 0;
+                        }
+                        return 1;
+                    });
+
+                    statements.forEach(function (statement) {
+                        sql += statement.sql;
+                    });
+
+                    client.query(sql, function (err) {
+                        if (err) {
+                            obj.callback(err);
+                            return;
+                        }
+
+                        obj.callback(null, true);
+                    });
+                };
+
+                // Build object to propagate relations */
+                keys = Object.keys(catalog);
+                keys.forEach(function (key) {
+                    let ckeys;
+
+                    cprops = catalog[key].properties;
+                    ckeys = Object.keys(cprops);
+
+                    ckeys.forEach(function (ckey) {
+                        if (
+                            cprops.hasOwnProperty(ckey) &amp;&amp;
+                            typeof cprops[ckey].type === &quot;object&quot; &amp;&amp;
+                            cprops[ckey].type.relation === name &amp;&amp;
+                            !cprops[ckey].type.childOf &amp;&amp;
+                            !cprops[ckey].type.parentOf
+                        ) {
+                            functions.push({
+                                func: propagateViews,
+                                payload: {
+                                    name: key,
+                                    client: client,
+                                    callback: next,
+                                    statements: statements,
+                                    level: level + 1
+                                }
+                            });
+                        }
+                    });
+                });
+
+                /* Propagate down */
+                keys = Object.keys(catalog);
+                keys.forEach(function (key) {
+                    if (catalog[key].inherits === name) {
+                        functions.push({
+                            func: propagateViews,
+                            payload: {
+                                name: key,
+                                client: client,
+                                callback: next,
+                                statements: statements,
+                                level: level + 1
+                            }
+                        });
+                    }
+                });
+
+                /* Propagate up */
+                propagateUp = function (name, plevel) {
+                    let pkeys;
+                    let props;
+
+                    plevel = plevel - 1;
+                    props = catalog[name].properties;
+                    pkeys = Object.keys(props);
+                    pkeys.forEach(function (key) {
+                        let type = props[key].type;
+                        if (typeof type === &quot;object&quot; &amp;&amp; type.childOf) {
+                            functions.push({
+                                func: createView,
+                                payload: {
+                                    name: type.relation,
+                                    client: client,
+                                    callback: next,
+                                    execute: false
+                                }
+                            });
+                            propagateUp(type.relation, plevel);
+                        }
+                    });
+                };
+
+                propagateUp(name, level);
+
+                next();
+            };
+
+            settings.getSettings({
+                client: client,
+                data: {
+                    name: &quot;catalog&quot;
+                }
+            }).then(afterGetCatalog).catch(obj.callback);
+        }
+
+        function getParentKey(obj) {
+            return new Promise(function (resolve, reject) {
+                let cParent;
+                let afterGetChildFeather;
+                let afterGetParentFeather;
+                let done;
+                let client = obj.client;
+
+                afterGetChildFeather = function (resp) {
+                    let cKeys;
+                    let cProps;
+
+                    cProps = resp.properties;
+                    cKeys = Object.keys(cProps);
+                    cKeys.every(function (cKey) {
+                        if (
+                            typeof cProps[cKey].type === &quot;object&quot; &amp;&amp;
+                            cProps[cKey].type.childOf
+                        ) {
+                            cParent = cProps[cKey].type.relation;
+
+                            that.getFeather({
+                                client: client,
+                                data: {
+                                    name: obj.parent
+                                }
+                            }).then(afterGetParentFeather).catch(reject);
+
+                            return false;
+                        }
+
+                        return true;
+                    });
+                };
+
+                afterGetParentFeather = function (resp) {
+                    if (resp.isChildFeather) {
+                        getParentKey({
+                            child: cParent,
+                            parent: obj.parent,
+                            client: client
+                        }).then(resolve).catch(reject);
+                        return;
+                    }
+
+                    tools.getKey({
+                        name: cParent.toSnakeCase(),
+                        client: client
+                    }).then(done).catch(reject);
+                };
+
+                done = function (err, resp) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    resolve(resp);
+                };
+
+                that.getFeather({
+                    client: client,
+                    data: {
+                        name: obj.child
+                    }
+                }).then(afterGetChildFeather).catch(reject);
+            });
+        }
+
+        // ..........................................................
+        // PUBLIC
+        //
+
+        /**
+            Remove a feather definition from the database.
+
+            @method deleteFeather
+            @param {Object} payload Request payload
+            @param {Object} payload.data Payload data
+            @param {String | Array} payload.data.name Name(s) of
+                feather(s) to delete
+            @param {Client} payload.client Database client
+            @return {Promise} Resolves to &#x60;true&#x60; if successful.
+        */
+        that.deleteFeather = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let name;
+                let table;
+                let catalog;
+                let sql;
+                let rels;
+                let props;
+                let view;
+                let type;
+                let keys;
+                let afterGetCatalog;
+                let next;
+                let createViews;
+                let dropTables;
+                let names = (
+                    Array.isArray(obj.data.name)
+                    ? obj.data.name
+                    : [obj.data.name]
+                );
+                let o = 0;
+                let c = 0;
+                let client = db.getClient(obj.client);
+
+                afterGetCatalog = function (resp) {
+                    catalog = resp;
+                    next();
+                };
+
+                dropTables = function (err) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    // Drop table(s)
+                    sql = (
+                        &quot;DROP VIEW IF EXISTS %I; &quot; +
+                        &quot;DROP TABLE IF EXISTS %I;&quot; + sql
+                    );
+                    sql = sql.format([&quot;_&quot; + table, table]);
+                    client.query(sql, function (err) {
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        sql = &quot;DELETE FROM \&quot;$auth\&quot; WHERE object_pk=&quot;;
+                        sql += &quot;(SELECT _pk FROM \&quot;$feather\&quot; WHERE id=$1);&quot;;
+                        client.query(sql, [table], function (err) {
+                            if (err) {
+                                reject(err);
+                                return;
+                            }
+
+                            sql = &quot;DELETE FROM \&quot;$feather\&quot; WHERE id=$1;&quot;;
+                            client.query(sql, [table], function (err) {
+                                if (err) {
+                                    reject(err);
+                                    return;
+                                }
+
+                                next();
+                            });
+                        });
+                    });
+                };
+
+                createViews = function () {
+                    let rel;
+
+                    if (c &lt; rels.length) {
+                        rel = rels[c];
+                        c += 1;
+
+                        // Update views
+                        createView({
+                            name: rel,
+                            dropFirst: true,
+                            client: client,
+                            callback: createViews
+                        });
+                        return;
+                    }
+
+                    dropTables();
+                };
+
+                next = function () {
+                    sql = &quot;&quot;;
+                    if (o &lt; names.length) {
+                        name = names[o];
+                        o += 1;
+                        table = name.toSnakeCase();
+                        rels = [];
+
+                        if (!table || !catalog[name]) {
+                            reject(&quot;Feather not found&quot;);
+                            return;
+                        }
+
+                        /* Drop views for composite types */
+                        props = catalog[name].properties;
+                        keys = Object.keys(props);
+                        keys.forEach(function (key) {
+                            let cfp;
+
+                            if (typeof props[key].type === &quot;object&quot;) {
+                                type = props[key].type;
+
+                                if (type.properties) {
+                                    view = &quot;_&quot; + name.toSnakeCase() + &quot;$&quot;;
+                                    view += key.toSnakeCase();
+                                    sql += &quot;DROP VIEW IF EXISTS %I;&quot;;
+                                    sql = sql.format([view]);
+                                }
+
+                                if (type.childOf &amp;&amp; catalog[type.relation]) {
+                                    cfp = catalog[type.relation].properties;
+                                    delete cfp[type.childOf];
+                                    rels.push(type.relation);
+                                }
+                            }
+                        });
+
+                        /* Update catalog settings */
+                        delete catalog[name];
+                        settings.saveSettings({
+                            client: client,
+                            data: {
+                                name: &quot;catalog&quot;,
+                                data: catalog
+                            }
+                        }).then(createViews).catch(reject);
+                        return;
+                    }
+
+                    // All done
+                    resolve(true);
+                };
+
+                settings.getSettings({
+                    client: client,
+                    data: {
+                        name: &quot;catalog&quot;
+                    }
+                }).then(afterGetCatalog).catch(reject);
+            });
+        };
+
+        /**
+            Return a feather definition, including inherited properties.
+
+            @method getFeather
+            @param {Object} payload Request payload
+            @param {Client} payload.client Database client
+            @param {Object} payload.data Data
+            @param {Object} payload.data.name Feather name
+            @param {Boolean} [payload.data.includeInherited] Include inherited
+                or not. Default = true.
+            @return {Promise} Reseloves to feather definition object.
+        */
+        that.getFeather = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let callback;
+                let name = obj.data.name;
+                let client = db.getClient(obj.client);
+
+                callback = function (catalog) {
+                    let resultProps;
+                    let featherProps;
+                    let keys;
+                    let appendParent;
+                    let result = {name: name, inherits: &quot;Object&quot;};
+
+                    appendParent = function (child, parent) {
+                        let feather = catalog[parent];
+                        let parentProps = feather.properties;
+                        let childProps = child.properties;
+                        let ckeys = Object.keys(parentProps);
+
+                        if (parent !== &quot;Object&quot;) {
+                            appendParent(child, feather.inherits || &quot;Object&quot;);
+                        }
+
+                        ckeys.forEach(function (key) {
+                            if (childProps[key] === undefined) {
+                                childProps[key] = parentProps[key];
+                                childProps[key].inheritedFrom = parent;
+                            }
+                        });
+
+                        return child;
+                    };
+
+                    /* Validation */
+                    if (!catalog[name]) {
+                        resolve(false);
+                        return;
+                    }
+
+                    /* Add other attributes after name */
+                    keys = Object.keys(catalog[name]);
+                    keys.forEach(function (key) {
+                        result[key] = catalog[name][key];
+                    });
+
+                    /* Want inherited properites before class properties */
+                    if (
+                        obj.data.includeInherited !== false &amp;&amp;
+                        name !== &quot;Object&quot;
+                    ) {
+                        result.properties = {};
+                        result = appendParent(result, result.inherits);
+                    } else {
+                        delete result.inherits;
+                    }
+
+                    /* Now add local properties back in */
+                    featherProps = catalog[name].properties;
+                    resultProps = result.properties;
+                    keys = Object.keys(featherProps);
+                    keys.forEach(function (key) {
+                        resultProps[key] = featherProps[key];
+                    });
+
+                    resolve(result);
+                };
+
+                /* First, get catalog */
+                settings.getSettings({
+                    client: client,
+                    data: {name: &quot;catalog&quot;}
+                }).then(callback).catch(reject);
+            });
+        };
+
+        /**
+            Check whether a user is authorized to perform an action on a
+            particular feather (class) or object.
+
+            Allowable actions: &#x60;canCreate&#x60;, &#x60;canRead&#x60;, &#x60;canUpdate&#x60;, &#x60;canDelete&#x60;
+
+            &#x60;canCreate&#x60; will only check feather names.
+
+            @method isAuthorized
+            @param {Object} payload
+            @param {Object} payload.data Payload data
+            @param {String} payload.data.action
+            @param {String} [payload.data.feather] Feather name
+            @param {String} [payload.data.id] Object id
+            @param {String} [payload.data.user] Defaults to current user
+            @param {Client} payload.client Database client
+            @return {Promise} Resolves to Boolean.
+        */
+        that.isAuthorized = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let table;
+                let pk;
+                let authSql;
+                let sql;
+                let params;
+                let user = obj.data.user || obj.client.currentUser();
+                let feather = obj.data.feather;
+                let action = obj.data.action;
+                let id = obj.data.id;
+                let tokens = [];
+                let result = false;
+                let client = db.getClient(obj.client);
+
+                function callback(isSuper) {
+                    if (isSuper) {
+                        resolve(true);
+                        return;
+                    }
+
+                    /* If feather, check class authorization */
+                    if (feather) {
+                        params = [feather.toSnakeCase(), user];
+                        sql = (
+                            &quot;SELECT pk FROM \&quot;$auth\&quot; &quot; +
+                            &quot;  JOIN \&quot;$feather\&quot; &quot; +
+                            &quot;    ON \&quot;$feather\&quot;._pk=\&quot;$auth\&quot;.object_pk &quot; +
+                            &quot;  JOIN pg_authid &quot; +
+                            &quot;   ON \&quot;$auth\&quot;.role=pg_authid.rolname &quot; +
+                            &quot;WHERE \&quot;$feather\&quot;.id=$1&quot; +
+                            &quot;  AND pg_has_role($2, pg_authid.oid, &#x27;member&#x27;)&quot; +
+                            &quot;  AND \&quot;$auth\&quot;.object_pk=\&quot;$feather\&quot;.parent_pk&quot; +
+                            &quot;  AND %I;&quot;
+                        );
+                        sql = sql.format([action.toSnakeCase()]);
+
+                        client.query(sql, params, function (err, resp) {
+                            if (err) {
+                                reject(err);
+                                return;
+                            }
+
+                            result = resp.rows.length &gt; 0;
+                            resolve(result);
+                        });
+
+                        /* Otherwise check object authorization */
+                    } else if (id) {
+                        /* Find object */
+                        sql = &quot;SELECT _pk, tableoid::regclass::text AS \&quot;t\&quot; &quot;;
+                        sql += &quot;FROM object WHERE id = $1;&quot;;
+
+                        client.query(sql, [id], function (err, resp) {
+                            if (err) {
+                                reject(err);
+                                return;
+                            }
+
+                            /* If object found, check authorization */
+                            if (resp.rows.length &gt; 0) {
+                                table = resp.rows[0].t;
+                                pk = resp.rows[0][tools.PKCOL];
+
+                                tokens.push(table);
+                                authSql = tools.buildAuthSql(
+                                    action,
+                                    table,
+                                    tokens
+                                );
+                                sql = (
+                                    &quot;SELECT _pk FROM %I WHERE _pk = $2 &quot; +
+                                    authSql
+                                );
+                                sql = sql.format(tokens);
+
+                                client.query(
+                                    sql,
+                                    [user, pk],
+                                    function (err, resp) {
+                                        if (err) {
+                                            reject(err);
+                                            return;
+                                        }
+
+                                        result = resp.rows.length &gt; 0;
+
+                                        resolve(result);
+                                    }
+                                );
+                            }
+                        });
+                    }
+                }
+
+                if (!obj.data.feather &amp;&amp; !obj.data.id) {
+                    throw new Error(
+                        &quot;Authorization check requires feather or id&quot;
+                    );
+                }
+
+                tools.isSuperUser({
+                    client: client,
+                    user: obj.data.user
+                }).then(callback).catch(reject);
+            });
+        };
+
+        /**
+            Set authorazition for a particular authorization role. Must pass
+            data &#x60;id&#x60; or &#x60;feather&#x60;.
+
+            @example
+                // Example payload
+                {
+                    id: &quot;ExWIx6&#x27;&quot;,
+                    role: &quot;jdoe&quot;,
+                    actions:
+                    {
+                        canCreate: false,
+                        canRead: true,
+                        canUpdate: false,
+                        canDelete: false
+                    }
+                }
+
+            @method saveAuthorization
+            @param {Object} payload
+            @param {Client} payload.client
+            @param {Object} payload.data Payload data
+            @param {String} [payload.data.id] Object id (if record level)
+            @param {String} [payload.data.feather] Feather
+            @param {String} payload.data.role Role
+            @param {Boolean} [payload.data.isInternal] Not a feather
+            @param {Boolean} [payload.data.isSilentError] Silence errors
+            @param {Object} payload.data.actions
+            @param {Boolean} [payload.data.actions.canCreate]
+            @param {Boolean} [payload.data.actions.canRead]
+            @param {Boolean} [payload.data.actions.canUpdate]
+            @param {Boolean} [payload.data.actions.canDelete]
+            @return {Promise}
+        */
+        that.saveAuthorization = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let result;
+                let sql;
+                let pk;
+                let feather;
+                let params;
+                let objPk;
+                let err;
+                let afterGetObjKey;
+                let afterGetRoleKey;
+                let afterGetFeatherName;
+                let afterGetFeather;
+                let checkSuperUser;
+                let afterCheckSuperUser;
+                let afterQueryAuth;
+                let done;
+                let id = (
+                    obj.data.feather
+                    ? obj.data.feather.toSnakeCase()
+                    : obj.data.id
+                );
+                let actions = obj.data.actions || {};
+                let hasAuth = false;
+                let client = db.getClient(obj.client);
+
+                afterGetObjKey = function (resp) {
+                    objPk = resp;
+
+                    // Validation
+                    if (!objPk) {
+                        reject(&quot;Object \&quot;&quot; + id + &quot;\&quot; not found&quot;);
+                        return;
+                    }
+
+                    client.query(
+                        &quot;SELECT _pk FROM \&quot;role\&quot; WHERE name = $1&quot;,
+                        [obj.data.role]
+                    ).then(afterGetRoleKey).catch(reject);
+                };
+
+                afterGetRoleKey = function (resp) {
+                    // Validation
+                    if (!resp.rows.length) {
+                        reject(&quot;Role \&quot;&quot; + obj.data.role + &quot;\&quot; not found&quot;);
+                        return;
+                    }
+
+                    if (obj.data.isInternal) {
+                        afterCheckSuperUser();
+                        return;
+                    }
+
+                    if (obj.data.id) {
+                        sql = (
+                            &quot;SELECT tableoid::regclass::text AS feather &quot; +
+                            &quot;FROM object WHERE id=$1&quot;
+                        );
+                        client.query(sql, [id], afterGetFeatherName);
+                        return;
+                    }
+
+                    afterGetFeatherName(null, {
+                        rows: [{
+                            feather: obj.data.feather
+                        }]
+                    });
+                };
+
+                afterGetFeatherName = function (err, resp) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    feather = resp.rows[0].feather.toCamelCase(true);
+
+                    that.getFeather({
+                        client: client,
+                        data: {
+                            name: feather,
+                            includeInherited: true
+                        }
+                    }).then(afterGetFeather).catch(reject);
+                };
+
+                afterGetFeather = function (resp) {
+                    feather = resp;
+
+                    if (tools.isChildFeather(feather)) {
+                        err = &quot;Can not set authorization on child feathers.&quot;;
+                    } else if (!feather.properties.owner) {
+                        err = (
+                            &quot;Feather &#x27;&quot; + resp.name +
+                            &quot;&#x27; must have owner property to set &quot; +
+                            &quot;authorization.&quot;
+                        );
+                    }
+
+                    if (err) {
+                        if (obj.data.isSilentError) {
+                            done(null, false);
+                            return;
+                        }
+                        reject(err);
+                        return;
+                    }
+
+                    checkSuperUser();
+                };
+
+                checkSuperUser = function () {
+                    tools.isSuperUser({
+                        client: client
+                    }).then(function (isSuper) {
+                        if (isSuper) {
+                            afterCheckSuperUser();
+                            return;
+                        }
+
+                        sql = &quot;SELECT owner FROM object WHERE _pk=$1;&quot;;
+
+                        client.query(sql, [objPk], function (err, resp) {
+                            if (err) {
+                                reject(err);
+                                return;
+                            }
+
+                            if (resp.rows[0].owner !== client.currentUser()) {
+                                if (obj.data.isSilentError) {
+                                    done(null, false);
+                                    return;
+                                }
+                                err = &quot;Must be super user or owner of \&quot;&quot; + id;
+                                err += &quot;\&quot; to set authorization.&quot;;
+                                reject(err);
+                                return;
+                            }
+
+                            afterCheckSuperUser();
+                        });
+                        return;
+                    }).catch(reject);
+                };
+
+                afterCheckSuperUser = function () {
+                    // Determine whether any authorization has been granted
+                    hasAuth = !(
+                        (
+                            actions.canCreate === false &amp;&amp;
+                            actions.canRead === false &amp;&amp;
+                            actions.canUpdate === false &amp;&amp;
+                            actions.canDelete === false
+                        ) || (
+                            actions.canCreate === null &amp;&amp;
+                            actions.canRead === null &amp;&amp;
+                            actions.canUpdate === null &amp;&amp;
+                            actions.canDelete === null
+                        )
+                    );
+
+                    // Find an existing authorization record
+                    sql = (
+                        &quot;SELECT auth.* FROM \&quot;$auth\&quot; AS auth &quot; +
+                        &quot;  JOIN object ON object._pk=object_pk &quot; +
+                        &quot;WHERE object.id=$1 &quot; +
+                        &quot;  AND auth.role=$2;&quot;
+                    );
+
+                    client.query(
+                        sql,
+                        [id, obj.data.role],
+                        afterQueryAuth
+                    );
+                };
+
+                afterQueryAuth = function (err, resp) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    result = resp.rows[0] || false;
+
+                    if (result) {
+                        pk = result.pk;
+
+                        if (!hasAuth) {
+                            sql = &quot;DELETE FROM \&quot;$auth\&quot; WHERE pk=$1&quot;;
+                            params = [pk];
+                        } else {
+                            sql = (
+                                &quot;UPDATE \&quot;$auth\&quot; SET can_create=$1,&quot; +
+                                &quot;can_read=$2, can_update=$3, can_delete=$4 &quot; +
+                                &quot;WHERE pk=$5&quot;
+                            );
+
+                            params = [
+                                (
+                                    actions.canCreate === undefined
+                                    ? result.can_create
+                                    : actions.canCreate
+                                ),
+                                (
+                                    actions.canRead === undefined
+                                    ? result.can_read
+                                    : actions.canRead
+                                ),
+                                (
+                                    actions.canUpdate === undefined
+                                    ? result.can_update
+                                    : actions.canUpdate
+                                ),
+                                (
+                                    actions.canDelete === undefined
+                                    ? result.can_delete
+                                    : actions.canDelete
+                                ),
+                                pk
+                            ];
+                        }
+                    } else if (hasAuth) {
+                        sql = (
+                            &quot;INSERT INTO \&quot;$auth\&quot; AS a VALUES &quot; +
+                            &quot;(nextval(&#x27;$auth_pk_seq&#x27;), &quot; +
+                            &quot;$1, $2, $3, $4, $5, $6)&quot;
+                        );
+                        params = [
+                            objPk,
+                            obj.data.role,
+                            (
+                                actions.canCreate === undefined
+                                ? null
+                                : actions.canCreate
+                            ),
+                            (
+                                actions.canRead === undefined
+                                ? null
+                                : actions.canRead
+                            ),
+                            (
+                                actions.canUpdate === undefined
+                                ? null
+                                : actions.canUpdate
+                            ),
+                            (
+                                actions.canDelete === undefined
+                                ? null
+                                : actions.canDelete
+                            )
+                        ];
+                    } else {
+                        done(null, false);
+                        return;
+                    }
+
+                    client.query(sql, params, done);
+                };
+
+                done = function (err, resp) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    resolve(resp !== false);
+                };
+
+                // Kick off query by getting object key, the rest falls
+                // through callbacks
+                tools.getKey({
+                    id: id,
+                    client: client
+                }).then(afterGetObjKey).catch(reject);
+            });
+        };
+
+        /**
+            Create or update a persistence class. This function is idempotent.
+            Subsequent saves will automatically drop properties no longer
+            present.
+
+            @example
+            // example payload:
+            {
+                &quot;name&quot;: &quot;Contact&quot;,
+                &quot;description&quot;: &quot;Contact data about a person&quot;,
+                &quot;inherits&quot;: &quot;Object&quot;,
+                &quot;properties&quot;: {
+                    &quot;fullName&quot;: {
+                        &quot;description&quot;: &quot;Full name&quot;,
+                        &quot;type&quot;: &quot;string&quot;
+                    },
+                    &quot;birthDate&quot;: {
+                        &quot;description&quot;: &quot;Birth date&quot;,
+                        &quot;type&quot;: &quot;string&quot;
+                        &quot;format&quot;: &quot;date&quot;
+                    },
+                    &quot;isMarried&quot;: {
+                        &quot;description&quot;: &quot;Marriage status&quot;,
+                        &quot;type&quot;: &quot;boolean&quot;
+                    },
+                    &quot;dependents&quot;: {
+                        &quot;description&quot;: &quot;Number of dependents&quot;,
+                        &quot;type&quot;: &quot;integer&quot;
+                    }
+                }
+            }
+
+            @method saveFeather
+            @param {Object} payload
+            @param {Client} payload.client Database client.
+            @param {Object | Array} [payload.spec] Feather specification(s).
+            @param {String} payload.spec.name Name
+            @param {String} [payload.spec.description] Description
+            @param {Object | Array | Boolean} [payload.spec.authorizations]
+            Authorization spec. Defaults to grant all to everyone if
+            undefined.
+            @param {String} [payload.spec.properties] Feather properties
+            @param {String} [payload.spec.properties.description]
+            Description
+            @param {String} [spec.properties.default] Default value
+            or function name.
+            @param {String | Object} payload.spec.properties.type
+            Type. Standard types are string, boolean, number, date.
+            Object is used for relation specs.
+            @param {String} [payload.spec.properties.relation] Feather name of
+            relation.
+            @param {String} [payload.spec.properties.childOf] Property name
+                on parent relation if one to many relation.
+            @return {Promise}
+        */
+        that.saveFeather = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let spec;
+                let parent;
+                let specs = (
+                    Array.isArray(obj.data.specs)
+                    ? obj.data.specs
+                    : [obj.data.specs]
+                );
+                let c = 0;
+                let len = specs.length;
+                let client = db.getClient(obj.client);
+
+                function nextSpec() {
+                    let sqlUpd;
+                    let token;
+                    let values;
+                    let defaultValue;
+                    let props;
+                    let keys;
+                    let recs;
+                    let type;
+                    let name;
+                    let isChild;
+                    let pk;
+                    let prec;
+                    let scale;
+                    let feather;
+                    let catalog;
+                    let autonumber;
+                    let afterGetCatalog;
+                    let afterUpdateSchema;
+                    let updateCatalog;
+                    let afterUpdateCatalog;
+                    let afterPropagateViews;
+                    let afterNextVal;
+                    let createIndex;
+                    let afterInsertFeather;
+                    let afterSaveAuthorization;
+                    let createSequence;
+                    let table;
+                    let inherits;
+                    let dropSql;
+                    let changed = false;
+                    let sql = &quot;&quot;;
+                    let tokens = [];
+                    let adds = [];
+                    let args = [];
+                    let fns = [];
+                    let cols = [];
+                    let unique = [];
+                    let indices = [];
+                    let i = 0;
+                    let n = 0;
+                    let p = 1;
+                    let err;
+
+                    function createDropSql(name) {
+                        let statements;
+                        let buildDeps;
+                        let feathers = [];
+
+                        buildDeps = function (name) {
+                            let dkeys = Object.keys(catalog);
+
+                            feathers.push(name);
+                            dkeys.forEach(function (key) {
+                                if (
+                                    key !== name &amp;&amp;
+                                    catalog[key].inherits === name
+                                ) {
+                                    buildDeps(key);
+                                }
+                            });
+                        };
+
+                        buildDeps(name);
+
+                        statements = feathers.map(function (feather) {
+                            let stmt = &quot;DROP VIEW IF EXISTS %I CASCADE&quot;;
+                            return stmt.format([&quot;_&quot; + feather.toSnakeCase()]);
+                        });
+
+                        return statements.join(&quot;;&quot;) + &quot;;&quot;;
+                    }
+
+                    function afterGetFeather(resp) {
+                        feather = resp;
+
+                        settings.getSettings({
+                            client: client,
+                            data: {
+                                name: &quot;catalog&quot;
+                            }
+                        }).then(afterGetCatalog).catch(reject);
+                    }
+
+                    function handleProps(key) {
+                        let vSql;
+                        let prop = props[key];
+                        let pProps;
+                        let tProps;
+                        let tRel;
+                        let descr;
+
+                        type = (
+                            typeof prop.type === &quot;string&quot;
+                            ? tools.types[prop.type]
+                            : prop.type
+                        );
+
+                        if (type &amp;&amp; key !== spec.discriminator) {
+                            if (!feather || !feather.properties[key]) {
+
+                                /* Drop views */
+                                if (feather &amp;&amp; !changed) {
+                                    sql += dropSql;
+                                }
+
+                                changed = true;
+                                sql += &quot;ALTER TABLE %I ADD COLUMN %I &quot;;
+
+                                /* Handle composite types */
+                                if (typeof prop.type === &quot;object&quot;) {
+                                    if (type.relation) {
+                                        sql += &quot;integer;&quot;;
+                                        token = tools.relationColumn(
+                                            key,
+                                            type.relation
+                                        );
+
+                                        /* Update parent class for to-many
+                                           children */
+                                        if (type.childOf) {
+                                            parent = catalog[type.relation];
+                                            pProps = parent.properties;
+                                            if (!pProps[type.childOf]) {
+                                                descr = &quot;Parent of \&quot;&quot; + key;
+                                                descr += &quot;\&quot; on \&quot;&quot;;
+                                                descr += spec.name + &quot;\&quot;&quot;;
+
+                                                pProps[type.childOf] = {
+                                                    description: descr,
+                                                    type: {
+                                                        relation: spec.name,
+                                                        parentOf: key
+                                                    }
+                                                };
+
+                                            } else {
+                                                err = &quot;Property \&quot;&quot;;
+                                                err += type.childOf;
+                                                err += &quot;\&quot; already exists on&quot;;
+                                                err += &quot;\&quot;&quot; + type.relation;
+                                                err += &quot;\&quot;&quot;;
+                                            }
+                                        } else if (type.parentOf) {
+                                            err = &quot;Can not set parent &quot;;
+                                            err += &quot;directly for \&quot;&quot;;
+                                            err += key + &quot;\&quot;&quot;;
+                                        } else if (
+                                            !type.properties ||
+                                            !type.properties.length
+                                        ) {
+                                            err = &quot;Properties must be defined&quot;;
+                                            err += &quot;for relation \&quot;&quot; + key;
+                                            err += &quot;\&quot;&quot;;
+                                        /* Must be to-one relation.
+                                           If relation feather is flagged
+                                           as child, flag property as
+                                           child on this feather. */
+                                        } else {
+                                            parent = catalog[type.relation];
+                                            if (parent.isChild) {
+                                                prop.type.isChild = true;
+                                            }
+                                        }
+                                    } else {
+                                        err = &quot;Relation not defined for &quot;;
+                                        err += &quot;composite type \&quot;&quot; + key;
+                                        err += &quot;\&quot;&quot;;
+                                    }
+
+                                    if (err) {
+                                        return false;
+                                    }
+
+                                    tProps = type.properties;
+
+                                    if (tProps) {
+                                        cols = [&quot;%I&quot;];
+                                        name = &quot;_&quot; + table + &quot;$&quot;;
+                                        name += key.toSnakeCase();
+                                        args = [name, &quot;_pk&quot;];
+
+                                        /* Always include &quot;id&quot; whether
+                                           specified or not */
+                                        if (tProps.indexOf(&quot;id&quot;) === -1) {
+                                            tProps.unshift(&quot;id&quot;);
+                                        }
+
+                                        i = 0;
+                                        while (i &lt; tProps.length) {
+                                            cols.push(&quot;%I&quot;);
+                                            args.push(tProps[i].toSnakeCase());
+                                            i += 1;
+                                        }
+
+                                        tRel = &quot;_&quot;;
+                                        tRel += type.relation.toSnakeCase();
+                                        args.push(tRel);
+                                        vSql = &quot;CREATE VIEW %I AS SELECT &quot;;
+                                        vSql += cols.join(&quot;,&quot;);
+                                        vSql += &quot; FROM %I &quot;;
+                                        vSql += &quot;WHERE NOT is_deleted;&quot;;
+                                        sql += vSql.format(args);
+                                    }
+
+                                    /* Handle standard types */
+                                } else {
+                                    if (prop.format) {
+                                        if (formats[prop.format]) {
+                                            sql += formats[prop.format].type;
+                                        } else if (formats[prop.type]) {
+                                            sql += formats[prop.type].type;
+                                        } else {
+                                            err = &quot;Invalid format \&quot;&quot;;
+                                            err += prop.format;
+                                            err += &quot;\&quot; for property \&quot;&quot;;
+                                            err += key + &quot;\&quot; on class \&quot;&quot;;
+                                            err += spec.name + &quot;\&quot;&quot;;
+                                            return false;
+                                        }
+                                    } else {
+                                        sql += type.type;
+                                        if (type.type === &quot;numeric&quot;) {
+                                            if (
+                                                prop.precision !== undefined &amp;&amp;
+                                                !Number.isNaN(prop.precision) &amp;&amp;
+                                                prop.precision !== -1
+                                            ) {
+                                                prec = prop.precision;
+                                            } else {
+                                                prec = f.PRECISION_DEFAULT;
+                                            }
+
+                                            if (
+                                                prop.scale !== undefined &amp;&amp;
+                                                !Number.isNaN(prop.scale) &amp;&amp;
+                                                prop.scale !== -1
+                                            ) {
+                                                scale = prop.scale;
+                                            } else {
+                                                scale = f.SCALE_DEFAULT;
+                                            }
+
+                                            sql += &quot;(&quot; + prec + &quot;,&quot; + scale;
+                                            sql += &quot;)&quot;;
+                                        }
+                                    }
+                                    sql += &quot;;&quot;;
+                                    token = key.toSnakeCase();
+                                }
+
+                                adds.push(key);
+                                tokens = tokens.concat([table, token]);
+
+                                if (prop.isNaturalKey) {
+                                    unique.push(key);
+                                }
+
+                                if (prop.isIndexed) {
+                                    indices.push(key);
+                                }
+
+                                if (prop.description) {
+                                    sql += &quot;COMMENT ON COLUMN %I.%I IS %L;&quot;;
+
+                                    tokens = tokens.concat([
+                                        table,
+                                        token,
+                                        prop.description || &quot;&quot;
+                                    ]);
+                                }
+                            }
+                        } else {
+                            err = &quot;Invalid type \&quot;&quot; + prop.type;
+                            err += &quot;\&quot; for property \&quot;&quot;;
+                            err += key + &quot;\&quot; on class \&quot;&quot; + spec.name + &quot;\&quot;&quot;;
+
+                            return false;
+                        }
+
+                        return true;
+                    }
+
+                    afterGetCatalog = function (resp) {
+                        catalog = resp;
+
+                        dropSql = createDropSql(spec.name);
+
+                        /* Create table if applicable */
+                        if (!feather) {
+                            sql = &quot;CREATE TABLE %I( &quot;;
+                            sql += &quot;CONSTRAINT %I PRIMARY KEY (_pk), &quot;;
+                            sql += &quot;CONSTRAINT %I UNIQUE (id)) &quot;;
+                            sql += &quot;INHERITS (%I);&quot;;
+                            sql += &quot;CREATE TRIGGER %I AFTER INSERT ON %I &quot;;
+                            sql += &quot;FOR EACH ROW EXECUTE PROCEDURE &quot;;
+                            sql += &quot;insert_trigger();&quot;;
+                            sql += &quot;CREATE TRIGGER %I AFTER UPDATE ON %I &quot;;
+                            sql += &quot;FOR EACH ROW EXECUTE PROCEDURE &quot;;
+                            sql += &quot;update_trigger();&quot;;
+
+                            tokens = tokens.concat([
+                                table,
+                                table + &quot;_pkey&quot;,
+                                table + &quot;_id_key&quot;,
+                                inherits,
+                                table + &quot;_insert_trigger&quot;,
+                                table,
+                                table + &quot;_update_trigger&quot;,
+                                table
+                            ]);
+
+                        } else {
+                            /* Drop non-inherited columns not included
+                               in properties */
+                            props = feather.properties;
+                            keys = Object.keys(props);
+                            keys.forEach(function (key) {
+                                let viewName;
+                                if (
+                                    spec.properties &amp;&amp; !spec.properties[key] &amp;&amp;
+                                    !(
+                                        typeof props[key].type === &quot;object&quot; &amp;&amp;
+                                        typeof props[key].type.parentOf
+                                    )
+                                ) {
+                                    /* Drop views */
+                                    if (!changed) {
+                                        sql += dropSql;
+                                        changed = true;
+                                    }
+
+                                    /* Handle relations */
+                                    type = props[key].type;
+
+                                    if (
+                                        typeof type === &quot;object&quot; &amp;&amp;
+                                        type.properties
+                                    ) {
+                                        // Drop associated view if applicable
+                                        sql += &quot;DROP VIEW %I;&quot;;
+                                        viewName = &quot;_&quot; + table;
+                                        viewName += &quot;_&quot; + key.toSnakeCase();
+                                        tokens = tokens.concat([
+                                            viewName,
+                                            table,
+                                            tools.relationColumn(
+                                                key,
+                                                type.relation
+                                            )
+                                        ]);
+                                    } else {
+                                        tokens = tokens.concat([
+                                            table,
+                                            key.toSnakeCase()
+                                        ]);
+                                    }
+
+                                    sql += &quot;ALTER TABLE %I DROP COLUMN %I;&quot;;
+
+                                    // Unrelate parent if applicable
+                                    if (type.childOf) {
+                                        parent = catalog[type.relation];
+                                        delete parent.properties[type.childOf];
+                                    }
+
+                                    // Parent properties need to be added back
+                                    // into spec so not lost
+                                } else if (
+                                    spec.properties &amp;&amp;
+                                    !spec.properties[key] &amp;&amp; (
+                                        typeof props[key].type === &quot;object&quot; &amp;&amp;
+                                        typeof props[key].type.parentOf
+                                    )
+                                ) {
+                                    spec.properties[key] = props[key];
+                                }
+                            });
+                        }
+
+                        // Add table description
+                        if (spec.description) {
+                            sql += &quot;COMMENT ON TABLE %I IS %L;&quot;;
+                            tokens = tokens.concat([
+                                table,
+                                spec.description || &quot;&quot;
+                            ]);
+                        }
+
+                        /* Add columns */
+                        spec.properties = spec.properties || {};
+                        props = spec.properties;
+                        keys = Object.keys(props).filter(function (item) {
+                            let prop = props[item];
+                            if (prop.autonumber) {
+                                autonumber = prop.autonumber;
+                                autonumber.key = item;
+                            }
+
+                            return !prop.inheritedFrom;
+                        });
+                        keys.every(handleProps);
+
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        /* Update schema */
+                        sql = sql.format(tokens);
+                        client.query(sql, createSequence);
+                    };
+
+                    createSequence = function (err) {
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        if (!autonumber) {
+                            afterUpdateSchema();
+                            return;
+                        }
+                        let sequence = autonumber.sequence;
+                        sql = &quot;SELECT relname FROM pg_class &quot;;
+                        sql += &quot;JOIN pg_namespace &quot;;
+                        sql += &quot;ON relnamespace=pg_namespace.oid &quot;;
+                        sql += &quot;WHERE relkind = &#x27;S&#x27; AND relname = $1 &quot;;
+                        sql += &quot;AND nspname = &#x27;public&#x27;&quot;;
+
+                        client.query(sql, [sequence], function (err, resp) {
+                            if (err) {
+                                reject(err);
+                                return;
+                            }
+
+                            if (!resp.rows.length) {
+                                sql = &quot;CREATE SEQUENCE %I;&quot;;
+                                sql = sql.format([sequence]);
+                                client.query(sql, function (err) {
+                                    if (err) {
+                                        reject(err);
+                                        return;
+                                    }
+
+                                    afterUpdateSchema();
+                                });
+                                return;
+                            }
+
+                            afterUpdateSchema();
+                        });
+                    };
+
+                    afterUpdateSchema = function (err) {
+                        let afterPopulateDefaults;
+                        let iterateDefaults;
+
+                        function disableTriggers() {
+                            return new Promise(function (resolve, reject) {
+                                sql = &quot;ALTER TABLE %I DISABLE TRIGGER ALL;&quot;;
+                                sql = sql.format([table]);
+                                client.query(sql).then(
+                                    resolve
+                                ).catch(
+                                    reject
+                                );
+                            });
+                        }
+
+                        function updateTable() {
+                            return new Promise(function (resolve, reject) {
+                                sql = &quot;UPDATE %I SET &quot; + tokens.join(&quot;,&quot;);
+                                sql += &quot;;&quot;;
+                                sql = sql.format(args);
+                                client.query(sql, values).then(
+                                    resolve
+                                ).catch(
+                                    reject
+                                );
+                            });
+                        }
+
+                        function enableTriggers() {
+                            return new Promise(function (resolve, reject) {
+                                sql = &quot;ALTER TABLE %I ENABLE TRIGGER ALL;&quot;;
+                                sql = sql.format([table]);
+                                client.query(sql).then(
+                                    resolve
+                                ).catch(
+                                    reject
+                                );
+                            });
+                        }
+
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        afterPopulateDefaults = function () {
+                            let atoken;
+
+                            // Update function based defaults (one by one)
+                            if (fns.length || autonumber) {
+                                tokens = [];
+                                args = [table];
+                                i = 0;
+
+                                fns.forEach(function (fn) {
+                                    tokens.push(&quot;%I=$&quot; + (i + 2));
+                                    args.push(fn.col);
+                                    i += 1;
+                                });
+
+                                if (autonumber) {
+                                    atoken = &quot;%I=&#x27;&quot;;
+                                    atoken += (autonumber.prefix || &quot;&quot;);
+                                    atoken += &quot;&#x27; || lpad(nextval(&#x27;&quot;;
+                                    atoken += autonumber.sequence;
+                                    atoken += &quot;&#x27;)::text, &quot;;
+                                    atoken += (autonumber.length || 0);
+                                    atoken += &quot;, &#x27;0&#x27;) || &#x27;&quot;;
+                                    atoken += (autonumber.suffix || &quot;&quot;) + &quot;&#x27;&quot;;
+                                    tokens.push(atoken);
+                                    args.push(autonumber.key);
+                                }
+
+                                sql = &quot;SELECT _pk FROM %I ORDER BY _pk &quot;;
+                                sql += &quot;OFFSET $1 LIMIT 1;&quot;;
+                                sql = sql.format([table]);
+                                sqlUpd = &quot;UPDATE %I SET &quot; + tokens.join(&quot;,&quot;);
+                                sqlUpd += &quot; WHERE _pk = $1&quot;;
+                                sqlUpd = sqlUpd.format(args);
+                                client.query(sql, [n], iterateDefaults);
+                                return;
+                            }
+
+                            createIndex();
+                        };
+
+                        iterateDefaults = function (err, resp) {
+                            if (err) {
+                                reject(err);
+                                return;
+                            }
+
+                            recs = resp.rows;
+
+                            if (recs.length) {
+                                values = [recs[0][tools.PKCOL]];
+                                i = 0;
+                                n += 1;
+
+                                while (i &lt; fns.length) {
+                                    values.push(f[fns[i].default]());
+                                    i += 1;
+                                }
+
+                                client.query(
+                                    sqlUpd,
+                                    values,
+                                    function (err) {
+                                        if (err) {
+                                            reject(err);
+                                            return;
+                                        }
+
+                                        // Look for next record
+                                        client.query(
+                                            sql,
+                                            [n],
+                                            iterateDefaults
+                                        );
+                                    }
+                                );
+                                return;
+                            }
+
+                            createIndex();
+                        };
+
+                        // Populate defaults
+                        if (adds.length) {
+                            values = [];
+                            tokens = [];
+                            args = [table];
+
+                            adds.forEach(function (add) {
+                                let pformat = props[add].format;
+
+                                type = props[add].type;
+
+                                if (typeof type === &quot;object&quot;) {
+                                    defaultValue = -1;
+                                } else {
+                                    defaultValue = props[add].default;
+                                    if (defaultValue === undefined) {
+                                        defaultValue = (
+                                            (pformat &amp;&amp; formats[pformat])
+                                            ? formats[pformat].default
+                                            : false
+                                        ) || tools.types[type].default;
+                                    }
+                                }
+
+                                if (
+                                    typeof defaultValue === &quot;string&quot; &amp;&amp;
+                                    defaultValue.match(/\(\)$/)
+                                ) {
+                                    fns.push({
+                                        col: add.toSnakeCase(),
+                                        default: defaultValue.replace(
+                                            /\(\)$/,
+                                            &quot;&quot;
+                                        )
+                                    });
+                                } else {
+                                    values.push(defaultValue);
+                                    tokens.push(&quot;%I=$&quot; + p);
+                                    if (typeof type === &quot;object&quot;) {
+                                        args.push(
+                                            tools.relationColumn(
+                                                add,
+                                                type.relation
+                                            )
+                                        );
+                                    } else {
+                                        args.push(add.toSnakeCase());
+                                    }
+                                    p += 1;
+                                }
+                            });
+
+                            if (values.length) {
+                                Promise.resolve().then(
+                                    disableTriggers
+                                ).then(
+                                    updateTable
+                                ).then(
+                                    enableTriggers
+                                ).then(
+                                    afterPopulateDefaults
+                                ).catch(
+                                    reject
+                                );
+
+                                return;
+                            }
+
+                            afterPopulateDefaults();
+                            return;
+                        }
+
+                        createIndex();
+                    };
+
+                    createIndex = function (err) {
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        if (unique.length || indices.length) {
+                            sql = &quot;&quot;;
+                            tokens = [];
+
+                            unique.forEach(function (key) {
+                                sql += &quot;CREATE INDEX %I ON %I (%I);&quot;;
+                                tokens = tokens.concat([
+                                    table + &quot;_index_&quot; + key.toSnakeCase(),
+                                    table,
+                                    key.toSnakeCase()
+                                ]);
+                            });
+
+                            indices.forEach(function (key) {
+                                sql += &quot;CREATE INDEX %I ON %I (%I);&quot;;
+                                tokens = tokens.concat([
+                                    table + &quot;_index_&quot; + key.toSnakeCase(),
+                                    table,
+                                    key.toSnakeCase()
+                                ]);
+                            });
+
+                            client.query(
+                                sql.format(tokens),
+                                updateCatalog
+                            );
+                            return;
+                        }
+                        updateCatalog();
+                    };
+
+                    updateCatalog = function (err) {
+                        let fprops;
+                        let sprops;
+
+                        function handleFP(attr) {
+                            let pr = this;
+                            let st = sprops[pr].type;
+                            let ft = fprops[pr].type;
+
+                            if (attr === &quot;type&quot;) {
+                                if (
+                                    typeof sprops[pr].type === &quot;object&quot; &amp;&amp;
+                                    st.relation === ft.relation &amp;&amp;
+                                    ft.isChild
+                                ) {
+                                    st.isChild = true;
+                                }
+                            }
+                        }
+
+                        function handleSP(p) {
+                            if (fprops[p]) {
+                                Object.keys(
+                                    fprops[p]
+                                ).forEach(
+                                    handleFP.bind(p)
+                                );
+                            }
+                        }
+
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        /* Make sure certain values added automatically
+                           persist */
+                        if (feather) {
+                            fprops = feather.properties;
+                            sprops = spec.properties;
+
+                            Object.keys(sprops).forEach(handleSP);
+                        }
+
+                        /* Update catalog settings */
+                        name = spec.name;
+                        catalog[name] = spec;
+                        delete spec.name;
+
+                        if (
+                            typeof spec.authorization === &quot;object&quot; &amp;&amp;
+                            !Array.isArray(spec.authorization)
+                        ) {
+                            spec.authorization = [spec.authorization];
+                        }
+
+                        spec.isChild = (
+                            spec.isChild || tools.isChildFeather(spec)
+                        );
+
+                        settings.saveSettings({
+                            client: client,
+                            data: {
+                                name: &quot;catalog&quot;,
+                                data: catalog
+                            }
+                        }).then(afterUpdateCatalog).catch(reject);
+                    };
+
+                    afterUpdateCatalog = function () {
+                        let callback;
+
+                        callback = function (resp) {
+                            isChild = tools.isChildFeather(resp);
+                            sql = &quot;SELECT nextval(&#x27;object__pk_seq&#x27;) AS pk;&quot;;
+                            client.query(sql, afterNextVal);
+                        };
+
+                        if (!feather) {
+                            that.getFeather({
+                                client: client,
+                                callback: callback,
+                                data: {
+                                    name: name
+                                }
+                            }).then(callback).catch(reject);
+                            return;
+                        }
+
+                        isChild = tools.isChildFeather(feather);
+                        afterInsertFeather();
+                    };
+
+                    afterNextVal = function (err, resp) {
+                        let callback;
+
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        pk = resp.rows[0].pk;
+
+                        callback = function (err, resp) {
+                            let key;
+
+                            if (err) {
+                                reject(err);
+                                return;
+                            }
+
+                            key = resp;
+
+                            sql = &quot;INSERT INTO \&quot;$feather\&quot; &quot;;
+                            sql += &quot;(_pk, id, created, created_by, updated, &quot;;
+                            sql += &quot;updated_by, is_deleted, is_child, &quot;;
+                            sql += &quot;parent_pk) VALUES &quot;;
+                            sql += &quot;($1, $2, now(), $3, now(), $4, false, &quot;;
+                            sql += &quot;$5, $6);&quot;;
+                            values = [
+                                pk,
+                                table,
+                                client.currentUser(),
+                                client.currentUser(),
+                                isChild,
+                                key
+                            ];
+                            client.query(sql, values, afterInsertFeather);
+                        };
+
+                        if (isChild) {
+                            getParentKey({
+                                parent: parent,
+                                child: name,
+                                client: client
+                            }).then(callback).catch(reject);
+                            return;
+                        }
+
+                        callback(null, pk);
+                    };
+
+                    afterInsertFeather = function (err) {
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        /* Propagate views */
+                        changed = changed || !feather;
+                        if (changed) {
+                            propagateViews({
+                                name: name,
+                                client: client,
+                                callback: afterPropagateViews
+                            });
+                            return;
+                        }
+
+                        afterPropagateViews();
+                    };
+
+                    afterPropagateViews = function (err) {
+                        let requests = [];
+
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        /* If no specific authoriztion this won&#x27;t work */
+                        if (
+                            !isChild &amp;&amp; !spec.isChild &amp;&amp; (
+                                spec.authorizations === undefined ||
+                                spec.authorizations === null
+                            )
+                        ) {
+                            throw new Error(
+                                &quot;Feather must specify authorization.&quot;
+                            );
+                        }
+
+                        /* Set authorization */
+                        if (
+                            Array.isArray(spec.authorizations) &amp;&amp;
+                            spec.authorizations.length
+                        ) {
+                            spec.authorizations.forEach(function (auth) {
+                                auth.feather = name;
+                                auth.isSilentError = true;
+                                requests.push(that.saveAuthorization({
+                                    client: client,
+                                    data: auth
+                                }));
+                            });
+
+                            Promise.all(requests).then(
+                                afterSaveAuthorization
+                            ).catch(reject);
+                            return;
+                        }
+
+                        afterSaveAuthorization();
+                    };
+
+                    afterSaveAuthorization = function () {
+                        if (c &lt; len) {
+                            nextSpec();
+                            return;
+                        }
+
+                        resolve(true);
+                    };
+
+                    // Real work starts here
+                    spec = specs[c];
+                    c += 1;
+                    table = (
+                        spec.name
+                        ? spec.name.toSnakeCase()
+                        : false
+                    );
+                    inherits = (spec.inherits || &quot;Object&quot;);
+                    inherits = inherits.toSnakeCase();
+
+                    if (!table) {
+                        reject(&quot;No name defined&quot;);
+                        return;
+                    }
+
+                    if (reserved.indexOf(
+                        table.toSnakeCase().toUpperCase()
+                    ) !== -1) {
+                        reject(
+                            &quot;Cannot create feather \&quot;&quot; + table +
+                            &quot;\&quot; because it is a reserved word.&quot;
+                        );
+                        return;
+                    }
+
+                    that.getFeather({
+                        client: client,
+                        data: {
+                            name: spec.name,
+                            includeInherited: false
+                        }
+                    }).then(afterGetFeather).catch(reject);
+                }
+
+                // Real work starts here
+                nextSpec();
+            });
+        };
+
+        return that;
+    };
+
+}(exports));
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

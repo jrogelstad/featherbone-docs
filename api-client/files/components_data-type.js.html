@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>components\data-type.js - Featherbone Client</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-client.png" title="Featherbone Client"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Catalog.html">Catalog</a></li>
+                                <li><a href="../classes/Components.AccountMenu.html">Components.AccountMenu</a></li>
+                                <li><a href="../classes/Components.AddressRelation.html">Components.AddressRelation</a></li>
+                                <li><a href="../classes/Components.AutoNumber.html">Components.AutoNumber</a></li>
+                                <li><a href="../classes/Components.Button.html">Components.Button</a></li>
+                                <li><a href="../classes/Components.Checkbox.html">Components.Checkbox</a></li>
+                                <li><a href="../classes/Components.ChildFormPage.html">Components.ChildFormPage</a></li>
+                                <li><a href="../classes/Components.ChildTable.html">Components.ChildTable</a></li>
+                                <li><a href="../classes/Components.ContactRelation.html">Components.ContactRelation</a></li>
+                                <li><a href="../classes/Components.DataList.html">Components.DataList</a></li>
+                                <li><a href="../classes/Components.DataType.html">Components.DataType</a></li>
+                                <li><a href="../classes/Components.Dialog.html">Components.Dialog</a></li>
+                                <li><a href="../classes/Components.FilterDialog.html">Components.FilterDialog</a></li>
+                                <li><a href="../classes/Components.FormDialog.html">Components.FormDialog</a></li>
+                                <li><a href="../classes/Components.FormPage.html">Components.FormPage</a></li>
+                                <li><a href="../classes/Components.FormWidget.html">Components.FormWidget</a></li>
+                                <li><a href="../classes/Components.MoneyRelation.html">Components.MoneyRelation</a></li>
+                                <li><a href="../classes/Components.NavigatorMenu.html">Components.NavigatorMenu</a></li>
+                                <li><a href="../classes/Components.RelationWidget.html">Components.RelationWidget</a></li>
+                                <li><a href="../classes/Components.SearchInput.html">Components.SearchInput</a></li>
+                                <li><a href="../classes/Components.SearchPage.html">Components.SearchPage</a></li>
+                                <li><a href="../classes/Components.SettingsPage.html">Components.SettingsPage</a></li>
+                                <li><a href="../classes/Components.SortDialog.html">Components.SortDialog</a></li>
+                                <li><a href="../classes/Components.TableDialog.html">Components.TableDialog</a></li>
+                                <li><a href="../classes/Components.TableWidget.html">Components.TableWidget</a></li>
+                                <li><a href="../classes/Components.WorkbookPage.html">Components.WorkbookPage</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/List.html">List</a></li>
+                                <li><a href="../classes/Model.html">Model</a></li>
+                                <li><a href="../classes/Models.Address.html">Models.Address</a></li>
+                                <li><a href="../classes/Models.BaseCurrency.html">Models.BaseCurrency</a></li>
+                                <li><a href="../classes/Models.Comment.html">Models.Comment</a></li>
+                                <li><a href="../classes/Models.Contact.html">Models.Contact</a></li>
+                                <li><a href="../classes/Models.ContactAddress.html">Models.ContactAddress</a></li>
+                                <li><a href="../classes/Models.ContactEmail.html">Models.ContactEmail</a></li>
+                                <li><a href="../classes/Models.ContactPhone.html">Models.ContactPhone</a></li>
+                                <li><a href="../classes/Models.ContactSocialAccount.html">Models.ContactSocialAccount</a></li>
+                                <li><a href="../classes/Models.Country.html">Models.Country</a></li>
+                                <li><a href="../classes/Models.Currency.html">Models.Currency</a></li>
+                                <li><a href="../classes/Models.CurrencyConversion.html">Models.CurrencyConversion</a></li>
+                                <li><a href="../classes/Models.CurrencyUnit.html">Models.CurrencyUnit</a></li>
+                                <li><a href="../classes/Models.CurrencyUnitConversion.html">Models.CurrencyUnitConversion</a></li>
+                                <li><a href="../classes/Models.DataListOption.html">Models.DataListOption</a></li>
+                                <li><a href="../classes/Models.DataService.html">Models.DataService</a></li>
+                                <li><a href="../classes/Models.Document.html">Models.Document</a></li>
+                                <li><a href="../classes/Models.Feather.html">Models.Feather</a></li>
+                                <li><a href="../classes/Models.FeatherAuthorization.html">Models.FeatherAuthorization</a></li>
+                                <li><a href="../classes/Models.FeatherOverload.html">Models.FeatherOverload</a></li>
+                                <li><a href="../classes/Models.FeatherProperty.html">Models.FeatherProperty</a></li>
+                                <li><a href="../classes/Models.Form.html">Models.Form</a></li>
+                                <li><a href="../classes/Models.FormAttr.html">Models.FormAttr</a></li>
+                                <li><a href="../classes/Models.FormAttrColumn.html">Models.FormAttrColumn</a></li>
+                                <li><a href="../classes/Models.FormTab.html">Models.FormTab</a></li>
+                                <li><a href="../classes/Models.Honorific.html">Models.Honorific</a></li>
+                                <li><a href="../classes/Models.Kind.html">Models.Kind</a></li>
+                                <li><a href="../classes/Models.Layout.html">Models.Layout</a></li>
+                                <li><a href="../classes/Models.Log.html">Models.Log</a></li>
+                                <li><a href="../classes/Models.Module.html">Models.Module</a></li>
+                                <li><a href="../classes/Models.ModuleDependency.html">Models.ModuleDependency</a></li>
+                                <li><a href="../classes/Models.Object.html">Models.Object</a></li>
+                                <li><a href="../classes/Models.ObjectAuthorization.html">Models.ObjectAuthorization</a></li>
+                                <li><a href="../classes/Models.RelationSearchColumn.html">Models.RelationSearchColumn</a></li>
+                                <li><a href="../classes/Models.RelationWidget.html">Models.RelationWidget</a></li>
+                                <li><a href="../classes/Models.Role.html">Models.Role</a></li>
+                                <li><a href="../classes/Models.RoleMembership.html">Models.RoleMembership</a></li>
+                                <li><a href="../classes/Models.Route.html">Models.Route</a></li>
+                                <li><a href="../classes/Models.Script.html">Models.Script</a></li>
+                                <li><a href="../classes/Models.SocialNetwork.html">Models.SocialNetwork</a></li>
+                                <li><a href="../classes/Models.State.html">Models.State</a></li>
+                                <li><a href="../classes/Models.Style.html">Models.Style</a></li>
+                                <li><a href="../classes/Models.Unit.html">Models.Unit</a></li>
+                                <li><a href="../classes/Models.UserAccount.html">Models.UserAccount</a></li>
+                                <li><a href="../classes/Models.Workbook.html">Models.Workbook</a></li>
+                                <li><a href="../classes/Models.WorkbookAuthorization.html">Models.WorkbookAuthorization</a></li>
+                                <li><a href="../classes/Models.WorkbookChild.html">Models.WorkbookChild</a></li>
+                                <li><a href="../classes/Models.WorkbookDefaultConfig.html">Models.WorkbookDefaultConfig</a></li>
+                                <li><a href="../classes/Models.WorkbookLocalConfig.html">Models.WorkbookLocalConfig</a></li>
+                                <li><a href="../classes/Property.html">Property</a></li>
+                                <li><a href="../classes/State.html">State</a></li>
+                                <li><a href="../classes/State.define.html">State.define</a></li>
+                                <li><a href="../classes/ViewModels.AccountMenu.html">ViewModels.AccountMenu</a></li>
+                                <li><a href="../classes/ViewModels.AddressRelation.html">ViewModels.AddressRelation</a></li>
+                                <li><a href="../classes/ViewModels.AutoNumber.html">ViewModels.AutoNumber</a></li>
+                                <li><a href="../classes/ViewModels.Button.html">ViewModels.Button</a></li>
+                                <li><a href="../classes/ViewModels.Checkbox.html">ViewModels.Checkbox</a></li>
+                                <li><a href="../classes/ViewModels.ChildFormPage.html">ViewModels.ChildFormPage</a></li>
+                                <li><a href="../classes/ViewModels.ChildTable.html">ViewModels.ChildTable</a></li>
+                                <li><a href="../classes/ViewModels.ContactRelation.html">ViewModels.ContactRelation</a></li>
+                                <li><a href="../classes/ViewModels.DataList.html">ViewModels.DataList</a></li>
+                                <li><a href="../classes/ViewModels.DataType.html">ViewModels.DataType</a></li>
+                                <li><a href="../classes/ViewModels.Dialog.html">ViewModels.Dialog</a></li>
+                                <li><a href="../classes/ViewModels.FilterDialog.html">ViewModels.FilterDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormDialog.html">ViewModels.FormDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormPage.html">ViewModels.FormPage</a></li>
+                                <li><a href="../classes/ViewModels.FormWidget.html">ViewModels.FormWidget</a></li>
+                                <li><a href="../classes/ViewModels.MoneyRelation.html">ViewModels.MoneyRelation</a></li>
+                                <li><a href="../classes/ViewModels.NavigatorMenu.html">ViewModels.NavigatorMenu</a></li>
+                                <li><a href="../classes/ViewModels.RelationWidget.html">ViewModels.RelationWidget</a></li>
+                                <li><a href="../classes/ViewModels.SearchInput.html">ViewModels.SearchInput</a></li>
+                                <li><a href="../classes/ViewModels.SearchPage.html">ViewModels.SearchPage</a></li>
+                                <li><a href="../classes/ViewModels.SettingsPage.html">ViewModels.SettingsPage</a></li>
+                                <li><a href="../classes/ViewModels.SortDialog.html">ViewModels.SortDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableDialog.html">ViewModels.TableDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableWidget.html">ViewModels.TableWidget</a></li>
+                                <li><a href="../classes/ViewModels.WorkbookPage.html">ViewModels.WorkbookPage</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/AccountMenu.html">AccountMenu</a></li>
+                                <li><a href="../modules/AddressRelation.html">AddressRelation</a></li>
+                                <li><a href="../modules/AutoNumber.html">AutoNumber</a></li>
+                                <li><a href="../modules/Button.html">Button</a></li>
+                                <li><a href="../modules/Catalog.html">Catalog</a></li>
+                                <li><a href="../modules/Checkbox.html">Checkbox</a></li>
+                                <li><a href="../modules/ChildFormPage.html">ChildFormPage</a></li>
+                                <li><a href="../modules/ChildTable.html">ChildTable</a></li>
+                                <li><a href="../modules/ContactRelation.html">ContactRelation</a></li>
+                                <li><a href="../modules/Core.html">Core</a></li>
+                                <li><a href="../modules/DataList.html">DataList</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/DataType.html">DataType</a></li>
+                                <li><a href="../modules/Dialog.html">Dialog</a></li>
+                                <li><a href="../modules/FilterDialog.html">FilterDialog</a></li>
+                                <li><a href="../modules/FormDialog.html">FormDialog</a></li>
+                                <li><a href="../modules/FormPage.html">FormPage</a></li>
+                                <li><a href="../modules/FormWidget.html">FormWidget</a></li>
+                                <li><a href="../modules/List.html">List</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/MoneyRelation.html">MoneyRelation</a></li>
+                                <li><a href="../modules/NavigatorMenu.html">NavigatorMenu</a></li>
+                                <li><a href="../modules/Property.html">Property</a></li>
+                                <li><a href="../modules/RelationWidget.html">RelationWidget</a></li>
+                                <li><a href="../modules/SearchInput.html">SearchInput</a></li>
+                                <li><a href="../modules/SearchPage.html">SearchPage</a></li>
+                                <li><a href="../modules/SettingsPage.html">SettingsPage</a></li>
+                                <li><a href="../modules/SortDialog.html">SortDialog</a></li>
+                                <li><a href="../modules/State.html">State</a></li>
+                                <li><a href="../modules/TableDialog.html">TableDialog</a></li>
+                                <li><a href="../modules/TableWidget.html">TableWidget</a></li>
+                                <li><a href="../modules/Workbook.html">Workbook</a></li>
+                                <li><a href="../modules/WorkbookPage.html">WorkbookPage</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: components\data-type.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint this, browser*/
+/**
+    @module DataType
+*/
+import f from &quot;../core.js&quot;;
+
+const catalog = f.catalog();
+const dataType = {};
+const listWidget = {};
+const m = window.m;
+
+listWidget.viewModel = function (options) {
+    let vm = {};
+
+    vm.name = f.prop(options.name);
+    vm.items = f.prop([]);
+    vm.onclick = function (e) {
+        let selected = vm.selected();
+        let idx = selected.indexOf(e.target.textContent);
+
+        if (idx === -1) {
+            selected.push(e.target.textContent);
+        } else {
+            selected.splice(idx, 1);
+        }
+    };
+    vm.selected = f.prop([]);
+
+    return vm;
+};
+
+listWidget.component = {
+    oninit: function (vnode) {
+        this.viewModel = vnode.attrs.viewModel;
+    },
+
+    view: function (vnode) {
+        let vm = this.viewModel;
+        let name = vm.name();
+        let items = vm.items() || [];
+        let selected = vm.selected();
+
+        return m(&quot;table&quot;, {
+            class: &quot;pure-table&quot;,
+            style: vnode.attrs.style,
+            readonly: vnode.attrs.readonly
+        }, [
+            m(&quot;thead&quot;, [
+                m(&quot;tr&quot;, [
+                    m(&quot;th&quot;, {
+                        class: &quot;fb-data-type-dialog-list-header&quot;
+                    }, name)
+                ])
+            ]),
+            m(&quot;tbody&quot;, {
+                class: &quot;fb-table-body fb-data-type-dialog-list-body&quot;
+            }, items.map(function (i) {
+                return m(&quot;tr&quot;, {
+                    onclick: vm.onclick,
+                    class: (
+                        selected.indexOf(i) === -1
+                        ? &quot;&quot;
+                        : &quot;fb-data-type-dialog-list-selected&quot;
+                    )
+                }, [
+                    m(&quot;td&quot;, i)
+                ]);
+            }))
+        ]);
+    }
+};
+
+/**
+    View model editor for data type selction.
+    @class DataType
+    @constructor
+    @namespace ViewModels
+    @param {Object} options Options
+    @param {Object} options.parentViewModel
+    @param {String} options.parentProperty
+    @param {String} [options.id]
+    @param {Object} [options.isOverload]
+*/
+dataType.viewModel = function (options) {
+    let vm = {};
+    let parent = options.parentViewModel;
+
+    /**
+        @method buttonAdd
+        @param {ViewModels.Button} button
+        @return {ViewModels.Button}
+    */
+    vm.buttonAdd = f.prop();
+    /**
+        @method buttonEdit
+        @param {ViewModels.Button} button
+        @return {ViewModels.Button}
+    */
+    vm.buttonEdit = f.prop();
+    /**
+        @method buttonRemove
+        @param {ViewModels.Button} button
+        @return {ViewModels.Button}
+    */
+    vm.buttonRemove = f.prop();
+    /**
+        Editor dialog view model.
+        @method dataTypeDialog
+        @param {ViewModels.Dialog} dialog
+        @return {ViewModels.Dialog}
+    */
+    vm.dataTypeDialog = f.prop();
+    /**
+        Parent attribute, if applicable.
+        @method childOf
+        @return {String}
+    */
+    vm.childOf = function () {
+        let type = vm.prop();
+
+        if (typeof type === &quot;object&quot; &amp;&amp; type !== null) {
+            return type.childOf || &quot;&quot;;
+        }
+
+        return &quot;&quot;;
+    };
+    /**
+        Array of feather as key value objects for selector options.
+        @method feathers
+        @return {Array}
+    */
+    vm.feathers = function () {
+        let countries = catalog.store().data().countries().map(
+            function (model) {
+                return model.data.name();
+            }
+        ).sort();
+
+        countries.unshift(&quot;&quot;);
+
+        return countries;
+    };
+    /**
+        @method id
+        @param {String} id
+        @return {String}
+    */
+    vm.id = f.prop(options.id || f.createId());
+    /**
+        Flag special handling if overload instance in a feather.
+        @method isOverload
+        @param {Boolean} flag
+        @return {Boolean}
+    */
+    vm.isOverload = f.prop(Boolean(options.isOverload));
+    /**
+        @method model
+        @return {Model}
+    */
+    vm.model = parent.model().data[options.parentProperty];
+    /**
+        @method onchange
+        @param {Event} event,
+        @param {Boolean} showDialog
+    */
+    vm.onchange = function (e, showDialog) {
+        if (e.target.value === &quot;relation&quot;) {
+            vm.prop({});
+            if (showDialog !== false) {
+                vm.dataTypeDialog().show();
+            }
+            vm.buttonAdd().enable();
+            vm.buttonRemove().enable();
+            if (
+                e.target.value &amp;&amp;
+                vm.relation() &amp;&amp;
+                !vm.childOf()
+            ) {
+                vm.buttonAdd().enable();
+                vm.buttonRemove().enable();
+                return;
+            }
+        } else {
+            vm.prop(e.target.value);
+        }
+
+        vm.propsAvailableWidget().items([]);
+        vm.propsSelectedWidget().items([]);
+        vm.buttonAdd().disable();
+        vm.buttonRemove().disable();
+    };
+    /**
+        @method onchangeDialogChildOf
+        @param {Event} event
+    */
+    vm.onchangeDialogChildOf = function (e) {
+        let type = vm.prop();
+
+        if (typeof type === &quot;object&quot;) {
+            type = f.copy(type);
+            if (e.target.value) {
+                type.childOf = e.target.value;
+                vm.propsAvailableWidget().items([]);
+                vm.propsSelectedWidget().items([]);
+                vm.buttonAdd().disable();
+                vm.buttonRemove().disable();
+            } else {
+                delete type.childOf;
+                vm.propsAvailableWidget().items(vm.properties());
+                vm.buttonAdd().enable();
+                vm.buttonRemove().enable();
+            }
+
+            vm.prop(type);
+        }
+    };
+    /**
+        @method onchangeDialogType
+        @param {Event} event
+    */
+    vm.onchangeDialogType = function (e) {
+        vm.onchange(e, false);
+    };
+    /**
+        @method onchangeDialogRelation
+        @param {Event} event
+    */
+    vm.onchangeDialogRelation = function (e) {
+        let type = f.copy(vm.prop());
+
+        if (typeof type === &quot;object&quot;) {
+            type.relation = e.target.value;
+            vm.prop(type);
+
+            if (e.target.value &amp;&amp; !vm.childOf()) {
+                vm.buttonAdd().enable();
+                vm.buttonRemove().enable();
+                vm.propsAvailableWidget().items(vm.properties());
+                vm.propsSelectedWidget().items([]);
+            } else {
+                vm.buttonAdd().disable();
+                vm.buttonRemove().disable();
+            }
+        }
+    };
+    /**
+        Adds selected available properties to relation.
+        @method propertyAdd
+    */
+    vm.propertyAdd = function () {
+        let selected = vm.propsAvailableWidget().selected();
+        let items = vm.propertiesSelected().slice();
+
+        selected.forEach((item) =&gt; items.push(item));
+        selected.length = 0;
+        vm.propsAvailableWidget().items(vm.propertiesAvailable());
+        vm.propsSelectedWidget().items(items);
+    };
+    /**
+        Removes selected relation properties from relation.
+        @method propertyRemove
+    */
+    vm.propertyRemove = function () {
+        let wSelected = vm.propsSelectedWidget().selected();
+        let selected = vm.propertiesSelected().slice();
+
+        wSelected.forEach(function (item) {
+            selected.splice(selected.indexOf(item), 1);
+        });
+        wSelected.length = 0;
+        vm.propsAvailableWidget().items(vm.propertiesAvailable());
+        vm.propsSelectedWidget().items(selected);
+    };
+    /**
+        All potential properties for relation.
+        @method properties
+    */
+    vm.properties = function () {
+        let props = [];
+        let feather;
+        let relation = vm.relation();
+
+        if (relation &amp;&amp; !vm.isOverload()) {
+            feather = catalog.getFeather(relation);
+            props = Object.keys(feather.properties).sort();
+        }
+
+        return props;
+    };
+    /**
+        Available properties for relation.
+        @method propertiesAvailable
+    */
+    vm.propertiesAvailable = function () {
+        let props = vm.properties().slice();
+        let selected = vm.propertiesSelected() || [];
+
+        return props.filter(function (p) {
+            return selected.indexOf(p) === -1;
+        });
+    };
+    /**
+        Properties assigned to relation.
+        @method propertiesSelected
+    */
+    vm.propertiesSelected = function (...args) {
+        let type = vm.prop();
+
+        if (typeof type === &quot;object&quot; &amp;&amp; type !== null) {
+            type = f.copy(type);
+            if (args.length) {
+                type.properties = args[0];
+                vm.prop(type);
+            }
+            return type.properties;
+        }
+
+        return [];
+    };
+    /**
+        Feather used as relation type.
+        @method relation
+        @return {String}
+    */
+    vm.relation = function () {
+        let type = vm.prop();
+
+        if (typeof type === &quot;object&quot; &amp;&amp; type !== null) {
+            return type.relation;
+        }
+
+        return &quot;&quot;;
+    };
+    /**
+        @method style
+        @param {Object} style
+        @return {Object}
+    */
+    vm.style = f.prop(options.style || {});
+    /**
+        Parent property.
+        @method prop
+        @param {Object} property
+        @return {Object}
+    */
+    vm.prop = options.parentViewModel.model().data[options.parentProperty];
+    /**
+        @method propsAvailableWidget
+        @param {Object} View model
+        @return {Object}
+    */
+    vm.propsAvailableWidget = f.prop();
+    /**
+        @method propsSelectedWidget
+        @param {Object} View model
+        @return {Object}
+    */
+    vm.propsSelectedWidget = f.prop();
+    /**
+        @method type
+        @return {String}
+    */
+    vm.type = function () {
+        let type = vm.prop();
+
+        if (typeof type === &quot;object&quot; &amp;&amp; type !== null) {
+            return &quot;relation&quot;;
+        }
+
+        return type;
+    };
+     /**
+        Array of available types.
+        @method types
+        @param {Array} types
+        @return {Array}
+    */
+    vm.types = f.prop(Object.freeze([
+        &quot;array&quot;,
+        &quot;boolean&quot;,
+        &quot;integer&quot;,
+        &quot;number&quot;,
+        &quot;object&quot;,
+        &quot;relation&quot;,
+        &quot;string&quot;
+    ]));
+    /**
+        Updates &#x60;prop&#x60; with selected value.
+        @method update
+    */
+    vm.update = function () {
+        let type = vm.type();
+        let relation = vm.relation();
+        let childOf = vm.childOf();
+        let value = type;
+        let props;
+
+        if (type === &quot;relation&quot;) {
+            value = {
+                relation: relation
+            };
+
+            props = vm.propertiesSelected();
+            if (props) {
+                value.properties = props;
+            } else if (childOf) {
+                value.childOf = childOf;
+            }
+        }
+
+        vm.prop(value);
+    };
+
+    // ..........................................................
+    // PRIVATE
+    //
+
+    vm.buttonAdd(f.createViewModel(&quot;Button&quot;, {
+        onclick: vm.propertyAdd,
+        title: &quot;Add&quot;,
+        icon: &quot;arrow-alt-circle-right&quot;,
+        style: {
+            display: &quot;block&quot;,
+            backgroundColor: &quot;white&quot;
+        }
+    }));
+
+    vm.buttonRemove(f.createViewModel(&quot;Button&quot;, {
+        onclick: vm.propertyRemove,
+        title: &quot;Remove&quot;,
+        icon: &quot;arrow-alt-circle-left&quot;,
+        style: {
+            backgroundColor: &quot;white&quot;
+        }
+    }));
+
+    vm.dataTypeDialog(f.createViewModel(&quot;Dialog&quot;, {
+        icon: &quot;edit&quot;,
+        title: (
+            vm.isOverload()
+            ? &quot;Overload type&quot;
+            : &quot;Data type&quot;
+        )
+    }));
+
+    vm.dataTypeDialog().buttons().pop();
+
+    vm.dataTypeDialog().content = function () {
+        let id = vm.id();
+        let isNotRelation = vm.type() !== &quot;relation&quot;;
+        let isNotFeather = !vm.relation();
+        let propertiesSelected = vm.propertiesSelected() || [];
+        let isOverload = vm.isOverload();
+        let btn = f.getComponent(&quot;Button&quot;);
+
+        return m(&quot;div&quot;, [
+            m(&quot;div&quot;, {
+                class: &quot;pure-control-group&quot;
+            }, [
+                m(&quot;label&quot;, {
+                    for: id
+                }, &quot;Type:&quot;),
+                m(&quot;select&quot;, {
+                    id: id,
+                    key: id,
+                    value: vm.type(),
+                    onchange: vm.onchangeDialogType,
+                    readonly: isOverload,
+                    disabled: isOverload
+                }, vm.types().map(function (item) {
+                    return m(&quot;option&quot;, {
+                        value: item,
+                        label: item,
+                        key: id + &quot;$&quot; + item
+                    });
+                }))
+            ]),
+            m(&quot;div&quot;, {
+                class: &quot;pure-control-group&quot;
+            }, [
+                m(&quot;label&quot;, {
+                    for: &quot;dlgRelation&quot;
+                }, &quot;Feather:&quot;),
+                m(&quot;select&quot;, {
+                    id: &quot;dlgRelation&quot;,
+                    key: &quot;dlgRelation&quot;,
+                    value: vm.relation(),
+                    onchange: vm.onchangeDialogRelation,
+                    readonly: isNotRelation,
+                    class: &quot;fb-input&quot;
+                }, f.feathers().map(function (item) {
+                    return m(&quot;option&quot;, {
+                        value: item.value,
+                        label: item.label,
+                        key: id + &quot;$feather$&quot; + item.value
+                    });
+                }))
+            ]),
+            m(&quot;div&quot;, {
+                class: &quot;pure-control-group&quot;
+            }, [
+                m(&quot;label&quot;, {
+                    for: &quot;dlgChildOf&quot;
+                }, &quot;Child Of:&quot;),
+                m(&quot;input&quot;, {
+                    id: &quot;dlgChildOf&quot;,
+                    value: vm.childOf(),
+                    onchange: vm.onchangeDialogChildOf,
+                    readonly: (
+                        isNotFeather ||
+                        propertiesSelected.length ||
+                        isOverload
+                    )
+                })
+            ]),
+            m(&quot;div&quot;, {
+                class: &quot;pure-control-group&quot;
+            }, [
+                m(&quot;label&quot;, {
+                    for: &quot;dlgSelectors&quot;
+                }, &quot;Properties:&quot;),
+                m(&quot;div&quot;, {
+                    id: &quot;dlgSelectors&quot;,
+                    style: {
+                        marginLeft: &quot;100px&quot;,
+                        marginTop: &quot;10px&quot;
+                    }
+                }, [
+                    m(listWidget.component, {
+                        viewModel: vm.propsAvailableWidget(),
+                        style: {
+                            display: &quot;inline-block&quot;,
+                            width: &quot;120px&quot;
+                        },
+                        readonly: isNotFeather || isOverload
+                    }),
+                    m(&quot;div&quot;, {
+                        style: {
+                            display: &quot;inline-block&quot;,
+                            position: &quot;absolute&quot;,
+                            marginTop: &quot;36px&quot;
+                        }
+                    }, [
+                        m(btn, {
+                            viewModel: vm.buttonAdd()
+                        }),
+                        m(btn, {
+                            viewModel: vm.buttonRemove()
+                        })
+                    ]),
+                    m(listWidget.component, {
+                        viewModel: vm.propsSelectedWidget(),
+                        style: {
+                            position: &quot;absolute&quot;,
+                            left: &quot;285px&quot;,
+                            display: &quot;inline-block&quot;,
+                            width: &quot;120px&quot;
+                        },
+                        readonly: isNotFeather || isOverload
+                    })
+                ])
+            ])
+        ]);
+    };
+
+    vm.dataTypeDialog().style().width = &quot;450px&quot;;
+    vm.dataTypeDialog().style().height = &quot;450px&quot;;
+
+    vm.buttonEdit(f.createViewModel(&quot;Button&quot;, {
+        onclick: vm.dataTypeDialog().show,
+        title: &quot;Edit relation details&quot;,
+        icon: &quot;edit&quot;,
+        class: &quot;fb-data-type-edit-button&quot;
+    }));
+
+    vm.propsAvailableWidget(listWidget.viewModel({
+        name: &quot;Available&quot;
+    }));
+    vm.propsAvailableWidget().items = vm.propertiesAvailable;
+
+    vm.propsSelectedWidget(listWidget.viewModel({
+        name: &quot;Selected&quot;
+    }));
+    vm.propsSelectedWidget().items = vm.propertiesSelected;
+
+    return vm;
+};
+
+/**
+    Editor component for feather property type.
+    @class DataType
+    @static
+    @namespace Components
+*/
+dataType.component = {
+    /**
+        @method onint
+        @param {Object} vnode Virtual node
+        @param {Object} vnode.attrs Options
+        @param {Object} vnode.attrs.parentViewModel
+        @param {String} vnode.attrs.parentProperty
+        @param {String} [vnode.attrs.id]
+        @param {Boolean} [vnode.attrs.isOverload]
+        @param {Boolean} [vnode.attrs.readonly]
+    */
+    oninit: function (vnode) {
+        let options = vnode.attrs;
+
+        // Set up viewModel if required
+        this.viewModel = dataType.viewModel({
+            parentViewModel: options.parentViewModel,
+            parentProperty: options.parentProperty,
+            id: options.id,
+            readonly: options.readonly,
+            isOverload: options.isOverload
+        });
+    },
+
+    /**
+        @method view
+        @param {Object} vnode Virtual node
+    */
+    view: function (vnode) {
+        let vm = this.viewModel;
+        let id = vm.id();
+        let style = vm.style();
+        let readonly = (
+            vnode.attrs.readonly === true ||
+            vm.isOverload()
+        );
+        let btn = f.getComponent(&quot;Button&quot;);
+
+        style.display = style.display || &quot;inline-block&quot;;
+
+        if (vnode.attrs.readonly) {
+            vm.buttonEdit().disable();
+        } else {
+            vm.buttonEdit().enable();
+        }
+
+        // Build the view
+        return m(&quot;div&quot;, {
+            style: style
+        }, [
+            m(f.getComponent(&quot;Dialog&quot;), {
+                viewModel: vm.dataTypeDialog()
+            }),
+            m(&quot;select&quot;, {
+                id: id,
+                key: id,
+                onchange: vm.onchange,
+                oncreate: vnode.attrs.onCreate,
+                onremove: vnode.attrs.onRemove,
+                value: vm.type(),
+                readonly: readonly,
+                disabled: readonly
+            }, vm.types().map(function (item) {
+                let opts = {
+                    value: item,
+                    label: item,
+                    key: id + &quot;$&quot; + item
+                };
+                if (vm.type() === item) {
+                    opts.selected = true;
+                }
+                return m(&quot;option&quot;, opts);
+            })),
+            m(btn, {
+                viewModel: vm.buttonEdit()
+            })
+        ]);
+    }
+};
+
+catalog.register(
+    &quot;components&quot;,
+    &quot;dataType&quot;,
+    dataType.component
+);
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

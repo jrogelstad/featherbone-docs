@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>components\table-dialog.js - Featherbone Client</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-client.png" title="Featherbone Client"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Catalog.html">Catalog</a></li>
+                                <li><a href="../classes/Components.AccountMenu.html">Components.AccountMenu</a></li>
+                                <li><a href="../classes/Components.AddressRelation.html">Components.AddressRelation</a></li>
+                                <li><a href="../classes/Components.AutoNumber.html">Components.AutoNumber</a></li>
+                                <li><a href="../classes/Components.Button.html">Components.Button</a></li>
+                                <li><a href="../classes/Components.Checkbox.html">Components.Checkbox</a></li>
+                                <li><a href="../classes/Components.ChildFormPage.html">Components.ChildFormPage</a></li>
+                                <li><a href="../classes/Components.ChildTable.html">Components.ChildTable</a></li>
+                                <li><a href="../classes/Components.ContactRelation.html">Components.ContactRelation</a></li>
+                                <li><a href="../classes/Components.DataList.html">Components.DataList</a></li>
+                                <li><a href="../classes/Components.DataType.html">Components.DataType</a></li>
+                                <li><a href="../classes/Components.Dialog.html">Components.Dialog</a></li>
+                                <li><a href="../classes/Components.FilterDialog.html">Components.FilterDialog</a></li>
+                                <li><a href="../classes/Components.FormDialog.html">Components.FormDialog</a></li>
+                                <li><a href="../classes/Components.FormPage.html">Components.FormPage</a></li>
+                                <li><a href="../classes/Components.FormWidget.html">Components.FormWidget</a></li>
+                                <li><a href="../classes/Components.MoneyRelation.html">Components.MoneyRelation</a></li>
+                                <li><a href="../classes/Components.NavigatorMenu.html">Components.NavigatorMenu</a></li>
+                                <li><a href="../classes/Components.RelationWidget.html">Components.RelationWidget</a></li>
+                                <li><a href="../classes/Components.SearchInput.html">Components.SearchInput</a></li>
+                                <li><a href="../classes/Components.SearchPage.html">Components.SearchPage</a></li>
+                                <li><a href="../classes/Components.SettingsPage.html">Components.SettingsPage</a></li>
+                                <li><a href="../classes/Components.SortDialog.html">Components.SortDialog</a></li>
+                                <li><a href="../classes/Components.TableDialog.html">Components.TableDialog</a></li>
+                                <li><a href="../classes/Components.TableWidget.html">Components.TableWidget</a></li>
+                                <li><a href="../classes/Components.WorkbookPage.html">Components.WorkbookPage</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/List.html">List</a></li>
+                                <li><a href="../classes/Model.html">Model</a></li>
+                                <li><a href="../classes/Models.Address.html">Models.Address</a></li>
+                                <li><a href="../classes/Models.BaseCurrency.html">Models.BaseCurrency</a></li>
+                                <li><a href="../classes/Models.Comment.html">Models.Comment</a></li>
+                                <li><a href="../classes/Models.Contact.html">Models.Contact</a></li>
+                                <li><a href="../classes/Models.ContactAddress.html">Models.ContactAddress</a></li>
+                                <li><a href="../classes/Models.ContactEmail.html">Models.ContactEmail</a></li>
+                                <li><a href="../classes/Models.ContactPhone.html">Models.ContactPhone</a></li>
+                                <li><a href="../classes/Models.ContactSocialAccount.html">Models.ContactSocialAccount</a></li>
+                                <li><a href="../classes/Models.Country.html">Models.Country</a></li>
+                                <li><a href="../classes/Models.Currency.html">Models.Currency</a></li>
+                                <li><a href="../classes/Models.CurrencyConversion.html">Models.CurrencyConversion</a></li>
+                                <li><a href="../classes/Models.CurrencyUnit.html">Models.CurrencyUnit</a></li>
+                                <li><a href="../classes/Models.CurrencyUnitConversion.html">Models.CurrencyUnitConversion</a></li>
+                                <li><a href="../classes/Models.DataListOption.html">Models.DataListOption</a></li>
+                                <li><a href="../classes/Models.DataService.html">Models.DataService</a></li>
+                                <li><a href="../classes/Models.Document.html">Models.Document</a></li>
+                                <li><a href="../classes/Models.Feather.html">Models.Feather</a></li>
+                                <li><a href="../classes/Models.FeatherAuthorization.html">Models.FeatherAuthorization</a></li>
+                                <li><a href="../classes/Models.FeatherOverload.html">Models.FeatherOverload</a></li>
+                                <li><a href="../classes/Models.FeatherProperty.html">Models.FeatherProperty</a></li>
+                                <li><a href="../classes/Models.Form.html">Models.Form</a></li>
+                                <li><a href="../classes/Models.FormAttr.html">Models.FormAttr</a></li>
+                                <li><a href="../classes/Models.FormAttrColumn.html">Models.FormAttrColumn</a></li>
+                                <li><a href="../classes/Models.FormTab.html">Models.FormTab</a></li>
+                                <li><a href="../classes/Models.Honorific.html">Models.Honorific</a></li>
+                                <li><a href="../classes/Models.Kind.html">Models.Kind</a></li>
+                                <li><a href="../classes/Models.Layout.html">Models.Layout</a></li>
+                                <li><a href="../classes/Models.Log.html">Models.Log</a></li>
+                                <li><a href="../classes/Models.Module.html">Models.Module</a></li>
+                                <li><a href="../classes/Models.ModuleDependency.html">Models.ModuleDependency</a></li>
+                                <li><a href="../classes/Models.Object.html">Models.Object</a></li>
+                                <li><a href="../classes/Models.ObjectAuthorization.html">Models.ObjectAuthorization</a></li>
+                                <li><a href="../classes/Models.RelationSearchColumn.html">Models.RelationSearchColumn</a></li>
+                                <li><a href="../classes/Models.RelationWidget.html">Models.RelationWidget</a></li>
+                                <li><a href="../classes/Models.Role.html">Models.Role</a></li>
+                                <li><a href="../classes/Models.RoleMembership.html">Models.RoleMembership</a></li>
+                                <li><a href="../classes/Models.Route.html">Models.Route</a></li>
+                                <li><a href="../classes/Models.Script.html">Models.Script</a></li>
+                                <li><a href="../classes/Models.SocialNetwork.html">Models.SocialNetwork</a></li>
+                                <li><a href="../classes/Models.State.html">Models.State</a></li>
+                                <li><a href="../classes/Models.Style.html">Models.Style</a></li>
+                                <li><a href="../classes/Models.Unit.html">Models.Unit</a></li>
+                                <li><a href="../classes/Models.UserAccount.html">Models.UserAccount</a></li>
+                                <li><a href="../classes/Models.Workbook.html">Models.Workbook</a></li>
+                                <li><a href="../classes/Models.WorkbookAuthorization.html">Models.WorkbookAuthorization</a></li>
+                                <li><a href="../classes/Models.WorkbookChild.html">Models.WorkbookChild</a></li>
+                                <li><a href="../classes/Models.WorkbookDefaultConfig.html">Models.WorkbookDefaultConfig</a></li>
+                                <li><a href="../classes/Models.WorkbookLocalConfig.html">Models.WorkbookLocalConfig</a></li>
+                                <li><a href="../classes/Property.html">Property</a></li>
+                                <li><a href="../classes/State.html">State</a></li>
+                                <li><a href="../classes/State.define.html">State.define</a></li>
+                                <li><a href="../classes/ViewModels.AccountMenu.html">ViewModels.AccountMenu</a></li>
+                                <li><a href="../classes/ViewModels.AddressRelation.html">ViewModels.AddressRelation</a></li>
+                                <li><a href="../classes/ViewModels.AutoNumber.html">ViewModels.AutoNumber</a></li>
+                                <li><a href="../classes/ViewModels.Button.html">ViewModels.Button</a></li>
+                                <li><a href="../classes/ViewModels.Checkbox.html">ViewModels.Checkbox</a></li>
+                                <li><a href="../classes/ViewModels.ChildFormPage.html">ViewModels.ChildFormPage</a></li>
+                                <li><a href="../classes/ViewModels.ChildTable.html">ViewModels.ChildTable</a></li>
+                                <li><a href="../classes/ViewModels.ContactRelation.html">ViewModels.ContactRelation</a></li>
+                                <li><a href="../classes/ViewModels.DataList.html">ViewModels.DataList</a></li>
+                                <li><a href="../classes/ViewModels.DataType.html">ViewModels.DataType</a></li>
+                                <li><a href="../classes/ViewModels.Dialog.html">ViewModels.Dialog</a></li>
+                                <li><a href="../classes/ViewModels.FilterDialog.html">ViewModels.FilterDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormDialog.html">ViewModels.FormDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormPage.html">ViewModels.FormPage</a></li>
+                                <li><a href="../classes/ViewModels.FormWidget.html">ViewModels.FormWidget</a></li>
+                                <li><a href="../classes/ViewModels.MoneyRelation.html">ViewModels.MoneyRelation</a></li>
+                                <li><a href="../classes/ViewModels.NavigatorMenu.html">ViewModels.NavigatorMenu</a></li>
+                                <li><a href="../classes/ViewModels.RelationWidget.html">ViewModels.RelationWidget</a></li>
+                                <li><a href="../classes/ViewModels.SearchInput.html">ViewModels.SearchInput</a></li>
+                                <li><a href="../classes/ViewModels.SearchPage.html">ViewModels.SearchPage</a></li>
+                                <li><a href="../classes/ViewModels.SettingsPage.html">ViewModels.SettingsPage</a></li>
+                                <li><a href="../classes/ViewModels.SortDialog.html">ViewModels.SortDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableDialog.html">ViewModels.TableDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableWidget.html">ViewModels.TableWidget</a></li>
+                                <li><a href="../classes/ViewModels.WorkbookPage.html">ViewModels.WorkbookPage</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/AccountMenu.html">AccountMenu</a></li>
+                                <li><a href="../modules/AddressRelation.html">AddressRelation</a></li>
+                                <li><a href="../modules/AutoNumber.html">AutoNumber</a></li>
+                                <li><a href="../modules/Button.html">Button</a></li>
+                                <li><a href="../modules/Catalog.html">Catalog</a></li>
+                                <li><a href="../modules/Checkbox.html">Checkbox</a></li>
+                                <li><a href="../modules/ChildFormPage.html">ChildFormPage</a></li>
+                                <li><a href="../modules/ChildTable.html">ChildTable</a></li>
+                                <li><a href="../modules/ContactRelation.html">ContactRelation</a></li>
+                                <li><a href="../modules/Core.html">Core</a></li>
+                                <li><a href="../modules/DataList.html">DataList</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/DataType.html">DataType</a></li>
+                                <li><a href="../modules/Dialog.html">Dialog</a></li>
+                                <li><a href="../modules/FilterDialog.html">FilterDialog</a></li>
+                                <li><a href="../modules/FormDialog.html">FormDialog</a></li>
+                                <li><a href="../modules/FormPage.html">FormPage</a></li>
+                                <li><a href="../modules/FormWidget.html">FormWidget</a></li>
+                                <li><a href="../modules/List.html">List</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/MoneyRelation.html">MoneyRelation</a></li>
+                                <li><a href="../modules/NavigatorMenu.html">NavigatorMenu</a></li>
+                                <li><a href="../modules/Property.html">Property</a></li>
+                                <li><a href="../modules/RelationWidget.html">RelationWidget</a></li>
+                                <li><a href="../modules/SearchInput.html">SearchInput</a></li>
+                                <li><a href="../modules/SearchPage.html">SearchPage</a></li>
+                                <li><a href="../modules/SettingsPage.html">SettingsPage</a></li>
+                                <li><a href="../modules/SortDialog.html">SortDialog</a></li>
+                                <li><a href="../modules/State.html">State</a></li>
+                                <li><a href="../modules/TableDialog.html">TableDialog</a></li>
+                                <li><a href="../modules/TableWidget.html">TableWidget</a></li>
+                                <li><a href="../modules/Workbook.html">Workbook</a></li>
+                                <li><a href="../modules/WorkbookPage.html">WorkbookPage</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: components\table-dialog.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint this, browser*/
+/**
+    @module TableDialog
+*/
+import f from &quot;../core.js&quot;;
+
+const catalog = f.catalog();
+const State = f.State;
+const tableDialog = {};
+const m = window.m;
+
+/**
+    View model for sort dialog.
+
+    @class TableDialog
+    @constructor
+    @namespace ViewModels
+    @extends ViewModels.Dialog
+    @param {Object} options
+    @param {Array} options.propertyName Filter property being modified
+    @param {Array} options.attrs Attributes
+    @param {Array} options.list Model list
+    @param {Array} options.feather Feather
+    @param {Property} options.filter Filter property
+*/
+tableDialog.viewModel = function (options) {
+    options = options || {};
+    let vm;
+    let state;
+    let buttonAdd;
+    let buttonRemove;
+    let buttonClear;
+    let buttonDown;
+    let buttonUp;
+    let selection = f.prop();
+
+    // ..........................................................
+    // PUBLIC
+    //
+
+    vm = f.createViewModel(&quot;Dialog&quot;, options);
+    /**
+        @method add
+    */
+    vm.add = function () {
+        let ary = vm.data();
+        let attrs = vm.attrs();
+
+        attrs.some(vm.addAttr.bind(ary));
+
+        if (!vm.isSelected()) {
+            vm.selection(ary.length - 1);
+        }
+
+        buttonRemove.enable();
+        buttonClear.enable();
+        vm.scrollBottom(true);
+    };
+    /**
+        @method addAttr
+        @param {String} attr Attribute
+    */
+    vm.addAttr = function (attr) {
+        if (!this.some(vm.hasAttr.bind(attr))) {
+            this.push({
+                property: attr
+            });
+            return true;
+        }
+    };
+    /**
+        @method buttonAdd
+        @param {ViewModels.Button} button
+        @return {ViewModels.Button}
+    */
+    vm.buttonAdd = function () {
+        return buttonAdd;
+    };
+    /**
+        @method buttonClear
+        @param {ViewModels.Button} button
+        @return {ViewModels.Button}
+    */
+    vm.buttonClear = function () {
+        return buttonClear;
+    };
+    /**
+        @method buttonDown
+        @param {ViewModels.Button} button
+        @return {ViewModels.Button}
+    */
+    vm.buttonDown = function () {
+        return buttonDown;
+    };
+    /**
+        @method buttonRemove
+        @param {ViewModels.Button} button
+        @return {ViewModels.Button}
+    */
+    vm.buttonRemove = function () {
+        return buttonRemove;
+    };
+    /**
+        @method buttonUp
+        @param {ViewModels.Button} button
+        @return {ViewModels.Button}
+    */
+    vm.buttonUp = function () {
+        return buttonUp;
+    };
+    /**
+        @method clear
+    */
+    vm.clear = function () {
+        vm.data().length = 0;
+        buttonClear.disable();
+    };
+    /**
+        @method content
+        @return {Object} View
+    */
+    vm.content = function () {
+        let btn = f.getComponent(&quot;Button&quot;);
+
+        return [
+            m(btn, {
+                viewModel: vm.buttonAdd()
+            }),
+            m(btn, {
+                viewModel: vm.buttonRemove()
+            }),
+            m(btn, {
+                viewModel: vm.buttonClear()
+            }),
+            m(btn, {
+                viewModel: vm.buttonDown()
+            }),
+            m(btn, {
+                viewModel: vm.buttonUp()
+            }),
+            m(&quot;table&quot;, {
+                class: &quot;pure-table&quot;
+            }, [
+                m(&quot;thead&quot;, {
+                    class: &quot;fb-table-dialog-table-header&quot;
+                }, vm.viewHeaders()),
+                m(&quot;tbody&quot;, {
+                    id: &quot;sortTbody&quot;,
+                    class: &quot;fb-table-dialog-table-body&quot;,
+                    oncreate: function (vnode) {
+                        let e = document.getElementById(vnode.dom.id);
+
+                        if (vm.scrollBottom()) {
+                            e.scrollTop = e.scrollHeight;
+                        }
+                        vm.scrollBottom(false);
+                    }
+                }, vm.viewRows())
+            ])
+        ];
+    };
+    /**
+        Placeholder function.
+        @method data
+        @return {List}
+    */
+    vm.data = function () {
+        // Implement list here
+        return;
+    };
+    /**
+        @method isSelected
+        @return {Boolean}
+    */
+    vm.isSelected = function () {
+        return state.resolve(
+            state.resolve(&quot;/Selection&quot;).current()[0]
+        ).isSelected();
+    };
+    /**
+        @method itemChanged
+        @param {Integer} index
+        @param {String} property
+        @param {Any} value
+    */
+    vm.itemChanged = function (index, property, value) {
+        vm.data()[index][property] = value;
+    };
+    /**
+        @method items
+        @return {Array}
+    */
+    vm.items = function () {
+        let i = 0;
+        let items = vm.data().map(function (item) {
+            let ret = f.copy(item);
+            ret.index = i;
+            i += 1;
+            return ret;
+        });
+
+        return items;
+    };
+     /**
+        @method hasAttr
+        @param {Object} item
+        @return {Boolean}
+    */
+    vm.hasAttr = function (item) {
+        return item.property === this;
+    };
+    /**
+        @method list
+        @param {List} list
+        @return {List}
+    */
+    vm.list = f.prop(options.list);
+    /**
+        @method moveDown
+    */
+    vm.moveDown = function () {
+        let ary = vm.data();
+        let idx = vm.selection();
+        let a = ary[idx];
+        let b = ary[idx + 1];
+
+        ary.splice(idx, 2, b, a);
+        vm.selection(idx + 1);
+    };
+    /**
+        @method moveUp
+    */
+    vm.moveUp = function () {
+        let ary = vm.data();
+        let idx = vm.selection() - 1;
+        let a = ary[idx];
+        let b = ary[idx + 1];
+
+        ary.splice(idx, 2, b, a);
+        vm.selection(idx);
+    };
+    /**
+        @method remove
+    */
+    vm.remove = function () {
+        let idx = selection();
+        let ary = vm.data();
+
+        ary.splice(idx, 1);
+        state.send(&quot;unselected&quot;);
+        if (ary.length) {
+            if (idx &gt; 0) {
+                idx -= 1;
+            }
+            selection(idx);
+            return;
+        }
+        buttonRemove.disable();
+    };
+    /**
+        Placeholder function.
+        @method reset
+    */
+    vm.reset = function () {
+        // Reset code here
+        return;
+    };
+    /**
+        @method resolveProperties
+        @param {Object} feather
+        @param {Object} properties
+        @param {Array} ary
+        @param {String} prefix
+        @return {Array}
+    */
+    vm.resolveProperties = function (feather, properties, ary, prefix) {
+        prefix = prefix || &quot;&quot;;
+        let result = ary || [];
+
+        properties.forEach(function (key) {
+            let rfeather;
+            let prop = feather.properties[key];
+            let isObject = typeof prop.type === &quot;object&quot;;
+            let path = prefix + key;
+
+            if (isObject &amp;&amp; prop.type.properties) {
+                rfeather = catalog.getFeather(prop.type.relation);
+                vm.resolveProperties(
+                    rfeather,
+                    prop.type.properties,
+                    result,
+                    path + &quot;.&quot;
+                );
+            }
+
+            if (prop.format === &quot;money&quot;) {
+                path += &quot;.amount&quot;;
+            } else if (
+                prop.type === &quot;object&quot; || (
+                    isObject &amp;&amp; (
+                        prop.type.childOf ||
+                        prop.type.parentOf ||
+                        prop.type.isChild
+                    )
+                )
+            ) {
+                return;
+            }
+
+            result.push(path);
+        });
+
+        return result;
+    };
+    /**
+        @method rowColor
+        @param {Integer} index
+        @return {String}
+    */
+    vm.rowColor = function (index) {
+        if (vm.selection() === index) {
+            if (vm.isSelected()) {
+                return &quot;LightSkyBlue&quot;;
+            }
+            return &quot;AliceBlue&quot;;
+        }
+        return &quot;White&quot;;
+    };
+    /**
+        @method title
+        @param {String} title
+        @return {String}
+    */
+    vm.title = f.prop(options.title);
+    /**
+        Placeholder function.
+        @method viewHeaderIds
+        @return {Object}
+    */
+    vm.viewHeaderIds = f.prop();
+    /**
+        Placeholder function.
+        @method viewHeaders
+        @return {Object} View
+    */
+    vm.viewHeaders = function () {
+        return;
+    };
+    /**
+        Placeholder function.
+        @method viewRows
+        @return {Object} View
+    */
+    vm.viewRows = function () {
+        return;
+    };
+    /**
+        @method scrollBottom
+        @param {Boolean} flag
+        @return {Boolean}
+    */
+    vm.scrollBottom = f.prop(false);
+    /**
+        @method selection
+        @param {Integer} [index]
+        @param {Boolean} [select]
+        @return {Object} View
+    */
+    vm.selection = function (...args) {
+        let ary = vm.data();
+        let index = args[0];
+        let select = args[1];
+
+        if (select) {
+            state.send(&quot;selected&quot;);
+        }
+
+        if (args.length) {
+            buttonUp.disable();
+            buttonDown.disable();
+
+            if (ary.length &gt; 1) {
+                if (index &lt; ary.length - 1) {
+                    buttonDown.enable();
+                }
+                if (index &gt; 0) {
+                    buttonUp.enable();
+                }
+            }
+
+            return selection(index);
+        }
+
+        return selection();
+    };
+
+    // ..........................................................
+    // PRIVATE
+    //
+
+    buttonAdd = f.createViewModel(&quot;Button&quot;, {
+        onclick: vm.add,
+        label: &quot;Add&quot;,
+        icon: &quot;plus-circle&quot;,
+        class: &quot;fb-icon-button&quot;,
+        style: {
+            backgroundColor: &quot;white&quot;
+        }
+    });
+
+    buttonRemove = f.createViewModel(&quot;Button&quot;, {
+        onclick: vm.remove,
+        label: &quot;Remove&quot;,
+        icon: &quot;trash&quot;,
+        class: &quot;fb-icon-button&quot;,
+        style: {
+            backgroundColor: &quot;white&quot;
+        }
+    });
+
+    buttonClear = f.createViewModel(&quot;Button&quot;, {
+        onclick: vm.clear,
+        title: &quot;Clear&quot;,
+        icon: &quot;eraser&quot;,
+        class: &quot;fb-icon-button&quot;,
+        style: {
+            backgroundColor: &quot;white&quot;
+        }
+    });
+
+    buttonUp = f.createViewModel(&quot;Button&quot;, {
+        onclick: vm.moveUp,
+        icon: &quot;chevron-up&quot;,
+        title: &quot;Move up&quot;,
+        class: &quot;fb-icon-button&quot;,
+        style: {
+            backgroundColor: &quot;white&quot;,
+            float: &quot;right&quot;
+        }
+    });
+
+    buttonDown = f.createViewModel(&quot;Button&quot;, {
+        onclick: vm.moveDown,
+        icon: &quot;chevron-down&quot;,
+        title: &quot;Move down&quot;,
+        class: &quot;fb-icon-button&quot;,
+        style: {
+            backgroundColor: &quot;white&quot;,
+            float: &quot;right&quot;
+        }
+    });
+
+    // Statechart
+    state = State.define(function () {
+        this.state(&quot;Selection&quot;, function () {
+            this.state(&quot;Off&quot;, function () {
+                this.event(&quot;selected&quot;, function () {
+                    this.goto(&quot;../On&quot;);
+                });
+                this.isSelected = function () {
+                    return false;
+                };
+            });
+            this.state(&quot;On&quot;, function () {
+                this.event(&quot;unselected&quot;, function () {
+                    this.goto(&quot;../Off&quot;);
+                });
+                this.isSelected = function () {
+                    return true;
+                };
+            });
+        });
+    });
+    state.goto();
+
+    vm.state().resolve(&quot;/Display/Showing&quot;).enter(function () {
+        vm.reset();
+    });
+
+    return vm;
+};
+
+catalog.register(&quot;viewModels&quot;, &quot;tableDialog&quot;, tableDialog.viewModel);
+
+/**
+    Table dialog component
+    @class TableDialog
+    @namespace Components
+    @static
+    @uses Components.Dialog
+*/
+tableDialog.component = f.getComponent(&quot;Dialog&quot;);
+
+catalog.register(&quot;components&quot;, &quot;tableDialog&quot;, tableDialog.component);
+
+export default Object.freeze(tableDialog);
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

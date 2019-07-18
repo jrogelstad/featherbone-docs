@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>services\settings.js - Featherbone Server</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-server.png" title="Featherbone Server"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Client.html">Client</a></li>
+                                <li><a href="../classes/Connection.html">Connection</a></li>
+                                <li><a href="../classes/Database.html">Database</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/Money.html">Money</a></li>
+                                <li><a href="../classes/Services.API.html">Services.API</a></li>
+                                <li><a href="../classes/Services.CRUD.html">Services.CRUD</a></li>
+                                <li><a href="../classes/Services.Currency.html">Services.Currency</a></li>
+                                <li><a href="../classes/Services.Events.html">Services.Events</a></li>
+                                <li><a href="../classes/Services.Exporter.html">Services.Exporter</a></li>
+                                <li><a href="../classes/Services.Feathers.html">Services.Feathers</a></li>
+                                <li><a href="../classes/Services.Importer.html">Services.Importer</a></li>
+                                <li><a href="../classes/Services.Installer.html">Services.Installer</a></li>
+                                <li><a href="../classes/Services.Packager.html">Services.Packager</a></li>
+                                <li><a href="../classes/Services.Profile.html">Services.Profile</a></li>
+                                <li><a href="../classes/Services.Role.html">Services.Role</a></li>
+                                <li><a href="../classes/Services.Routes.html">Services.Routes</a></li>
+                                <li><a href="../classes/Services.Services.html">Services.Services</a></li>
+                                <li><a href="../classes/Services.Settings.html">Services.Settings</a></li>
+                                <li><a href="../classes/Services.Tools.html">Services.Tools</a></li>
+                                <li><a href="../classes/Services.Workbooks.html">Services.Workbooks</a></li>
+                                <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/User.html">User</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/API.html">API</a></li>
+                                <li><a href="../modules/CRUD.html">CRUD</a></li>
+                                <li><a href="../modules/Currency.html">Currency</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/Events.html">Events</a></li>
+                                <li><a href="../modules/Feathers.html">Feathers</a></li>
+                                <li><a href="../modules/Installer.html">Installer</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/Packager.html">Packager</a></li>
+                                <li><a href="../modules/Profile.html">Profile</a></li>
+                                <li><a href="../modules/Role.html">Role</a></li>
+                                <li><a href="../modules/Routes.html">Routes</a></li>
+                                <li><a href="../modules/Settings.html">Settings</a></li>
+                                <li><a href="../modules/Tools.html">Tools</a></li>
+                                <li><a href="../modules/Workbooks.html">Workbooks</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: services\settings.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint node*/
+/**
+    @module Settings
+*/
+(function (exports) {
+    &quot;use strict&quot;;
+
+    const {Database} = require(&quot;../database&quot;);
+    const f = require(&quot;../../common/core&quot;);
+
+    const db = new Database();
+    const settings = {};
+
+    // ..........................................................
+    // PRIVATE
+    //
+
+    /**
+        Check to see if an etag is current.
+        @private
+        @method checkEtag
+        @param {Object} payload
+        @param {String} payload.id Object id
+        @param {String} payload.etag Object etag
+        @param {Object} payload.client Database client
+        @return {Promise}
+    */
+    function checkEtag(obj) {
+        return new Promise(function (resolve, reject) {
+            let sql = &quot;SELECT etag FROM %I WHERE id = $1&quot;;
+
+            function callback(resp) {
+                let result = false;
+
+                if (resp.rows.length) {
+                    result = resp.rows[0].etag === obj.etag;
+                }
+
+                resolve(result);
+            }
+
+            sql = sql.format([obj.name.toSnakeCase()]);
+
+            obj.client.query(sql, [obj.id]).then(callback).catch(reject);
+        });
+    }
+
+    // ..........................................................
+    // PUBLIC
+    //
+
+    settings.data = {};
+
+    /**
+        Return settings data.
+        @method getSettings
+        @for Services.Settings
+        @param {Object} payload Request payload
+        @param {Object} payload.data Data
+        @param {String} payload.data.name Settings name
+        @param {Object} payload.client Database client
+        @return {Promise}
+    */
+    settings.getSettings = function (obj) {
+        return new Promise(function (resolve, reject) {
+            let payload;
+            let name = obj.data.name;
+            let client = db.getClient(obj.client);
+
+            function callback(ok) {
+                let sql;
+
+                sql = &quot;SELECT id, etag, data FROM \&quot;$settings\&quot;&quot;;
+                sql += &quot;WHERE name = $1&quot;;
+
+                // If etag checks out, pass back cached
+                if (ok) {
+                    resolve(settings.data[name].data);
+                    return;
+                }
+
+                // If here, need to query for the current settings
+                client.query(sql, [name]).then(function (resp) {
+                    let rec;
+
+                    // If we found something, cache it
+                    if (resp.rows.length) {
+                        rec = resp.rows[0];
+                        settings.data[name] = {
+                            id: rec.id,
+                            etag: rec.etag,
+                            data: rec.data
+                        };
+                    }
+
+                    // Send back the settings if any were found, otherwise
+                    // &quot;false&quot;
+                    if (settings.data[name]) {
+                        resolve(settings.data[name].data);
+                        return;
+                    }
+
+                    resolve(false);
+                }).catch(reject);
+            }
+
+            // Check if settings have been changed if we already have them
+            if (settings.data[name]) {
+                payload = {
+                    name: &quot;$settings&quot;,
+                    id: settings.data[name].id,
+                    etag: settings.data[name].etag,
+                    client: client,
+                    callback: callback
+                };
+
+                checkEtag(payload).then(callback).catch(reject);
+
+                return;
+            }
+
+            // Request the settings from the database
+            callback(false);
+        });
+    };
+
+    /**
+        Resolve settings definitions as array of objects.
+        @method getSettingsDefinition
+        @for Services.Settings
+        @param {Object} Request payload
+        @param {Client} payload.client Database client
+        @return {Promise}
+    */
+    settings.getSettingsDefinition = function (obj) {
+        return new Promise(function (resolve, reject) {
+            let sql;
+            let client = db.getClient(obj.client);
+
+            sql = &quot;SELECT definition FROM \&quot;$settings\&quot; &quot;;
+            sql += &quot;WHERE definition is NOT NULL&quot;;
+
+            function definition(row) {
+                return row.definition;
+            }
+
+            function callback(resp) {
+                resolve(resp.rows.map(definition));
+            }
+
+            client.query(sql).then(callback).catch(reject);
+        });
+    };
+
+    /**
+        Resolves to object properties &#x60;definition&#x60; and &#x60;etag&#x60;.
+        @method getSettingsRow
+        @for Services.Settings
+        @param {Object} payload Request payload
+        @param {Object} payload.client Database client
+        @param {String} payload.name Settings name
+        @return {Promise}
+    */
+    settings.getSettingsRow = function (obj) {
+        return new Promise(function (resolve, reject) {
+            let ret = {};
+
+            function callback(resp) {
+                if (resp !== false) {
+                    ret.etag = settings.data[obj.data.name].etag;
+                    ret.data = settings.data[obj.data.name].data;
+                    resolve(ret);
+                    return;
+                }
+
+                resolve(false);
+            }
+
+            settings.getSettings(obj).then(callback).catch(reject);
+        });
+    };
+
+    /**
+        Create or upate settings.
+        @method saveSettings
+        @for Services.Settings
+        @param {Object} payload
+        @param {Object} payload.data Payload data
+        @param {String} payload.data.name Name of settings
+        @param {String} payload.data.etag Etag
+        @param {Object} payload.data.data Settings data
+        @param {Object} payload.client Database client
+        @return {Promise}
+    */
+    settings.saveSettings = function (obj) {
+        return new Promise(function (resolve, reject) {
+            let row;
+            let sql = &quot;SELECT * FROM \&quot;$settings\&quot; WHERE name = $1;&quot;;
+            let name = obj.data.name;
+            let data = obj.data.data;
+            let etag = obj.etag || f.createId();
+            let params = [name, data, etag, obj.client.currentUser()];
+            let client = db.getClient(obj.client);
+
+            function done() {
+                settings[name] = {
+                    id: name,
+                    data: data,
+                    etag: etag
+                };
+                resolve(true);
+            }
+
+            function update(resp) {
+                return new Promise(function (resolve, reject) {
+                    let msg;
+
+                    // If found existing, update
+                    if (resp.rows.length) {
+                        row = resp.rows[0];
+
+                        if (
+                            settings[name] &amp;&amp;
+                            settings[name].etag !== row.etag
+                        ) {
+                            msg = &quot;Settings for \&quot;&quot; + name;
+                            msg += &quot;\&quot; changed by another user. Save failed.&quot;;
+                            obj.callback(msg);
+                            return;
+                        }
+
+                        sql = &quot;UPDATE \&quot;$settings\&quot; SET &quot;;
+                        sql += &quot; data = $2, etag = $3, &quot;;
+                        sql += &quot; updated = now(), updated_by = $4 &quot;;
+                        sql += &quot;WHERE name = $1;&quot;;
+                        client.query(sql, params, done);
+                        return;
+                    }
+
+                    // otherwise create new
+                    sql = &quot;INSERT INTO \&quot;$settings\&quot; (name, data, etag, id, &quot;;
+                    sql += &quot; created, created_by, updated, updated_by, &quot;;
+                    sql += &quot;is_deleted) VALUES &quot;;
+                    sql += &quot;($1, $2, $3, $1, now(), $4, now(), $4, false);&quot;;
+
+                    client.query(sql, params).then(resolve).catch(reject);
+                });
+            }
+
+            client.query(sql, [name]).then(
+                update
+            ).then(
+                done
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        @class Settings
+        @constructor
+        @namespace Services
+    */
+    exports.Settings = function () {
+        return settings;
+    };
+
+}(exports));
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

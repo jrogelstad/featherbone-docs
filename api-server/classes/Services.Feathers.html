@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Services.Feathers - Featherbone Server</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-server.png" title="Featherbone Server"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Client.html">Client</a></li>
+                                <li><a href="../classes/Connection.html">Connection</a></li>
+                                <li><a href="../classes/Database.html">Database</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/Money.html">Money</a></li>
+                                <li><a href="../classes/Services.API.html">Services.API</a></li>
+                                <li><a href="../classes/Services.CRUD.html">Services.CRUD</a></li>
+                                <li><a href="../classes/Services.Currency.html">Services.Currency</a></li>
+                                <li><a href="../classes/Services.Events.html">Services.Events</a></li>
+                                <li><a href="../classes/Services.Exporter.html">Services.Exporter</a></li>
+                                <li><a href="../classes/Services.Feathers.html">Services.Feathers</a></li>
+                                <li><a href="../classes/Services.Importer.html">Services.Importer</a></li>
+                                <li><a href="../classes/Services.Installer.html">Services.Installer</a></li>
+                                <li><a href="../classes/Services.Packager.html">Services.Packager</a></li>
+                                <li><a href="../classes/Services.Profile.html">Services.Profile</a></li>
+                                <li><a href="../classes/Services.Role.html">Services.Role</a></li>
+                                <li><a href="../classes/Services.Routes.html">Services.Routes</a></li>
+                                <li><a href="../classes/Services.Services.html">Services.Services</a></li>
+                                <li><a href="../classes/Services.Settings.html">Services.Settings</a></li>
+                                <li><a href="../classes/Services.Tools.html">Services.Tools</a></li>
+                                <li><a href="../classes/Services.Workbooks.html">Services.Workbooks</a></li>
+                                <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/User.html">User</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/API.html">API</a></li>
+                                <li><a href="../modules/CRUD.html">CRUD</a></li>
+                                <li><a href="../modules/Currency.html">Currency</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/Events.html">Events</a></li>
+                                <li><a href="../modules/Feathers.html">Feathers</a></li>
+                                <li><a href="../modules/Installer.html">Installer</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/Packager.html">Packager</a></li>
+                                <li><a href="../modules/Profile.html">Profile</a></li>
+                                <li><a href="../modules/Role.html">Role</a></li>
+                                <li><a href="../modules/Routes.html">Routes</a></li>
+                                <li><a href="../modules/Settings.html">Settings</a></li>
+                                <li><a href="../modules/Tools.html">Tools</a></li>
+                                <li><a href="../modules/Workbooks.html">Workbooks</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>Services.Feathers Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/services_feathers.js.html#l138"><code>services\feathers.js:138</code></a>
+        </div>
+
+            Module: <a href="../modules/Feathers.html">Feathers</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>Feather management service.</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+<div id="method_Services.Feathers" class="method item">
+    <h3 class="name"><code>Services.Feathers</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/services_feathers.js.html#l138"><code>services\feathers.js:138</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+
+
+
+</div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_deleteFeather">deleteFeather</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getFeather">getFeather</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_isAuthorized">isAuthorized</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_saveAuthorization">saveAuthorization</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_saveFeather">saveFeather</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_deleteFeather" class="method item">
+    <h3 class="name"><code>deleteFeather</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>payload</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/services_feathers.js.html#l537"><code>services\feathers.js:537</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Remove a feather definition from the database.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">payload</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+                    <div class="param-description">
+                        <p>Request payload</p>
+
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">data</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+                                <div class="param-description">
+                                    <p>Payload data</p>
+
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">name</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+                                            <div class="param-description">
+                                                Name(s) of
+    feather(s) to delete
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">client</code>
+                                    <span class="type"><a href="../classes/Client.html" class="crosslink">Client</a></span>
+
+                                <div class="param-description">
+                                    <p>Database client</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                    <p>Resolves to <code>true</code> if successful.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getFeather" class="method item">
+    <h3 class="name"><code>getFeather</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>payload</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/services_feathers.js.html#l698"><code>services\feathers.js:698</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Return a feather definition, including inherited properties.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">payload</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+                    <div class="param-description">
+                        <p>Request payload</p>
+
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">client</code>
+                                    <span class="type"><a href="../classes/Client.html" class="crosslink">Client</a></span>
+
+                                <div class="param-description">
+                                    <p>Database client</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">data</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+                                <div class="param-description">
+                                    <p>Data</p>
+
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">name</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+                                            <div class="param-description">
+                                                Feather name
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[includeInherited]</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Include inherited
+    or not. Default = true.
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                    <p>Reseloves to feather definition object.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_isAuthorized" class="method item">
+    <h3 class="name"><code>isAuthorized</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>payload</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/services_feathers.js.html#l785"><code>services\feathers.js:785</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Check whether a user is authorized to perform an action on a
+particular feather (class) or object.</p>
+<p>Allowable actions: <code>canCreate</code>, <code>canRead</code>, <code>canUpdate</code>, <code>canDelete</code></p>
+<p><code>canCreate</code> will only check feather names.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">payload</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">data</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+                                <div class="param-description">
+                                    <p>Payload data</p>
+
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">action</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[feather]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Feather name
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[id]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Object id
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[user]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Defaults to current user
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">client</code>
+                                    <span class="type"><a href="../classes/Client.html" class="crosslink">Client</a></span>
+
+                                <div class="param-description">
+                                    <p>Database client</p>
+
+                                </div>
+
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                    <p>Resolves to Boolean.</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_saveAuthorization" class="method item">
+    <h3 class="name"><code>saveAuthorization</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>payload</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/services_feathers.js.html#l911"><code>services\feathers.js:911</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Set authorazition for a particular authorization role. Must pass
+data <code>id</code> or <code>feather</code>.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">payload</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">client</code>
+                                    <span class="type"><a href="../classes/Client.html" class="crosslink">Client</a></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">data</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+                                <div class="param-description">
+                                    <p>Payload data</p>
+
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name optional">[id]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Object id (if record level)
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[feather]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Feather
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">role</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+                                            <div class="param-description">
+                                                Role
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[isInternal]</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Not a feather
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[isSilentError]</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Silence errors
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">actions</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[actions.canCreate]</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[actions.canRead]</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[actions.canUpdate]</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[actions.canDelete]</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+            </div>
+        </div>
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>// Example payload
+{
+    id: &quot;ExWIx6'&quot;,
+    role: &quot;jdoe&quot;,
+    actions:
+    {
+        canCreate: false,
+        canRead: true,
+        canUpdate: false,
+        canDelete: false
+    }
+}</code></pre>
+
+            </div>
+        </div>
+</div>
+<div id="method_saveFeather" class="method item">
+    <h3 class="name"><code>saveFeather</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>payload</code>
+                </li>
+                <li class="arg">
+                        <code class="optional">[spec.properties.default]</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/services_feathers.js.html#l1222"><code>services\feathers.js:1222</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Create or update a persistence class. This function is idempotent.
+Subsequent saves will automatically drop properties no longer
+present.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">payload</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">client</code>
+                                    <span class="type"><a href="../classes/Client.html" class="crosslink">Client</a></span>
+
+                                <div class="param-description">
+                                    <p>Database client.</p>
+
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name optional">[spec]</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                <div class="param-description">
+                                    <p>Feather specification(s).</p>
+
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">name</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+                                            <div class="param-description">
+                                                Name
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[description]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Description
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[authorizations]</code>
+                                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                
+Authorization spec. Defaults to grant all to everyone if
+undefined.
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[properties]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Feather properties
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[properties.description]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                
+Description
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">properties.type
+Type.</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+                                            <div class="param-description">
+                                                Standard types are string, boolean, number, date.
+Object is used for relation specs.
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[properties.relation]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Feather name of
+relation.
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name optional">[properties.childOf]</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                                                <span class="flag optional" title="This parameter is optional.">optional</span>
+
+                                            <div class="param-description">
+                                                Property name
+    on parent relation if one to many relation.
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                </li>
+                <li class="param">
+                        <code class="param-name optional">[spec.properties.default]</code>
+                        <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+
+
+                    <div class="param-description">
+                        <p>Default value
+or function name.</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+            </div>
+        </div>
+
+
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <p>// example payload:
+{
+&quot;name&quot;: &quot;Contact&quot;,
+&quot;description&quot;: &quot;Contact data about a person&quot;,
+&quot;inherits&quot;: &quot;Object&quot;,
+&quot;properties&quot;: {
+&quot;fullName&quot;: {
+&quot;description&quot;: &quot;Full name&quot;,
+&quot;type&quot;: &quot;string&quot;
+},
+&quot;birthDate&quot;: {
+&quot;description&quot;: &quot;Birth date&quot;,
+&quot;type&quot;: &quot;string&quot;
+&quot;format&quot;: &quot;date&quot;
+},
+&quot;isMarried&quot;: {
+&quot;description&quot;: &quot;Marriage status&quot;,
+&quot;type&quot;: &quot;boolean&quot;
+},
+&quot;dependents&quot;: {
+&quot;description&quot;: &quot;Number of dependents&quot;,
+&quot;type&quot;: &quot;integer&quot;
+}
+}
+}</p>
+
+            </div>
+        </div>
+</div>
+            </div>
+
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

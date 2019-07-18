@@ -1,18 +1,23 @@
-Canary
+Featherbone Docs
 ========
-A service that will generate web page documentation based on the open API api.json file generated when featherbone is configured.
-
-# Prerequisites
-* [Featherbone](https://github.com/jrogelstad/featherbone)
-  
-# Install
-
-Clone this repository adjacent to your featherbone repository and from the featherbone directory:
 
 ```text
 $ npm install
 $ node server
 ```
-From your browser navigate to <http://localhost:10002> to run the application.
-Note: the featherbone server must also be running for this application to work.
+From your browser navigate to:
+  * <http://localhost:10002/api-client> to view the featherbone Client API definition
+  * <http://localhost:10002/api-server> to view the featherbone Server API definition
+  * <http://localhost:10002/api-rest> to view the REST Open API definition
 
+By default the API definitions are populated based on the base featherbone installation. However, if a featherbone repository is cloned and installed adjacent to featherbone-docs, the Open API specification will automatically be updated to whatever is installed in the featherbone installation.
+
+You may also update the Client and Server API documentation according to your current featherbone installation as follows by installing and running `yuidoc` as follows.
+
+```text
+$ npm yuidoc -g
+$ cd ..\featherbone\client
+$ yuidoc .
+$ cd ..\server
+$ yuidoc .
+```

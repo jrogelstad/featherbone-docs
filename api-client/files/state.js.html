@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>state.js - Featherbone Client</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-client.png" title="Featherbone Client"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Catalog.html">Catalog</a></li>
+                                <li><a href="../classes/Components.AccountMenu.html">Components.AccountMenu</a></li>
+                                <li><a href="../classes/Components.AddressRelation.html">Components.AddressRelation</a></li>
+                                <li><a href="../classes/Components.AutoNumber.html">Components.AutoNumber</a></li>
+                                <li><a href="../classes/Components.Button.html">Components.Button</a></li>
+                                <li><a href="../classes/Components.Checkbox.html">Components.Checkbox</a></li>
+                                <li><a href="../classes/Components.ChildFormPage.html">Components.ChildFormPage</a></li>
+                                <li><a href="../classes/Components.ChildTable.html">Components.ChildTable</a></li>
+                                <li><a href="../classes/Components.ContactRelation.html">Components.ContactRelation</a></li>
+                                <li><a href="../classes/Components.DataList.html">Components.DataList</a></li>
+                                <li><a href="../classes/Components.DataType.html">Components.DataType</a></li>
+                                <li><a href="../classes/Components.Dialog.html">Components.Dialog</a></li>
+                                <li><a href="../classes/Components.FilterDialog.html">Components.FilterDialog</a></li>
+                                <li><a href="../classes/Components.FormDialog.html">Components.FormDialog</a></li>
+                                <li><a href="../classes/Components.FormPage.html">Components.FormPage</a></li>
+                                <li><a href="../classes/Components.FormWidget.html">Components.FormWidget</a></li>
+                                <li><a href="../classes/Components.MoneyRelation.html">Components.MoneyRelation</a></li>
+                                <li><a href="../classes/Components.NavigatorMenu.html">Components.NavigatorMenu</a></li>
+                                <li><a href="../classes/Components.RelationWidget.html">Components.RelationWidget</a></li>
+                                <li><a href="../classes/Components.SearchInput.html">Components.SearchInput</a></li>
+                                <li><a href="../classes/Components.SearchPage.html">Components.SearchPage</a></li>
+                                <li><a href="../classes/Components.SettingsPage.html">Components.SettingsPage</a></li>
+                                <li><a href="../classes/Components.SortDialog.html">Components.SortDialog</a></li>
+                                <li><a href="../classes/Components.TableDialog.html">Components.TableDialog</a></li>
+                                <li><a href="../classes/Components.TableWidget.html">Components.TableWidget</a></li>
+                                <li><a href="../classes/Components.WorkbookPage.html">Components.WorkbookPage</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/List.html">List</a></li>
+                                <li><a href="../classes/Model.html">Model</a></li>
+                                <li><a href="../classes/Models.Address.html">Models.Address</a></li>
+                                <li><a href="../classes/Models.BaseCurrency.html">Models.BaseCurrency</a></li>
+                                <li><a href="../classes/Models.Comment.html">Models.Comment</a></li>
+                                <li><a href="../classes/Models.Contact.html">Models.Contact</a></li>
+                                <li><a href="../classes/Models.ContactAddress.html">Models.ContactAddress</a></li>
+                                <li><a href="../classes/Models.ContactEmail.html">Models.ContactEmail</a></li>
+                                <li><a href="../classes/Models.ContactPhone.html">Models.ContactPhone</a></li>
+                                <li><a href="../classes/Models.ContactSocialAccount.html">Models.ContactSocialAccount</a></li>
+                                <li><a href="../classes/Models.Country.html">Models.Country</a></li>
+                                <li><a href="../classes/Models.Currency.html">Models.Currency</a></li>
+                                <li><a href="../classes/Models.CurrencyConversion.html">Models.CurrencyConversion</a></li>
+                                <li><a href="../classes/Models.CurrencyUnit.html">Models.CurrencyUnit</a></li>
+                                <li><a href="../classes/Models.CurrencyUnitConversion.html">Models.CurrencyUnitConversion</a></li>
+                                <li><a href="../classes/Models.DataListOption.html">Models.DataListOption</a></li>
+                                <li><a href="../classes/Models.DataService.html">Models.DataService</a></li>
+                                <li><a href="../classes/Models.Document.html">Models.Document</a></li>
+                                <li><a href="../classes/Models.Feather.html">Models.Feather</a></li>
+                                <li><a href="../classes/Models.FeatherAuthorization.html">Models.FeatherAuthorization</a></li>
+                                <li><a href="../classes/Models.FeatherOverload.html">Models.FeatherOverload</a></li>
+                                <li><a href="../classes/Models.FeatherProperty.html">Models.FeatherProperty</a></li>
+                                <li><a href="../classes/Models.Form.html">Models.Form</a></li>
+                                <li><a href="../classes/Models.FormAttr.html">Models.FormAttr</a></li>
+                                <li><a href="../classes/Models.FormAttrColumn.html">Models.FormAttrColumn</a></li>
+                                <li><a href="../classes/Models.FormTab.html">Models.FormTab</a></li>
+                                <li><a href="../classes/Models.Honorific.html">Models.Honorific</a></li>
+                                <li><a href="../classes/Models.Kind.html">Models.Kind</a></li>
+                                <li><a href="../classes/Models.Layout.html">Models.Layout</a></li>
+                                <li><a href="../classes/Models.Log.html">Models.Log</a></li>
+                                <li><a href="../classes/Models.Module.html">Models.Module</a></li>
+                                <li><a href="../classes/Models.ModuleDependency.html">Models.ModuleDependency</a></li>
+                                <li><a href="../classes/Models.Object.html">Models.Object</a></li>
+                                <li><a href="../classes/Models.ObjectAuthorization.html">Models.ObjectAuthorization</a></li>
+                                <li><a href="../classes/Models.RelationSearchColumn.html">Models.RelationSearchColumn</a></li>
+                                <li><a href="../classes/Models.RelationWidget.html">Models.RelationWidget</a></li>
+                                <li><a href="../classes/Models.Role.html">Models.Role</a></li>
+                                <li><a href="../classes/Models.RoleMembership.html">Models.RoleMembership</a></li>
+                                <li><a href="../classes/Models.Route.html">Models.Route</a></li>
+                                <li><a href="../classes/Models.Script.html">Models.Script</a></li>
+                                <li><a href="../classes/Models.SocialNetwork.html">Models.SocialNetwork</a></li>
+                                <li><a href="../classes/Models.State.html">Models.State</a></li>
+                                <li><a href="../classes/Models.Style.html">Models.Style</a></li>
+                                <li><a href="../classes/Models.Unit.html">Models.Unit</a></li>
+                                <li><a href="../classes/Models.UserAccount.html">Models.UserAccount</a></li>
+                                <li><a href="../classes/Models.Workbook.html">Models.Workbook</a></li>
+                                <li><a href="../classes/Models.WorkbookAuthorization.html">Models.WorkbookAuthorization</a></li>
+                                <li><a href="../classes/Models.WorkbookChild.html">Models.WorkbookChild</a></li>
+                                <li><a href="../classes/Models.WorkbookDefaultConfig.html">Models.WorkbookDefaultConfig</a></li>
+                                <li><a href="../classes/Models.WorkbookLocalConfig.html">Models.WorkbookLocalConfig</a></li>
+                                <li><a href="../classes/Property.html">Property</a></li>
+                                <li><a href="../classes/State.html">State</a></li>
+                                <li><a href="../classes/State.define.html">State.define</a></li>
+                                <li><a href="../classes/ViewModels.AccountMenu.html">ViewModels.AccountMenu</a></li>
+                                <li><a href="../classes/ViewModels.AddressRelation.html">ViewModels.AddressRelation</a></li>
+                                <li><a href="../classes/ViewModels.AutoNumber.html">ViewModels.AutoNumber</a></li>
+                                <li><a href="../classes/ViewModels.Button.html">ViewModels.Button</a></li>
+                                <li><a href="../classes/ViewModels.Checkbox.html">ViewModels.Checkbox</a></li>
+                                <li><a href="../classes/ViewModels.ChildFormPage.html">ViewModels.ChildFormPage</a></li>
+                                <li><a href="../classes/ViewModels.ChildTable.html">ViewModels.ChildTable</a></li>
+                                <li><a href="../classes/ViewModels.ContactRelation.html">ViewModels.ContactRelation</a></li>
+                                <li><a href="../classes/ViewModels.DataList.html">ViewModels.DataList</a></li>
+                                <li><a href="../classes/ViewModels.DataType.html">ViewModels.DataType</a></li>
+                                <li><a href="../classes/ViewModels.Dialog.html">ViewModels.Dialog</a></li>
+                                <li><a href="../classes/ViewModels.FilterDialog.html">ViewModels.FilterDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormDialog.html">ViewModels.FormDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormPage.html">ViewModels.FormPage</a></li>
+                                <li><a href="../classes/ViewModels.FormWidget.html">ViewModels.FormWidget</a></li>
+                                <li><a href="../classes/ViewModels.MoneyRelation.html">ViewModels.MoneyRelation</a></li>
+                                <li><a href="../classes/ViewModels.NavigatorMenu.html">ViewModels.NavigatorMenu</a></li>
+                                <li><a href="../classes/ViewModels.RelationWidget.html">ViewModels.RelationWidget</a></li>
+                                <li><a href="../classes/ViewModels.SearchInput.html">ViewModels.SearchInput</a></li>
+                                <li><a href="../classes/ViewModels.SearchPage.html">ViewModels.SearchPage</a></li>
+                                <li><a href="../classes/ViewModels.SettingsPage.html">ViewModels.SettingsPage</a></li>
+                                <li><a href="../classes/ViewModels.SortDialog.html">ViewModels.SortDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableDialog.html">ViewModels.TableDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableWidget.html">ViewModels.TableWidget</a></li>
+                                <li><a href="../classes/ViewModels.WorkbookPage.html">ViewModels.WorkbookPage</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/AccountMenu.html">AccountMenu</a></li>
+                                <li><a href="../modules/AddressRelation.html">AddressRelation</a></li>
+                                <li><a href="../modules/AutoNumber.html">AutoNumber</a></li>
+                                <li><a href="../modules/Button.html">Button</a></li>
+                                <li><a href="../modules/Catalog.html">Catalog</a></li>
+                                <li><a href="../modules/Checkbox.html">Checkbox</a></li>
+                                <li><a href="../modules/ChildFormPage.html">ChildFormPage</a></li>
+                                <li><a href="../modules/ChildTable.html">ChildTable</a></li>
+                                <li><a href="../modules/ContactRelation.html">ContactRelation</a></li>
+                                <li><a href="../modules/Core.html">Core</a></li>
+                                <li><a href="../modules/DataList.html">DataList</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/DataType.html">DataType</a></li>
+                                <li><a href="../modules/Dialog.html">Dialog</a></li>
+                                <li><a href="../modules/FilterDialog.html">FilterDialog</a></li>
+                                <li><a href="../modules/FormDialog.html">FormDialog</a></li>
+                                <li><a href="../modules/FormPage.html">FormPage</a></li>
+                                <li><a href="../modules/FormWidget.html">FormWidget</a></li>
+                                <li><a href="../modules/List.html">List</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/MoneyRelation.html">MoneyRelation</a></li>
+                                <li><a href="../modules/NavigatorMenu.html">NavigatorMenu</a></li>
+                                <li><a href="../modules/Property.html">Property</a></li>
+                                <li><a href="../modules/RelationWidget.html">RelationWidget</a></li>
+                                <li><a href="../modules/SearchInput.html">SearchInput</a></li>
+                                <li><a href="../modules/SearchPage.html">SearchPage</a></li>
+                                <li><a href="../modules/SettingsPage.html">SettingsPage</a></li>
+                                <li><a href="../modules/SortDialog.html">SortDialog</a></li>
+                                <li><a href="../modules/State.html">State</a></li>
+                                <li><a href="../modules/TableDialog.html">TableDialog</a></li>
+                                <li><a href="../modules/TableWidget.html">TableWidget</a></li>
+                                <li><a href="../modules/Workbook.html">Workbook</a></li>
+                                <li><a href="../modules/WorkbookPage.html">WorkbookPage</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: state.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+// Acknowledgement:
+// Original codebase from https://github.com/burrows/statechart.js
+// Commit: 1e834e167bea4709034056703652b7d802d74979
+// License: MIT
+// Alterations: Convert to ES6 module and lint
+
+/*jslint for, this, browser*/
+/*global console*/
+/**
+    @module State
+*/
+let slice = Array.prototype.slice;
+let trace;
+let exit;
+let enter;
+
+// Internal: Returns a boolean indicating whether the given object is an
+// Array.
+function isArray(o) {
+    return Object.prototype.toString.call(o) === &quot;[object Array]&quot;;
+}
+
+// Internal: Flattens the given array by removing all nesting.
+function flatten(array) {
+    let result = [];
+    let i = 0;
+    let n;
+
+    for (n = array.length; i &lt; n; i += 1) {
+        if (isArray(array[i])) {
+            result = result.concat(flatten(array[i]));
+        } else {
+            result.push(array[i]);
+        }
+    }
+
+    return result;
+}
+
+// Internal: Returns an array containing the unique states in the given array.
+function uniqStates(states) {
+    let seen = {};
+    let a = [];
+    let path;
+    let i = 0;
+    let n;
+
+    for (n = states.length; i &lt; n; i += 1) {
+        if (states[i]) {
+            path = states[i].path();
+            if (!seen[path]) {
+                a.push(states[i]);
+                seen[path] = true;
+            }
+        }
+    }
+
+    return a;
+}
+
+// Internal: Calculates and caches the path from the root state to the
+// receiver state. Subsequent calls will return the cached path array.
+//
+// Returns an array of &#x60;State&#x60; objects.
+function path() {
+    this.cache.path = (
+        this.cache.path || (
+            this.superstate
+            ? path.call(this.superstate).concat(this)
+            : [this]
+        )
+    );
+
+    return this.cache.path;
+}
+
+// Internal: Returns an array of all current leaf states.
+function _current() {
+    let a = [];
+    let i = 0;
+    let n;
+
+    if (!this.isCurrent) {
+        return [];
+    }
+    if (this.substates.length === 0) {
+        return [this];
+    }
+
+    for (n = this.substates.length; i &lt; n; i += 1) {
+        if (this.substates[i].isCurrent) {
+            a = a.concat(_current.call(this.substates[i]));
+        }
+    }
+
+    return a;
+}
+
+// Internal: Finds the pivot state between the receiver and the given state.
+// The pivot state is the first common ancestor between the two states.
+//
+// Returns a &#x60;State&#x60; object.
+// Throws &#x60;Error&#x60; if the two states do not belong to the same statechart.
+function findPivot(other) {
+    let p1 = path.call(this);
+    let p2 = path.call(other);
+    let i = 0;
+    let len;
+    let p;
+
+    for (
+        len = (
+            p1.length &lt; p2.length
+            ? p1.length
+            : p2.length
+        );
+        i &lt; len;
+        i += 1
+    ) {
+        if (p1[i] === p2[i]) {
+            p = p1[i];
+        } else {
+            break;
+        }
+    }
+
+    if (!p) {
+        throw new Error(
+            &quot;State#findPivot: states &quot; + this + &quot; and &quot; + other +
+            &quot; do not belong to the same statechart&quot;
+        );
+    }
+
+    return p;
+}
+
+// Internal: Queues up a transition for later processing. Transitions are
+// queued instead of happening immediately because we need to allow all
+// current states to receive an event before any transitions actually occur.
+//
+// pivot  - The pivot state between the start state and destination states.
+// states - An array of destination states.
+// opts   - The options object passed to the &#x60;goto&#x60; method.
+//
+// Returns nothing.
+function queueTransition(pivot, states, opts) {
+    this.transitions.push({
+        pivot: pivot,
+        states: states,
+        opts: opts
+    });
+}
+
+// Internal: Performs all queued transitions. This is the method that actually
+// takes the statechart from one set of current states to another.
+function transition() {
+    let ts = this.transitions;
+    let i = 0;
+    let len;
+
+    if (!ts || ts.length === 0) {
+        return;
+    }
+
+    for (len = ts.length; i &lt; len; i += 1) {
+        enter.call(ts[i].pivot, ts[i].states, ts[i].opts);
+    }
+
+    this.transitions = [];
+}
+
+// Internal: Invokes all registered enter handlers.
+function callEnterHandlers(context) {
+    let i = 0;
+    let n;
+
+    for (n = this.enters.length; i &lt; n; i += 1) {
+        this.enters[i].call(this, context);
+    }
+}
+
+// Internal: Invokes all registered exit handlers.
+function callExitHandlers(context) {
+    let i = 0;
+    let n;
+
+    for (n = this.exits.length; i &lt; n; i += 1) {
+        this.exits[i].call(this, context);
+    }
+}
+
+// Internal: Enters a clustered state. Entering a clustered state involves
+// exiting the current substate (if one exists and is not a destination
+// state), invoking the &#x60;enter&#x60; callbacks on the receiver state, and
+// recursively entering the new destination substate. The new destination
+// substate is determined as follows:
+//
+// 1. the substate indicated in the &#x60;states&#x60; argument if its not empty
+// 2. the result of invoking the condition function defined with the &#x60;C&#x60;
+//    method if it exists and returns a substate path
+// 3. the most recently exited substate if the state was defined with the
+//    &#x60;H&#x60; option and has been previously entered
+// 4. the first substate
+//
+// states - An array of destination states (may be empty to indicate that
+//          a condition, history, or default substate should be entered).
+// opts   - The options passed to &#x60;goto&#x60;.
+//
+// Returns the receiver.
+// Throws an &#x60;Error&#x60; if the given destination states include multiple
+//   substates.
+function enterClustered(states, opts) {
+    let selflen = path.call(this).length;
+    let nexts = [];
+    let state;
+    let paths;
+    let cur;
+    let next;
+    let i = 0;
+    let n;
+
+    for (n = this.substates.length; i &lt; n; i += 1) {
+        if (this.substates[i].isCurrent) {
+            cur = this.substates[i];
+            break;
+        }
+    }
+
+    i = 0;
+
+    for (n = states.length; i &lt; n; i += 1) {
+        nexts.push(path.call(states[i])[selflen]);
+    }
+
+    if (uniqStates(nexts).length &gt; 1) {
+        throw new Error(
+            &quot;State#enterClustered: attempted to enter multiple substates of &quot;
+            + this + &quot;: &quot; + nexts.join(&quot;, &quot;)
+        );
+    }
+
+    next = nexts[0];
+
+    if (!next &amp;&amp; this.substates.length &gt; 0) {
+        if (this.condition) {
+            paths = this.condition.call(this, opts.context);
+
+            if (paths) {
+                paths = flatten([paths]);
+                states = [];
+                i = 0;
+
+                for (n = paths.length; i &lt; n; i += 1) {
+                    state = this.resolve(paths[i]);
+
+                    if (!state) {
+                        throw new Error(
+                            &quot;State#enterClustered: could not resolve path &#x27;&quot; +
+                            paths[i] + &quot;&#x27; returned by condition function &quot; +
+                            &quot;from &quot; + this
+                        );
+                    }
+                    states.push(state);
+                }
+
+                return enterClustered.call(this, states, opts);
+            }
+        }
+
+        if (this.history) {
+            next = this.previous;
+        }
+
+        if (!next) {
+            next = this.substates[0];
+        }
+    }
+
+    if (cur &amp;&amp; cur !== next) {
+        exit.call(cur, opts);
+    }
+
+    if (!this.isCurrent || opts.force) {
+        trace.call(
+            this,
+            (
+                &quot;State: [ENTER]  : &quot; + this.path() + (
+                    this.isCurrent
+                    ? &quot; (forced)&quot;
+                    : &quot;&quot;
+                )
+            )
+        );
+        this.isCurrent = true;
+        callEnterHandlers.call(this, opts.context);
+    }
+
+    if (next) {
+        enter.call(next, states, opts);
+    }
+
+    return this;
+}
+
+// Internal: Enters a concurrent state. Entering a concurrent state simply
+// involves calling the &#x60;enter&#x60; method on the receiver and recursively
+// entering each substate.
+//
+// states - An array of destination states.
+// opts   - The options passed to &#x60;goto&#x60;.
+//
+// Returns the receiver.
+function enterConcurrent(states, opts) {
+    let sstate;
+    let dstates;
+    let i = 0;
+    let j;
+    let ni;
+    let nj;
+
+    if (!this.isCurrent || opts.force) {
+        trace.call(
+            this,
+            (
+                &quot;State: [ENTER]  : &quot; + this.path() + (
+                    this.isCurrent
+                    ? &quot; (forced)&quot;
+                    : &quot;&quot;
+                )
+            )
+        );
+        this.isCurrent = true;
+        callEnterHandlers.call(this, opts.context);
+    }
+
+    for (ni = this.substates.length; i &lt; ni; i += 1) {
+        sstate = this.substates[i];
+        dstates = [];
+        j = 0;
+
+        for (nj = states.length; j &lt; nj; j += 1) {
+            if (findPivot.call(sstate, states[j]) === sstate) {
+                dstates.push(states[j]);
+            }
+
+        }
+        enter.call(sstate, dstates, opts);
+    }
+
+    return this;
+}
+
+// Internal: Enters the receiver state. The actual entering logic is in the
+// &#x60;enterClustered&#x60; and &#x60;enterConcurrent&#x60; methods.
+//
+// states - An array of destination states.
+// opts   - The options passed to &#x60;goto&#x60;.
+//
+// Returns the receiver.
+enter = function (states, opts) {
+    return (
+        this.concurrent
+        ? enterConcurrent.call(this, states, opts)
+        : enterClustered.call(this, states, opts)
+    );
+};
+
+// Internal: Exits a clustered state. Exiting happens bottom to top, so we
+// recursively exit the current substate and then invoke the &#x60;exit&#x60; method on
+// each state as the stack unwinds.
+//
+// opts - The options passed to &#x60;goto&#x60;.
+//
+// Returns the receiver.
+function exitClustered(opts) {
+    let cur;
+    let i = 0;
+    let n;
+
+    for (n = this.substates.length; i &lt; n; i += 1) {
+        if (this.substates[i].isCurrent) {
+            cur = this.substates[i];
+            break;
+        }
+    }
+
+    if (this.history) {
+        this.previous = cur;
+    }
+
+    if (cur) {
+        exit.call(cur, opts);
+    }
+
+    callExitHandlers.call(this, opts.context);
+    this.isCurrent = false;
+    trace.call(this, &quot;State: [EXIT]   : &quot; + this.path());
+
+    return this;
+}
+
+// Internal: Exits a concurrent state. Similiar to &#x60;exitClustered&#x60; we
+// recursively exit each substate and invoke the &#x60;exit&#x60; method as the stack
+// unwinds.
+//
+// opts - The options passed to &#x60;goto&#x60;.
+//
+// Returns the receiver.
+function exitConcurrent(opts) {
+    let root = this.root();
+    let i = 0;
+    let n;
+
+    for (n = this.substates.length; i &lt; n; i += 1) {
+        exit.call(this.substates[i], opts);
+    }
+
+    callExitHandlers.call(this, opts.context);
+    this.isCurrent = false;
+    if (this !== root) {
+        trace.call(this, &quot;State: [EXIT]   : &quot; + this.path());
+    }
+
+    return this;
+}
+
+// Internal: Exits the receiver state. The actual exiting logic is in the
+// &#x60;exitClustered&#x60; and &#x60;exitConcurrent&#x60; methods.
+//
+// opts   - The options passed to &#x60;goto&#x60;.
+//
+// Returns the receiver.
+exit = function (opts) {
+    return (
+        this.concurrent
+        ? exitConcurrent.call(this, opts)
+        : exitClustered.call(this, opts)
+    );
+};
+
+// Internal: Asks the receiver state if it can exit.
+//
+// destStates - The destination states.
+// opts       - The options passed to &#x60;goto&#x60;.
+//
+// Returns boolean.
+function canExit(destStates, opts) {
+    let i = 0;
+    let n;
+
+    for (n = this.substates.length; i &lt; n; i += 1) {
+        if (this.substates[i].isCurrent) {
+            if (canExit.call(this.substates[i], destStates, opts) === false) {
+                return false;
+            }
+        }
+    }
+
+    return this.canExit(destStates, opts.context);
+}
+
+// Internal: Sends an event to a clustered state.
+//
+// Returns a boolean indicating whether or not the event was handled by the
+//   current substate.
+function sendClustered(...args) {
+    let handled = false;
+    let i = 0;
+    let n;
+    let cur;
+
+    for (n = this.substates.length; i &lt; n; i += 1) {
+        if (this.substates[i].isCurrent) {
+            cur = this.substates[i];
+            break;
+        }
+    }
+
+    if (cur) {
+        handled = Boolean(cur.send.apply(cur, slice.call(args)));
+    }
+
+    return handled;
+}
+
+// Internal: Sends an event to a concurrent state.
+//
+// Returns a boolean indicating whether or not the event was handled by all
+//   substates.
+function sendConcurrent(...ary) {
+    let args = slice.call(ary);
+    let handled = true;
+    let state;
+    let i = 0;
+    let n;
+
+    for (n = this.substates.length; i &lt; n; i += 1) {
+        state = this.substates[i];
+        handled = state.send.apply(state, args) &amp;&amp; handled;
+    }
+
+    return handled;
+}
+
+/**
+    The &#x60;State&#x60; constructor.
+
+    Throws &#x60;Error&#x60; if both the &#x60;concurrent&#x60; and &#x60;H&#x60; options are set.
+
+    @class State
+    @constructor
+    @param {String} name A string containing the name of the state.
+    @param {Object} [opts] An object containing zero or more of the following
+    keys (default:&#x60;null&#x60;).
+    @param {Boolean} [opts.concurrent] Makes the state&#x27;s substates concurrent.
+    @param {Boolean} [opts.H] Causes the state to keep track of its history
+    state. Set to &#x60;true&#x60; to track just the history of this state
+    or &#x60;&#x27;*&#x27;&#x60; to track the history of all substates.
+    @param {Function} [f] function to invoke in the context of the newly
+    created state (default: &#x60;null&#x60;)
+*/
+function State(name, opts, f) {
+    if (typeof opts === &quot;function&quot;) {
+        f = opts;
+        opts = {};
+    }
+
+    opts = opts || {};
+
+    if (opts.concurrent &amp;&amp; opts.H) {
+        throw new Error(
+            &quot;State: history states are not allowed on concurrent states&quot;
+        );
+    }
+
+    this.name = name;
+    this.substateMap = {};
+    this.substates = [];
+    this.superstate = null;
+    this.enters = [];
+    this.exits = [];
+    this.events = {};
+    this.concurrent = Boolean(opts.concurrent);
+    this.history = Boolean(opts.H);
+    this.deep = opts.H === &quot;*&quot;;
+    this.isCurrent = false;
+    this.cache = {};
+    this.transitions = [];
+    this.trace = false;
+
+    if (f) {
+        f.call(this);
+    }
+}
+
+/**
+    Convenience method for creating a new statechart. Simply creates a
+    root state and invokes the given function in the context of that state.
+
+    @example
+        let sc = State.define({concurrent: true}, function () {
+            this.state(&quot;a&quot;);
+            this.state(&quot;b&quot;);
+            this.state(&quot;c&quot;);
+        });
+    @class define
+    @constructor
+    @namespace State
+    @param {Object | Function} [opts] An object of options to pass the to
+    the &#x60;State&#x60; constructor or function object (default: &#x60;null&#x60;).
+    @param {Function} f A function object to invoke in the context of the
+    newly created root state (default: &#x60;null&#x60;).
+    @return {State} Newly created root state.
+*/
+State.define = function (...args) {
+    let opts = {};
+    let f = null;
+    let s;
+    let Statechart = this; // Make jslint happy
+
+    if (args.length === 2) {
+        opts = args[0];
+        f = args[1];
+    } else if (args.length === 1) {
+        if (typeof args[0] === &quot;function&quot;) {
+            f = args[0];
+        } else {
+            opts = args[0];
+        }
+    }
+
+    s = new Statechart(&quot;root&quot;, opts, f);
+    return s;
+};
+
+/**
+    Indicates whether the state is the root of the statechart created
+    by the &#x60;State.define&#x60; method.
+
+    @method isRoot
+    @for State
+    @return {Boolean}
+*/
+State.prototype.isRoot = function () {
+    return this.name === &quot;root&quot;;
+};
+
+/**
+    Creates a substate with the given name and adds it as a substate to
+    the receiver state. If a &#x60;State&#x60; object is given, then it simply adds the
+    state as a substate. This allows you to split up the definition of your
+    states instead of defining everything in one place.
+
+    @method state
+    @param {String} name A string containing the name of the state or a &#x60;State&#x60;
+    object.
+    @param {Object} [opts] opts An object of options to pass to the &#x60;State&#x60;
+    constructor
+    (default: &#x60;null&#x60;).
+    @param {Function} [opts.f] A function to invoke in the context of the newly
+    created state
+    (default: &#x60;null&#x60;).
+
+    @example
+        let s2 = new State(&quot;s2&quot;);
+        s2.state(&quot;s21&quot;);
+        s2.state(&quot;s22&quot;);
+
+        let sc = State.define(function () {
+            this.state(&quot;s&quot;, function () {
+                this.state(&quot;s1&quot;, function () {
+                    this.state(&quot;s11&quot;);
+                    this.state(&quot;s12&quot;);
+                });
+
+                this.state(s2);
+            });
+        });
+
+    @return {State) The newly created state.
+*/
+State.prototype.state = function (name, opts, f) {
+    let Constructor = this.constructor; // Make jslint happy
+    let s = (
+        typeof name === &quot;object&quot;
+        ? name
+        : new Constructor(name, opts, f)
+    );
+    this.addSubstate(s);
+    return s;
+};
+
+/**
+    Registers an enter handler to be called with the receiver state
+    is entered. The &#x60;context&#x60; option passed to &#x60;goto&#x60; will be passed to the
+    given function when invoked.
+
+    Multiple enter handlers may be registered per state. They are invoked in
+    the order in which they are defined.
+
+    @method enter
+    @param {Function} f A function to call when the state is entered.
+    @return {State} The receiver
+*/
+State.prototype.enter = function pState_enter(f) {
+    this.enters.push(f);
+    return this;
+};
+
+/**
+    Registers an exit handler to be called with the receiver state
+    is exited. The &#x60;context&#x60; option passed to &#x60;goto&#x60; will be passed to the
+    given function when invoked.
+
+    Multiple exit handlers may be registered per state. They are invoked in
+    the order in which they are defined.
+
+    @method exit
+    @param {Function} f A function to call when the state is exited.
+    @return {State} The receiver
+*/
+State.prototype.exit = function pState_exit(f) {
+    this.exits.push(f);
+    return this;
+};
+
+/**
+    A function that can be used to prevent a state from being exited.
+    &#x60;destStates&#x60; and &#x60;context&#x60; are the destination states and context that
+    will be transitioned to if the states can be exited.
+
+    @method canExit
+    @param {Object} destStates The destination states.
+    @param {Object} context The destination context.
+    @return {State} The receiver.
+*/
+State.prototype.canExit = function ( /*destStates, context*/ ) {
+    return true;
+};
+
+/**
+    Registers an event handler to be called when an event with a
+    matching name is sent to the state via the &#x60;send&#x60; method.
+
+    Only one event handler may be registered per event.
+
+    @method event
+    @param {String} name The name of the event.
+    @param {Function} f A function to call when the event occurs.
+    @return {State} The receiver.
+*/
+State.prototype.event = function pState_event(name, f) {
+    this.events[name] = f;
+    return this;
+};
+
+/**
+    Defines a condition state on the receiver state. Condition states
+    are consulted when entering a clustered state without specified destination
+    states. The given function should return a path to some substate of the
+    state that the condition state is defined on.
+
+    @method C
+    @param {Function} f The condition function.
+    @example
+        let sc = State.define(function () {
+            this.state(&quot;a&quot;, function () {
+                this.C(function () {
+                    if (shouldGoToB) {
+                        return &quot;./b&quot;;
+                    }
+                    if (shouldGoToC) {
+                        return &quot;./c&quot;;
+                    }
+                    if (shouldGoToD) {
+                        return &quot;./d&quot;;
+                    }
+                });
+                this.state(&quot;b&quot;);
+                this.state(&quot;c&quot;);
+                this.state(&quot;d&quot;);
+            });
+        });
+*/
+State.prototype.C = function pState_C(f) {
+    if (this.concurrent) {
+        throw new Error(
+            &quot;State#C: a concurrent state may not have a &quot; +
+            &quot;condition state: &quot; + this
+        );
+    }
+
+    this.condition = f;
+};
+
+/**
+    Returns an array of paths to all current leaf states.
+    @method
+    @return {Array}
+*/
+State.prototype.current = function pState_current() {
+    let states = _current.call(this);
+    let paths = [];
+    let i = 0;
+    let n;
+
+    for (n = states.length; i &lt; n; i += 1) {
+        paths.push(states[i].path());
+    }
+
+    return paths;
+};
+
+/**
+    The &#x60;State&#x60; iterator - invokes the given function once for each
+    state in the statechart. The states are traversed in a preorder depth-first
+    manner.
+
+    @method each
+    @param {Function} f A function object, it will be invoked once for each
+    state.
+    @return {State} The receiver.
+*/
+State.prototype.each = function pState_each(f) {
+    let i = 0;
+    let n;
+
+    f(this);
+
+    for (n = this.substates.length; i &lt; n; i += 1) {
+        this.substates[i].each(f);
+    }
+
+    return this;
+};
+
+/**
+    Adds the given state as a substate of the receiver state.
+
+    @method addSubstate
+    @param {State} state
+    @return {State} The receiver.
+*/
+State.prototype.addSubstate = function pState_addSubstate(state) {
+    let deep = this.deep;
+    let didAttach = this.root().isRoot();
+
+    this.substateMap[state.name] = state;
+    this.substates.push(state);
+    state.superstate = this;
+    state.each(function (s) {
+        s.cache = {};
+        if (deep) {
+            s.history = true;
+            s.deep = true;
+        }
+        if (didAttach) {
+            s.didAttach();
+        }
+    });
+    return this;
+};
+
+// Internal: Invoked by the &#x60;#addSubstate&#x60; method when the state has been
+// connected to a root statechart. This is currently only used by the
+// &#x60;RoutableState&#x60; substate and should not be invoked by client code.
+State.prototype.didAttach = function pState_didAttach() {
+    return;
+};
+
+/**
+    Indicates whether the receiver state is attached to a root
+    statechart node.
+    @method isAttached
+    @return {Boolean}
+*/
+State.prototype.isAttached = function pState_isAttached() {
+    return this.root().isRoot();
+};
+
+/**
+    @method root
+    @return {State} The root state.
+*/
+State.prototype.root = function pState_root() {
+    this.cache.root = this.cache.root || (
+        this.superstate
+        ? this.superstate.root()
+        : this
+    );
+
+    return this.cache.root;
+};
+
+/**
+    Returns a string containing the full path from the root state to
+    the receiver state. State paths are very similar to unix directory paths.
+
+    @example
+        let r = new State(&quot;root&quot;);
+        let a = new State(&quot;a&quot;);
+        let b = new State(&quot;b&quot;);
+        let c = new State(&quot;c&quot;);
+
+        r.addSubstate(a);
+        a.addSubstate(b);
+        b.addSubstate(c);
+
+        r.path(); // =&gt; &quot;/&quot;
+        a.path(); // =&gt; &quot;/a&quot;
+        b.path(); // =&gt; &quot;/a/b&quot;
+        c.path(); // =&gt; &quot;/a/b/c&quot;
+    @method path
+    @return {String}
+*/
+State.prototype.path = function pState_path() {
+    let states = path.call(this);
+    let names = [];
+    let i = 1;
+    let len;
+
+    for (len = states.length; i &lt; len; i += 1) {
+        names.push(states[i].name);
+    }
+
+    return &quot;/&quot; + names.join(&quot;/&quot;);
+};
+
+/**
+    Sets up a transition from the receiver state to the given
+    destination states. Transitions are usually triggered during event
+    handlers called by the &#x60;send&#x60; method. This method should be called on the
+    root state to send the statechart into its initial set of current states.
+
+    @method goto
+    @param {String | Array} paths Zero or more strings representing destination
+    state paths (default: &#x60;[]&#x60;).
+    @param {Object} [opts] An object containing zero or more of the following
+    keys:
+    @param {Object} [opts.context] An object to pass along to the &#x60;exit&#x60; and
+    &#x60;enter&#x60; methods
+    invoked during the actual transistion.
+    @param {Boolean} [opts.force] Forces &#x60;enter&#x60; methods to be called during
+    the transition
+    on states that are already current.
+
+    @example
+        let sc = State.define(function () {
+            this.state(&quot;a&quot;, function () {
+                this.state(&quot;b&quot;, function () {
+                    this.foo = function () { this.goto(&quot;../c&quot;); };
+                });
+                this.state(&quot;c&quot;, function () {
+                    this.bar = function () { this.goto(&quot;../b&quot;); };
+                });
+            });
+        });
+
+        sc.goto();
+        sc.current();   // =&gt; [&quot;/a/b&quot;]
+        sc.send(&quot;foo&quot;);
+        sc.current();   // =&gt; [&quot;/a/c&quot;]
+        sc.send(&quot;bar&quot;);
+        sc.current();   // =&gt; [&quot;/a/b&quot;]
+
+    @return {Boolean} &#x60;false&#x60; if transition failed.
+    @throws {Error} Throws an &#x60;Error&#x60; if called on a non-current non-root
+    state or multiple pivot states are found between the receiver
+    and destination states or if a destination path is not reachable from
+    the receiver.
+*/
+State.prototype.goto = function pState_goto(...args) {
+    let root = this.root();
+    let paths = flatten(slice.call(args));
+    let opts = (
+        typeof paths[paths.length - 1] === &quot;object&quot;
+        ? paths.pop()
+        : {}
+    );
+    let states = [];
+    let pivots = [];
+    let state;
+    let pivot;
+    let i = 0;
+    let n;
+
+    for (n = paths.length; i &lt; n; i += 1) {
+        state = this.resolve(paths[i]);
+
+        if (!state) {
+            throw new Error(
+                &quot;State#goto: could not resolve path &quot; +
+                paths[i] + &quot; from &quot; + this
+            );
+        }
+
+        states.push(state);
+    }
+
+    i = 0;
+
+    for (n = states.length; i &lt; n; i += 1) {
+        pivots.push(findPivot.call(this, states[i]));
+    }
+
+    if (uniqStates(pivots).length &gt; 1) {
+        throw new Error(
+            &quot;State#goto: multiple pivot states found between state &quot; +
+            this + &quot; and paths &quot; + paths.join(&quot;, &quot;)
+        );
+    }
+
+    pivot = pivots[0] || this;
+
+    if (canExit.call(pivot, states, opts) === false) {
+        trace.call(this, &quot;State: [GOTO]   : &quot; + this + &quot; can not exit]&quot;);
+        return false;
+    }
+
+    trace.call(
+        this,
+        &quot;State: [GOTO]   : &quot; + this + &quot; -&gt; [&quot; + states.join(&quot;, &quot;) + &quot;]&quot;
+    );
+
+    if (!this.isCurrent &amp;&amp; this.superstate) {
+        throw new Error(&quot;State#goto: state &quot; + this + &quot; is not current&quot;);
+    }
+
+    // if the pivot state is a concurrent state and is not also the starting
+    // state, then we&#x27;re attempting to cross a concurrency boundary, which is
+    // not allowed
+    if (pivot.concurrent &amp;&amp; pivot !== this) {
+        throw new Error(
+            &quot;State#goto: one or more of the given paths are not reachable &quot; +
+            &quot;from state &quot; + this + &quot;: &quot; + paths.join(&quot;, &quot;)
+        );
+    }
+
+    queueTransition.call(root, pivot, states, opts);
+
+    if (!this.isSending) {
+        transition.call(root);
+    }
+
+    return true;
+};
+
+/**
+    Sends an event to the statechart. A statechart handles an event
+    by giving each current leaf state an opportunity to handle it. Events
+    bubble up superstate chains as long as handler methods do not return a
+    truthy value. When a handler does return a truthy value (indicating that
+    it has handled the event) the bubbling is canceled. A handler method is
+    registered with the &#x60;event&#x60; method.
+
+    @method send
+    @param {String} event The event name.
+    @param {Any} [args] Zero or more arguments that get passed on to the
+    handler methods.
+    @return {Boolean} A boolean indicating whether or not the event was
+    handled.
+    @throws {Error} Throws &#x60;Error&#x60; if the state is not current.
+*/
+State.prototype.send = function pState_send(...ary) {
+    let args = slice.call(ary);
+    let events = this.events;
+    let handled;
+
+    if (!this.isCurrent) {
+        throw new Error(
+            &quot;State#send: attempted to send an event to a state &quot; +
+            &quot;that is not current: &quot; + this
+        );
+    }
+
+    if (this === this.root()) {
+        trace.call(this, &quot;State: [EVENT]  : &quot; + args[0]);
+    }
+
+    handled = (
+        this.concurrent
+        ? sendConcurrent.apply(this, ary)
+        : sendClustered.apply(this, ary)
+    );
+
+    if (!handled &amp;&amp; typeof events[args[0]] === &quot;function&quot;) {
+        this.isSending = true;
+        handled = Boolean(events[args[0]].apply(this, args.slice(1)));
+        this.isSending = false;
+    }
+
+    if (!this.superstate) {
+        transition.call(this);
+    }
+
+    return handled;
+};
+
+/**
+    Resets the statechart by exiting all current states.
+    @method reset
+*/
+State.prototype.reset = function pState_reset() {
+    exit.call(this, {});
+};
+
+/**
+    Returns a boolean indicating whether or not the state at the given
+    path is current.
+    @method isCurrent
+    @return {Boolean}
+    @throws {Error} Throws &#x60;Error&#x60; if the path cannot be resolved.
+*/
+State.prototype.isCurrent = function pState_isCurrent(path) {
+    let state = this.resolve(path);
+
+    return Boolean(state &amp;&amp; state.isCurrent);
+};
+
+/**
+    Resolves a string path into an actual &#x60;State&#x60; object. Paths not
+    starting with a &#x27;/&#x27; are resolved relative to the receiver state, paths that
+    do start with a &#x27;/&#x27; are resolved relative to the root state.
+
+    @method resolve
+    @param {String} path The path to resolve or an array of path segments.
+    @return {State} The &#x60;State&#x60; object the path represents if it can be
+    resolved and &#x60;null&#x60; otherwise.
+*/
+State.prototype.resolve = function pState_resolve(path) {
+    let head;
+    let next;
+
+    if (!path) {
+        return null;
+    }
+
+    path = (
+        typeof path === &quot;string&quot;
+        ? path.split(&quot;/&quot;)
+        : path
+    );
+    head = path.shift();
+
+    switch (head) {
+    case &quot;&quot;:
+        next = this.root();
+        break;
+    case &quot;.&quot;:
+        next = this;
+        break;
+    case &quot;..&quot;:
+        next = this.superstate;
+        break;
+    default:
+        next = this.substateMap[head];
+    }
+
+    if (!next) {
+        return null;
+    }
+
+    return (
+        path.length === 0
+        ? next
+        : next.resolve(path)
+    );
+};
+
+/**
+    Returns a formatted string with the state&#x27;s full path.
+    @method toString
+    @return {String}
+*/
+State.prototype.toString = function pState_toString() {
+    return &quot;State(&quot; + this.path() + &quot;)&quot;;
+};
+
+// Internal: Logs the given message. How the message gets logged is determined
+// by the &#x60;State.logger&#x60; property. By default this is &#x60;console&#x60;, but can be
+// setto use another logger object. It assumes that there is an &#x60;info&#x60; method
+// on the logger object.
+trace = function (message) {
+    let logger = State.logger || console;
+
+    if (!this.root().trace || !logger) {
+        return;
+    }
+
+    logger.info(message);
+};
+
+export default Object.freeze(State);
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

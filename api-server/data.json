@@ -1,0 +1,4154 @@
+{
+    "project": {
+        "name": "Featherbone Server",
+        "description": "Framework for building object relational database apps",
+        "version": "0.1.0",
+        "url": "https://github.com/jrogelstad/featherbone",
+        "logo": "../featherbone-server.png"
+    },
+    "files": {
+        "services\\api.js": {
+            "name": "services\\api.js",
+            "modules": {
+                "API": 1
+            },
+            "classes": {
+                "Services.API": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\crud.js": {
+            "name": "services\\crud.js",
+            "modules": {
+                "CRUD": 1
+            },
+            "classes": {
+                "Services.CRUD": 1
+            },
+            "fors": {
+                "f": 1
+            },
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\currency.js": {
+            "name": "services\\currency.js",
+            "modules": {
+                "Currency": 1
+            },
+            "classes": {
+                "Money": 1,
+                "Services.Currency": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\events.js": {
+            "name": "services\\events.js",
+            "modules": {
+                "Events": 1
+            },
+            "classes": {
+                "Services.Events": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\feathers.js": {
+            "name": "services\\feathers.js",
+            "modules": {
+                "Feathers": 1
+            },
+            "classes": {
+                "Services.Feathers": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\installer.js": {
+            "name": "services\\installer.js",
+            "modules": {
+                "Installer": 1
+            },
+            "classes": {
+                "Services.Installer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\io.js": {
+            "name": "services\\io.js",
+            "modules": {
+                "IO": 1
+            },
+            "classes": {
+                "Services.Exporter": 1,
+                "Services.Importer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\packager.js": {
+            "name": "services\\packager.js",
+            "modules": {
+                "Packager": 1
+            },
+            "classes": {
+                "Services.Packager": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\profile.js": {
+            "name": "services\\profile.js",
+            "modules": {
+                "Profile": 1
+            },
+            "classes": {
+                "Services.Profile": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\role.js": {
+            "name": "services\\role.js",
+            "modules": {
+                "Role": 1
+            },
+            "classes": {
+                "Services.Role": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\routes.js": {
+            "name": "services\\routes.js",
+            "modules": {
+                "Routes": 1
+            },
+            "classes": {
+                "Services.Routes": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\services.js": {
+            "name": "services\\services.js",
+            "modules": {},
+            "classes": {
+                "Services.Services": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\settings.js": {
+            "name": "services\\settings.js",
+            "modules": {
+                "Settings": 1
+            },
+            "classes": {
+                "Services.Settings": 1
+            },
+            "fors": {
+                "Services.Settings": 1
+            },
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\tools.js": {
+            "name": "services\\tools.js",
+            "modules": {
+                "Tools": 1
+            },
+            "classes": {
+                "Services.Tools": 1
+            },
+            "fors": {
+                "String": 1
+            },
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "services\\workbooks.js": {
+            "name": "services\\workbooks.js",
+            "modules": {
+                "Workbooks": 1
+            },
+            "classes": {
+                "Services.Workbooks": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            }
+        },
+        "database.js": {
+            "name": "database.js",
+            "modules": {
+                "Database": 1
+            },
+            "classes": {
+                "Database": 1,
+                "Connection": 1,
+                "Client": 1,
+                "User": 1
+            },
+            "fors": {
+                "Database": 1
+            },
+            "namespaces": {}
+        },
+        "datasource.js": {
+            "name": "datasource.js",
+            "modules": {
+                "Datasource": 1
+            },
+            "classes": {
+                "Datasource": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "API": {
+            "name": "API",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.API": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\api.js",
+            "line": 103,
+            "description": "API file generator methods called during installation."
+        },
+        "CRUD": {
+            "name": "CRUD",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "f": 1,
+                "Services.CRUD": 1
+            },
+            "fors": {
+                "f": 1
+            },
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\crud.js",
+            "line": 70,
+            "description": "Create, read, update and delete methods for persisting data to the\ndatabase."
+        },
+        "Currency": {
+            "name": "Currency",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Money": 1,
+                "Services.Currency": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\currency.js",
+            "line": 207
+        },
+        "Events": {
+            "name": "Events",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Events": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\events.js",
+            "line": 28
+        },
+        "Feathers": {
+            "name": "Feathers",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Feathers": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\feathers.js",
+            "line": 138
+        },
+        "Installer": {
+            "name": "Installer",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Installer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\installer.js",
+            "line": 44
+        },
+        "IO": {
+            "name": "IO",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Exporter": 1,
+                "Services.Importer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\io.js",
+            "line": 389,
+            "description": "Import and export"
+        },
+        "Packager": {
+            "name": "Packager",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Packager": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\packager.js",
+            "line": 643
+        },
+        "Profile": {
+            "name": "Profile",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Profile": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\profile.js",
+            "line": 35
+        },
+        "Role": {
+            "name": "Role",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Role": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\role.js",
+            "line": 28
+        },
+        "Routes": {
+            "name": "Routes",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Routes": 1,
+                "Services.Services": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\services.js",
+            "line": 25
+        },
+        "Settings": {
+            "name": "Settings",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Settings": 1
+            },
+            "fors": {
+                "Services.Settings": 1
+            },
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\settings.js",
+            "line": 274
+        },
+        "Tools": {
+            "name": "Tools",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "String": 1,
+                "Services.Tools": 1
+            },
+            "fors": {
+                "String": 1
+            },
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\tools.js",
+            "line": 66
+        },
+        "Workbooks": {
+            "name": "Workbooks",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Services.Workbooks": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Services": 1
+            },
+            "tag": "module",
+            "file": "services\\workbooks.js",
+            "line": 34
+        },
+        "Database": {
+            "name": "Database",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Database": 1,
+                "Connection": 1,
+                "Client": 1,
+                "User": 1
+            },
+            "fors": {
+                "Database": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "database.js",
+            "line": 284,
+            "description": "PostgreSQL database connection handlers."
+        },
+        "Datasource": {
+            "name": "Datasource",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Datasource": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "datasource.js",
+            "line": 65
+        }
+    },
+    "classes": {
+        "Services.API": {
+            "name": "Services.API",
+            "shortname": "Services.API",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "API",
+            "namespace": "Services",
+            "file": "services\\api.js",
+            "line": 103,
+            "description": "Service for building Open API specification.",
+            "is_constructor": 1
+        },
+        "f": {
+            "name": "f",
+            "shortname": "f",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "CRUD",
+            "namespace": ""
+        },
+        "Services.CRUD": {
+            "name": "Services.CRUD",
+            "shortname": "Services.CRUD",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "CRUD",
+            "namespace": "Services",
+            "file": "services\\crud.js",
+            "line": 70,
+            "description": "Services for create, read, update and delete actions.",
+            "is_constructor": 1
+        },
+        "Money": {
+            "name": "Money",
+            "shortname": "Money",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Currency",
+            "namespace": "",
+            "file": "services\\currency.js",
+            "line": 22,
+            "static": 1
+        },
+        "Services.Currency": {
+            "name": "Services.Currency",
+            "shortname": "Services.Currency",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Currency",
+            "namespace": "Services",
+            "file": "services\\currency.js",
+            "line": 207,
+            "description": "Currency conversion service.",
+            "is_constructor": 1
+        },
+        "Services.Events": {
+            "name": "Services.Events",
+            "shortname": "Services.Events",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Events",
+            "namespace": "Services",
+            "file": "services\\events.js",
+            "line": 28,
+            "description": "Event management services.",
+            "is_constructor": 1
+        },
+        "Services.Feathers": {
+            "name": "Services.Feathers",
+            "shortname": "Services.Feathers",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Feathers",
+            "namespace": "Services",
+            "file": "services\\feathers.js",
+            "line": 138,
+            "description": "Feather management service.",
+            "is_constructor": 1
+        },
+        "Services.Installer": {
+            "name": "Services.Installer",
+            "shortname": "Services.Installer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Installer",
+            "namespace": "Services",
+            "file": "services\\installer.js",
+            "line": 44,
+            "description": "Install and uninstall packaged modules.",
+            "is_constructor": 1
+        },
+        "Services.Exporter": {
+            "name": "Services.Exporter",
+            "shortname": "Services.Exporter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "IO",
+            "namespace": "Services",
+            "file": "services\\io.js",
+            "line": 80,
+            "is_constructor": 1
+        },
+        "Services.Importer": {
+            "name": "Services.Importer",
+            "shortname": "Services.Importer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "IO",
+            "namespace": "Services",
+            "file": "services\\io.js",
+            "line": 389,
+            "is_constructor": 1
+        },
+        "Services.Packager": {
+            "name": "Services.Packager",
+            "shortname": "Services.Packager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Packager",
+            "namespace": "Services",
+            "file": "services\\packager.js",
+            "line": 643,
+            "is_constructor": 1
+        },
+        "Services.Profile": {
+            "name": "Services.Profile",
+            "shortname": "Services.Profile",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Profile",
+            "namespace": "Services",
+            "file": "services\\profile.js",
+            "line": 35,
+            "description": "User's local configuration settings such as column widths, zoom, etc.",
+            "is_constructor": 1
+        },
+        "Services.Role": {
+            "name": "Services.Role",
+            "shortname": "Services.Role",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Role",
+            "namespace": "Services",
+            "file": "services\\role.js",
+            "line": 28,
+            "is_constructor": 1
+        },
+        "Services.Routes": {
+            "name": "Services.Routes",
+            "shortname": "Services.Routes",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Routes",
+            "namespace": "Services",
+            "file": "services\\routes.js",
+            "line": 28,
+            "description": "Routes define URLs for custom data service functions to be called.",
+            "is_constructor": 1
+        },
+        "Services.Services": {
+            "name": "Services.Services",
+            "shortname": "Services.Services",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Routes",
+            "namespace": "Services",
+            "file": "services\\services.js",
+            "line": 25,
+            "description": "Custom data service scripts loaded from the database at run time.",
+            "is_constructor": 1
+        },
+        "Services.Settings": {
+            "name": "Services.Settings",
+            "shortname": "Services.Settings",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Settings",
+            "namespace": "Services",
+            "file": "services\\settings.js",
+            "line": 274,
+            "is_constructor": 1
+        },
+        "String": {
+            "name": "String",
+            "shortname": "String",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Tools",
+            "namespace": ""
+        },
+        "Services.Tools": {
+            "name": "Services.Tools",
+            "shortname": "Services.Tools",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Tools",
+            "namespace": "Services",
+            "file": "services\\tools.js",
+            "line": 66,
+            "is_constructor": 1
+        },
+        "Services.Workbooks": {
+            "name": "Services.Workbooks",
+            "shortname": "Services.Workbooks",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Workbooks",
+            "namespace": "Services",
+            "file": "services\\workbooks.js",
+            "line": 34,
+            "is_constructor": 1
+        },
+        "Database": {
+            "name": "Database",
+            "shortname": "Database",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "namespace": "",
+            "file": "database.js",
+            "line": 42,
+            "description": "Class for managing database connectivity functions.",
+            "is_constructor": 1
+        },
+        "Connection": {
+            "name": "Connection",
+            "shortname": "Connection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "namespace": "",
+            "file": "database.js",
+            "line": 124,
+            "description": "Database connection object. This object is requested from a\nconnection pool and passed forward through all actions of a\ntransaction until it is completed. Featherbone automatically\nhandles connections and transactions, however it is important to\nknow that any service that makes a\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}}\non another service needs to reference the\n{{#crossLink \"Client\"}}{{/crossLink}} forwarded to it.",
+            "static": 1
+        },
+        "Client": {
+            "name": "Client",
+            "shortname": "Client",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "namespace": "",
+            "file": "database.js",
+            "line": 145,
+            "description": "A Featherbone object which references a client connection created\nby the <a href='https://node-postgres.com'>node-postgres</a> library\nfor handling postgres connectivity.\nIt also contains several properties for keeping track of\ntransaction state and the user account making requests.\n\nUse {{#crossLink \"Database/getClient:method\"}}{{/crossLink}} to\nresolve to an actual\n<a href='https://node-postgres.com/api/client'>postgres client</a>\nand execute SQL.",
+            "static": 1
+        },
+        "User": {
+            "name": "User",
+            "shortname": "User",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Database",
+            "namespace": "",
+            "file": "database.js",
+            "line": 284,
+            "description": "Object defining a user on the server side for passport management.",
+            "static": 1
+        },
+        "Datasource": {
+            "name": "Datasource",
+            "shortname": "Datasource",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Datasource",
+            "namespace": "",
+            "file": "datasource.js",
+            "line": 65,
+            "description": "Server datasource class.",
+            "static": 1
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "services\\api.js",
+            "line": 117,
+            "description": "Build client api specification. Creates api.js in client folder.",
+            "itemtype": "method",
+            "name": "buildClientApi",
+            "params": [
+                {
+                    "name": "datasource",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.API",
+            "module": "API",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\api.js",
+            "line": 249,
+            "description": "Build open api specification. Creates api.json in the root folder.",
+            "itemtype": "method",
+            "name": "buildRestApi",
+            "params": [
+                {
+                    "name": "datasource",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.API",
+            "module": "API",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\crud.js",
+            "line": 42,
+            "description": "Return a promise that resolves money object with\nzero amount and base currency. Used as currency\ndefault.",
+            "itemtype": "method",
+            "name": "money",
+            "return": {
+                "description": "Resolves to {{#crossLink \"Money\"}}{{/crossLink}}",
+                "type": "Promise"
+            },
+            "class": "f",
+            "module": "CRUD"
+        },
+        {
+            "file": "services\\crud.js",
+            "line": 88,
+            "description": "Perform soft delete on object records.",
+            "itemtype": "method",
+            "name": "doDelete",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "id",
+                            "description": "Id of record to delete",
+                            "type": "String"
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "String | Object"
+                        },
+                        {
+                            "name": "isHard",
+                            "description": "Hard delete flag. Default false.",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "isChild",
+                    "description": "Request as child. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                },
+                {
+                    "name": "isSuperUser",
+                    "description": "Request as super user. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Resolves `true` if successful",
+                "type": "Promise"
+            },
+            "class": "Services.CRUD",
+            "module": "CRUD",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\crud.js",
+            "line": 268,
+            "description": "Insert records for a passed object.",
+            "itemtype": "method",
+            "name": "doInsert",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "Object type name",
+                            "type": "String"
+                        },
+                        {
+                            "name": "data",
+                            "description": "Data to insert",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "String | Object"
+                        }
+                    ]
+                },
+                {
+                    "name": "isChild",
+                    "description": "Request as child. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                },
+                {
+                    "name": "isSuperUser",
+                    "description": "Request as super user. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Resolves to array of patches reporting back\ndifferences between request and actual saved record result.",
+                "type": "Promise"
+            },
+            "class": "Services.CRUD",
+            "module": "CRUD",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\crud.js",
+            "line": 813,
+            "description": "Select records for an object based on payload id or an\narray of objects if no id provided.",
+            "itemtype": "method",
+            "name": "doSelect",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "id",
+                            "description": "Id of record to select",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "name",
+                            "description": "Name of feather",
+                            "type": "String"
+                        },
+                        {
+                            "name": "filter",
+                            "description": "Filter criteria of records to\nselect",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "String | Object"
+                        },
+                        {
+                            "name": "showDeleted",
+                            "description": "include deleted records",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "name": "subscription",
+                            "description": "subscribe to events on\nresults",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "sanitize",
+                            "description": "sanitize result. Default true",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "isChild",
+                    "description": "Request as child. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                },
+                {
+                    "name": "isSuperUser",
+                    "description": "Request as super user. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Resolves to object or array.",
+                "type": "Promise"
+            },
+            "class": "Services.CRUD",
+            "module": "CRUD",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\crud.js",
+            "line": 1032,
+            "description": "Update records based on patch definition.",
+            "itemtype": "method",
+            "name": "doUpdate",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "id",
+                            "description": "Id of record to update",
+                            "type": "String"
+                        },
+                        {
+                            "name": "data",
+                            "description": "Patch to apply",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "String | Object"
+                        }
+                    ]
+                },
+                {
+                    "name": "isChild",
+                    "description": "Request as child. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                },
+                {
+                    "name": "isSuperUser",
+                    "description": "Request as super user. Default\nfalse.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Resolves to array of patches reporting back\ndifferences between request and actual saved record result.",
+                "type": "Promise"
+            },
+            "class": "Services.CRUD",
+            "module": "CRUD",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\crud.js",
+            "line": 1615,
+            "description": "Lock a record to prevent others from editing.",
+            "itemtype": "method",
+            "name": "lock",
+            "params": [
+                {
+                    "name": "client",
+                    "description": "Database client connection id",
+                    "type": "Object"
+                },
+                {
+                    "name": "nodeId",
+                    "description": "Node id.",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "Record id",
+                    "type": "String"
+                },
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "eventKey",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Resolves to `true` if successful.",
+                "type": "Promise"
+            },
+            "class": "Services.CRUD",
+            "module": "CRUD",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\crud.js",
+            "line": 1721,
+            "description": "Unlock object(s) by type. At least one criteria must be provided.",
+            "itemtype": "method",
+            "name": "unlock",
+            "params": [
+                {
+                    "name": "client",
+                    "description": "Database client connection id",
+                    "type": "Object"
+                },
+                {
+                    "name": "criteria",
+                    "description": "Criteria for what to unlock.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "id",
+                            "description": "Object id.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "username",
+                            "description": "User name.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "eventKey",
+                            "description": "Browser instance key.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "nodeId",
+                            "description": "Node id.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Resolves to array of ids unlocked.",
+                "type": "Promise"
+            },
+            "class": "Services.CRUD",
+            "module": "CRUD",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\currency.js",
+            "line": 26,
+            "itemtype": "property",
+            "name": "currency",
+            "type": "String",
+            "class": "Money",
+            "module": "Currency"
+        },
+        {
+            "file": "services\\currency.js",
+            "line": 30,
+            "itemtype": "property",
+            "name": "amount",
+            "type": "Number",
+            "class": "Money",
+            "module": "Currency"
+        },
+        {
+            "file": "services\\currency.js",
+            "line": 34,
+            "description": "Conversion date",
+            "itemtype": "property",
+            "name": "effective",
+            "type": "String",
+            "optional": 1,
+            "class": "Money",
+            "module": "Currency"
+        },
+        {
+            "file": "services\\currency.js",
+            "line": 40,
+            "description": "Amount in base currency",
+            "itemtype": "property",
+            "name": "baseAmmount",
+            "type": "Number",
+            "optional": 1,
+            "class": "Money",
+            "module": "Currency"
+        },
+        {
+            "file": "services\\currency.js",
+            "line": 221,
+            "description": "Resolves to a base currency object based on an effective date.",
+            "itemtype": "method",
+            "name": "baseCurrency",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Payload",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "data",
+                            "description": "Arguments.",
+                            "type": "String",
+                            "optional": true,
+                            "props": [
+                                {
+                                    "name": "effective",
+                                    "description": "ISO formatted date.\n    Default today.",
+                                    "type": "String",
+                                    "optional": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Resolves to base currency record.",
+                "type": "Promise"
+            },
+            "class": "Services.Currency",
+            "module": "Currency",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\currency.js",
+            "line": 274,
+            "description": "Resolves to a base currency money object populated with the base\ncurrency amount.",
+            "itemtype": "method",
+            "name": "convertCurrency",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "Arguments",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "fromCurrency",
+                                    "description": "Currency code from",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "amount",
+                                    "description": "Amount",
+                                    "type": "Number"
+                                },
+                                {
+                                    "name": "toCurrency",
+                                    "description": "Target currency code.\n    Default base.",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "effective",
+                                    "description": "ISO formatted date.\n    Default today.",
+                                    "type": "String",
+                                    "optional": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Resolves to {{#crossLink \"Money\"}}{{/crossLink}}",
+                "type": "Promise"
+            },
+            "class": "Services.Currency",
+            "module": "Currency",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\events.js",
+            "line": 45,
+            "description": "Initialize listener.",
+            "itemtype": "method",
+            "name": "listen",
+            "params": [
+                {
+                    "name": "client",
+                    "description": "Database client connection",
+                    "type": "Object"
+                },
+                {
+                    "name": "channel",
+                    "description": "Node server id",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "Responds to events",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Events",
+            "module": "Events",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\events.js",
+            "line": 66,
+            "description": "Subscribe to changes against objects with matching ids. If merge is\ntrue then previous subscription objects continue to listen,\notherwise previous subscription unsubscribed to.",
+            "itemtype": "method",
+            "name": "subscribe",
+            "params": [
+                {
+                    "name": "client",
+                    "description": "Database client connection",
+                    "type": "Object"
+                },
+                {
+                    "name": "subscription",
+                    "description": "If empty promise just resolves\n    without change.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "nodeId",
+                            "description": "Node server id.",
+                            "type": "String"
+                        },
+                        {
+                            "name": "eventKey",
+                            "description": "Client event key.",
+                            "type": "String"
+                        },
+                        {
+                            "name": "id",
+                            "description": "Subscription id.",
+                            "type": "String"
+                        },
+                        {
+                            "name": "merge",
+                            "description": "Merge previous subscription.\n    Default false.",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "ids",
+                    "description": "Ids to listen to",
+                    "type": "Array"
+                },
+                {
+                    "name": "tablename",
+                    "description": "Feather or table name to listen for\ninserts.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Events",
+            "module": "Events",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\events.js",
+            "line": 162,
+            "description": "Unsubscribe to event notifications by type.",
+            "itemtype": "method",
+            "name": "unsubscribe",
+            "params": [
+                {
+                    "name": "client",
+                    "description": "Database client connection",
+                    "type": "Object"
+                },
+                {
+                    "name": "id",
+                    "description": "Id to unsubscribe to.",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "type",
+                    "description": "Unsubscribe by 'subscription',\n    'instance' or 'node'. Default 'subscription'",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Events",
+            "module": "Events",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\feathers.js",
+            "line": 537,
+            "description": "Remove a feather definition from the database.",
+            "itemtype": "method",
+            "name": "deleteFeather",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "data",
+                            "description": "Payload data",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Name(s) of\n    feather(s) to delete",
+                                    "type": "String | Array"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Resolves to `true` if successful.",
+                "type": "Promise"
+            },
+            "class": "Services.Feathers",
+            "module": "Feathers",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\feathers.js",
+            "line": 698,
+            "description": "Return a feather definition, including inherited properties.",
+            "itemtype": "method",
+            "name": "getFeather",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "Data",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Feather name",
+                                    "type": "Object"
+                                },
+                                {
+                                    "name": "includeInherited",
+                                    "description": "Include inherited\n    or not. Default = true.",
+                                    "type": "Boolean",
+                                    "optional": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Reseloves to feather definition object.",
+                "type": "Promise"
+            },
+            "class": "Services.Feathers",
+            "module": "Feathers",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\feathers.js",
+            "line": 785,
+            "description": "Check whether a user is authorized to perform an action on a\nparticular feather (class) or object.\n\nAllowable actions: `canCreate`, `canRead`, `canUpdate`, `canDelete`\n\n`canCreate` will only check feather names.",
+            "itemtype": "method",
+            "name": "isAuthorized",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "data",
+                            "description": "Payload data",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "action",
+                                    "description": "",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "feather",
+                                    "description": "Feather name",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "id",
+                                    "description": "Object id",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "user",
+                                    "description": "Defaults to current user",
+                                    "type": "String",
+                                    "optional": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Resolves to Boolean.",
+                "type": "Promise"
+            },
+            "class": "Services.Feathers",
+            "module": "Feathers",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\feathers.js",
+            "line": 911,
+            "description": "Set authorazition for a particular authorization role. Must pass\ndata `id` or `feather`.",
+            "example": [
+                "\n    // Example payload\n    {\n        id: \"ExWIx6'\",\n        role: \"jdoe\",\n        actions:\n        {\n            canCreate: false,\n            canRead: true,\n            canUpdate: false,\n            canDelete: false\n        }\n    }"
+            ],
+            "itemtype": "method",
+            "name": "saveAuthorization",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "Payload data",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "id",
+                                    "description": "Object id (if record level)",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "feather",
+                                    "description": "Feather",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "role",
+                                    "description": "Role",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "isInternal",
+                                    "description": "Not a feather",
+                                    "type": "Boolean",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "isSilentError",
+                                    "description": "Silence errors",
+                                    "type": "Boolean",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "actions",
+                                    "description": "",
+                                    "type": "Object"
+                                },
+                                {
+                                    "name": "actions.canCreate",
+                                    "description": "",
+                                    "type": "Boolean",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "actions.canRead",
+                                    "description": "",
+                                    "type": "Boolean",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "actions.canUpdate",
+                                    "description": "",
+                                    "type": "Boolean",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "actions.canDelete",
+                                    "description": "",
+                                    "type": "Boolean",
+                                    "optional": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Feathers",
+            "module": "Feathers",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\feathers.js",
+            "line": 1222,
+            "description": "Create or update a persistence class. This function is idempotent.\nSubsequent saves will automatically drop properties no longer\npresent.",
+            "example": [
+                "\n// example payload:\n{\n    \"name\": \"Contact\",\n    \"description\": \"Contact data about a person\",\n    \"inherits\": \"Object\",\n    \"properties\": {\n        \"fullName\": {\n            \"description\": \"Full name\",\n            \"type\": \"string\"\n        },\n        \"birthDate\": {\n            \"description\": \"Birth date\",\n            \"type\": \"string\"\n            \"format\": \"date\"\n        },\n        \"isMarried\": {\n            \"description\": \"Marriage status\",\n            \"type\": \"boolean\"\n        },\n        \"dependents\": {\n            \"description\": \"Number of dependents\",\n            \"type\": \"integer\"\n        }\n    }\n}"
+            ],
+            "itemtype": "method",
+            "name": "saveFeather",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client.",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "spec",
+                            "description": "Feather specification(s).",
+                            "type": "Object | Array",
+                            "optional": true,
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Name",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "description",
+                                    "description": "Description",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "authorizations",
+                                    "description": "\nAuthorization spec. Defaults to grant all to everyone if\nundefined.",
+                                    "type": "Object | Array | Boolean",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "properties",
+                                    "description": "Feather properties",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "properties.description",
+                                    "description": "\nDescription",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "properties.type\nType.",
+                                    "description": "Standard types are string, boolean, number, date.\nObject is used for relation specs.",
+                                    "type": "String | Object"
+                                },
+                                {
+                                    "name": "properties.relation",
+                                    "description": "Feather name of\nrelation.",
+                                    "type": "String",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "properties.childOf",
+                                    "description": "Property name\n    on parent relation if one to many relation.",
+                                    "type": "String",
+                                    "optional": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "spec.properties.default",
+                    "description": "Default value\nor function name.",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Feathers",
+            "module": "Feathers",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\installer.js",
+            "line": 57,
+            "description": "Install a package in a specified directory.",
+            "itemtype": "method",
+            "name": "install",
+            "params": [
+                {
+                    "name": "datsource",
+                    "description": "Initialized datasource (catalog loaded)",
+                    "type": "Object"
+                },
+                {
+                    "name": "client",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "dir",
+                    "description": "Directory of manifest",
+                    "type": "String"
+                },
+                {
+                    "name": "user",
+                    "description": "User name",
+                    "type": "String"
+                },
+                {
+                    "name": "isSuper",
+                    "description": "Force as super user",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Installer",
+            "module": "Installer",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\installer.js",
+            "line": 515,
+            "description": "Uninstall a module.",
+            "itemtype": "method",
+            "name": "deleteModule",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "String | Object"
+                        },
+                        {
+                            "name": "data",
+                            "description": "",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Module name",
+                                    "type": "String"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Installer",
+            "module": "Installer",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\io.js",
+            "line": 292,
+            "description": "Export as json.",
+            "itemtype": "method",
+            "name": "json",
+            "params": [
+                {
+                    "name": "client",
+                    "description": "Database client",
+                    "type": "Object"
+                },
+                {
+                    "name": "feather",
+                    "description": "Feather name",
+                    "type": "String"
+                },
+                {
+                    "name": "properties",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "filter",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "dir",
+                    "description": "Target file directory",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Resolves filename of exported data",
+                "type": "Promise"
+            },
+            "class": "Services.Exporter",
+            "module": "IO",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\io.js",
+            "line": 336,
+            "description": "Export as Open Document spreadsheet.",
+            "itemtype": "method",
+            "name": "ods",
+            "params": [
+                {
+                    "name": "Database",
+                    "description": "client",
+                    "type": "Object"
+                },
+                {
+                    "name": "Feather",
+                    "description": "name",
+                    "type": "String"
+                },
+                {
+                    "name": "Properties",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "Filter",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "Target",
+                    "description": "file directory",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Filename",
+                "type": "String"
+            },
+            "class": "Services.Exporter",
+            "module": "IO",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\io.js",
+            "line": 361,
+            "description": "Export as Excel spreadsheet.",
+            "itemtype": "method",
+            "name": "xlsx",
+            "params": [
+                {
+                    "name": "Database",
+                    "description": "client",
+                    "type": "Object"
+                },
+                {
+                    "name": "Feather",
+                    "description": "name",
+                    "type": "String"
+                },
+                {
+                    "name": "Properties",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "Filter",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "Target",
+                    "description": "file directory",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Filename",
+                "type": "String"
+            },
+            "class": "Services.Exporter",
+            "module": "IO",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\io.js",
+            "line": 401,
+            "description": "Import JSON file.",
+            "itemtype": "method",
+            "name": "json",
+            "params": [
+                {
+                    "name": "Datasource",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "Database",
+                    "description": "client",
+                    "type": "Object"
+                },
+                {
+                    "name": "Feather",
+                    "description": "name",
+                    "type": "String"
+                },
+                {
+                    "name": "Source",
+                    "description": "file",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Error log",
+                "type": "Array"
+            },
+            "class": "Services.Importer",
+            "module": "IO",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\io.js",
+            "line": 488,
+            "description": "Import Excel file.",
+            "itemtype": "method",
+            "name": "xlsx",
+            "params": [
+                {
+                    "name": "Datasource",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "Database",
+                    "description": "client",
+                    "type": "Object"
+                },
+                {
+                    "name": "Feather",
+                    "description": "name",
+                    "type": "String"
+                },
+                {
+                    "name": "Source",
+                    "description": "file",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Error log",
+                "type": "Array"
+            },
+            "class": "Services.Importer",
+            "module": "IO",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\io.js",
+            "line": 649,
+            "description": "Import Open Document Spreadsheet file.",
+            "itemtype": "method",
+            "name": "ods",
+            "params": [
+                {
+                    "name": "Datasource",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "Database",
+                    "description": "client",
+                    "type": "Object"
+                },
+                {
+                    "name": "Feather",
+                    "description": "name",
+                    "type": "String"
+                },
+                {
+                    "name": "Source",
+                    "description": "file",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Error log",
+                "type": "Array"
+            },
+            "class": "Services.Importer",
+            "module": "IO",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\packager.js",
+            "line": 695,
+            "description": "Package a module and its submodules into a zip file.",
+            "itemtype": "method",
+            "name": "package",
+            "params": [
+                {
+                    "name": "client",
+                    "description": "Database client",
+                    "type": "Client"
+                },
+                {
+                    "name": "name",
+                    "description": "Module name",
+                    "type": "String"
+                },
+                {
+                    "name": "user",
+                    "description": "User name",
+                    "type": "String"
+                },
+                {
+                    "name": "sub",
+                    "description": "Sub module",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Packager",
+            "module": "Packager",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\profile.js",
+            "line": 48,
+            "description": "Resolves to user profile.",
+            "itemtype": "method",
+            "name": "getProfile",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "role",
+                            "description": "Username",
+                            "type": "Object"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Profile",
+            "module": "Profile",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\profile.js",
+            "line": 82,
+            "description": "Save a new user profile.",
+            "itemtype": "method",
+            "name": "saveProfile",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client",
+                            "props": [
+                                {
+                                    "name": "currentUser",
+                                    "description": "Current user",
+                                    "type": "Function",
+                                    "optional": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "etag",
+                            "description": "Version for optimistic locking",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "data",
+                            "description": "Profile data",
+                            "type": "Object",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Profile",
+            "module": "Profile",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\profile.js",
+            "line": 132,
+            "description": "Update a user profile.",
+            "itemtype": "method",
+            "name": "patchProfile",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "etag",
+                            "description": "Version for optimistic locking",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "data",
+                            "description": "Profile data",
+                            "type": "Object",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Profile",
+            "module": "Profile",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\role.js",
+            "line": 40,
+            "description": "Update whether role can log in.",
+            "itemtype": "method",
+            "name": "changeRoleLogin",
+            "params": [
+                {
+                    "name": "Payload",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.client",
+                    "description": "",
+                    "type": "Client",
+                    "optional": true
+                },
+                {
+                    "name": "payload.data",
+                    "description": "Data",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "payload.data.name",
+                    "description": "Role name",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "payload.data.isLogin",
+                    "description": "Is Login",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Role",
+            "module": "Role",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\role.js",
+            "line": 73,
+            "description": "Update role password.",
+            "itemtype": "method",
+            "name": "changeRolePassword",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "Data",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Role name",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "password",
+                                    "description": "Password",
+                                    "type": "String"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Role",
+            "module": "Role",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\role.js",
+            "line": 103,
+            "description": "Create role with password.",
+            "itemtype": "method",
+            "name": "createRole",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Role name",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "password",
+                                    "description": "Password",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "isLogin",
+                                    "description": "Default false",
+                                    "type": "Boolean",
+                                    "optional": true
+                                },
+                                {
+                                    "name": "isInherit",
+                                    "description": "Default false",
+                                    "type": "Boolean",
+                                    "optional": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Role",
+            "module": "Role",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\role.js",
+            "line": 156,
+            "description": "Drop role.",
+            "itemtype": "method",
+            "name": "dropRole",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Role name",
+                                    "type": "String"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Role",
+            "module": "Role",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\role.js",
+            "line": 183,
+            "description": "Grant one user or role privileges to another role.",
+            "itemtype": "method",
+            "name": "grantMembership",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "fromRole",
+                                    "description": "",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "toRole",
+                                    "description": "",
+                                    "type": "Boolean"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Role",
+            "module": "Role",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\role.js",
+            "line": 203,
+            "description": "Revoke one user or role privileges from another role.",
+            "itemtype": "method",
+            "name": "revokeMembership",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "fromRole",
+                                    "description": "",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "toRole",
+                                    "description": "",
+                                    "type": "Boolean"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Role",
+            "module": "Role",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\routes.js",
+            "line": 41,
+            "description": "Fetch all routes from the database and resolve in promise.",
+            "itemtype": "method",
+            "name": "getRoutes",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Routes",
+            "module": "Routes",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\services.js",
+            "line": 38,
+            "description": "Fetch all service scripts from the database and resolve in promise.",
+            "itemtype": "method",
+            "name": "getServices",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Services",
+            "module": "Routes",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\settings.js",
+            "line": 32,
+            "description": "Check to see if an etag is current.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "checkEtag",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "id",
+                            "description": "Object id",
+                            "type": "String"
+                        },
+                        {
+                            "name": "etag",
+                            "description": "Object etag",
+                            "type": "String"
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Object"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Settings",
+            "module": "Settings"
+        },
+        {
+            "file": "services\\settings.js",
+            "line": 68,
+            "description": "Return settings data.",
+            "itemtype": "method",
+            "name": "getSettings",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "data",
+                            "description": "Data",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Settings name",
+                                    "type": "String"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Object"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Settings",
+            "module": "Settings"
+        },
+        {
+            "file": "services\\settings.js",
+            "line": 141,
+            "description": "Resolve settings definitions as array of objects.",
+            "itemtype": "method",
+            "name": "getSettingsDefinition",
+            "params": [
+                {
+                    "name": "Request",
+                    "description": "payload",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.client",
+                    "description": "Database client",
+                    "type": "Client"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Settings",
+            "module": "Settings"
+        },
+        {
+            "file": "services\\settings.js",
+            "line": 169,
+            "description": "Resolves to object properties `definition` and `etag`.",
+            "itemtype": "method",
+            "name": "getSettingsRow",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "name",
+                            "description": "Settings name",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Settings",
+            "module": "Settings"
+        },
+        {
+            "file": "services\\settings.js",
+            "line": 197,
+            "description": "Create or upate settings.",
+            "itemtype": "method",
+            "name": "saveSettings",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "data",
+                            "description": "Payload data",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Name of settings",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "etag",
+                                    "description": "Etag",
+                                    "type": "String"
+                                },
+                                {
+                                    "name": "data",
+                                    "description": "Settings data",
+                                    "type": "Object"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Object"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Settings",
+            "module": "Settings"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 43,
+            "description": "Escape strings to prevent sql injection\nhttp://www.postgresql.org/docs/9.1/interactive/functions-string.html",
+            "itemtype": "method",
+            "name": "format",
+            "params": [
+                {
+                    "name": "Array",
+                    "description": "of replacement strings.",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "Escaped string.",
+                "type": "String"
+            },
+            "class": "String",
+            "module": "Tools"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 76,
+            "itemtype": "property",
+            "name": "PKCOL",
+            "type": "String",
+            "default": "\"_pk\"",
+            "static": 1,
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 83,
+            "description": "Return a SQL clause that adds checks for use authorization to a\n`WHERE` clause.",
+            "itemtype": "method",
+            "name": "buildAuthSql",
+            "params": [
+                {
+                    "name": "action",
+                    "description": "`canCreate`, `canRead`, `canUpdate` or\n`canDelete`",
+                    "type": "String"
+                },
+                {
+                    "name": "table",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "tokens",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "SQL clause",
+                "type": "String"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 158,
+            "description": "Object with properties mapping to each type of data type format\nrequiring special support on the server side. Each format has a\ndatabase type and default value.",
+            "itemtype": "property",
+            "name": "formats",
+            "type": "Object",
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 220,
+            "description": "Get the primary key for a given id.",
+            "itemtype": "method",
+            "name": "getKey",
+            "params": [
+                {
+                    "name": "Request",
+                    "description": "payload",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.id",
+                    "description": "Id to resolve",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.client",
+                    "description": "Database client",
+                    "type": "Object"
+                },
+                {
+                    "name": "flag",
+                    "description": "Request as super user. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 251,
+            "description": "Get an array of primary keys for a given feather and filter\ncriteria.",
+            "itemtype": "method",
+            "name": "getKeys",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "Feather name",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "filter",
+                            "description": "Filter",
+                            "type": "Filter",
+                            "optional": true
+                        },
+                        {
+                            "name": "showDeleted",
+                            "description": "Show deleted records",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Object"
+                        }
+                    ]
+                },
+                {
+                    "name": "flag",
+                    "description": "Request as super user. Default false.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 404,
+            "itemtype": "method",
+            "name": "isChildFeather",
+            "params": [
+                {
+                    "name": "feather",
+                    "description": "Feathe name",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 417,
+            "description": "Returns whether user is super user.",
+            "itemtype": "method",
+            "name": "isSuperUser",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "user",
+                            "description": "User. Defaults to current user",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "client",
+                            "description": "Database client",
+                            "type": "Client"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 451,
+            "description": "Returns authorizations for an object.",
+            "itemtype": "method",
+            "name": "getAuthorizations",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "Request payload",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "id",
+                            "description": "Object ID",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Promise"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 474,
+            "description": "Clear out primmary keys and convert snake case to camel case.",
+            "itemtype": "method",
+            "name": "sanitize",
+            "params": [
+                {
+                    "name": "Data",
+                    "description": "to sanitize",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Sanitized object",
+                "type": "Object"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 547,
+            "description": "Sets a user as super user or not.",
+            "itemtype": "method",
+            "name": "setSuperUser",
+            "params": [
+                {
+                    "name": "Payload",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.user",
+                    "description": "User",
+                    "type": "String"
+                },
+                {
+                    "name": "payload.client",
+                    "description": "Database client",
+                    "type": "Client"
+                },
+                {
+                    "name": "payload.isSuper",
+                    "description": "Default true",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 633,
+            "description": "Returns an `ORDER BY` SQL clause based sort criteria.",
+            "itemtype": "method",
+            "name": "processSort",
+            "params": [
+                {
+                    "name": "sort",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "tokens",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "SQL clause",
+                "type": "String"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 668,
+            "description": "Infer name of relation primary key column.",
+            "itemtype": "method",
+            "name": "relationColumn",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "Column name",
+                    "type": "String"
+                },
+                {
+                    "name": "relation",
+                    "description": "Feather name of relation",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 684,
+            "description": "Adds a token for a given column name to `tokens` and returns\n\"%I\" as the place holder value for a SQL clause.",
+            "itemtype": "method",
+            "name": "resolvePath",
+            "params": [
+                {
+                    "name": "column",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "tokens",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\tools.js",
+            "line": 710,
+            "description": "Object with properties mapping to each type of data type\nto database equivilents. Each format has a database `type` and\n`default` property.",
+            "itemtype": "property",
+            "name": "types",
+            "type": "Object",
+            "class": "Services.Tools",
+            "module": "Tools",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\workbooks.js",
+            "line": 50,
+            "description": "Remove a workbook from the database.",
+            "itemtype": "method",
+            "name": "deleteWorkbook",
+            "params": [
+                {
+                    "name": "Request",
+                    "description": "payload",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.user",
+                    "description": "User name",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "payload.data",
+                    "description": "Payload data",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "payload.data.name",
+                    "description": "Workbook to delete",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "payload.client",
+                    "description": "Database client",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Promise",
+                "type": "Object"
+            },
+            "class": "Services.Workbooks",
+            "module": "Workbooks",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\workbooks.js",
+            "line": 92,
+            "itemtype": "method",
+            "name": "getWorkbook",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "user",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "client",
+                            "description": "",
+                            "type": "Client"
+                        },
+                        {
+                            "name": "data",
+                            "description": "",
+                            "type": "Object",
+                            "props": [
+                                {
+                                    "name": "name",
+                                    "description": "Workbook name",
+                                    "type": "String"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Workbooks",
+            "module": "Workbooks",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\workbooks.js",
+            "line": 123,
+            "description": "Resolve to workbook definition(s). If name is passed in payload\nonly that workbook will be returned.",
+            "itemtype": "method",
+            "name": "getWorkbooks",
+            "params": [
+                {
+                    "name": "Request",
+                    "description": "payload",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.data",
+                    "description": "Workbook data",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "payload.data.name",
+                    "description": "Workbook name",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "payload.client",
+                    "description": "Database client",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Workbooks",
+            "module": "Workbooks",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\workbooks.js",
+            "line": 212,
+            "description": "Check whether a user is authorized to perform an action on a\nparticular feather (class) or object.\n\nAllowable actions: `canCreate`, `canRead`, `canUpdate\", `canDelete`\n\n`canCreate` will only check feather names.",
+            "itemtype": "method",
+            "name": "workbookIsAuthorized",
+            "params": [
+                {
+                    "name": "Payload",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.data",
+                    "description": "Payload data",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.data.action",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "payload.data.name",
+                    "description": "Workbook name",
+                    "type": "String"
+                },
+                {
+                    "name": "payload.data.user",
+                    "description": "User.",
+                    "type": "String"
+                },
+                {
+                    "name": "payload.client",
+                    "description": "Database client",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Workbooks",
+            "module": "Workbooks",
+            "namespace": "Services"
+        },
+        {
+            "file": "services\\workbooks.js",
+            "line": 281,
+            "description": "Create or upate workbooks.",
+            "itemtype": "method",
+            "name": "saveWorkbook",
+            "params": [
+                {
+                    "name": "Payload",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.user",
+                    "description": "User name.",
+                    "type": "String"
+                },
+                {
+                    "name": "payload.data",
+                    "description": "Workbook data.",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.data.specs",
+                    "description": "Workbook\nspecification(s).",
+                    "type": "Object | Array"
+                },
+                {
+                    "name": "payload.client",
+                    "description": "Database client",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Services.Workbooks",
+            "module": "Workbooks",
+            "namespace": "Services"
+        },
+        {
+            "file": "database.js",
+            "line": 70,
+            "description": "Authenticates user against database credentials, and if successful\nresolves to\n{{#crossLink \"User\"}}{{/crossLink}}.\nNote this function does not create a persistant client connection.\nAll actual client connections are handled by the service account.",
+            "itemtype": "method",
+            "name": "authenticate",
+            "params": [
+                {
+                    "name": "username",
+                    "description": ""
+                },
+                {
+                    "name": "password",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Database",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 136,
+            "itemtype": "property",
+            "name": "client",
+            "type": "Client",
+            "final": 1,
+            "class": "Connection",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 141,
+            "description": "Called when transaction is completed and returns client to the pool.",
+            "itemtype": "method",
+            "name": "done",
+            "class": "Connection",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 159,
+            "description": "Unique id to reference which node-postgres client to use in a\ntransaction.",
+            "itemtype": "property",
+            "name": "clientId",
+            "type": "string",
+            "final": 1,
+            "class": "Client",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 166,
+            "description": "Returns the user name of the user who made a request. Necessary for\nFeatherbone authorization management.",
+            "itemtype": "method",
+            "name": "currentUser",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Client",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 172,
+            "description": "Prevents recursive triggers from committing until all are done.",
+            "itemtype": "method",
+            "name": "isTriggering",
+            "params": [
+                {
+                    "name": "flag",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Client",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 178,
+            "description": "Indicates whether client is currently wrapped in a transaction.",
+            "itemtype": "method",
+            "name": "wrapped",
+            "params": [
+                {
+                    "name": "flag",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Client",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 184,
+            "description": "Resolves to a\n{{#crossLink \"Connection\"}}{{/crossLink}} using\nthe configured postgres user account. If `referenceOnly`\nis passed as `true` then the connection's client value is a\nreference {{#crossLink \"client\"}}{{/crossLink}}, otherwise the\nclient is an actual\n<a href='https://node-postgres.com/api/client'>postgres client</a>\nconnection.\nThe reference client is necessary to prevent SQL injection\nwithin a\n{{#crossLink \"datasource\"}}{{/crossLink}}\n{{#crossLink \"datasource/request:method\"}}{{/crossLink}} called by\nservices written in the web client and stored in the database,\nwhere otherwise a \"real\" postgres client is used to execute SQL\nstatements for hard coded services such as\n{{#crossLink \"Services.CRUD\"}}{{/crossLink}},\n{{#crossLink \"Services.Events\"}}{{/crossLink}} and\n{{#crossLink \"Services.Installer\"}}{{/crossLink}}.",
+            "itemtype": "method",
+            "name": "connect",
+            "params": [
+                {
+                    "name": "referenceOnly",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Database",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 289,
+            "itemtype": "property",
+            "name": "name",
+            "type": "String",
+            "class": "User",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 293,
+            "itemtype": "property",
+            "name": "isSuper",
+            "type": "Boolean",
+            "class": "User",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 297,
+            "itemtype": "property",
+            "name": "email",
+            "type": "String",
+            "class": "User",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 301,
+            "itemtype": "property",
+            "name": "phone",
+            "type": "String",
+            "class": "User",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 305,
+            "description": "Return user data.",
+            "itemtype": "method",
+            "name": "deserializeUser",
+            "params": [
+                {
+                    "name": "username",
+                    "description": "User account or role name",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "User account info",
+                "type": "User"
+            },
+            "class": "Database",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 344,
+            "description": "Resolve a reference {{#crossLink \"Client\"}}{{/crossLink}}\nto an actual\n<a href='https://node-postgres.com/api/client'>postgres client</a>\nto execute SQL.",
+            "itemtype": "method",
+            "name": "getClient",
+            "params": [
+                {
+                    "name": "client",
+                    "description": "",
+                    "type": "Client"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Database",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 355,
+            "description": "Resolve to a\n<a href='https://node-postgres.com/api/pool'>connection pool</a>\nfrom which to request a connection.",
+            "itemtype": "method",
+            "name": "getPool",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Database",
+            "module": "Database"
+        },
+        {
+            "file": "datasource.js",
+            "line": 138,
+            "itemtype": "property",
+            "name": "TRIGGER_BEFORE",
+            "type": "Integer",
+            "static": 1,
+            "final": 1,
+            "default": "1",
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 147,
+            "itemtype": "property",
+            "name": "TRIGGER_AFTER",
+            "type": "Integer",
+            "static": 1,
+            "final": 1,
+            "default": "2",
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 156,
+            "description": "Fetch feather catalog.",
+            "itemtype": "method",
+            "name": "getCatalog",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 181,
+            "description": "Fetch array of all services.",
+            "itemtype": "method",
+            "name": "getServices",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 203,
+            "description": "Fetch array of all routes.",
+            "itemtype": "method",
+            "name": "getRoutes",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 225,
+            "description": "Initialize listener. Message is passed to callback.\nExposes {{#crossLink \"Services.Events/listen:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "listen",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 262,
+            "description": "Unsubcribe from object or by type.\nExposes\n{{#crossLink \"Services.Events/unsubscribe:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "unsubscribe",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 307,
+            "description": "Lock record. Resolves to `true` if successful.\nExposes {{#crossLink \"Services.CRUD/lock:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "lock",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Object id",
+                    "type": "String"
+                },
+                {
+                    "name": "user",
+                    "description": "User name",
+                    "type": "String"
+                },
+                {
+                    "name": "eventKey",
+                    "description": "Browser instance event key",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 354,
+            "description": "Unlock one or more records.\nExposes {{#crossLink \"Services.CRUD/unlock:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "unlock",
+            "params": [
+                {
+                    "name": "Criteria",
+                    "description": "for what to unlock (at least one)",
+                    "type": "Object"
+                },
+                {
+                    "name": "criteria.id",
+                    "description": "Object id",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "criteria.username",
+                    "description": "User name",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "criteria.eventKey",
+                    "description": "Event key",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 399,
+            "description": "Install a module from a specified manifest file name.\nExposes {{#crossLink \"Services.Installer/install:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "install",
+            "params": [
+                {
+                    "name": "Manifest",
+                    "description": "filename.",
+                    "type": "String"
+                },
+                {
+                    "name": "User",
+                    "description": "name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Promise",
+                "type": "Object"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 444,
+            "description": "Package a module.\nExposes {{#crossLink \"Services.Packager/package:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "package",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Module name",
+                    "type": "String"
+                },
+                {
+                    "name": "username",
+                    "description": "User name",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 488,
+            "description": "Export data.\nExposes {{#crossLink \"Services.Exporter\"}}{{/crossLink}} via datasource.",
+            "itemtype": "method",
+            "name": "export",
+            "params": [
+                {
+                    "name": "Feather",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "properties",
+                    "description": "",
+                    "type": "Array",
+                    "optional": true
+                },
+                {
+                    "name": "filter",
+                    "description": "",
+                    "type": "Filter"
+                },
+                {
+                    "name": "dir",
+                    "description": "Target directory",
+                    "type": "String"
+                },
+                {
+                    "name": "format",
+                    "description": "`json`, `ods` or `xlsx`",
+                    "type": "String"
+                },
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 553,
+            "description": "Import data.\nExposes {{#crossLink \"Services.Importer\"}}{{/crossLink}} via\ndatasource.",
+            "itemtype": "method",
+            "name": "import",
+            "params": [
+                {
+                    "name": "feather",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "format",
+                    "description": "`json`, `ods` or `xlsx`",
+                    "type": "String"
+                },
+                {
+                    "name": "filename",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 603,
+            "description": "Check user and password.\nExposes {{#crossLink \"Database/authenticate:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "authenticate",
+            "params": [
+                {
+                    "name": "Username",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "Password",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Promise",
+                "type": "Object"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 615,
+            "description": "Resolves to {{#crossLink \"User\"}}{{/crossLink}} for passport\nmanagement. Exposes\n{{#crossLink \"Database/deserializeUser:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "deserializeUser",
+            "params": [
+                {
+                    "name": "Username",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 627,
+            "description": "Return a configured postgres pool. Exposes\n{{#crossLink \"Database/getPool:method\"}}{{/crossLink}}\nvia datasource.",
+            "itemtype": "method",
+            "name": "getPool",
+            "return": {
+                "description": "Promise",
+                "type": "Object"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 648,
+            "description": "This function is the gateway for all\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}} requests and data\nservice function calls. {{#crossLink \"Datasource\"}}{{/crossLink}} is\nattached to the `f` global variable in scripts to expose this\ncapability.\n\n### CRUD Methods\nThese requests include the capitalized feather as the `name` argument.\nThe following methods are supported:\n\n#### POST (Create)\nUse this method to insert new records. Any properties not included\nwill be populated by default values. The\n{{#crossLink \"Promise\"}}{{/crossLink}} will resolve to a `PATCH` array\ndescribing all changes made on the server side due to feather defaults\nand changes caused by triggers. This `PATCH` can be applied by the\noriginating requestor to ensure its own copy of the record exactly\nmatches the server.The `id` will be checked for uniqueness, along with\nany properties on the feather set for `isUnique` equals `true`.\n\n    let ds = f.datasource;\n\n    function callback (resp) {\n        console.log(\"PATCH->\", resp);\n    }\n\n    function error (err) {\n        console.error(\"ERROR->\", err);\n    }\n\n    ds.request({\n        method: \"POST\",\n        name: \"Contact\",\n        data: {\n            id: \"m7akxiwvz22a\",\n            firstName: \"Caleb\",\n            lastName: \"Johnstone\"\n        }\n    }).then(callback).catch(error);\n\nIf the code above is run twice an error will be thrown because of\na unique id violation, however, if the record id is included\nin a `POST` request, the request will be treated as an \"Upsert\" call,\nwhich is to say if a record with that id is not found it will be\ninserted, if one is found the values included in the data will be\nupdated on the existing record. Post requests that include `id`\nare therefore idempotent.\n\n    ...\n\n    ds.request({\n        method: \"POST\",\n        name: \"Contact\",\n        id: \"m7akxiwvz22a\", // Indicate upsert behavior\n        data: {\n            firstName: \"Caleb\",\n            lastName: \"Johnstone\"\n        }\n    }).then(callback).catch(error);\n\n#### GET (Read)\nUse `GET` to retreive one or more records.\n\nRetreive one result by refering to the record id\n\n    ...\n\n    f.datasource.request({\n        method: \"GET\",\n        name: \"Contact\",\n        id: \"m7akxiwvz22a\"\n    }).then(callback).catch(error);\n\nExcluding the `id` will return all records\n\n    ...\n\n    f.datasource.request({\n        method: \"GET\",\n        name: \"Contact\"\n    }).then(callback).catch(error);\n\nRequests can be paginated so records are returned in small groups\nusing the {{#crossLink \"Filter\"}}{{/crossLink}} property.\n\n    ...\n\n    f.datasource.request({\n        method: \"GET\",\n        name: \"Contact\",\n        filter: {\n            offset: 20, // Start page\n            limit: 10   // Page length\n        }\n    }).then(callback).catch(error);\n\nOf course filters can also logically limit and sort\n\n    ...\n\n    f.datasource.request({\n        method: \"GET\",\n        name: \"Contact\",\n        filter: {\n            criteria: [{\n                property: \"lastName\",\n                operation: \"equals\",\n                criteria: \"Doe\"\n            }],\n            sort: [{\n                property: \"firstName\",\n                order: \"ASC\"\n            }]\n        }\n    }).then(callback).catch(error);\n\n#### PATCH (Update)\n\nUpdate records using `PATCH` where the `data` argument follows the\n<a href='https://tools.ietf.org/html/rfc6902'>rfc 6092</a>\nspecification for JSON patch updates. As with `POST`, any property\nvalues that are updated as a side effect or wind up with different\nvalues than requested will be returned in a patch containing all\nthe differences.\n\n    ...\n\n    ds.request({\n        method: \"PATCH\",\n        name: \"Contact\",\n        id: \"m7akxiwvz22a\", // Which record to patch\n        data: [{\n            op: \"replace\",\n            path: \"/firstName\",\n            value: \"Joshua\"\n        }]\n    }).then(callback).catch(error);\n\n#### DELETE\n\nDelete a record simply by referencing the `id`.\n\n    ...\n\n    ds.request({\n        method: \"DELETE\",\n        name: \"Contact\",\n        id: \"m7akxiwvz22a\"\n    }).then(callback).catch(error);\n\n### Calling Registered Functions\n\nRequests can also call registered functions to run procedural logic.\nThey are differentiated from CRUD requests by use of a camel case\nname argument. See\n{{#crossLink \"Datasource/registerFunction:method\"}}{{/crossLink}}\nfor more information.\n\n    // Requesting currency conversion\n    ...\n\n    ds.request({\n        method: \"POST\",\n        name: \"convertCurrency\",\n        data: {\n            fromCurrency: \"EUR\",\n            amount: \"100\"\n        }\n    }).then(callback).catch(error);",
+            "itemtype": "method",
+            "name": "request",
+            "params": [
+                {
+                    "name": "Payload",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "payload.name",
+                    "description": "Name of feather or registered function",
+                    "type": "String"
+                },
+                {
+                    "name": "payload.method",
+                    "description": "Method to perform: `GET`, `POST`,\n`PUT`, `PATCH` or `DELETE`",
+                    "type": "String"
+                },
+                {
+                    "name": "payload.id",
+                    "description": "Identifier for `GET`, `PATCH` and `DELETE`",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "payload.data",
+                    "description": "Required for `POST` and `PATCH`\ncalls",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "payload.filter",
+                    "description": "Filter for `GET` requests",
+                    "type": "Filter",
+                    "optional": true
+                },
+                {
+                    "name": "payload.client",
+                    "description": "Database client. If undefined one\nwill be intialized by default and wrapped in a transaction if necessary.",
+                    "type": "Client",
+                    "optional": true
+                },
+                {
+                    "name": "isSuperUser",
+                    "description": "Bypass authorization checks.\nDefault false.",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 1421,
+            "description": "Register a function that can be called as a service by a\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}}\nso that data services can be made available to other data services\nadded via data service scripts. As a rule, all\nfunctions must accept one {{#crossLink \"Object\"}}{{/crossLink}}\nas an argument whose properties can be used as arguments within the\ntarget function. The\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}} will\nautomatically append its\n{{#crossLink \"Client\"}}{{/crossLink}}\nto the object argument to use\nfor executing queries or other requests within the target function.\n\nThe function should return a {{#crossLink \"Promise\"}}{{/crossLink}}\nthat resolves to the result of the function, if any.\n\nFunction names should be camel case which distinquishes them from\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}} requests\nwhere a capitalized feather name is used.\n\nThe following is list of functions that come pre-registered from hard\ncoded services:\n* __GET__\n  * {{#crossLink \"Services.Currency/baseCurrency:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Currency/convertCurrency:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Tools/getAuthorizations:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Feathers/getFeather:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Profile/getProfile:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Routes/getRoutes:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Services/getServices:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Settings/getSettings:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Settings/getSettingsRow:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Settings/getSettingsDefinition:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/getWorkbook:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/getWorkbooks:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Feathers/isAuthorized:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Tools/isSuperUser:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/workbookIsAuthorized:method\"}}\n  {{/crossLink}}\n* __PUT__\n  * {{#crossLink \"Services.Feathers/saveAuthorization:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Feathers/saveFeather:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Profile/saveProfile:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Settings/saveSettings:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/saveWorkbook:method\"}}\n  {{/crossLink}}\n* __POST__\n  * {{#crossLink \"Services.Role/changeRoleLogin:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/changeRolePassword:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/createRole:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/dropRole:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/grantMembership:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/revokeMembership:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Feathers/saveAuthorization:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Events/subscribe:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Events/unsubscribe:method\"}}\n  {{/crossLink}}\n* __PATCH__\n  * {{#crossLink \"Services.Profile/patchProfile:method\"}}\n  {{/crossLink}}\n* __DELETE__\n  * {{#crossLink \"Services.Feathers/deleteFeather:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Installer/deleteModule:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/deleteWorkbook:method\"}}\n  {{/crossLink}}",
+            "example": [
+                "\n    // Create a function that updates something specific\n    // (Assumed here to be executed within a data service script)\n    function fn (obj) { // Note the single object argument\n        return new Promise(function (resolve, reject) {\n            function callback() {\n                resolve(true); // Success results in boolean\n            }\n\n            // \"f\" is the global variable available in scripts\n            f.datasource.request({\n                method: \"PATCH\",\n                name: \"Foo\", // Capitalized name indicates CRUD request\n                client: obj.client, // Client is automatically included\n                id: obj.id, // Id is unique argument for this function\n                data: [{\n                    op: \"replace\",\n                    path: \"/status\",\n                    value: \"Closed\"\n                }]\n            }).then(callback).catch(reject);\n        });\n    }\n\n    // Register the function\n    f.datasource.registerFunction(\"POST\", \"closeFoo\", fn);\n\n    // Define a callback to use when calling our function\n    function callback (resp) {\n        console.log(\"Response->\", resp);\n    }\n\n    // Trap for errors\n    function error (err) {\n        console.error(\"Erorr->\", err);\n    }\n\n    // Execute a request that calls our function and sends a response\n    // via the callback\n    datasource.request({\n        method: \"POST\",\n        name: \"closeFoo\",\n        data: {\n            id: \"HTJ28n\"\n        }\n    }).then(callback).catch(error);"
+            ],
+            "itemtype": "method",
+            "name": "registerFunction",
+            "params": [
+                {
+                    "name": "method",
+                    "description": "`GET`, `POST`, `PUT`, `PATCH`, or `DELETE`",
+                    "type": "String"
+                },
+                {
+                    "name": "name",
+                    "description": "Camel case function name",
+                    "type": "String"
+                },
+                {
+                    "name": "func",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "Receiver",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 1570,
+            "description": "When a trigger is included as an argument in `registerFunction`,\nthen the registered function is executed before or after a feather\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}}\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}}\naccording to the method and trigger type. The `method`\ndetermines whether the function applies to a `POST`, `PATCH` or `DELETE`\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}}\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}},\nand the `trigger` determines whether the function is\nexecuted before or after the\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}}\nrequest is processed. The function must take in one\n{{#crossLink \"Object\"}}{{/crossLink}} as its sole argument\nand return a {{#crossLink \"Promise\"}}{{/crossLink}}.\n\nThe following types of declarative business logic can be executed by\nregistered triggers:\n* Validate values\n* Change values before processig (`before` trigger only)\n* Make data requests that create, update or delete other records.\n\nThe design is meant to work similar to database triggers, except that\nobject inheritence is honored so triggers will also be inherited by\nfeather sub classes. Note this logic is declarative by definition, where\na change caused by one trigger can potentially cascade to many other\nrecords which also have triggers.\n\nThe function called in a trigger will be passed an\nobject argument that includes the property `newRec` for `POST` and\n`PATCH` requests that contains new record properties that will be\ncommitted, and `oldRec` for `PATCH` and `DELETE` calls that contains\nthe property values of the record before the request was made.\n\nTo handle an invalid request, simply throw an error and\nthe entire originating request transaction will be rolled back.\n\n    let ds = f.datasource;\n\n    function (obj) {\n        return new Promise(function (resolve) {\n            if (newRec.lowest >= newRec.highest) {\n                throw new Error(\n                    \"'Lowest' value must be less than 'highest'\"\n                );\n            }\n\n            resolve(); // Make sure to always resolve your promises!\n        });\n    }\n\n    // Apply on `POST` record creation...\n    ds.registerFunction(\"POST\", \"Foo\", fn, ds.TRIGGER_BEFORE);\n\nIf values on `newRec` are changed in a `before` trigger, those\nvalues are what will be committed, which provides a way to intercept\nand change values on proposed requests.\n\n    let ds = f.datasource;\n\n    function (obj) {\n        return new Promise(function (resolve) {\n            if (newRec.lowest >= newRec.highest) {\n                newRec.highest = newRec.lowest + 1;\n            }\n\n            resolve();\n        });\n    }\n\n    // We can run this same logic on both `POST` and `PATCH`\n    ds.registerFunction(\"POST\", \"Foo\", fn, ds.TRIGGER_BEFORE);\n    ds.registerFunction(\"PATCH\", \"Foo\", fn, ds.TRIGGER_BEFORE);\n\nIf applicable, Properties can be compared between `oldRec` and `newRec`\nto determine if changes have been proposed.\n\n    let ds = f.datasource;\n\n    function (obj) {\n        return new Promise(function (resolve) {\n            if (newRec.name !== oldRec.name) {\n                throw new Error(\"Name cannot be changed\");\n            }\n\n            resolve();\n        });\n    }\n\n    // Note this one applies only to `PATCH` updates\n    ds.registerFunction(\"PATCH\", \"Foo\", fn, ds.TRIGGER_BEFORE);\n\nIf other records will be changed as a consequence of a request, it is\na good practice to do this in an `after` trigger after all proposed\nproperty changes, including default values, have already been\nproceessed.\n\n    let ds = f.datasource;\n\n    function (obj) {\n        return new Promise(function (resolve, reject) {\n            let msg;\n\n            // Create a log of some change. Note the updated\n            // time and user aren't set until after the update\n            // has been completed, so must use `after` trigger\n            if (newRec.description !== oldRec.description) {\n                msg = (\n                    \"Description changed from '\" +\n                    oldRec.description + \"' to '\" +\n                    newRec.description + \"' by \" +\n                    newRec.updatedBy + \".\"\n                );\n                fs.request({\n                    method: \"POST\",\n                    name: \"FooLog\",\n                    client: obj.client,\n                    data: {\n                        message: msg,\n                        logTime: newRec.updated\n                    }\n                }).then(resolve).catch(reject);\n\n                return;\n            }\n\n            resolve();\n        });\n    }\n\n    // Note this one applies only to `PATCH` updates\n    ds.registerFunction(\"PATCH\", \"Foo\", fn, ds.TRIGGER_AFTER);\n\nNote any particular feather only supports one registered function per\nmethod and trigger type.",
+            "itemtype": "method",
+            "name": "registerFunction",
+            "params": [
+                {
+                    "name": "method",
+                    "description": "`POST`, `PATCH`, or `DELETE`",
+                    "type": "String"
+                },
+                {
+                    "name": "name",
+                    "description": "Upper case feather name",
+                    "type": "String"
+                },
+                {
+                    "name": "func",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "trigger",
+                    "description": "{{#crossLink\n\"Datasource/TRIGGER_BEFORE:property\"}}{{/crossLink}} or\n{{#crossLink \"Datasource/TRIGGER_AFTER:property\"}}{{/crossLink}}",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "Receiver",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 1728,
+            "itemtype": "method",
+            "name": "registeredFunctions",
+            "return": {
+                "description": "Object listing registered functions",
+                "type": "Object"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 1743,
+            "itemtype": "method",
+            "name": "settings",
+            "return": {
+                "description": "Internal settings object maintained by service",
+                "type": "Settings"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        }
+    ],
+    "warnings": []
+}

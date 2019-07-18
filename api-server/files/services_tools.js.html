@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>services\tools.js - Featherbone Server</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-server.png" title="Featherbone Server"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Client.html">Client</a></li>
+                                <li><a href="../classes/Connection.html">Connection</a></li>
+                                <li><a href="../classes/Database.html">Database</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/Money.html">Money</a></li>
+                                <li><a href="../classes/Services.API.html">Services.API</a></li>
+                                <li><a href="../classes/Services.CRUD.html">Services.CRUD</a></li>
+                                <li><a href="../classes/Services.Currency.html">Services.Currency</a></li>
+                                <li><a href="../classes/Services.Events.html">Services.Events</a></li>
+                                <li><a href="../classes/Services.Exporter.html">Services.Exporter</a></li>
+                                <li><a href="../classes/Services.Feathers.html">Services.Feathers</a></li>
+                                <li><a href="../classes/Services.Importer.html">Services.Importer</a></li>
+                                <li><a href="../classes/Services.Installer.html">Services.Installer</a></li>
+                                <li><a href="../classes/Services.Packager.html">Services.Packager</a></li>
+                                <li><a href="../classes/Services.Profile.html">Services.Profile</a></li>
+                                <li><a href="../classes/Services.Role.html">Services.Role</a></li>
+                                <li><a href="../classes/Services.Routes.html">Services.Routes</a></li>
+                                <li><a href="../classes/Services.Services.html">Services.Services</a></li>
+                                <li><a href="../classes/Services.Settings.html">Services.Settings</a></li>
+                                <li><a href="../classes/Services.Tools.html">Services.Tools</a></li>
+                                <li><a href="../classes/Services.Workbooks.html">Services.Workbooks</a></li>
+                                <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/User.html">User</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/API.html">API</a></li>
+                                <li><a href="../modules/CRUD.html">CRUD</a></li>
+                                <li><a href="../modules/Currency.html">Currency</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/Events.html">Events</a></li>
+                                <li><a href="../modules/Feathers.html">Feathers</a></li>
+                                <li><a href="../modules/Installer.html">Installer</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/Packager.html">Packager</a></li>
+                                <li><a href="../modules/Profile.html">Profile</a></li>
+                                <li><a href="../modules/Role.html">Role</a></li>
+                                <li><a href="../modules/Routes.html">Routes</a></li>
+                                <li><a href="../modules/Settings.html">Settings</a></li>
+                                <li><a href="../modules/Tools.html">Tools</a></li>
+                                <li><a href="../modules/Workbooks.html">Workbooks</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: services\tools.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint node, this*/
+/**
+    @module Tools
+*/
+(function (exports) {
+    &quot;use strict&quot;;
+
+    const f = require(&quot;../../common/core&quot;);
+    const {Database} = require(&quot;../database&quot;);
+    const ops = Object.keys(f.operators);
+    const format = require(&quot;pg-format&quot;);
+
+    const db = new Database();
+    const tools = {};
+
+    function curry(...args1) {
+        let fn = args1[0];
+        let args = args1[1];
+        let ary = [];
+
+        return function () {
+            return fn.apply(this, args.concat(ary.slice.call(args1)));
+        };
+    }
+
+    /**
+        Escape strings to prevent sql injection
+        http://www.postgresql.org/docs/9.1/interactive/functions-string.html
+        @method format
+        @for String
+        @param {Array} Array of replacement strings.
+        @return {String} Escaped string.
+    */
+    String.prototype.format = function (ary) {
+        let params = [];
+        let i = 0;
+
+        ary = ary || [];
+        ary.unshift(this);
+
+        while (ary[i]) {
+            i += 1;
+            params.push(&quot;$&quot; + i);
+        }
+
+        return curry(format, ary)();
+    };
+
+    /**
+        @class Tools
+        @constructor
+        @namespace Services
+    */
+    exports.Tools = function () {
+
+        // ..........................................................
+        // PUBLIC
+        //
+        /**
+            @property PKCOL
+            @type String
+            @default &quot;_pk&quot;
+            @static
+        */
+        tools.PKCOL = &quot;_pk&quot;;
+        /**
+            Return a SQL clause that adds checks for use authorization to a
+            &#x60;WHERE&#x60; clause.
+            @method buildAuthSql
+            @param {String} action &#x60;canCreate&#x60;, &#x60;canRead&#x60;, &#x60;canUpdate&#x60; or
+            &#x60;canDelete&#x60;
+            @param {String} table
+            @param {Array} tokens
+            @return {String} SQL clause
+        */
+        tools.buildAuthSql = function (action, table, tokens) {
+            let actions;
+            let i = 7;
+            let msg;
+            let sql;
+
+            actions = [
+                &quot;canRead&quot;,
+                &quot;canUpdate&quot;,
+                &quot;canDelete&quot;
+            ];
+
+            if (actions.indexOf(action) === -1) {
+                msg = &quot;Invalid authorization action for object \&quot;&quot;;
+                msg += action + &quot;\&quot;&quot;;
+                throw msg;
+            }
+
+            while (i) {
+                i -= 1;
+                tokens.push(table);
+            }
+
+            action = action.toSnakeCase();
+
+            sql = (
+                &quot; AND _pk IN (&quot; +
+                &quot;SELECT %I._pk &quot; +
+                &quot;FROM %I &quot; +
+                &quot;  JOIN \&quot;$feather\&quot; &quot; +
+                &quot;  ON \&quot;$feather\&quot;.id::regclass::oid=%I.tableoid &quot; +
+                &quot;WHERE EXISTS (&quot; +
+                &quot;  SELECT &quot; + action + &quot; FROM ( &quot; +
+                &quot;    SELECT &quot; + action +
+                &quot;    FROM \&quot;$auth\&quot;, pg_authid&quot; +
+                &quot;    WHERE pg_has_role($1, pg_authid.oid, &#x27;member&#x27;)&quot; +
+                &quot;      AND \&quot;$auth\&quot;.object_pk &quot; +
+                &quot;        IN (\&quot;$feather\&quot;.parent_pk, %I._pk)&quot; +
+                &quot;      AND \&quot;$auth\&quot;.role=pg_authid.rolname&quot; +
+                &quot;      AND &quot; + action + &quot; IS NOT NULL &quot; +
+                &quot;    ORDER BY &quot; + action + &quot; DESC&quot; +
+                &quot;    LIMIT 1&quot; +
+                &quot;  ) AS data&quot; +
+                &quot;  WHERE &quot; + action +
+                &quot;) &quot; +
+                &quot;EXCEPT &quot; +
+                &quot;SELECT %I._pk &quot; +
+                &quot;FROM %I &quot; +
+                &quot;WHERE EXISTS ( &quot; +
+                &quot;  SELECT &quot; + action + &quot; FROM (&quot; +
+                &quot;    SELECT &quot; + action +
+                &quot;    FROM \&quot;$auth\&quot;, pg_authid&quot; +
+                &quot;    WHERE pg_has_role($1, pg_authid.oid, &#x27;member&#x27;)&quot; +
+                &quot;      AND \&quot;$auth\&quot;.object_pk=%I._pk&quot; +
+                &quot;      AND \&quot;$auth\&quot;.role=pg_authid.rolname&quot; +
+                &quot;      AND &quot; + action + &quot; IS NOT NULL &quot; +
+                &quot;    ORDER BY &quot; + action + &quot; DESC&quot; +
+                &quot;    LIMIT 1 &quot; +
+                &quot;  ) AS data &quot; +
+                &quot;WHERE NOT &quot; + action + &quot;))&quot;
+            );
+
+            return sql;
+        };
+
+        /**
+            Object with properties mapping to each type of data type format
+            requiring special support on the server side. Each format has a
+            database type and default value.
+            @property formats
+            @type Object
+        */
+        tools.formats = {
+            integer: {
+                type: &quot;integer&quot;,
+                default: 0
+            },
+            long: {
+                type: &quot;bigint&quot;,
+                default: 0
+            },
+            float: {
+                type: &quot;real&quot;,
+                default: 0
+            },
+            double: {
+                type: &quot;double precision&quot;,
+                default: 0
+            },
+            string: {
+                type: &quot;text&quot;,
+                default: &quot;&#x27;&#x27;&quot;
+            },
+            boolean: {
+                type: &quot;boolean&quot;,
+                default: &quot;false&quot;
+            },
+            date: {
+                type: &quot;date&quot;,
+                default: &quot;today()&quot;
+            },
+            dateTime: {
+                type: &quot;timestamp with time zone&quot;,
+                default: &quot;now()&quot;
+            },
+            enum: {
+                type: &quot;text&quot;,
+                default: &quot;&quot;
+            },
+            color: {
+                type: &quot;text&quot;,
+                default: &quot;#000000&quot;
+            },
+            money: {
+                type: &quot;mono&quot;,
+                default: &quot;money()&quot;
+            },
+            lock: {
+                type: &quot;lock&quot;,
+                default: null
+            },
+            object: {
+                type: &quot;json&quot;,
+                default: null
+            }
+        };
+
+        /**
+            Get the primary key for a given id.
+            @method getKey
+            @param {Object} Request payload
+            @param {Object} payload.id Id to resolve
+            @param {Object} payload.client Database client
+            @param {Boolean} [flag] Request as super user. Default false.
+            @return {Promise}
+        */
+        tools.getKey = function (obj, isSuperUser) {
+            return new Promise(function (resolve, reject) {
+                let payload;
+
+                payload = {
+                    name: obj.name || &quot;Object&quot;,
+                    filter: {criteria: [{property: &quot;id&quot;, value: obj.id}]},
+                    client: obj.client,
+                    showDeleted: obj.showDeleted
+                };
+
+                function callback(keys) {
+                    resolve(keys[0]);
+                }
+
+                tools.getKeys(payload, isSuperUser).then(
+                    callback
+                ).catch(
+                    reject
+                );
+            });
+        };
+        /**
+            Get an array of primary keys for a given feather and filter
+            criteria.
+            @method getKeys
+            @param {Object} payload Request payload
+            @param {Object} payload.name Feather name
+            @param {Filter} [payload.filter] Filter
+            @param {Boolean} [payload.showDeleted] Show deleted records
+            @param {Object} payload.client Database client
+            @param {Boolean} [flag] Request as super user. Default false.
+            @return {Promise}
+        */
+        tools.getKeys = function (obj, isSuperUser) {
+            return new Promise(function (resolve, reject) {
+                let part;
+                let op;
+                let err;
+                let or;
+                let name = obj.name;
+                let filter = obj.filter;
+                let table = name.toSnakeCase();
+                let clause = &quot;NOT is_deleted&quot;;
+                let sql = &quot;SELECT _pk FROM %I WHERE &quot;;
+                let tokens = [&quot;_&quot; + table];
+                let criteria = false;
+                let sort = [];
+                let params = [];
+                let parts = [];
+                let p = 1;
+
+                function callback(resp) {
+                    let keys = resp.rows.map(function (rec) {
+                        return rec[tools.PKCOL];
+                    });
+
+                    resolve(keys);
+                }
+
+                try {
+                    if (obj.showDeleted) {
+                        clause = &quot;true&quot;;
+                    }
+
+                    sql += clause;
+
+                    if (filter) {
+                        criteria = filter.criteria || [];
+                        sort = filter.sort || [];
+                    }
+
+                    // Add authorization criteria
+                    if (isSuperUser === false) {
+                        sql += tools.buildAuthSql(&quot;canRead&quot;, table, tokens);
+
+                        params.push(obj.client.currentUser());
+                        p += 1;
+                    }
+
+                    // Process filter
+                    if (filter) {
+                        // Process criteria
+                        criteria.forEach(function (where) {
+                            op = where.operator || &quot;=&quot;;
+
+                            if (ops.indexOf(op) === -1) {
+                                err = &quot;Unknown operator \&quot;&quot; + op + &quot;\&quot;&quot;;
+                                throw err;
+                            }
+
+                            // Value &quot;IN&quot; array (&quot;Andy&quot; IN [&quot;Ann&quot;,&quot;Andy&quot;])
+                            // Whether &quot;Andy&quot;=&quot;Ann&quot; OR &quot;Andy&quot;=&quot;Andy&quot;
+                            if (op === &quot;IN&quot;) {
+                                part = [];
+                                where.value.forEach(function (val) {
+                                    params.push(val);
+                                    part.push(&quot;$&quot; + p);
+                                    p += 1;
+                                });
+                                part = tools.resolvePath(
+                                    where.property,
+                                    tokens
+                                ) + &quot; IN (&quot; + part.join(&quot;,&quot;) + &quot;)&quot;;
+
+                            // Property &quot;OR&quot; array compared to value
+                            // ([&quot;name&quot;,&quot;email&quot;]=&quot;Andy&quot;)
+                            // Whether &quot;name&quot;=&quot;Andy&quot; OR &quot;email&quot;=&quot;Andy&quot;
+                            } else if (Array.isArray(where.property)) {
+                                or = [];
+                                where.property.forEach(function (prop) {
+                                    params.push(where.value);
+                                    or.push(tools.resolvePath(
+                                        prop,
+                                        tokens
+                                    ) + &quot; &quot; + op + &quot; $&quot; + p);
+                                    p += 1;
+                                });
+                                part = &quot;(&quot; + or.join(&quot; OR &quot;) + &quot;)&quot;;
+
+                            // Regular comparison (&quot;name&quot;=&quot;Andy&quot;)
+                            } else if (
+                                typeof where.value === &quot;object&quot; &amp;&amp;
+                                !where.value.id
+                            ) {
+                                part = tools.resolvePath(
+                                    where.property,
+                                    tokens
+                                ) + &quot; IS NULL&quot;;
+                            } else {
+                                if (typeof where.value === &quot;object&quot;) {
+                                    where.property = where.property + &quot;.id&quot;;
+                                    where.value = where.value.id;
+                                }
+                                params.push(where.value);
+                                part = tools.resolvePath(
+                                    where.property,
+                                    tokens
+                                ) + &quot; &quot; + op + &quot; $&quot; + p;
+                                p += 1;
+                            }
+                            parts.push(part);
+                        });
+
+                        if (parts.length) {
+                            sql += &quot; AND &quot; + parts.join(&quot; AND &quot;);
+                        }
+                    }
+
+
+                    // Process sort
+                    sql += tools.processSort(sort, tokens);
+
+                    if (filter) {
+                        // Process offset and limit
+                        if (filter.offset) {
+                            sql += &quot; OFFSET $&quot; + p;
+                            p += 1;
+                            params.push(filter.offset);
+                        }
+
+                        if (filter.limit) {
+                            sql += &quot; LIMIT $&quot; + p;
+                            params.push(filter.limit);
+                        }
+                    }
+
+                    sql = sql.format(tokens);
+
+                    obj.client.query(sql, params).then(callback).catch(reject);
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        };
+        /**
+            @method isChildFeather
+            @param {String} feather Feathe name
+            @return {Boolean}
+        */
+        tools.isChildFeather = function (feather) {
+            let props = feather.properties;
+
+            return Object.keys(props).some(function (key) {
+                return Boolean(props[key].type.childOf);
+            });
+        };
+
+        /**
+            Returns whether user is super user.
+
+            @method isSuperUser
+            @param {Object} payload Request payload
+            @param {String} [payload.user] User. Defaults to current user
+            @param {Client} payload.client Database client
+            @return {Promise}
+        */
+        tools.isSuperUser = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let sql = &quot;SELECT is_super FROM user_account WHERE name=$1;&quot;;
+                let user = (
+                    obj.user === undefined
+                    ? obj.client.currentUser()
+                    : obj.user
+                );
+                let client = db.getClient(obj.client);
+
+                client.query(sql, [user], function (err, resp) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    resolve(
+                        resp.rows.length
+                        ? resp.rows[0].is_super
+                        : false
+                    );
+                });
+            });
+        };
+
+        /**
+            Returns authorizations for an object.
+            @method getAuthorizations
+            @param {Object} payload Request payload
+            @param {Client} payload.client
+            @param {String} payload.id Object ID
+            @return Promise
+        */
+        tools.getAuthorizations = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let client = db.getClient(obj.client);
+                let sql = (
+                    &quot;SELECT auth.role, auth.can_read, auth.can_update,&quot; +
+                    &quot;auth.can_delete FROM object, \&quot;$auth\&quot; AS auth &quot; +
+                    &quot;WHERE id=$1 AND object._pk=auth.object_pk;&quot;
+                );
+
+                client.query(sql, [obj.data.id]).then(function (resp) {
+                    resolve(tools.sanitize(resp.rows));
+                }).catch(reject);
+            });
+        };
+
+        /**
+            Clear out primmary keys and convert snake case to camel case.
+            @method sanitize
+            @param {Object} Data to sanitize
+            @return {Object} Sanitized object
+        */
+        tools.sanitize = function (obj) {
+            let oldObj;
+            let newObj;
+            let oKey;
+            let ary;
+            let len;
+            let nKey;
+            let keys;
+            let klen;
+            let n;
+            let isArray = Array.isArray(obj);
+            let i = 0;
+
+            if (isArray) {
+                ary = obj;
+            } else {
+                ary = [obj];
+            }
+            len = ary.length;
+
+            while (i &lt; len) {
+                if (typeof ary[i] === &quot;string&quot;) {
+                    i += 1;
+                } else {
+                    /* Copy to convert dates back to string for accurate
+                       comparisons */
+                    oldObj = JSON.parse(JSON.stringify(ary[i]));
+                    newObj = {};
+
+                    keys = Object.keys(oldObj);
+                    klen = keys.length;
+                    n = 0;
+
+                    while (n &lt; klen) {
+                        oKey = keys[n];
+                        n += 1;
+
+                        /* Remove internal properties */
+                        if (oKey.match(&quot;^_&quot;)) {
+                            delete oldObj[oKey];
+                        } else {
+                            /* Make properties camel case */
+                            nKey = oKey.toCamelCase();
+                            newObj[nKey] = oldObj[oKey];
+
+                            /* Recursively sanitize objects */
+                            if (
+                                typeof newObj[nKey] === &quot;object&quot; &amp;&amp;
+                                newObj[nKey] !== null
+                            ) {
+                                newObj[nKey] = tools.sanitize(newObj[nKey]);
+                            }
+                        }
+                    }
+
+                    ary[i] = newObj;
+                    i += 1;
+                }
+            }
+
+            return (
+                isArray
+                ? ary
+                : ary[0]
+            );
+        };
+
+        /**
+            Sets a user as super user or not.
+            @method setSuperUser
+            @param {Object} Payload
+            @param {String} payload.user User
+            @param {Client} payload.client Database client
+            @param {Boolean} [payload.isSuper] Default true
+            @return {Promise}
+        */
+        tools.setSuperUser = function (obj, isSuper) {
+            return new Promise(function (resolve, reject) {
+                isSuper = (
+                    obj.isSuper === undefined
+                    ? true
+                    : obj.isSuper
+                );
+
+                let sql;
+                let afterCheckSuperUser;
+                let afterGetPgUser;
+                let afterGetUser;
+                let afterUpsert;
+                let user = obj.user;
+                let client = db.getClient(obj.client);
+
+                afterCheckSuperUser = function (err, ok) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    if (!ok) {
+                        reject(&quot;Only a super user can set another super user&quot;);
+                    }
+
+                    sql = &quot;SELECT * FROM pg_user WHERE usename=$1;&quot;;
+                    client.query(sql, [user], afterGetUser);
+                };
+
+                afterGetPgUser = function (err, resp) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    if (!resp.rows.length) {
+                        obj.callback(&quot;User does not exist&quot;);
+                    }
+
+                    sql = &quot;SELECT * FROM user_account WHERE name=$1;&quot;;
+                    client.query(sql, [user], afterGetPgUser);
+                };
+
+                afterGetUser = function (err, resp) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    if (resp.rows.length) {
+                        sql = &quot;UPDATE user_account SET is_super=$2 &quot;;
+                        sql += &quot;WHERE name=$1&quot;;
+                    } else {
+                        throw new Error(&quot;User &quot; + user + &quot; not found.&quot;);
+                    }
+
+                    client.query(sql, [user, isSuper], afterUpsert);
+                };
+
+                afterUpsert = function (err) {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+
+                    // Success. Return to callback.
+                    resolve(true);
+                };
+
+                tools.isSuperUser({
+                    name: client.currentUser(),
+                    client: client
+                }).then(afterCheckSuperUser).catch(reject);
+            });
+        };
+
+        /**
+            Returns an &#x60;ORDER BY&#x60; SQL clause based sort criteria.
+            @method processSort
+            @param {Array} sort
+            @param {Array} tokens
+            @return {String} SQL clause
+        */
+        tools.processSort = function (sort, tokens) {
+            let order;
+            let part;
+            let clause = &quot;&quot;;
+            let i = 0;
+            let parts = [];
+
+            // Always sort on primary key as final tie breaker
+            sort.push({property: tools.PKCOL});
+
+            while (sort[i]) {
+                order = (sort[i].order || &quot;ASC&quot;);
+                order = order.toUpperCase();
+                if (order !== &quot;ASC&quot; &amp;&amp; order !== &quot;DESC&quot;) {
+                    throw &quot;Unknown operator \&quot;&quot; + order + &quot;\&quot;&quot;;
+                }
+                part = tools.resolvePath(sort[i].property, tokens);
+                parts.push(part + &quot; &quot; + order);
+                i += 1;
+            }
+
+            if (parts.length) {
+                clause = &quot; ORDER BY &quot; + parts.join(&quot;,&quot;);
+            }
+
+            return clause;
+        };
+
+        /**
+            Infer name of relation primary key column.
+            @method relationColumn
+            @param {String} key Column name
+            @param {String} relation Feather name of relation
+            @return {String}
+        */
+        tools.relationColumn = function (key, relation) {
+            let ret;
+
+            ret = &quot;_&quot; + key.toSnakeCase() + &quot;_&quot; + relation.toSnakeCase();
+            ret += &quot;_pk&quot;;
+
+            return ret;
+        };
+
+        /**
+            Adds a token for a given column name to &#x60;tokens&#x60; and returns
+            &quot;%I&quot; as the place holder value for a SQL clause.
+            @method resolvePath
+            @param {String} column
+            @param {Array} tokens
+            @return {String}
+        */
+        tools.resolvePath = function (col, tokens) {
+            let prefix;
+            let suffix;
+            let ret;
+            let idx = col.lastIndexOf(&quot;.&quot;);
+
+            if (idx &gt; -1) {
+                prefix = col.slice(0, idx);
+                suffix = col.slice(idx + 1, col.length).toSnakeCase();
+                ret = &quot;(&quot; + tools.resolvePath(prefix, tokens) + &quot;).%I&quot;;
+                tokens.push(suffix);
+                return ret;
+            }
+
+            tokens.push(col.toSnakeCase());
+            return &quot;%I&quot;;
+        };
+
+        /**
+            Object with properties mapping to each type of data type
+            to database equivilents. Each format has a database &#x60;type&#x60; and
+            &#x60;default&#x60; property.
+            @property types
+            @type Object
+        */
+        tools.types = {
+            object: {
+                type: &quot;json&quot;,
+                default: null
+            },
+            array: {
+                type: &quot;json&quot;,
+                default: null
+            },
+            string: {
+                type: &quot;text&quot;,
+                default: &quot;&quot;
+            },
+            integer: {
+                type: &quot;integer&quot;,
+                default: 0
+            },
+            number: {
+                type: &quot;numeric&quot;,
+                default: 0
+            },
+            boolean: {
+                type: &quot;boolean&quot;,
+                default: &quot;false&quot;
+            }
+        };
+
+        return tools;
+    };
+
+}(exports));
+
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

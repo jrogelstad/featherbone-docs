@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>services\workbooks.js - Featherbone Server</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-server.png" title="Featherbone Server"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Client.html">Client</a></li>
+                                <li><a href="../classes/Connection.html">Connection</a></li>
+                                <li><a href="../classes/Database.html">Database</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/Money.html">Money</a></li>
+                                <li><a href="../classes/Services.API.html">Services.API</a></li>
+                                <li><a href="../classes/Services.CRUD.html">Services.CRUD</a></li>
+                                <li><a href="../classes/Services.Currency.html">Services.Currency</a></li>
+                                <li><a href="../classes/Services.Events.html">Services.Events</a></li>
+                                <li><a href="../classes/Services.Exporter.html">Services.Exporter</a></li>
+                                <li><a href="../classes/Services.Feathers.html">Services.Feathers</a></li>
+                                <li><a href="../classes/Services.Importer.html">Services.Importer</a></li>
+                                <li><a href="../classes/Services.Installer.html">Services.Installer</a></li>
+                                <li><a href="../classes/Services.Packager.html">Services.Packager</a></li>
+                                <li><a href="../classes/Services.Profile.html">Services.Profile</a></li>
+                                <li><a href="../classes/Services.Role.html">Services.Role</a></li>
+                                <li><a href="../classes/Services.Routes.html">Services.Routes</a></li>
+                                <li><a href="../classes/Services.Services.html">Services.Services</a></li>
+                                <li><a href="../classes/Services.Settings.html">Services.Settings</a></li>
+                                <li><a href="../classes/Services.Tools.html">Services.Tools</a></li>
+                                <li><a href="../classes/Services.Workbooks.html">Services.Workbooks</a></li>
+                                <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/User.html">User</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/API.html">API</a></li>
+                                <li><a href="../modules/CRUD.html">CRUD</a></li>
+                                <li><a href="../modules/Currency.html">Currency</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/Events.html">Events</a></li>
+                                <li><a href="../modules/Feathers.html">Feathers</a></li>
+                                <li><a href="../modules/Installer.html">Installer</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/Packager.html">Packager</a></li>
+                                <li><a href="../modules/Profile.html">Profile</a></li>
+                                <li><a href="../modules/Role.html">Role</a></li>
+                                <li><a href="../modules/Routes.html">Routes</a></li>
+                                <li><a href="../modules/Settings.html">Settings</a></li>
+                                <li><a href="../modules/Tools.html">Tools</a></li>
+                                <li><a href="../modules/Workbooks.html">Workbooks</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: services\workbooks.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint node*/
+/**
+    @module Workbooks
+*/
+(function (exports) {
+    &quot;use strict&quot;;
+
+    const {Database} = require(&quot;../database&quot;);
+    const {Feathers} = require(&quot;./feathers&quot;);
+    const {Tools} = require(&quot;./tools&quot;);
+    const f = require(&quot;../../common/core&quot;);
+
+    const db = new Database();
+    const feathers = new Feathers();
+    const tools = new Tools();
+
+    /**
+        @class Workbooks
+        @constructor
+        @namespace Services
+    */
+    exports.Workbooks = function () {
+        // ..........................................................
+        // PRIVATE
+        //
+
+        let that = {};
+
+        // ..........................................................
+        // PUBLIC
+        //
+
+        /**
+          Remove a workbook from the database.
+
+            @method deleteWorkbook
+            @param {Object} Request payload
+            @param {String} [payload.user] User name
+            @param {Object} [payload.data] Payload data
+            @param {String} [payload.data.name] Workbook to delete
+            @param {Object} [payload.client] Database client
+            @return {Object} Promise
+        */
+        that.deleteWorkbook = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let sql = &quot;DELETE FROM \&quot;$workbook\&quot; WHERE name=$1;&quot;;
+                let client = db.getClient(obj.client);
+
+                tools.isSuperUser({
+                    client: client,
+                    user: obj.user
+                }).then(function (isSuper) {
+                    let err;
+
+                    if (!isSuper) {
+                        err = new Error(
+                            &quot;Only super users may delete workbooks.&quot;
+                        );
+                        err.statusCode = 401;
+                        throw err;
+                    }
+
+                    client.query(sql, [obj.data.name], function (err) {
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        resolve(true);
+                    });
+                }).catch(reject);
+            });
+        };
+
+        /**
+            @method getWorkbook
+            @param {Object} payload
+            @param {String} payload.user
+            @param {Client} payload.client
+            @param {Object} payload.data
+            @param {String} payload.data.name Workbook name
+            @return {Promise}
+        */
+        that.getWorkbook = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let err;
+
+                function callback(resp) {
+                    if (!resp.length) {
+                        err = new Error(&quot;Workbook not found&quot;);
+                        err.statusCode = 404;
+                        throw err;
+                    }
+
+                    resolve(resp[0]);
+                }
+
+                that.getWorkbooks({
+                    user: obj.user,
+                    data: obj.data,
+                    client: obj.client
+                }).then(callback).catch(reject);
+            });
+        };
+
+        /**
+            Resolve to workbook definition(s). If name is passed in payload
+            only that workbook will be returned.
+
+            @method getWorkbooks
+            @param {Object} Request payload
+            @param {Object} [payload.data] Workbook data
+            @param {Object} [payload.data.name] Workbook name
+            @param {Object} [payload.client] Database client
+            @return {Promise}
+        */
+        that.getWorkbooks = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let user = obj.user;
+                let client = db.getClient(obj.client);
+
+                function callback(isSuper) {
+                    let params = [];
+                    let sql;
+
+                    sql = (
+                        &quot;SELECT name, description, module, &quot; +
+                        &quot;launch_config AS \&quot;launchConfig\&quot;, &quot; +
+                        &quot;icon, &quot; +
+                        &quot;default_config AS \&quot;defaultConfig\&quot;, &quot; +
+                        &quot;local_config AS \&quot;localConfig\&quot;, &quot; +
+                        &quot;to_json(ARRAY( SELECT ROW(role, can_read, &quot; +
+                        &quot;can_update) &quot; +
+                        &quot;  FROM \&quot;$auth\&quot; as auth &quot; +
+                        &quot;  WHERE auth.object_pk = workbook._pk &quot; +
+                        &quot;  ORDER BY auth.pk)) AS authorizations &quot; +
+                        &quot;FROM \&quot;$workbook\&quot; AS workbook &quot; +
+                        &quot;WHERE true &quot;
+                    );
+
+                    if (!isSuper) {
+                        params = [client.currentUser()];
+                        sql += (
+                            &quot;AND EXISTS (&quot; +
+                            &quot;  SELECT can_read FROM ( &quot; +
+                            &quot;    SELECT can_read &quot; +
+                            &quot;    FROM \&quot;$auth\&quot;, pg_authid &quot; +
+                            &quot;    WHERE pg_has_role(&quot; +
+                            &quot;        $1, pg_authid.oid, &#x27;member&#x27;)&quot; +
+                            &quot;      AND \&quot;$auth\&quot;.object_pk=workbook._pk&quot; +
+                            &quot;      AND \&quot;$auth\&quot;.role=pg_authid.rolname&quot; +
+                            &quot;    ORDER BY can_read DESC&quot; +
+                            &quot;    LIMIT 1&quot; +
+                            &quot;  ) AS data &quot; +
+                            &quot;  WHERE can_read)&quot;
+                        );
+                    }
+
+                    if (obj.data.name) {
+                        sql += &quot; AND name=$2&quot;;
+                        params.push(obj.data.name);
+                    }
+
+                    sql += &quot; ORDER BY _pk&quot;;
+
+                    client.query(sql, params, function (err, resp) {
+                        function auths(a) {
+                            return {
+                                role: a.f1,
+                                canRead: a.f2,
+                                canUpdate: a.f3
+                            };
+                        }
+
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        resp.rows.forEach(function (row) {
+                            row.authorizations = row.authorizations.map(auths);
+                        });
+
+                        resolve(resp.rows);
+                    });
+                }
+
+                tools.isSuperUser({
+                    client: client,
+                    user: user
+                }).then(callback).catch(reject);
+            });
+        };
+
+        /**
+            Check whether a user is authorized to perform an action on a
+            particular feather (class) or object.
+
+            Allowable actions: &#x60;canCreate&#x60;, &#x60;canRead&#x60;, &#x60;canUpdate&quot;, &#x60;canDelete&#x60;
+
+            &#x60;canCreate&#x60; will only check feather names.
+
+            @method workbookIsAuthorized
+            @param {Object} Payload
+            @param {Object} payload.data Payload data
+            @param {String} payload.data.action
+            @param {String} payload.data.name Workbook name
+            @param {String} payload.data.user User.
+            @param {String} payload.client Database client
+            @return {Promise}
+        */
+        that.workbookIsAuthorized = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let sql;
+                let user = obj.data.user;
+                let action = obj.data.action || &quot;&quot;;
+                let name = obj.data.name;
+                let client = db.getClient(obj.client);
+
+                action = action.toSnakeCase();
+
+                function callback(isSuper) {
+                    if (isSuper) {
+                        resolve(true);
+                        return;
+                    }
+
+                    sql = (
+                        &quot;SELECT _pk &quot; +
+                        &quot;FROM \&quot;$workbook\&quot; AS workbook, &quot; +
+                        &quot;  \&quot;$auth\&quot; AS auth, &quot; +
+                        &quot;  pg_authid &quot; +
+                        &quot;WHERE name = $1 &quot; +
+                        &quot;  AND workbook._pk=auth.object_pk&quot; +
+                        &quot;  AND auth.role=pg_authid.rolname &quot; +
+                        &quot;  AND pg_has_role($2, pg_authid.oid, &#x27;member&#x27;)&quot; +
+                        &quot;  AND &quot; + action + &quot; &quot; +
+                        &quot;LIMIT 1;&quot;
+                    );
+
+                    client.query(sql, [name, user]).then(function (resp) {
+                        resolve(resp.rows.length &gt; 0);
+                    }).catch(reject);
+                }
+
+                if (action !== &quot;can_read&quot; &amp;&amp; action !== &quot;can_update&quot;) {
+                    throw new Error(
+                        &quot;Only actions &#x60;canRead&#x60; and &#x60;canUpdate&#x60; supported &quot; +
+                        &quot;for workbook.&quot;
+                    );
+                }
+
+                if (!name) {
+                    throw new Error(&quot;Authorization check requires name&quot;);
+                }
+
+                tools.isSuperUser({
+                    client: client,
+                    user: obj.data.user
+                }).then(callback).catch(reject);
+            });
+        };
+
+        /**
+            Create or upate workbooks.
+
+            @method saveWorkbook
+            @param {Object} Payload
+            @param {String} payload.user User name.
+            @param {Object} payload.data Workbook data.
+            @param {Object | Array} payload.data.specs Workbook
+            specification(s).
+            @param {Object} payload.client Database client
+            @return {Promise}
+        */
+        that.saveWorkbook = function (obj) {
+            return new Promise(function (resolve, reject) {
+                let row;
+                let nextWorkbook;
+                let wb;
+                let sql;
+                let params;
+                let authorizations;
+                let id;
+                let user = obj.user;
+                let findSql = &quot;SELECT * FROM \&quot;$workbook\&quot; WHERE name = $1;&quot;;
+                let workbooks = (
+                    Array.isArray(obj.data.specs)
+                    ? obj.data.specs
+                    : [obj.data.specs]
+                );
+                let len = workbooks.length;
+                let n = 0;
+                let oldAuth;
+                let client = db.getClient(obj.client);
+
+                findSql = (
+                    &quot;SELECT * FROM \&quot;$workbook\&quot; AS workbook, &quot; +
+                    &quot;to_json(ARRAY( SELECT ROW(role) &quot; +
+                    &quot;  FROM \&quot;$auth\&quot; as auth &quot; +
+                    &quot;  WHERE auth.object_pk = workbook._pk &quot; +
+                    &quot;  ORDER BY auth.pk)) AS authorizations &quot; +
+                    &quot;WHERE name = $1;&quot;
+                );
+
+                function execute() {
+                    client.query(sql, params, function (err) {
+                        let auths = [];
+                        let requests = [];
+
+                        if (err) {
+                            reject(err);
+                            return;
+                        }
+
+                        // If no specific authorization, make one
+                        if (authorizations === undefined) {
+                            authorizations = [{
+                                role: &quot;everyone&quot;,
+                                canCreate: null,
+                                canRead: true,
+                                canUpdate: true,
+                                canDelete: null
+                            }];
+                        }
+
+                        if (oldAuth) {
+                            // Clear old auths in case of deletions
+                            oldAuth.forEach(function (auth) {
+                                auths.push({
+                                    client: client,
+                                    data: {
+                                        id: id,
+                                        role: auth.f1,
+                                        isInternal: true,
+                                        actions: {
+                                            canCreate: false,
+                                            canRead: false,
+                                            canUpdate: false,
+                                            canDelete: false
+                                        }
+                                    }
+                                });
+                            });
+                        }
+
+                        // Set new authorizations
+                        if (authorizations) {
+                            authorizations.forEach(function (auth) {
+                                let found;
+                                let actions;
+
+                                if (auth === null) {
+                                    return; // Was deleted
+                                }
+
+                                found = auths.find(
+                                    (a) =&gt; a.data.role === auth.role
+                                );
+
+                                if (found) {
+                                    actions = found.data.actions;
+                                    actions.canCreate = null;
+                                    actions.canUpdate = auth.canUpdate;
+                                    actions.canRead = auth.canRead;
+                                    actions.canDelete = null;
+                                } else {
+                                    auths.push({
+                                        client: client,
+                                        data: {
+                                            id: id,
+                                            role: auth.role,
+                                            isInternal: true,
+                                            actions: {
+                                                canCreate: null,
+                                                canRead: auth.canRead,
+                                                canUpdate: auth.canUpdate,
+                                                canDelete: null
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        }
+
+                        auths.forEach(function (auth) {
+                            requests.push(
+                                feathers.saveAuthorization(auth)
+                            );
+                        });
+                        Promise.all(requests).then(nextWorkbook).catch(reject);
+                    });
+                }
+
+                nextWorkbook = function () {
+                    if (n &lt; len) {
+                        wb = workbooks[n];
+                        authorizations = wb.authorizations;
+                        n += 1;
+                        oldAuth = false;
+
+                        // Upsert workbook
+                        client.query(
+                            findSql,
+                            [wb.name],
+                            function (err, resp) {
+                                let icon;
+                                let launchConfig;
+                                let localConfig;
+                                let defaultConfig;
+
+                                if (err) {
+                                    reject(err);
+                                    return;
+                                }
+
+                                row = resp.rows[0];
+                                if (row) {
+                                    oldAuth = row.authorizations;
+
+                                    // Update workbook
+                                    sql = (
+                                        &quot;UPDATE \&quot;$workbook\&quot; SET &quot; +
+                                        &quot;updated_by=$2, updated=now(), &quot; +
+                                        &quot;description=$3, launch_config=$4,&quot; +
+                                        &quot;default_config=$5,&quot; +
+                                        &quot;local_config=$6, module=$7, &quot; +
+                                        &quot;icon=$8 &quot; +
+                                        &quot;WHERE name=$1;&quot;
+                                    );
+                                    id = row.id;
+                                    launchConfig = (
+                                        wb.launchConfig || row.launch_config
+                                    );
+                                    icon = (
+                                        wb.icon || row.icon
+                                    );
+                                    defaultConfig = (
+                                        wb.defaultConfig || row.default_config
+                                    );
+                                    localConfig = (
+                                        wb.localConfig || row.local_config
+                                    );
+                                    params = [
+                                        wb.name,
+                                        client.currentUser(),
+                                        wb.description || row.description,
+                                        JSON.stringify(launchConfig),
+                                        JSON.stringify(defaultConfig),
+                                        JSON.stringify(localConfig),
+                                        wb.module,
+                                        icon
+                                    ];
+                                    execute();
+                                } else {
+                                    tools.isSuperUser({
+                                        client: client,
+                                        user: user
+                                    }).then(function (isSuper) {
+                                        let e;
+
+                                        if (!isSuper) {
+                                            e = new Error(
+                                                &quot;Only super users may create&quot; +
+                                                &quot; workbooks.&quot;
+                                            );
+                                            e.statusCode = 401;
+                                            throw e;
+                                        }
+
+                                        // Insert new workbook
+                                        sql = (
+                                            &quot;INSERT INTO \&quot;$workbook\&quot;&quot; +
+                                            &quot;(_pk, id, name, description, &quot; +
+                                            &quot;module, &quot; +
+                                            &quot;launch_config, default_config, &quot; +
+                                            &quot;local_config, icon, &quot; +
+                                            &quot;created_by, updated_by, &quot; +
+                                            &quot;created, updated, is_deleted) &quot; +
+                                            &quot;VALUES (&quot; +
+                                            &quot;nextval(&#x27;object__pk_seq&#x27;),&quot; +
+                                            &quot;$1, $2, $3, $4, $5, $6, $7, $8,&quot; +
+                                            &quot;$8, $9, &quot; +
+                                            &quot;now(), now(), false) &quot; +
+                                            &quot;RETURNING _pk;&quot;
+                                        );
+                                        id = f.createId();
+                                        launchConfig = wb.launchConfig || {};
+                                        localConfig = wb.localConfig || [];
+                                        defaultConfig = wb.defaultConfig || [];
+                                        icon = wb.icon || &quot;folder&quot;;
+                                        params = [
+                                            id,
+                                            wb.name,
+                                            wb.description || &quot;&quot;,
+                                            wb.module,
+                                            launchConfig,
+                                            JSON.stringify(defaultConfig),
+                                            JSON.stringify(localConfig),
+                                            icon,
+                                            client.currentUser()
+                                        ];
+
+                                        execute();
+                                    }).catch(reject);
+                                }
+                            }
+                        );
+                        return;
+                    }
+
+                    resolve(true);
+                };
+
+                nextWorkbook();
+            });
+        };
+
+        return that;
+    };
+
+}(exports));
+
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

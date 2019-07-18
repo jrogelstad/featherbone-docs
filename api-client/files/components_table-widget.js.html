@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>components\table-widget.js - Featherbone Client</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-client.png" title="Featherbone Client"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Catalog.html">Catalog</a></li>
+                                <li><a href="../classes/Components.AccountMenu.html">Components.AccountMenu</a></li>
+                                <li><a href="../classes/Components.AddressRelation.html">Components.AddressRelation</a></li>
+                                <li><a href="../classes/Components.AutoNumber.html">Components.AutoNumber</a></li>
+                                <li><a href="../classes/Components.Button.html">Components.Button</a></li>
+                                <li><a href="../classes/Components.Checkbox.html">Components.Checkbox</a></li>
+                                <li><a href="../classes/Components.ChildFormPage.html">Components.ChildFormPage</a></li>
+                                <li><a href="../classes/Components.ChildTable.html">Components.ChildTable</a></li>
+                                <li><a href="../classes/Components.ContactRelation.html">Components.ContactRelation</a></li>
+                                <li><a href="../classes/Components.DataList.html">Components.DataList</a></li>
+                                <li><a href="../classes/Components.DataType.html">Components.DataType</a></li>
+                                <li><a href="../classes/Components.Dialog.html">Components.Dialog</a></li>
+                                <li><a href="../classes/Components.FilterDialog.html">Components.FilterDialog</a></li>
+                                <li><a href="../classes/Components.FormDialog.html">Components.FormDialog</a></li>
+                                <li><a href="../classes/Components.FormPage.html">Components.FormPage</a></li>
+                                <li><a href="../classes/Components.FormWidget.html">Components.FormWidget</a></li>
+                                <li><a href="../classes/Components.MoneyRelation.html">Components.MoneyRelation</a></li>
+                                <li><a href="../classes/Components.NavigatorMenu.html">Components.NavigatorMenu</a></li>
+                                <li><a href="../classes/Components.RelationWidget.html">Components.RelationWidget</a></li>
+                                <li><a href="../classes/Components.SearchInput.html">Components.SearchInput</a></li>
+                                <li><a href="../classes/Components.SearchPage.html">Components.SearchPage</a></li>
+                                <li><a href="../classes/Components.SettingsPage.html">Components.SettingsPage</a></li>
+                                <li><a href="../classes/Components.SortDialog.html">Components.SortDialog</a></li>
+                                <li><a href="../classes/Components.TableDialog.html">Components.TableDialog</a></li>
+                                <li><a href="../classes/Components.TableWidget.html">Components.TableWidget</a></li>
+                                <li><a href="../classes/Components.WorkbookPage.html">Components.WorkbookPage</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/List.html">List</a></li>
+                                <li><a href="../classes/Model.html">Model</a></li>
+                                <li><a href="../classes/Models.Address.html">Models.Address</a></li>
+                                <li><a href="../classes/Models.BaseCurrency.html">Models.BaseCurrency</a></li>
+                                <li><a href="../classes/Models.Comment.html">Models.Comment</a></li>
+                                <li><a href="../classes/Models.Contact.html">Models.Contact</a></li>
+                                <li><a href="../classes/Models.ContactAddress.html">Models.ContactAddress</a></li>
+                                <li><a href="../classes/Models.ContactEmail.html">Models.ContactEmail</a></li>
+                                <li><a href="../classes/Models.ContactPhone.html">Models.ContactPhone</a></li>
+                                <li><a href="../classes/Models.ContactSocialAccount.html">Models.ContactSocialAccount</a></li>
+                                <li><a href="../classes/Models.Country.html">Models.Country</a></li>
+                                <li><a href="../classes/Models.Currency.html">Models.Currency</a></li>
+                                <li><a href="../classes/Models.CurrencyConversion.html">Models.CurrencyConversion</a></li>
+                                <li><a href="../classes/Models.CurrencyUnit.html">Models.CurrencyUnit</a></li>
+                                <li><a href="../classes/Models.CurrencyUnitConversion.html">Models.CurrencyUnitConversion</a></li>
+                                <li><a href="../classes/Models.DataListOption.html">Models.DataListOption</a></li>
+                                <li><a href="../classes/Models.DataService.html">Models.DataService</a></li>
+                                <li><a href="../classes/Models.Document.html">Models.Document</a></li>
+                                <li><a href="../classes/Models.Feather.html">Models.Feather</a></li>
+                                <li><a href="../classes/Models.FeatherAuthorization.html">Models.FeatherAuthorization</a></li>
+                                <li><a href="../classes/Models.FeatherOverload.html">Models.FeatherOverload</a></li>
+                                <li><a href="../classes/Models.FeatherProperty.html">Models.FeatherProperty</a></li>
+                                <li><a href="../classes/Models.Form.html">Models.Form</a></li>
+                                <li><a href="../classes/Models.FormAttr.html">Models.FormAttr</a></li>
+                                <li><a href="../classes/Models.FormAttrColumn.html">Models.FormAttrColumn</a></li>
+                                <li><a href="../classes/Models.FormTab.html">Models.FormTab</a></li>
+                                <li><a href="../classes/Models.Honorific.html">Models.Honorific</a></li>
+                                <li><a href="../classes/Models.Kind.html">Models.Kind</a></li>
+                                <li><a href="../classes/Models.Layout.html">Models.Layout</a></li>
+                                <li><a href="../classes/Models.Log.html">Models.Log</a></li>
+                                <li><a href="../classes/Models.Module.html">Models.Module</a></li>
+                                <li><a href="../classes/Models.ModuleDependency.html">Models.ModuleDependency</a></li>
+                                <li><a href="../classes/Models.Object.html">Models.Object</a></li>
+                                <li><a href="../classes/Models.ObjectAuthorization.html">Models.ObjectAuthorization</a></li>
+                                <li><a href="../classes/Models.RelationSearchColumn.html">Models.RelationSearchColumn</a></li>
+                                <li><a href="../classes/Models.RelationWidget.html">Models.RelationWidget</a></li>
+                                <li><a href="../classes/Models.Role.html">Models.Role</a></li>
+                                <li><a href="../classes/Models.RoleMembership.html">Models.RoleMembership</a></li>
+                                <li><a href="../classes/Models.Route.html">Models.Route</a></li>
+                                <li><a href="../classes/Models.Script.html">Models.Script</a></li>
+                                <li><a href="../classes/Models.SocialNetwork.html">Models.SocialNetwork</a></li>
+                                <li><a href="../classes/Models.State.html">Models.State</a></li>
+                                <li><a href="../classes/Models.Style.html">Models.Style</a></li>
+                                <li><a href="../classes/Models.Unit.html">Models.Unit</a></li>
+                                <li><a href="../classes/Models.UserAccount.html">Models.UserAccount</a></li>
+                                <li><a href="../classes/Models.Workbook.html">Models.Workbook</a></li>
+                                <li><a href="../classes/Models.WorkbookAuthorization.html">Models.WorkbookAuthorization</a></li>
+                                <li><a href="../classes/Models.WorkbookChild.html">Models.WorkbookChild</a></li>
+                                <li><a href="../classes/Models.WorkbookDefaultConfig.html">Models.WorkbookDefaultConfig</a></li>
+                                <li><a href="../classes/Models.WorkbookLocalConfig.html">Models.WorkbookLocalConfig</a></li>
+                                <li><a href="../classes/Property.html">Property</a></li>
+                                <li><a href="../classes/State.html">State</a></li>
+                                <li><a href="../classes/State.define.html">State.define</a></li>
+                                <li><a href="../classes/ViewModels.AccountMenu.html">ViewModels.AccountMenu</a></li>
+                                <li><a href="../classes/ViewModels.AddressRelation.html">ViewModels.AddressRelation</a></li>
+                                <li><a href="../classes/ViewModels.AutoNumber.html">ViewModels.AutoNumber</a></li>
+                                <li><a href="../classes/ViewModels.Button.html">ViewModels.Button</a></li>
+                                <li><a href="../classes/ViewModels.Checkbox.html">ViewModels.Checkbox</a></li>
+                                <li><a href="../classes/ViewModels.ChildFormPage.html">ViewModels.ChildFormPage</a></li>
+                                <li><a href="../classes/ViewModels.ChildTable.html">ViewModels.ChildTable</a></li>
+                                <li><a href="../classes/ViewModels.ContactRelation.html">ViewModels.ContactRelation</a></li>
+                                <li><a href="../classes/ViewModels.DataList.html">ViewModels.DataList</a></li>
+                                <li><a href="../classes/ViewModels.DataType.html">ViewModels.DataType</a></li>
+                                <li><a href="../classes/ViewModels.Dialog.html">ViewModels.Dialog</a></li>
+                                <li><a href="../classes/ViewModels.FilterDialog.html">ViewModels.FilterDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormDialog.html">ViewModels.FormDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormPage.html">ViewModels.FormPage</a></li>
+                                <li><a href="../classes/ViewModels.FormWidget.html">ViewModels.FormWidget</a></li>
+                                <li><a href="../classes/ViewModels.MoneyRelation.html">ViewModels.MoneyRelation</a></li>
+                                <li><a href="../classes/ViewModels.NavigatorMenu.html">ViewModels.NavigatorMenu</a></li>
+                                <li><a href="../classes/ViewModels.RelationWidget.html">ViewModels.RelationWidget</a></li>
+                                <li><a href="../classes/ViewModels.SearchInput.html">ViewModels.SearchInput</a></li>
+                                <li><a href="../classes/ViewModels.SearchPage.html">ViewModels.SearchPage</a></li>
+                                <li><a href="../classes/ViewModels.SettingsPage.html">ViewModels.SettingsPage</a></li>
+                                <li><a href="../classes/ViewModels.SortDialog.html">ViewModels.SortDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableDialog.html">ViewModels.TableDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableWidget.html">ViewModels.TableWidget</a></li>
+                                <li><a href="../classes/ViewModels.WorkbookPage.html">ViewModels.WorkbookPage</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/AccountMenu.html">AccountMenu</a></li>
+                                <li><a href="../modules/AddressRelation.html">AddressRelation</a></li>
+                                <li><a href="../modules/AutoNumber.html">AutoNumber</a></li>
+                                <li><a href="../modules/Button.html">Button</a></li>
+                                <li><a href="../modules/Catalog.html">Catalog</a></li>
+                                <li><a href="../modules/Checkbox.html">Checkbox</a></li>
+                                <li><a href="../modules/ChildFormPage.html">ChildFormPage</a></li>
+                                <li><a href="../modules/ChildTable.html">ChildTable</a></li>
+                                <li><a href="../modules/ContactRelation.html">ContactRelation</a></li>
+                                <li><a href="../modules/Core.html">Core</a></li>
+                                <li><a href="../modules/DataList.html">DataList</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/DataType.html">DataType</a></li>
+                                <li><a href="../modules/Dialog.html">Dialog</a></li>
+                                <li><a href="../modules/FilterDialog.html">FilterDialog</a></li>
+                                <li><a href="../modules/FormDialog.html">FormDialog</a></li>
+                                <li><a href="../modules/FormPage.html">FormPage</a></li>
+                                <li><a href="../modules/FormWidget.html">FormWidget</a></li>
+                                <li><a href="../modules/List.html">List</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/MoneyRelation.html">MoneyRelation</a></li>
+                                <li><a href="../modules/NavigatorMenu.html">NavigatorMenu</a></li>
+                                <li><a href="../modules/Property.html">Property</a></li>
+                                <li><a href="../modules/RelationWidget.html">RelationWidget</a></li>
+                                <li><a href="../modules/SearchInput.html">SearchInput</a></li>
+                                <li><a href="../modules/SearchPage.html">SearchPage</a></li>
+                                <li><a href="../modules/SettingsPage.html">SettingsPage</a></li>
+                                <li><a href="../modules/SortDialog.html">SortDialog</a></li>
+                                <li><a href="../modules/State.html">State</a></li>
+                                <li><a href="../modules/TableDialog.html">TableDialog</a></li>
+                                <li><a href="../modules/TableWidget.html">TableWidget</a></li>
+                                <li><a href="../modules/Workbook.html">Workbook</a></li>
+                                <li><a href="../modules/WorkbookPage.html">WorkbookPage</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: components\table-widget.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint this, for, browser*/
+/**
+    @module TableWidget
+*/
+let scrWidth;
+let inner;
+let widthNoScroll;
+let widthWithScroll;
+
+import f from &quot;../core.js&quot;;
+
+/*
+    @class tableWidget
+*/
+const catalog = f.catalog();
+const datasource = f.datasource();
+const tableWidget = {};
+const outer = document.createElement(&quot;div&quot;);
+const COL_WIDTH_DEFAULT = &quot;150&quot;;
+const LIMIT = 30;
+const ROW_COUNT = 2;
+const m = window.m;
+
+// Calculate scroll bar width
+// http://stackoverflow.com/questions/13382516
+outer.style.visibility = &quot;hidden&quot;;
+outer.style.width = &quot;100px&quot;;
+outer.style.msOverflowStyle = &quot;scrollbar&quot;; // needed for WinJS apps
+
+document.body.appendChild(outer);
+
+widthNoScroll = outer.offsetWidth;
+// force scrollbars
+outer.style.overflow = &quot;scroll&quot;;
+
+// add innerdiv
+inner = document.createElement(&quot;div&quot;);
+inner.style.width = &quot;100%&quot;;
+outer.appendChild(inner);
+
+widthWithScroll = inner.offsetWidth;
+
+// remove divs
+outer.parentNode.removeChild(outer);
+scrWidth = widthNoScroll - widthWithScroll;
+
+function handleStyle(style, tdOpts) {
+    if (style) {
+        style = f.getStyle(style);
+        tdOpts.style.color = style.color;
+        tdOpts.style.backgroundColor = style.backgroundColor;
+        tdOpts.style.fontWeight = style.fontWeight;
+        tdOpts.style.textDecoration = style.textDecoration;
+    }
+}
+
+function createTableDataEditor(options, col) {
+    let config = options.config;
+    let defaultFocusId = options.defaultFocusId;
+    let model = options.model;
+    let onshifttab = options.onshifttab;
+    let ontab = options.ontab;
+    let vm = options.vm;
+    let zoom = options.zoom;
+    let cell;
+    let tdOpts;
+    let inputOpts;
+    let columnSpacerClass;
+    let widget;
+    let prop = f.resolveProperty(model, col);
+    let id = vm.formatInputId(col);
+    let item = config.columns[options.idx];
+    let columnWidth = item.width || COL_WIDTH_DEFAULT;
+    let dataList = item.dataList || prop.dataList;
+    let cfilter = item.filter;
+    let style = (
+        prop.style
+        ? prop.style()
+        : &quot;&quot;
+    );
+
+    columnWidth -= 6;
+
+    inputOpts = {
+        id: id,
+        onclick: vm.toggleSelection.bind(this, model, id),
+        value: prop(),
+        style: {
+            minWidth: columnWidth + &quot;px&quot;,
+            maxWidth: columnWidth + &quot;px&quot;,
+            fontSize: zoom
+        },
+        isCell: true,
+        showCurrency: item.showCurrency
+    };
+
+    // Set up self focus
+    if (vm.nextFocus() === id &amp;&amp; id === defaultFocusId) {
+        inputOpts.oncreate = function (vnode) {
+            let e = document.getElementById(vnode.dom.id);
+
+            e.addEventListener(&quot;keydown&quot;, onshifttab);
+            e.focus();
+        };
+        inputOpts.onremove = function (vnode) {
+            let e = document.getElementById(vnode.dom.id);
+            // Key down handler for up down movement
+            if (e) {
+                e.removeEventListener(&quot;keydown&quot;, onshifttab);
+            }
+        };
+        vm.nextFocus(undefined);
+
+    } else if (
+        vm.nextFocus() === id &amp;&amp;
+        id !== defaultFocusId
+    ) {
+        inputOpts.oncreate = function (vnode) {
+            document.getElementById(vnode.dom.id).focus();
+        };
+        vm.nextFocus(undefined);
+    } else if (id === defaultFocusId) {
+        inputOpts.oncreate = function (vnode) {
+            // Key down handler for up down movement
+            document.getElementById(
+                vnode.dom.id
+            ).addEventListener(&quot;keydown&quot;, onshifttab);
+        };
+
+        inputOpts.onremove = function (vnode) {
+            let e = document.getElementById(vnode.dom.id);
+
+            // Key down handler for up down movement
+            if (e) {
+                e.removeEventListener(&quot;keydown&quot;, onshifttab);
+            }
+        };
+    }
+
+    // We want tab out of last cell to loop back to
+    // the first
+    if (options.lastFocusId === id) {
+        inputOpts.oncreate = function (vnode) {
+            // Key down handler for up down movement
+            document.getElementById(
+                vnode.dom.id
+            ).addEventListener(&quot;keydown&quot;, ontab);
+        };
+
+        inputOpts.onremove = function (vnode) {
+            let e = document.getElementById(vnode.dom.id);
+            // Key down handler for up down movement
+            if (e) {
+                e.removeEventListener(&quot;keydown&quot;, ontab);
+            }
+        };
+    }
+
+    if (
+        prop.isRequired &amp;&amp; prop.isRequired() &amp;&amp; (
+            prop() === null || prop() === undefined
+        )
+    ) {
+        tdOpts = {
+            class: (
+                &quot;fb-table-cell-edit &quot; +
+                &quot;fb-table-cell-edit-cell &quot; +
+                &quot;fb-table-cell-edit-required&quot;
+            ),
+            style: {}
+        };
+    } else {
+        tdOpts = {
+            class: (
+                &quot;fb-table-cell-edit &quot; +
+                &quot;fb-table-cell-edit-cell&quot;
+            ),
+            style: {}
+        };
+    }
+
+    tdOpts.style.minWidth = columnWidth + &quot;px&quot;;
+    tdOpts.style.maxWidth = columnWidth + &quot;px&quot;;
+    tdOpts.style.fontSize = zoom;
+
+    handleStyle(style, tdOpts);
+
+    if (dataList) {
+        // If reference a property, get the property
+        if (typeof dataList === &quot;string&quot;) {
+            dataList = model.data[dataList]();
+
+        // Must referencoe a simple array, transform
+        } else if (typeof dataList[0] !== &quot;object&quot;) {
+            dataList = dataList.map(function (item) {
+                return {value: item, label: item};
+            });
+        }
+    }
+
+    columnSpacerClass = (
+        &quot;fb-column-spacer &quot; + tdOpts.class
+    );
+
+    widget = vm.form().attrs.find(
+        (item) =&gt; (
+            item.attr === col &amp;&amp; item.relationWidget
+        )
+    );
+    if (widget) {
+        widget = widget.relationWidget;
+    }
+
+    cell = [
+        m(&quot;td&quot;, tdOpts, [
+            f.createEditor({
+                model: model,
+                key: col,
+                dataList: dataList,
+                filter: cfilter,
+                viewModel: vm,
+                options: inputOpts,
+                widget: widget
+            })
+        ]),
+        m(&quot;td&quot;, {
+            style: {
+                fontSize: zoom
+            },
+            class: columnSpacerClass
+        })
+    ];
+
+    options.idx += 1;
+
+    return cell;
+}
+
+function createTableDataView(options, col) {
+    let vm = options.vm;
+    let model = options.model;
+    let config = options.config;
+    let zoom = options.zoom;
+    let onclick = options.onclick;
+    let d = options.d;
+    let url;
+    let cell;
+    let content;
+    let tdOpts;
+    let tableData;
+    let prop = f.resolveProperty(options.model, col);
+    let value = prop();
+    let format = prop.format || prop.type;
+    let columnWidth = (
+        config.columns[options.idx].width || COL_WIDTH_DEFAULT
+    );
+    let style = (
+        prop.style
+        ? prop.style()
+        : &quot;&quot;
+    );
+    let relation;
+
+    columnWidth -= 6;
+
+    tdOpts = {
+        onclick: function (ev) {
+            let optKey;
+            if (ev.shiftKey) {
+                optKey = &quot;shiftKey&quot;;
+            } else if (ev.ctrlKey) {
+                optKey = &quot;ctrlKey&quot;;
+            }
+            vm.toggleSelection(
+                model,
+                vm.formatInputId(col),
+                optKey
+            );
+        },
+        class: &quot;fb-cell-view&quot;,
+        style: {
+            minWidth: columnWidth + &quot;px&quot;,
+            maxWidth: columnWidth + &quot;px&quot;,
+            fontSize: zoom
+        }
+    };
+
+    handleStyle(style, tdOpts);
+
+    // Build cell
+    if (typeof format === &quot;object&quot; &amp;&amp; d[col]()) {
+        relation = prop.type.relation.toCamelCase();
+        if (f.types[relation] &amp;&amp; f.types[relation].tableData) {
+            tableData = f.types[relation].tableData;
+        } else {
+            tableData = function () {
+                let rel;
+                let keys;
+
+                // If relation, use feather natural key to
+                // find value to display
+                rel = catalog.getFeather(format.relation);
+                keys = Object.keys(rel.properties);
+                rel = (
+                    keys.find((key) =&gt; rel.properties[key].isNaturalKey) ||
+                    keys.find((key) =&gt; rel.properties[key].isLabelKey)
+                );
+
+                if (rel) {
+                    value = d[col]().data[rel]();
+
+                    url = (
+                        window.location.protocol + &quot;//&quot; +
+                        window.location.hostname + &quot;:&quot; +
+                        window.location.port + &quot;#!/edit/&quot; +
+                        prop.type.relation.toSnakeCase() +
+                        &quot;/&quot; + d[col]().id()
+                    );
+
+                    return m(&quot;a&quot;, {
+                        href: url,
+                        onclick: function (e) {
+                            vm.canToggle(false);
+                            e.preventDefault();
+                            m.route.set(&quot;/edit/:feather/:key&quot;, {
+                                feather: prop.type.relation.toSnakeCase(),
+                                key: d[col]().id()
+                            }, {
+                                state: {}
+                            });
+                        }
+                    }, value);
+                }
+            };
+        }
+    } else if (prop.format &amp;&amp; f.formats()[prop.format].tableData) {
+        tableData = f.formats()[prop.format].tableData;
+    } else if (f.types[prop.type] &amp;&amp; f.types[prop.type].tableData) {
+        tableData = f.types[prop.type].tableData;
+    } else {
+        tableData = (obj) =&gt; obj.value;
+    }
+
+    content = tableData({
+        value: value,
+        options: tdOpts,
+        viewModel: vm,
+        prop: prop,
+        onclick: onclick
+    });
+
+    cell = [
+        m(&quot;td&quot;, tdOpts, content),
+        // This exists to force exact alignment
+        // with header on all browsers
+        m(&quot;td&quot;, {
+            class: &quot;fb-column-spacer&quot;,
+            style: {
+                fontSize: zoom
+            }
+        })
+    ];
+
+    options.idx += 1;
+
+    return cell;
+}
+
+// Helper function
+function resolveDescription(feather, attr) {
+    let prefix;
+    let suffix;
+    let idx = attr.indexOf(&quot;.&quot;);
+
+    if (idx &gt; -1) {
+        prefix = attr.slice(0, idx);
+        suffix = attr.slice(idx + 1, attr.length);
+        feather = catalog.getFeather(
+            feather.properties[prefix].type.relation
+        );
+        return resolveDescription(feather, suffix);
+    }
+
+    if (!feather.properties[attr]) {
+        return &quot;Unknown attribute &#x27;&quot; + attr + &quot;&#x27;&quot;;
+    }
+
+    return feather.properties[attr].description;
+}
+
+function createTableHeader(options, col) {
+    let config = options.config;
+    let filter = options.filter;
+    let vm = options.vm;
+    let sort = options.sort;
+    let zoom = options.zoom;
+    let hview;
+    let order;
+    let name;
+    let key = col.attr;
+    let icon = [];
+    let fidx;
+    let operators = f.operators;
+    let columnWidth = (
+        config.columns[options.idx].width || COL_WIDTH_DEFAULT
+    );
+
+    function findFilterIndex(col, name) {
+        name = name || &quot;criteria&quot;;
+        let hasCol;
+        let ary = filter[name] || [];
+        let i = 0;
+
+        hasCol = function (item) {
+            if (item.property === col) {
+                return true;
+            }
+            i += 1;
+        };
+
+        if (ary.some(hasCol)) {
+            return i;
+        }
+        return false;
+    }
+
+    fidx = findFilterIndex(key, &quot;sort&quot;);
+
+    columnWidth -= 6;
+
+    // Add sort icons
+    if (fidx !== false) {
+        order = sort[fidx].order || &quot;ASC&quot;;
+        if (order.toUpperCase() === &quot;ASC&quot;) {
+            name = &quot;fa fa-sort-up&quot;;
+        } else {
+            name = &quot;fa fa-sort-down&quot;;
+        }
+
+        icon.push(m(&quot;i&quot;, {
+            class: name + &quot; fb-column-sort-icon&quot;,
+            style: {
+                fontSize: zoom
+            }
+        }));
+
+        if (sort.length &gt; 1) {
+            icon.push(m(&quot;span&quot;, {
+                class: &quot;fb-column-sort-number&quot;,
+                style: {
+                    fontSize: vm.zoom() * 0.6 + &quot;%&quot;
+                }
+            }, fidx + 1));
+        }
+    }
+
+    // Add filter icons
+    fidx = findFilterIndex(key);
+    if (fidx !== false) {
+        icon.push(m(&quot;i&quot;, {
+            class: &quot;fa fa-filter fb-column-filter-icon&quot;,
+            title: operators[
+                (filter.criteria[fidx].operator || &quot;=&quot;)
+            ] + &quot; &quot; + filter.criteria[fidx].value,
+            style: {
+                fontSize: vm.zoom() * 0.80 + &quot;%&quot;
+            }
+        }));
+    }
+
+    hview = [
+        m(&quot;th&quot;, {
+            ondragover: vm.ondragover,
+            draggable: true,
+            ondragstart: vm.ondragstart.bind(
+                null,
+                options.idx,
+                &quot;column&quot;
+            ),
+            ondrop: vm.ondrop.bind(
+                null,
+                options.idx,
+                &quot;column&quot;,
+                config.columns
+            ),
+            class: &quot;fb-column-header&quot;,
+            style: {
+                minWidth: columnWidth + &quot;px&quot;,
+                maxWidth: columnWidth + &quot;px&quot;,
+                fontSize: zoom
+            },
+            title: resolveDescription(options.feather, key)
+        }, icon, col.label || vm.alias(key)),
+        m(&quot;th&quot;, {
+            ondragover: vm.ondragover,
+            draggable: true,
+            ondragstart: vm.ondragstart.bind(
+                null,
+                options.idx,
+                &quot;width&quot;
+            ),
+            class: &quot;fb-column-spacer fb-column-header-grabber&quot;,
+            style: {
+                fontSize: zoom
+            }
+        })
+    ];
+
+    options.idx += 1;
+
+    return hview;
+}
+
+function createTableRow(options, model) {
+    let config = options.config;
+    let vm = options.vm;
+    let zoom = options.zoom;
+    let tds;
+    let row;
+    let thContent;
+    let onclick;
+    let lock;
+    let iconStyle;
+    let lastFocusId;
+    let ontab;
+    let onshifttab;
+    let defaultFocusId = vm.defaultFocus(model);
+    let currentMode = vm.mode().current()[0];
+    let isSelected = vm.isSelected(model);
+    let currentState = model.state().current()[0];
+    let d = model.data;
+    let rowOpts = {
+        key: model.id()
+    };
+    let cellOpts = {};
+    let rowClass;
+    let style;
+
+    // Build row
+    if (isSelected) {
+        rowClass = vm.selectedClass();
+    }
+
+    // Build view row
+    if (currentMode === &quot;/Mode/View&quot; || !isSelected) {
+        // Build cells
+        tds = vm.attrs().map(createTableDataView.bind(null, {
+            config: config,
+            d: d,
+            idx: 0,
+            model: model,
+            onclick: onclick,
+            vm: vm,
+            zoom: zoom
+        }));
+
+        rowOpts = {
+            ondblclick: vm.ondblclick.bind(null, model)
+        };
+
+        // Apply any style business logic
+        style = model.style();
+
+        if (style) {
+            style = f.getStyle(style);
+
+            rowOpts.style = {
+                color: style.color,
+                fontWeight: style.fontWeight,
+                textDecoration: style.textDecoration
+            };
+
+            if (!isSelected) {
+                rowOpts.style.backgroundColor = style.backgroundColor;
+            }
+        }
+
+        // Build editable row
+    } else {
+        cellOpts = {
+            class: &quot;fb-table-cell-edit&quot;
+        };
+
+        lastFocusId = vm.lastFocus(model);
+        ontab = function (e) {
+            let key = e.key || e.keyIdentifier;
+            if (key === &quot;Tab&quot; &amp;&amp; !e.shiftKey) {
+                e.preventDefault();
+                document.getElementById(defaultFocusId).focus();
+            }
+        };
+
+        onshifttab = function (e) {
+            let key = e.key || e.keyIdentifier;
+            if (key === &quot;Tab&quot; &amp;&amp; e.shiftKey) {
+                e.preventDefault();
+                document.getElementById(lastFocusId).focus();
+            }
+        };
+
+        // Build cells
+        tds = vm.attrs().map(createTableDataEditor.bind(null, {
+            config: config,
+            defaultFocusId: defaultFocusId,
+            idx: 0,
+            lastFocusId: lastFocusId,
+            model: model,
+            onshifttab: onshifttab,
+            ontab: ontab,
+            vm: vm,
+            zoom: zoom
+        }));
+    }
+
+    // Front cap header navigation
+    onclick = vm.toggleSelection.bind(
+        this,
+        model,
+        defaultFocusId
+    );
+    iconStyle = {
+        fontSize: zoom,
+        minWidth: &quot;25px&quot;
+    };
+
+    if (currentMode !== &quot;/Mode/Edit&quot; &amp;&amp; isSelected) {
+        thContent = m(&quot;i&quot;, {
+            onclick: vm.ondblclick.bind(null, model),
+            class: &quot;fa fa-folder-open fb-icon-button&quot;,
+            style: iconStyle
+        });
+    } else if (!model.isValid()) {
+        thContent = m(&quot;i&quot;, {
+            onclick: onclick,
+            title: model.lastError(),
+            class: &quot;fa fa-exclamation-triangle&quot;,
+            style: iconStyle
+        });
+    } else if (currentState === &quot;/Locked&quot;) {
+        lock = d.lock() || {};
+        thContent = m(&quot;i&quot;, {
+            onclick: onclick,
+            title: (
+                &quot;User: &quot; + lock.username + &quot;\nSince: &quot; +
+                new Date(lock.created).toLocaleTimeString()
+            ),
+            class: &quot;fa fa-user-lock&quot;,
+            style: iconStyle
+        });
+    } else if (currentState === &quot;/Delete&quot;) {
+        thContent = m(&quot;i&quot;, {
+            onclick: onclick,
+            class: &quot;fa fa-trash&quot;,
+            style: iconStyle
+        });
+    } else if (currentState === &quot;/Ready/New&quot;) {
+        thContent = m(&quot;i&quot;, {
+            onclick: onclick,
+            class: &quot;fa fa-plus&quot;,
+            style: iconStyle
+        });
+    } else if (model.canUndo()) {
+        thContent = m(&quot;i&quot;, {
+            onclick: onclick,
+            class: &quot;fa fa-pencil-alt&quot;,
+            style: iconStyle
+        });
+    } else {
+        cellOpts = {
+            onclick: onclick,
+            style: iconStyle
+        };
+        if (currentMode === &quot;/Mode/Edit&quot; &amp;&amp; isSelected) {
+            cellOpts.class = (
+                &quot;fb-table-cell-edit fb-table-cell-edit-header&quot;
+            );
+        }
+    }
+    tds.unshift(m(&quot;th&quot;, cellOpts, thContent));
+
+    // Build row
+    rowOpts.class = rowClass;
+    rowOpts.key = model.id();
+
+    if (d.isDeleted()) {
+        row = m(&quot;del&quot;, m(&quot;tr&quot;, rowOpts, tds));
+    } else {
+        row = m(&quot;tr&quot;, rowOpts, tds);
+    }
+
+    options.idx += 1;
+
+    return row;
+}
+
+// Resize according to surroundings
+function resize(vm, vnode) {
+    let footer;
+    let yPosition;
+    let e = document.getElementById(vnode.dom.id);
+    let id = vm.footerId();
+    let height = vm.height();
+
+    if (height) {
+        e.style.height = height;
+        return;
+    }
+
+    if (id) {
+        footer = document.getElementById(id);
+        e.style.height = (
+            window.innerHeight -
+            f.getElementPosition(e.parentElement).y -
+            e.offsetTop - footer.offsetHeight - 1 + &quot;px&quot;
+        );
+    } else {
+        yPosition = f.getElementPosition(e).y;
+        height = window.innerHeight - yPosition - 47;
+
+        if (height &lt; 150) {
+            height = 150;
+        }
+
+        e.style.height = height + &quot;px&quot;;
+    }
+}
+
+/**
+    View model for viewing and editing model lists.
+    @class TableWidget
+    @constructor
+    @namespace ViewModels
+    @param {Object} Options
+    @param {Array} [options.actions] Actions
+    @param {Object|String} options.feather Feather
+    @param {Object} options.config Configuration
+    @param {Array} [options.models] Array of models
+    @param {String} [options.height] Fixed height. If none automatic
+    @param {String} [options.containerId] Container id for automatic resize
+    @param {String} [options.footerId] Footer id for automatic resize
+*/
+tableWidget.viewModel = function (options) {
+    options = options || {};
+    let fromWidthIdx;
+    let dataTransfer;
+    let feather = (
+        typeof options.feather === &quot;object&quot;
+        ? options.feather
+        : catalog.getFeather(options.feather)
+    );
+    let modelName = feather.name.toCamelCase();
+    let modelConstructor = catalog.store().models()[modelName];
+    let offset = 0;
+    let dlgSelectId = f.createId();
+    let dlgSelectedId = f.createId();
+    let dlgVisibleId = f.createId();
+    let vm = {};
+
+    function doDownload(target, source) {
+        let element = document.createElement(&quot;a&quot;);
+
+        element.setAttribute(&quot;href&quot;, source + &quot;/&quot; + target);
+        element.setAttribute(&quot;download&quot;, source);
+        element.style.display = &quot;none&quot;;
+
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
+
+    function doImport() {
+        let input = document.createElement(&quot;input&quot;);
+        let dlg = vm.confirmDialog();
+
+        function callback(resp) {
+            let target = &quot;error_log_&quot; + f.now() + &quot;.json&quot;;
+
+            if (resp) {
+                dlg.message(
+                    &quot;One or more errors were encountered during import. &quot; +
+                    &quot;Would you like to download the log?&quot;
+                );
+                dlg.title(&quot;Error&quot;);
+                dlg.icon(&quot;window-close&quot;);
+                dlg.onOk(doDownload.bind(null, target, resp));
+                dlg.show();
+            }
+            vm.refresh();
+        }
+
+        function error(err) {
+            dlg.message(err.message);
+            dlg.title(&quot;Error&quot;);
+            dlg.icon(&quot;window-close&quot;);
+            dlg.buttonCancel().hide();
+            dlg.show();
+        }
+
+        function processFile() {
+            let file = input.files[0];
+            let formData = new FormData();
+            let format = file.name.slice(
+                file.name.indexOf(&quot;.&quot;) + 1,
+                file.name.length
+            );
+            let name = file.name.slice(0, file.name.indexOf(&quot;.&quot;));
+            let feathers = catalog.feathers();
+            let payload;
+
+            if (name.indexOf(&quot; &quot;) !== -1) {
+                name = name.slice(0, name.indexOf(&quot; &quot;));
+            }
+
+            if (format !== &quot;ods&quot; &amp;&amp; format !== &quot;json&quot; &amp;&amp; format !== &quot;xlsx&quot;) {
+                error(new Error(
+                    &quot;Unrecognized file format \&quot;&quot; + format + &quot;\&quot;&quot;
+                ));
+                return;
+            }
+
+            if (!Object.keys(feathers).some(
+                (key) =&gt; feathers[key].plural === name
+            )) {
+                error(new Error(
+                    &quot;Unrecognized data type name \&quot;&quot; + feather + &quot;\&quot;&quot;
+                ));
+                return;
+            }
+
+            formData.append(&quot;import&quot;, file);
+            payload = {
+                method: &quot;POST&quot;,
+                path: &quot;/do/import/&quot; + format + &quot;/&quot; + name,
+                data: formData
+            };
+
+            datasource.request(payload).then(callback).catch(error);
+        }
+
+        input.setAttribute(&quot;type&quot;, &quot;file&quot;);
+        input.setAttribute(&quot;accept&quot;, &quot;.json,.ods,.xlsx&quot;);
+        input.onchange = processFile;
+        input.click();
+    }
+
+    function getFilter(p) {
+        let fattrs = [];
+        let criterion;
+        let value = vm.search();
+        let filter = f.copy(vm.filter());
+
+        filter.offset = p || 0;
+
+        // Recursively resolve type
+        function formatOf(feather, property) {
+            let prefix;
+            let suffix;
+            let rel;
+            let prop;
+            let idx = property.indexOf(&quot;.&quot;);
+
+            if (idx &gt; -1) {
+                prefix = property.slice(0, idx);
+                suffix = property.slice(idx + 1, property.length);
+                rel = feather.properties[prefix].type.relation;
+                return formatOf(catalog.getFeather(rel), suffix);
+            }
+
+            prop = feather.properties[property];
+            return prop.format || prop.type;
+        }
+
+        // Only search on text attributes
+        if (value) {
+            vm.attrs().forEach(function (attr) {
+                let theFeather = vm.feather();
+                let fmt = formatOf(theFeather, attr);
+                let nk;
+                let props;
+
+                if (fmt === &quot;string&quot;) {
+                    fattrs.push(attr);
+                } else if (
+                    typeof fmt === &quot;object&quot; &amp;&amp;
+                    !fmt.childOf
+                ) {
+                    props = catalog.getFeather(fmt.relation).properties;
+                    nk = Object.keys(props).find(
+                        (key) =&gt; props[key].isNaturalKey
+                    );
+                    if (nk) {
+                        fattrs.push(attr + &quot;.&quot; + nk);
+                    }
+                }
+            });
+
+            if (fattrs.length) {
+                criterion = {
+                    property: fattrs,
+                    operator: &quot;~*&quot;,
+                    value: value
+                };
+                filter.criteria = filter.criteria || [];
+                filter.criteria.push(criterion);
+            }
+        }
+
+        return filter;
+    }
+
+    function doExport() {
+        let dlg = vm.confirmDialog();
+        let isOnlyVisible = f.prop(false);
+        let isOnlySelected = f.prop(false);
+        let format = f.prop(&quot;json&quot;);
+        let chkbox = f.getComponent(&quot;Checkbox&quot;);
+
+        function error(err) {
+            dlg.message(err.message);
+            dlg.title(&quot;Error&quot;);
+            dlg.icon(&quot;window-close&quot;);
+            dlg.buttonCancel().hide();
+            dlg.show();
+        }
+
+        function onOk() {
+            let url;
+            let payload;
+            let body = {};
+            let plural = vm.feather().plural || vm.feather().name;
+
+            if (isOnlyVisible()) {
+                body.properties = vm.config().columns.map((col) =&gt; col.attr);
+            }
+
+            body.filter = getFilter();
+            delete body.filter.limit;
+
+            if (isOnlySelected()) {
+                body.filter.criteria = [{
+                    property: &quot;id&quot;,
+                    operator: &quot;IN&quot;,
+                    value: vm.selections().map((item) =&gt; item.id())
+                }];
+            }
+
+            url = &quot;/do/export/&quot; + format() + &quot;/&quot; + plural;
+            payload = {
+                method: &quot;POST&quot;,
+                url: url,
+                data: body
+            };
+
+            return m.request(payload).then(
+                doDownload.bind(null, plural + &quot;.&quot; + format())
+            ).catch(error);
+        }
+
+        dlg.content = function () {
+            let dots = vm.config().columns.some(
+                (col) =&gt; col.attr.indexOf(&quot;.&quot;) &gt; -1
+            );
+
+            return m(&quot;div&quot;, {
+                class: &quot;pure-form pure-form-aligned&quot;
+            }, [
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        for: dlgSelectId
+                    }, &quot;Format:&quot;),
+                    m(&quot;select&quot;, {
+                        id: dlgSelectId,
+                        onchange: (e) =&gt; format(e.target.value),
+                        value: format()
+                    }, [
+                        m(&quot;option&quot;, {
+                            value: &quot;json&quot;
+                        }, &quot;JavaScript Object Notation (json)&quot;),
+                        m(&quot;option&quot;, {
+                            value: &quot;ods&quot;
+                        }, &quot;Open Document Spreadsheet (ods)&quot;),
+                        m(&quot;option&quot;, {
+                            value: &quot;xlsx&quot;
+                        }, &quot;Excel 2007+ XML Format (xlsx)&quot;)
+                    ])
+                ]),
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        for: dlgSelectedId
+                    }, &quot;Only selected rows:&quot;),
+                    m(chkbox, {
+                        onclick: function (value) {
+                            isOnlySelected(value);
+                        },
+                        value: isOnlySelected(),
+                        readonly: vm.selections().length === 0,
+                        title: (
+                            vm.selections().length === 0
+                            ? &quot;No selections to export&quot;
+                            : &quot;&quot;
+                        )
+                    })
+                ]),
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        for: dlgVisibleId
+                    }, &quot;Only visible columns:&quot;),
+                    m(chkbox, {
+                        onclick: function (value) {
+                            isOnlyVisible(value);
+                        },
+                        value: isOnlyVisible(),
+                        readonly: dots,
+                        title: (
+                            dots
+                            ? (
+                                &quot;Cannot export configured columns &quot; +
+                                &quot;referencing relations&quot;
+                            )
+                            : &quot;&quot;
+                        )
+                    })
+                ])
+            ]);
+        };
+
+        dlg.title(&quot;Export data&quot;);
+        dlg.icon(&quot;file-export&quot;);
+        dlg.onOk(onOk);
+        dlg.style({
+            width: &quot;550px&quot;
+        });
+        dlg.show();
+    }
+
+    function doFetch(refresh) {
+        if (refresh) {
+            offset = 0;
+        }
+
+        vm.models().fetch(getFilter(offset), refresh !== true);
+    }
+
+    // Dialog gets modified by actions, so reset after any useage
+    function doResetDialog() {
+        let dlg = vm.confirmDialog();
+
+        dlg.icon(&quot;question-circle&quot;);
+        dlg.title(&quot;Confirmation&quot;);
+        dlg.buttonOk().show();
+        dlg.buttonCancel().show();
+        dlg.buttonCancel().isPrimary(false);
+        dlg.onOk(undefined);
+        dlg.onCancel(undefined);
+        dlg.content = function () {
+            return m(&quot;div&quot;, {
+                id: dlg.ids().content
+            }, dlg.message());
+        };
+        dlg.buttons([
+            dlg.buttonOk,
+            dlg.buttonCancel
+        ]);
+    }
+
+    function selectionChanged() {
+        vm.state().send(&quot;changed&quot;);
+    }
+
+    function selectionFetched() {
+        vm.state().send(&quot;fetched&quot;);
+    }
+
+    // ..........................................................
+    // PUBLIC
+    //
+
+    /**
+        @method actions
+        @return {Array}
+    */
+    vm.actions = function () {
+        let menu;
+        let actions = options.actions || [];
+        let selections = vm.selections();
+        let o;
+
+        menu = actions.map(function (action) {
+            let opts;
+            let actionIcon;
+            let method = modelConstructor.static()[action.method];
+
+            action.id = action.id || f.createId();
+
+            opts = {
+                id: &quot;nav-actions-&quot; + action.id,
+                class: &quot;pure-menu-link&quot;,
+                title: action.title
+            };
+
+            if (
+                action.validator &amp;&amp;
+                !modelConstructor.static()[action.validator](selections)
+            ) {
+                opts.class = &quot;pure-menu-link pure-menu-disabled&quot;;
+            } else {
+                opts.onclick = method.bind(null, vm);
+            }
+
+            if (action.hasSeparator) {
+                opts.class += &quot; fb-menu-list-separator&quot;;
+            }
+
+            if (action.icon) {
+                actionIcon = [m(&quot;i&quot;, {
+                    id: &quot;nav-actions-&quot; + action.id + &quot;-icon&quot;,
+                    class: &quot;fa fa-&quot; + action.icon + &quot; fb-menu-list-icon&quot;
+                })];
+            }
+
+            return m(&quot;li&quot;, opts, actionIcon, action.name);
+        });
+
+        o = {
+            id: &quot;nav-actions-import&quot;,
+            class: &quot;pure-menu-link&quot;,
+            title: &quot;Import data&quot;,
+            onclick: doImport
+        };
+
+        if (menu.length) {
+            o.class += &quot; fb-menu-list-separator&quot;;
+        }
+
+        menu.push(
+            m(&quot;li&quot;, o, [m(&quot;i&quot;, {
+                id: &quot;nav-actions-import-icon&quot;,
+                class: &quot;fa fa-file-import fb-menu-list-icon&quot;
+            })], &quot;Import&quot;)
+        );
+
+        menu.push(
+            m(&quot;li&quot;, {
+                id: &quot;nav-actions-export&quot;,
+                class: &quot;pure-menu-link&quot;,
+                title: &quot;Export data&quot;,
+                onclick: doExport
+            }, [m(&quot;i&quot;, {
+                id: &quot;nav-actions-export-icon&quot;,
+                class: &quot;fa fa-file-export fb-menu-list-icon&quot;
+            })], &quot;Export&quot;)
+        );
+
+        return menu;
+    };
+    /**
+        Resolve the alias for an attribute in a column.
+        @method alias.
+        @param {String} attr
+        @return {String}
+    */
+    vm.alias = function (attr) {
+        return f.resolveAlias(vm.feather(), attr);
+    };
+    /**
+        Array of displayed attributes.
+        @method attrs
+        @return {Array}
+    */
+    vm.attrs = function () {
+        let columns = vm.config().columns;
+        let result = columns.map(function (column) {
+            return column.attr;
+        });
+
+        return result || [{
+            attr: &quot;id&quot;
+        }];
+    };
+    /**
+        Whether can toggle row as selected.
+        @method canToggle
+        @param {Boolean} flag
+        @return {Boolean}
+    */
+    vm.canToggle = f.prop(true);
+    /**
+        CSS class.
+        @method class
+        @param {String} class
+        @return {String}
+    */
+    vm.class = f.prop(options.class || &quot;&quot;);
+    /**
+        @method isEditModeEnabled
+        @param {Boolean} flag
+        @return {Boolean}
+    */
+    vm.isEditModeEnabled = f.prop(options.isEditModeEnabled !== false);
+    /**
+        Flag whether list is populated by query.
+        @method isQuery
+        @param {Boolean} flag
+        @return {Boolean}
+    */
+    vm.isQuery = f.prop(true);
+    /**
+        Layout configuration.
+        @method config
+        @param {Object} object
+        @return {Object}
+    */
+    vm.config = f.prop(options.config);
+    /**
+        Id of footer element below table if any. Used for rendering dimensions.
+        @method footerId
+        @param {String} id
+        @return {String}
+    */
+    vm.footerId = f.prop(options.footerId);
+    /**
+        Dialog for confirmation messages. Content changes depending on context.
+        @method confirmDialog
+        @param {ViewModels.Dialog} dialog
+        @return {ViewModels.Dialog}
+    */
+    vm.confirmDialog = f.prop(f.createViewModel(&quot;Dialog&quot;, {
+        icon: &quot;question-circle&quot;,
+        title: &quot;Confirmation&quot;
+    }));
+    vm.confirmDialog().state().resolve(&quot;/Display/Closed&quot;).enter(doResetDialog);
+    /**
+        Return the id of the input element which should recieve focus.
+        @method defaultFocus
+        @param {Object} Model to evaluate
+        @return {String}
+    */
+    vm.defaultFocus = function (model) {
+        let col = vm.attrs().find(function (attr) {
+            return !model.data[attr] || !model.data[attr].isReadOnly();
+        });
+
+        return (
+            col
+            ? vm.formatInputId(col)
+            : undefined
+        );
+    };
+    /**
+        Dialog for error messages. Content changes depending on context.
+        @method errorDialog
+        @param {ViewModels.Dialog} dialog
+        @return {ViewModels.Dialog}
+    */
+    vm.errorDialog = f.prop(f.createViewModel(&quot;Dialog&quot;, {
+        icon: &quot;exclamation-triangle&quot;,
+        title: &quot;Error&quot;
+    }));
+    /**
+        @method feather
+        @param {Object} feather
+        @return {Object}
+    */
+    vm.feather = f.prop(feather);
+    /**
+        @method filter
+        @param {Filter} filter
+        @return {Filter}
+    */
+    vm.filter = f.prop();
+    /**
+        Form used for editing rows.
+        @method form
+        @return {Object}
+    */
+    vm.form = function () {
+        return f.getForm({
+            form: vm.config().form,
+            feather: feather.name
+        });
+    };
+    /**
+        @method formatInputId
+        @return {string}
+    */
+    vm.formatInputId = function (col) {
+        return &quot;input&quot; + col.toCamelCase(true);
+    };
+    /**
+        Manually set stlye height if any.
+        @method height
+        @param {String} height
+        @return {String}
+    */
+    vm.height = f.prop(options.height);
+    /**
+        @method goNextRow
+    */
+    vm.goNextRow = function () {
+        let list = vm.models();
+        let ids = list.map(function (model) {
+            return model.id();
+        });
+        let model = vm.model();
+        let idx = (
+            model
+            ? ids.indexOf(model.id()) + 1
+            : 0
+        );
+
+        if (list.length &gt; idx) {
+            vm.select(list[idx]);
+        }
+    };
+    /**
+        @method goPrevRow
+    */
+    vm.goPrevRow = function () {
+        let list = vm.models();
+        let model = vm.model();
+        let idx = list.indexOf(model) - 1;
+
+        if (idx &gt;= 0) {
+            vm.select(list[idx]);
+        }
+    };
+    /**
+        Object with table header table body ids.
+        @method ids
+        @param {Object} obj
+        @return {Object}
+    */
+    vm.ids = f.prop({
+        header: f.createId(),
+        rows: f.createId()
+    });
+    /**
+        @method isDragging
+        @param {Boolean} flag
+        @return {Boolean}
+    */
+    vm.isDragging = f.prop(false);
+    /**
+        @method isScrolling
+        @param {Boolean} flag
+        @return {Boolean}
+    */
+    vm.isScrolling = f.prop(false);
+    /**
+        @method isSelected
+        @param {Model} model
+        @return {Boolean}
+    */
+    vm.isSelected = function (model) {
+        return vm.selectionIds().indexOf(model.id()) &gt; -1;
+    };
+    /**
+        Return the name of the last attribute which can recive focus.
+        @method lastFocus
+        @param {Model} model
+        @return {String}
+    */
+    vm.lastFocus = function (model) {
+        let col;
+        let attrs = vm.attrs().slice().reverse();
+
+        col = attrs.find(function (attr) {
+            return model.data[attr] &amp;&amp; !model.data[attr].isReadOnly();
+        });
+        return (
+            col
+            ? vm.formatInputId(col)
+            : undefined
+        );
+    };
+    /**
+        Set or return the last model that was selected in the list.
+        @method lastSelected
+        @param {Model} Model selected
+        @return {Model} Last model selected
+    */
+    vm.lastSelected = f.prop();
+    /**
+        Current edit mode state.
+        @method mode
+        @return {String}
+    */
+    vm.mode = function () {
+        let state = vm.state();
+        return state.resolve(state.current()[0]);
+    };
+    /**
+        Currently selected model.
+        @method model
+        @return {Model}
+    */
+    vm.model = function () {
+        return vm.selection();
+    };
+    /**
+        @method modelDelete
+    */
+    vm.modelDelete = function () {
+        return vm.mode().modelDelete();
+    };
+    /**
+        @method modelNew
+    */
+    vm.modelNew = function () {
+        return vm.mode().modelNew();
+    };
+    /**
+        Model list.
+        @method models
+        @param {List} list
+        @return {List}
+    */
+    vm.models = f.prop(options.models);
+    /**
+        @method nextFocus
+        @param {String} attr
+        @return {String}
+    */
+    vm.nextFocus = f.prop();
+    /**
+        @method ondblclick
+        @param {Model} model
+    */
+    vm.ondblclick = function (model) {
+        vm.select(model);
+        if (options.ondblclick) {
+            options.ondblclick();
+        }
+    };
+    /**
+        @method ondragover
+        @param {Event} event
+    */
+    vm.ondragover = function (ev) {
+        ev.preventDefault();
+    };
+    /**
+        @method ondragstart
+        @param {Integer} index
+        @param {String} type
+        @param {Event} event
+    */
+    vm.ondragstart = function (idx, type, ev) {
+        vm.isDragging(true);
+
+        dataTransfer = {}; // Because ms edge only allows one value
+        dataTransfer.typeStart = type;
+
+        switch (type) {
+        case &quot;width&quot;:
+            fromWidthIdx = idx;
+            dataTransfer.widthStart = ev.clientX;
+            return;
+        }
+
+        dataTransfer[type] = idx;
+    };
+    /**
+        @method ondrop
+        @param {Integer} toIndex
+        @param {String} type
+        @param {Array} ary
+        @param {Event} event
+    */
+    vm.ondrop = function (toIdx, type, ary, ev) {
+        let moved;
+        let column;
+        let fromIdx;
+        let oldWidth;
+        let newWidth;
+        let widthStart;
+        let typeStart = dataTransfer.typeStart;
+
+        ev.preventDefault();
+
+        switch (typeStart) {
+        case &quot;width&quot;:
+            if (fromWidthIdx &lt;= toIdx) {
+                widthStart = dataTransfer.widthStart - 0;
+                column = vm.config().columns[fromWidthIdx];
+                oldWidth = column.width || COL_WIDTH_DEFAULT;
+                newWidth = oldWidth - (widthStart - ev.clientX);
+                column.width = newWidth;
+            }
+            break;
+        default:
+            fromIdx = dataTransfer[type] - 0;
+            if (fromIdx !== toIdx) {
+                moved = ary.splice(fromIdx, 1)[0];
+                ary.splice(toIdx, 0, moved);
+            }
+        }
+
+        vm.isDragging(false);
+    };
+    /**
+        @method onkeydown
+        @param {Event} event
+    */
+    vm.onkeydown = function (e) {
+        let id;
+        let key = e.key || e.keyIdentifier;
+
+        function nav(name) {
+            id = e.target.id;
+            document.getElementById(id).blur();
+
+            // Navigate in desired direction
+            vm[name]();
+            m.redraw();
+            // Set focus on the same cell we left
+            document.getElementById(id).focus();
+        }
+
+        switch (key) {
+        case &quot;Up&quot;:
+        case &quot;ArrowUp&quot;:
+            nav(&quot;goPrevRow&quot;);
+            break;
+        case &quot;Down&quot;:
+        case &quot;ArrowDown&quot;:
+            nav(&quot;goNextRow&quot;);
+            break;
+        }
+    };
+    /**
+        @method onscroll
+        @param {Event} event
+    */
+    vm.onscroll = function (evt) {
+        let ids = vm.ids();
+        let e = evt.srcElement;
+        let remainScroll = e.scrollHeight - e.clientHeight - e.scrollTop;
+        let childHeight = e.lastChild.clientHeight;
+        let header = document.getElementById(ids.header);
+        let rows = document.getElementById(ids.rows);
+
+        // Lazy load: fetch more rows if near bottom and more possible
+        if (vm.isQuery()) {
+            if (
+                remainScroll &lt; childHeight *
+                ROW_COUNT &amp;&amp; vm.models().length &gt;= offset
+            ) {
+                offset = offset + LIMIT;
+                doFetch();
+                return;
+            }
+        }
+
+        // Sync header position with table body position
+        header.scrollLeft = rows.scrollLeft;
+
+        // No need to redraw
+        vm.isScrolling(true);
+    };
+    /**
+        Rerun query.
+        @method refresh
+    */
+    vm.refresh = function () {
+        doFetch(true);
+    };
+    /**
+        Cache of relation widgets for editing.
+        @method relations
+        @param {Object} obj
+        @return {Object}
+    */
+    vm.relations = f.prop({});
+    /**
+        Cache of select components for editing.
+        @method selectComponents
+        @param {Object} obj
+        @return {Object}
+    */
+    vm.selectComponents = f.prop({});
+    /**
+        Save edited models.
+        @method save
+    */
+    vm.save = function () {
+        vm.models().save();
+    };
+    /**
+        @method scrollbarWidth
+        @param {Integr} width
+        @return {Integer}
+    */
+    vm.scrollbarWidth = f.prop(scrWidth);
+    /**
+        Search string.
+        @method search
+        @param {String} str
+        @return {String}
+    */
+    vm.search = options.search || f.prop(&quot;&quot;);
+    /**
+        Array of models to select
+        @method select
+        @param {Array} Models
+        @return {Array} Selected models
+    */
+    vm.select = function (models) {
+        let state;
+        let selections = vm.selections();
+        let ids = vm.selectionIds();
+
+        if (!Array.isArray(models)) {
+            if (
+                selections.length !== 1 ||
+                models === undefined ||
+                selections[0].id() !== models.id()
+            ) {
+                vm.unselect(selections);
+                ids = [];
+            }
+            models = (
+                models === undefined
+                ? []
+                : [models]
+            );
+        }
+
+        models.forEach(function (model) {
+            if (ids.indexOf(model.id()) === -1) {
+                state = model.state().resolve(&quot;/Ready/Fetched/Dirty&quot;);
+                state.enter(selectionChanged);
+                state = model.state().resolve(&quot;/Delete&quot;);
+                state.enter(selectionChanged);
+                state = model.state().resolve(&quot;/Ready/Fetched/Clean&quot;);
+                state.enter(selectionFetched);
+                model.checkDelete();
+
+                selections.push(model);
+            }
+        });
+
+        vm.relations({});
+
+        if (selections.length) {
+            vm.state().send(&quot;selected&quot;);
+        }
+
+        return selections;
+    };
+    /**
+        Current selection (edit mode).
+        @method selection
+        @return {Model}
+    */
+    vm.selection = function () {
+        return vm.selections()[0];
+    };
+    /**
+        Array of selected model ids.
+        @method selectionIds
+        @return {Array}
+    */
+    vm.selectionIds = function () {
+        return vm.selections().map(function (selection) {
+            return selection.id();
+        });
+    };
+    /**
+        Current model selections (view mode).
+        @method selections
+        @param {Array} Models
+        @return {Array} Models
+    */
+    vm.selections = f.prop([]);
+    /**
+        CSS class of selected model.
+        @method selectedClass
+        @return {String}
+    */
+    vm.selectedClass = function () {
+        return vm.mode().selectedClass();
+    };
+    /**
+        @method state
+        @param {State} state
+        @return {State}
+    */
+    vm.state = f.prop();
+    /**
+        Go to edit mode.
+        @method toggleEdit
+    */
+    vm.toggleEdit = function () {
+        vm.state().send(&quot;edit&quot;);
+    };
+    /**
+        Go to view mode.
+        @method toggleView
+    */
+    vm.toggleView = function () {
+        vm.state().send(&quot;view&quot;);
+    };
+    /**
+        Change to either view or edit mode.
+        @method toggleMode
+    */
+    vm.toggleMode = function () {
+        vm.state().send(&quot;toggle&quot;);
+    };
+    /**
+        @method toggleSelection
+        @param {Model} model
+        @param {String} id
+        @return {key} key
+    */
+    vm.toggleSelection = function (model, id, optKey) {
+        if (!vm.canToggle()) {
+            return;
+        }
+        return vm.mode().toggleSelection(model, id, optKey);
+    };
+    /**
+        @method undo
+    */
+    vm.undo = function () {
+        let selection = vm.selection();
+
+        if (selection) {
+            selection.undo();
+        }
+    };
+    /**
+        @method unselect
+        @param {Array} Models
+    */
+    vm.unselect = function (models) {
+        let idx;
+        let state;
+        let ids = [];
+        let selections = vm.selections();
+        let remaining = [];
+
+        // Cache model ids if applicable
+        if (models) {
+            if (Array.isArray(models)) {
+                ids = models.map(function (model) {
+                    return model.id();
+                });
+            } else {
+                ids = [models.id()];
+                models = [models];
+            }
+        }
+
+        // Make sure we&#x27;re working with the exact same list of objects
+        // (i.e. no mixup up of interal pointers)
+        if (models) {
+            models = selections.filter(function (selection) {
+                let isClearing = ids.some(function (id) {
+                    return selection.id() === id;
+                });
+
+                if (!isClearing) {
+                    remaining.push(selection);
+                }
+                return isClearing;
+            });
+        } else {
+            models = selections.map(function (selection) {
+                return selection;
+            });
+        }
+
+        // Remove old state bindings
+        models.forEach(function (selection) {
+            state = selection.state().resolve(&quot;/Ready/Fetched/Dirty&quot;);
+            idx = state.enters.indexOf(selectionChanged);
+            state.enters.splice(idx, 1);
+            state = selection.state().resolve(&quot;/Delete&quot;);
+            idx = state.enters.indexOf(selectionChanged);
+            state.enters.splice(idx, 1);
+            state = selection.state().resolve(&quot;/Ready/Fetched/Clean&quot;);
+            idx = state.enters.indexOf(selectionFetched);
+            state.enters.splice(idx, 1);
+        });
+
+        // Clear selections
+        selections.length = 0;
+
+        // Reapply selections we wanted to leave in tact
+        if (remaining.length) {
+            remaining.forEach(function (model) {
+                selections.push(model);
+            });
+            return;
+        }
+
+        vm.state().send(&quot;unselected&quot;);
+    };
+    /**
+        @method zoom
+        @param {Integer} percent
+        @return {Integer}
+    */
+    vm.zoom = f.prop(100);
+
+    // ..........................................................
+    // INIT
+    //
+
+    vm.filter(f.copy(options.config.filter || {}));
+    vm.filter().limit = vm.filter().limit || LIMIT;
+    if (!options.models) {
+        vm.models(f.createList(
+            feather.name,
+            {
+                subscribe: options.subscribe,
+                filter: vm.filter()
+            }
+        ));
+    }
+
+    // Bind refresh to filter change event
+    vm.filter.state().resolve(&quot;/Ready&quot;).enter(function () {
+        vm.config().filter = vm.filter();
+        vm.refresh();
+    });
+
+    // Create table widget statechart
+    vm.state(f.State.define({
+        concurrent: true
+    }, function () {
+        this.state(&quot;Mode&quot;, function () {
+            this.state(&quot;View&quot;, function () {
+                this.event(&quot;edit&quot;, function () {
+                    if (vm.isEditModeEnabled()) {
+                        this.goto(&quot;../Edit&quot;);
+                    }
+                });
+                this.event(&quot;toggle&quot;, function () {
+                    if (vm.isEditModeEnabled()) {
+                        this.goto(&quot;../Edit&quot;);
+                    }
+                });
+                this.modelDelete = function () {
+                    let confirmDialog = vm.confirmDialog();
+
+                    confirmDialog.message(
+                        &quot;Are you sure you want to delete the &quot; +
+                        &quot;selected rows?&quot;
+                    );
+                    confirmDialog.onOk(function () {
+                        let candidates = vm.selections().filter(
+                            function (selection) {
+                                return selection.canDelete();
+                            }
+                        );
+
+                        candidates.forEach(function (selection) {
+                            return selection.delete(
+                                true
+                            ).then(
+                                function () {
+                                    vm.unselect(selection);
+                                    vm.models().remove(selection);
+                                }
+                            ).catch(
+                                function (err) {
+                                    vm.errorDialog().message(err.message);
+                                    m.redraw();
+                                    vm.errorDialog().show();
+                                }
+                            );
+                        });
+                    });
+                    confirmDialog.show();
+                };
+                this.modelNew = f.prop(false); // Do nothing
+                this.selectedClass = function () {
+                    return &quot;fb-table-row-selected&quot;;
+                };
+                this.toggleSelection = function (model, id, optKey) {
+                    let startIdx;
+                    let endIdx;
+                    let lastIdx;
+                    let currentIdx;
+                    let i;
+                    let models;
+                    let modelIds;
+                    let adds;
+                    let isSelected = vm.isSelected(model);
+
+                    switch (optKey) {
+                    case &quot;ctrlKey&quot;:
+                        if (isSelected) {
+                            vm.unselect(model);
+                            vm.lastSelected(undefined);
+                            return;
+                        }
+                        vm.select([model]);
+                        vm.lastSelected(model);
+                        break;
+                    case &quot;shiftKey&quot;:
+                        document.getSelection().removeAllRanges();
+                        adds = [];
+                        models = vm.models();
+                        modelIds = vm.models().map(function (item) {
+                            return item.id();
+                        });
+                        lastIdx = Math.max(modelIds.indexOf(
+                            vm.lastSelected().id()
+                        ), 0);
+                        currentIdx = modelIds.indexOf(model.id());
+
+                        if (currentIdx &gt; lastIdx) {
+                            startIdx = lastIdx;
+                            endIdx = currentIdx;
+                        } else {
+                            startIdx = currentIdx;
+                            endIdx = lastIdx;
+                        }
+
+                        for (i = startIdx; i &lt;= endIdx; i += 1) {
+                            adds.push(models[i]);
+                        }
+
+                        vm.select(adds);
+                        vm.lastSelected(model);
+                        break;
+                    default:
+                        vm.unselect();
+                        if (!isSelected) {
+                            vm.select(model);
+                            vm.lastSelected(model);
+                        }
+                    }
+
+                    vm.nextFocus(id);
+                    return true;
+                };
+                this.enter(function () {
+                    let checkUpdate = vm.models().checkUpdate;
+
+                    if (checkUpdate) {
+                        checkUpdate(false);
+                    }
+                });
+            });
+            this.state(&quot;Edit&quot;, function () {
+                this.enter(function () {
+                    let last;
+                    let checkUpdate = vm.models().checkUpdate;
+
+                    if (checkUpdate) {
+                        checkUpdate(true);
+                    }
+
+                    if (vm.selections().length &gt; 1) {
+                        last = vm.lastSelected();
+                        vm.unselect();
+                        vm.select(last);
+                    }
+                });
+                this.event(&quot;view&quot;, function () {
+                    this.goto(&quot;../View&quot;);
+                });
+                this.event(&quot;toggle&quot;, function () {
+                    this.goto(&quot;../View&quot;);
+                });
+                this.modelDelete = function () {
+                    let selection = vm.selection();
+                    let prevState = selection.state().current()[0];
+
+                    selection.delete();
+                    if (prevState === &quot;/Ready/New&quot;) {
+                        vm.models().remove(selection);
+                    }
+                };
+                this.modelNew = function () {
+                    let name = vm.feather().name;
+                    let model = f.createModel(name);
+                    let input = vm.defaultFocus(model);
+
+                    vm.models().add(model);
+                    vm.nextFocus(input);
+                    vm.select(model);
+                    return true;
+                };
+                this.selectedClass = function () {
+                    return &quot;fb-table-row-editor&quot;;
+                };
+                this.toggleSelection = function (model, id) {
+                    vm.select(model);
+                    vm.lastSelected(model);
+                    vm.nextFocus(id);
+                    return true;
+                };
+            });
+        });
+        this.state(&quot;Selection&quot;, function () {
+            this.event(&quot;selected&quot;, function () {
+                this.goto(&quot;./On&quot;, {
+                    force: true
+                });
+            });
+            this.state(&quot;Off&quot;);
+            this.state(&quot;On&quot;, function () {
+                this.event(&quot;unselected&quot;, function () {
+                    this.goto(&quot;../Off&quot;);
+                });
+                this.c = this.C; // Squelch jslint complaint
+                this.c(function () {
+                    if (vm.selection().canUndo()) {
+                        return &quot;./Dirty&quot;;
+                    }
+                    return &quot;./Clean&quot;;
+                });
+                this.state(&quot;Clean&quot;, function () {
+                    this.event(&quot;changed&quot;, function () {
+                        this.goto(&quot;../Dirty&quot;);
+                    });
+                });
+                this.state(&quot;Dirty&quot;, function () {
+                    this.event(&quot;fetched&quot;, function () {
+                        this.goto(&quot;../Clean&quot;);
+                    });
+                });
+            });
+        });
+    }));
+
+    // Initialize statechart
+    vm.state().goto();
+
+    return vm;
+};
+
+catalog.register(&quot;viewModels&quot;, &quot;tableWidget&quot;, tableWidget.viewModel);
+
+/**
+    @class TableWidget
+    @static
+    @namespace Components
+*/
+tableWidget.component = {
+
+    /**
+        @method oninit
+        @param {Object} vnode Virtual node
+        @param {ViewModels.TableWidget} vnode.viewModel
+    */
+    oninit: function (vnode) {
+        vnode.attrs.viewModel.canToggle(true);
+    },
+
+    /**
+        Block redrawing where unneccessary to improve performance.
+        @method onbeforeupdate
+        @param {Object} vnode Virtual node
+        @param {ViewModels.TableWidget} vnode.viewModel
+    */
+    onbeforeupdate: function (vnode) {
+        let vm = vnode.attrs.viewModel;
+        let isDragging = vm.isDragging();
+        let isScrolling = vm.isScrolling();
+
+        if (isScrolling) {
+            vm.isScrolling(false); // Reset
+        }
+
+        if (isDragging || isScrolling) {
+            return false; // Don&#x27;t redraw
+        }
+    },
+
+    /**
+        @method view
+        @param {Object} vnode Virtual node
+        @param {ViewModels.TableWidget} vnode.viewModel
+        @return {Object} View
+    */
+    view: function (vnode) {
+        let header;
+        let rows;
+        let vm = vnode.attrs.viewModel;
+        let ids = vm.ids();
+        let config = vm.config();
+        let filter = vm.filter();
+        let sort = filter.sort || [];
+        let zoom = vm.zoom() + &quot;%&quot;;
+        let feather = vm.feather();
+        let dlg = f.getComponent(&quot;Dialog&quot;);
+
+        // Build header
+        header = (function () {
+            let ths = config.columns.map(createTableHeader.bind(null, {
+                config: config,
+                feather: feather,
+                filter: filter,
+                idx: 0,
+                sort: sort,
+                vm: vm,
+                zoom: zoom
+            }));
+
+            // Front cap header navigation
+            ths.unshift(m(&quot;th&quot;, {
+                style: {
+                    minWidth: &quot;25px&quot;,
+                    fontSize: zoom
+                }
+            }));
+
+            // End cap on header for scrollbar
+            ths.push(m(&quot;th&quot;, {
+                style: {
+                    minWidth: vm.scrollbarWidth() + &quot;px&quot;,
+                    maxWidth: vm.scrollbarWidth() + &quot;px&quot;
+                }
+            }));
+
+            return m(&quot;tr&quot;, ths);
+        }());
+
+        // Build rows
+        rows = vm.models().map(createTableRow.bind(null, {
+            config: config,
+            idx: 0,
+            vm: vm,
+            zoom: zoom
+        }));
+
+        // Put a dummy row in to manage spacing correctly if
+        // none otherwise.
+        if (!rows.length) {
+            rows.push(m(&quot;tr&quot;, {
+                style: {
+                    height: &quot;50px&quot;
+                }
+            }));
+        }
+
+        return m(&quot;div&quot;, {
+            class: &quot;pure-form &quot; + vm.class()
+        }, [
+            m(dlg, {
+                viewModel: vm.confirmDialog()
+            }),
+            m(dlg, {
+                viewModel: vm.errorDialog()
+            }),
+            m(&quot;table&quot;, {
+                class: &quot;pure-table fb-table&quot;
+            }, [
+                m(&quot;thead&quot;, {
+                    id: ids.header,
+                    class: &quot;fb-table-header&quot;
+                }, [header]),
+                m(&quot;tbody&quot;, {
+                    id: ids.rows,
+                    class: &quot;fb-table-body&quot;,
+                    onscroll: vm.onscroll,
+                    oncreate: function (vnode) {
+                        // Key down handler for up down movement
+                        let e = document.getElementById(vnode.dom.id);
+                        e.addEventListener(&quot;keydown&quot;, vm.onkeydown);
+                        resize(vm, vnode);
+                    },
+                    onupdate: resize.bind(null, vm),
+                    onremove: function (vnode) {
+                        // Key down handler for up down movement
+                        let e = document.getElementById(vnode.dom.id);
+
+                        if (e) {
+                            e.removeEventListener(&quot;keydown&quot;, vm.onkeydown);
+                        }
+                    }
+                }, rows)
+            ])
+        ]);
+    }
+};
+
+catalog.register(&quot;components&quot;, &quot;tableWidget&quot;, tableWidget.component);
+
+export default Object.freeze(tableWidget);
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

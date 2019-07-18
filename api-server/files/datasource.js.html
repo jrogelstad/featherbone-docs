@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>datasource.js - Featherbone Server</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-server.png" title="Featherbone Server"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Client.html">Client</a></li>
+                                <li><a href="../classes/Connection.html">Connection</a></li>
+                                <li><a href="../classes/Database.html">Database</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/Money.html">Money</a></li>
+                                <li><a href="../classes/Services.API.html">Services.API</a></li>
+                                <li><a href="../classes/Services.CRUD.html">Services.CRUD</a></li>
+                                <li><a href="../classes/Services.Currency.html">Services.Currency</a></li>
+                                <li><a href="../classes/Services.Events.html">Services.Events</a></li>
+                                <li><a href="../classes/Services.Exporter.html">Services.Exporter</a></li>
+                                <li><a href="../classes/Services.Feathers.html">Services.Feathers</a></li>
+                                <li><a href="../classes/Services.Importer.html">Services.Importer</a></li>
+                                <li><a href="../classes/Services.Installer.html">Services.Installer</a></li>
+                                <li><a href="../classes/Services.Packager.html">Services.Packager</a></li>
+                                <li><a href="../classes/Services.Profile.html">Services.Profile</a></li>
+                                <li><a href="../classes/Services.Role.html">Services.Role</a></li>
+                                <li><a href="../classes/Services.Routes.html">Services.Routes</a></li>
+                                <li><a href="../classes/Services.Services.html">Services.Services</a></li>
+                                <li><a href="../classes/Services.Settings.html">Services.Settings</a></li>
+                                <li><a href="../classes/Services.Tools.html">Services.Tools</a></li>
+                                <li><a href="../classes/Services.Workbooks.html">Services.Workbooks</a></li>
+                                <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/User.html">User</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/API.html">API</a></li>
+                                <li><a href="../modules/CRUD.html">CRUD</a></li>
+                                <li><a href="../modules/Currency.html">Currency</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/Events.html">Events</a></li>
+                                <li><a href="../modules/Feathers.html">Feathers</a></li>
+                                <li><a href="../modules/Installer.html">Installer</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/Packager.html">Packager</a></li>
+                                <li><a href="../modules/Profile.html">Profile</a></li>
+                                <li><a href="../modules/Role.html">Role</a></li>
+                                <li><a href="../modules/Routes.html">Routes</a></li>
+                                <li><a href="../modules/Settings.html">Settings</a></li>
+                                <li><a href="../modules/Tools.html">Tools</a></li>
+                                <li><a href="../modules/Workbooks.html">Workbooks</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: datasource.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint node, this, devel*/
+/**
+    @module Datasource
+*/
+(function (exports) {
+    &quot;use strict&quot;;
+
+    require(&quot;../common/string&quot;);
+    require(&quot;../common/number&quot;);
+    require(&quot;../common/date&quot;);
+
+    const {Database} = require(&quot;./database&quot;);
+    const {Events} = require(&quot;./services/events&quot;);
+    const {CRUD} = require(&quot;./services/crud&quot;);
+    const {Currency} = require(&quot;./services/currency&quot;);
+    const {Feathers} = require(&quot;./services/feathers&quot;);
+    const {Importer, Exporter} = require(&quot;./services/io&quot;);
+    const {Installer} = require(&quot;./services/installer&quot;);
+    const {Profile} = require(&quot;./services/profile&quot;);
+    const {Packager} = require(&quot;./services/packager&quot;);
+    const {Routes} = require(&quot;./services/routes&quot;);
+    const {Services} = require(&quot;./services/services&quot;);
+    const {Settings} = require(&quot;./services/settings&quot;);
+    const {Role} = require(&quot;./services/role&quot;);
+    const {Tools} = require(&quot;./services/tools&quot;);
+    const {Workbooks} = require(&quot;./services/workbooks&quot;);
+    const {Config} = require(&quot;./config&quot;);
+
+    const f = require(&quot;../common/core&quot;);
+    const jsonpatch = require(&quot;fast-json-patch&quot;);
+    const db = new Database();
+    const events = new Events();
+    const config = new Config();
+    const crud = new CRUD();
+    const currency = new Currency();
+    const exporter = new Exporter();
+    const feathers = new Feathers();
+    const importer = new Importer();
+    const installer = new Installer();
+    const packager = new Packager();
+    const profile = new Profile();
+    const routes = new Routes();
+    const services = new Services();
+    const settings = new Settings();
+    const role = new Role();
+    const tools = new Tools();
+    const workbooks = new Workbooks();
+    /**
+        Server datasource class.
+
+        @class Datasource
+        @static
+    */
+    const that = {};
+
+    let registered;
+
+    registered = {
+        GET: {},
+        POST: {},
+        PUT: {},
+        PATCH: {},
+        DELETE: {}
+    };
+
+    const TRIGGER_BEFORE = 1;
+    const TRIGGER_AFTER = 2;
+
+    // ..........................................................
+    // PRIVATE
+    //
+
+    function isRegistered(method, name, trigger) {
+        let found = registered[method][name];
+
+        if (trigger &amp;&amp; found &amp;&amp; found[trigger]) {
+            return found[trigger];
+        }
+
+        if (trigger === undefined) {
+            return found || false;
+        }
+
+        return false;
+    }
+
+    function subscribe(obj) {
+        return new Promise(function (resolve, reject) {
+            let client = db.getClient(obj.client);
+
+            events.subscribe(
+                client,
+                obj.subscription,
+                [obj.id]
+            ).then(
+                resolve.bind(null, true)
+            ).catch(
+                reject
+            );
+        });
+    }
+
+    function unsubscribe(obj) {
+        return new Promise(function (resolve, reject) {
+            let client = db.getClient(obj.client);
+
+            events.unsubscribe(
+                client,
+                obj.subscription.id
+            ).then(
+                resolve.bind(null, true)
+            ).catch(
+                reject
+            );
+        });
+    }
+
+    // ..........................................................
+    // PUBLIC
+    //
+    /**
+        @property TRIGGER_BEFORE
+        @type Integer
+        @static
+        @final
+        @default 1
+    */
+    that.TRIGGER_BEFORE = TRIGGER_BEFORE;
+
+    /**
+        @property TRIGGER_AFTER
+        @type Integer
+        @static
+        @final
+        @default 2
+    */
+    that.TRIGGER_AFTER = TRIGGER_AFTER;
+
+    /**
+        Fetch feather catalog.
+
+        @method getCatalog
+        @return {Promise}
+    */
+    that.getCatalog = function () {
+        return new Promise(function (resolve, reject) {
+            function callback(resp) {
+                let payload = {
+                    method: &quot;GET&quot;,
+                    name: &quot;getSettings&quot;,
+                    user: resp.postgres.user,
+                    data: {
+                        name: &quot;catalog&quot;
+                    }
+                };
+
+                that.request(payload).then(resolve).catch(reject);
+            }
+
+            config.read().then(callback);
+        });
+    };
+
+    /**
+        Fetch array of all services.
+
+        @method getServices
+        @return {Promise}
+    */
+    that.getServices = function () {
+        return new Promise(function (resolve, reject) {
+            function callback(resp) {
+                let payload = {
+                    method: &quot;GET&quot;,
+                    name: &quot;getServices&quot;,
+                    user: resp.postgres.user
+                };
+
+                that.request(payload).then(resolve).catch(reject);
+            }
+
+            config.read().then(callback);
+        });
+    };
+
+    /**
+        Fetch array of all routes.
+
+        @method getRoutes
+        @return {Promise}
+    */
+    that.getRoutes = function () {
+        return new Promise(function (resolve, reject) {
+            function callback(resp) {
+                let payload = {
+                    method: &quot;GET&quot;,
+                    name: &quot;getRoutes&quot;,
+                    user: resp.postgres.user
+                };
+
+                that.request(payload).then(resolve).catch(reject);
+            }
+
+            config.read().then(callback);
+        });
+    };
+
+    /**
+        Initialize listener. Message is passed to callback.
+        Exposes {{#crossLink &quot;Services.Events/listen:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method listen
+        @param {Function} callback
+        @return {Promise}
+    */
+    that.listen = function (callback) {
+        function doListen(resp) {
+            return new Promise(function (resolve, reject) {
+                events.listen(
+                    resp.client,
+                    db.nodeId,
+                    callback
+                ).then(
+                    resolve
+                ).catch(
+                    reject
+                );
+            });
+        }
+
+        return new Promise(function (resolve, reject) {
+            Promise.resolve().then(
+                db.connect
+            ).then(
+                doListen
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Unsubcribe from object or by type.
+        Exposes
+        {{#crossLink &quot;Services.Events/unsubscribe:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method unsubscribe
+        @param {String} id
+        @param {String} type
+        @return {Promise}
+    */
+    that.unsubscribe = function (id, type) {
+        return new Promise(function (resolve, reject) {
+            // Do the work
+            function doUnsubscribe(resp) {
+                return new Promise(function (resolve, reject) {
+                    function callback() {
+                        resp.done();
+                        resolve();
+                    }
+
+                    events.unsubscribe(
+                        resp.client,
+                        id || db.nodeId,
+                        type || &quot;node&quot;
+                    ).then(
+                        callback
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            Promise.resolve().then(
+                db.connect
+            ).then(
+                doUnsubscribe
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Lock record. Resolves to &#x60;true&#x60; if successful.
+        Exposes {{#crossLink &quot;Services.CRUD/lock:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method lock
+        @param {String} id Object id
+        @param {String} user User name
+        @param {String} eventKey Browser instance event key
+        @return {Promise}
+    */
+    that.lock = function (id, username, eventkey) {
+        return new Promise(function (resolve, reject) {
+            // Do the work
+            function doLock(resp) {
+                return new Promise(function (resolve, reject) {
+                    function callback(ok) {
+                        resp.done();
+                        resolve(ok);
+                    }
+
+                    crud.lock(
+                        resp.client,
+                        db.nodeId,
+                        id,
+                        username,
+                        eventkey
+                    ).then(
+                        callback
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            Promise.resolve().then(
+                db.connect
+            ).then(
+                doLock
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Unlock one or more records.
+        Exposes {{#crossLink &quot;Services.CRUD/unlock:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method unlock
+        @param {Object} Criteria for what to unlock (at least one)
+        @param {String} [criteria.id] Object id
+        @param {String} [criteria.username] User name
+        @param {String} [criteria.eventKey] Event key
+        @return {Promise}
+    */
+    that.unlock = function (criteria) {
+        return new Promise(function (resolve, reject) {
+            criteria = criteria || {};
+            criteria.nodeId = db.nodeId;
+
+            // Do the work
+            function doUnlock(resp) {
+                return new Promise(function (resolve, reject) {
+                    function callback(ids) {
+                        resp.done();
+                        resolve(ids);
+                    }
+
+                    crud.unlock(resp.client, criteria).then(
+                        callback
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            Promise.resolve().then(
+                db.connect
+            ).then(
+                doUnlock
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Install a module from a specified manifest file name.
+        Exposes {{#crossLink &quot;Services.Installer/install:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method install
+        @param {String} Manifest filename.
+        @param {String} User name.
+        @return {Object} Promise
+    */
+    that.install = function (filename, username) {
+        return new Promise(function (resolve, reject) {
+            // Do the work
+            function doInstall(resp) {
+                return new Promise(function (resolve, reject) {
+                    function callback(filename) {
+                        resp.done();
+                        resolve(filename);
+                    }
+
+                    installer.install(
+                        that,
+                        resp.client,
+                        filename,
+                        username
+                    ).then(
+                        callback
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            Promise.resolve().then(
+                db.connect
+            ).then(
+                doInstall
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Package a module.
+        Exposes {{#crossLink &quot;Services.Packager/package:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method package
+        @param {String} name Module name
+        @param {String} username User name
+        @return {Promise}
+    */
+    that.package = function (name, username) {
+        return new Promise(function (resolve, reject) {
+            // Do the work
+            function doPackage(resp) {
+                return new Promise(function (resolve, reject) {
+                    function callback(filename) {
+                        resp.done();
+                        resolve(filename);
+                    }
+
+                    packager.package(
+                        resp.client,
+                        name,
+                        username
+                    ).then(
+                        callback
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            Promise.resolve().then(
+                db.connect
+            ).then(
+                doPackage
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Export data.
+        Exposes {{#crossLink &quot;Services.Exporter&quot;}}{{/crossLink}} via datasource.
+
+        @method export
+        @param {String} Feather
+        @param {Array} [properties]
+        @param {Filter} filter
+        @param {String} dir Target directory
+        @param {String} format &#x60;json&#x60;, &#x60;ods&#x60; or &#x60;xlsx&#x60;
+        @param {String} username
+        @return {Promise}
+    */
+    that.export = function (
+        feather,
+        properties,
+        filter,
+        dir,
+        format,
+        username
+    ) {
+        return new Promise(function (resolve, reject) {
+            let formats = [&quot;json&quot;, &quot;ods&quot;, &quot;xlsx&quot;];
+
+            if (formats.indexOf(format) === -1) {
+                throw new Error(&quot;Unsupported format &quot; + format);
+            }
+
+            // Do the work
+            function doExport(resp) {
+                return new Promise(function (resolve, reject) {
+                    function callback(ok) {
+                        resp.client.currentUser(undefined);
+                        resp.done();
+                        resolve(ok);
+                    }
+
+                    resp.client.currentUser(username);
+
+                    exporter[format](
+                        resp.client,
+                        feather,
+                        properties,
+                        filter,
+                        dir
+                    ).then(
+                        callback
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            Promise.resolve().then(
+                db.connect
+            ).then(
+                doExport
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Import data.
+        Exposes {{#crossLink &quot;Services.Importer&quot;}}{{/crossLink}} via
+        datasource.
+
+        @method import
+        @param {String} feather
+        @param {String} format &#x60;json&#x60;, &#x60;ods&#x60; or &#x60;xlsx&#x60;
+        @param {String} filename
+        @param {String} username
+        @return {Promise}
+    */
+    that.import = function (feather, format, filename, username) {
+        return new Promise(function (resolve, reject) {
+            // Do the work
+            function doImport(resp) {
+                return new Promise(function (resolve, reject) {
+                    function callback(ok) {
+                        resp.client.currentUser(undefined);
+                        resp.done();
+                        resolve(ok);
+                    }
+
+                    resp.client.currentUser(username);
+
+                    importer[format](
+                        that,
+                        resp.client,
+                        feather,
+                        filename
+                    ).then(
+                        callback
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            Promise.resolve().then(
+                db.connect
+            ).then(
+                doImport
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Check user and password.
+        Exposes {{#crossLink &quot;Database/authenticate:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method authenticate
+        @param {String} Username
+        @param {String} Password
+        @return {Object} Promise
+    */
+    that.authenticate = db.authenticate;
+
+    /**
+        Resolves to {{#crossLink &quot;User&quot;}}{{/crossLink}} for passport
+        management. Exposes
+        {{#crossLink &quot;Database/deserializeUser:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method deserializeUser
+        @param {String} Username
+        @return {Promise}
+    */
+    that.deserializeUser = db.deserializeUser;
+
+    /**
+        Return a configured postgres pool. Exposes
+        {{#crossLink &quot;Database/getPool:method&quot;}}{{/crossLink}}
+        via datasource.
+
+        @method getPool
+        @return {Object} Promise
+    */
+    that.getPool = db.getPool;
+
+    function getOld(client, obj) {
+        return new Promise(function (resolve, reject) {
+            that.request({
+                method: &quot;GET&quot;,
+                name: obj.name,
+                id: obj.id,
+                client: client
+            }, true).then(resolve).catch(reject);
+        });
+    }
+
+    /**
+        This function is the gateway for all
+        {{#crossLinkModule &quot;CRUD&quot;}}{{/crossLinkModule}} requests and data
+        service function calls. {{#crossLink &quot;Datasource&quot;}}{{/crossLink}} is
+        attached to the &#x60;f&#x60; global variable in scripts to expose this
+        capability.
+
+        ### CRUD Methods
+        These requests include the capitalized feather as the &#x60;name&#x60; argument.
+        The following methods are supported:
+
+        #### POST (Create)
+        Use this method to insert new records. Any properties not included
+        will be populated by default values. The
+        {{#crossLink &quot;Promise&quot;}}{{/crossLink}} will resolve to a &#x60;PATCH&#x60; array
+        describing all changes made on the server side due to feather defaults
+        and changes caused by triggers. This &#x60;PATCH&#x60; can be applied by the
+        originating requestor to ensure its own copy of the record exactly
+        matches the server.The &#x60;id&#x60; will be checked for uniqueness, along with
+        any properties on the feather set for &#x60;isUnique&#x60; equals &#x60;true&#x60;.
+
+            let ds = f.datasource;
+
+            function callback (resp) {
+                console.log(&quot;PATCH-&gt;&quot;, resp);
+            }
+
+            function error (err) {
+                console.error(&quot;ERROR-&gt;&quot;, err);
+            }
+
+            ds.request({
+                method: &quot;POST&quot;,
+                name: &quot;Contact&quot;,
+                data: {
+                    id: &quot;m7akxiwvz22a&quot;,
+                    firstName: &quot;Caleb&quot;,
+                    lastName: &quot;Johnstone&quot;
+                }
+            }).then(callback).catch(error);
+
+        If the code above is run twice an error will be thrown because of
+        a unique id violation, however, if the record id is included
+        in a &#x60;POST&#x60; request, the request will be treated as an &quot;Upsert&quot; call,
+        which is to say if a record with that id is not found it will be
+        inserted, if one is found the values included in the data will be
+        updated on the existing record. Post requests that include &#x60;id&#x60;
+        are therefore idempotent.
+
+            ...
+
+            ds.request({
+                method: &quot;POST&quot;,
+                name: &quot;Contact&quot;,
+                id: &quot;m7akxiwvz22a&quot;, // Indicate upsert behavior
+                data: {
+                    firstName: &quot;Caleb&quot;,
+                    lastName: &quot;Johnstone&quot;
+                }
+            }).then(callback).catch(error);
+
+        #### GET (Read)
+        Use &#x60;GET&#x60; to retreive one or more records.
+
+        Retreive one result by refering to the record id
+
+            ...
+
+            f.datasource.request({
+                method: &quot;GET&quot;,
+                name: &quot;Contact&quot;,
+                id: &quot;m7akxiwvz22a&quot;
+            }).then(callback).catch(error);
+
+        Excluding the &#x60;id&#x60; will return all records
+
+            ...
+
+            f.datasource.request({
+                method: &quot;GET&quot;,
+                name: &quot;Contact&quot;
+            }).then(callback).catch(error);
+
+        Requests can be paginated so records are returned in small groups
+        using the {{#crossLink &quot;Filter&quot;}}{{/crossLink}} property.
+
+            ...
+
+            f.datasource.request({
+                method: &quot;GET&quot;,
+                name: &quot;Contact&quot;,
+                filter: {
+                    offset: 20, // Start page
+                    limit: 10   // Page length
+                }
+            }).then(callback).catch(error);
+
+        Of course filters can also logically limit and sort
+
+            ...
+
+            f.datasource.request({
+                method: &quot;GET&quot;,
+                name: &quot;Contact&quot;,
+                filter: {
+                    criteria: [{
+                        property: &quot;lastName&quot;,
+                        operation: &quot;equals&quot;,
+                        criteria: &quot;Doe&quot;
+                    }],
+                    sort: [{
+                        property: &quot;firstName&quot;,
+                        order: &quot;ASC&quot;
+                    }]
+                }
+            }).then(callback).catch(error);
+
+        #### PATCH (Update)
+
+        Update records using &#x60;PATCH&#x60; where the &#x60;data&#x60; argument follows the
+        &lt;a href=&#x27;https://tools.ietf.org/html/rfc6902&#x27;&gt;rfc 6092&lt;/a&gt;
+        specification for JSON patch updates. As with &#x60;POST&#x60;, any property
+        values that are updated as a side effect or wind up with different
+        values than requested will be returned in a patch containing all
+        the differences.
+
+            ...
+
+            ds.request({
+                method: &quot;PATCH&quot;,
+                name: &quot;Contact&quot;,
+                id: &quot;m7akxiwvz22a&quot;, // Which record to patch
+                data: [{
+                    op: &quot;replace&quot;,
+                    path: &quot;/firstName&quot;,
+                    value: &quot;Joshua&quot;
+                }]
+            }).then(callback).catch(error);
+
+        #### DELETE
+
+        Delete a record simply by referencing the &#x60;id&#x60;.
+
+            ...
+
+            ds.request({
+                method: &quot;DELETE&quot;,
+                name: &quot;Contact&quot;,
+                id: &quot;m7akxiwvz22a&quot;
+            }).then(callback).catch(error);
+
+        ### Calling Registered Functions
+
+        Requests can also call registered functions to run procedural logic.
+        They are differentiated from CRUD requests by use of a camel case
+        name argument. See
+        {{#crossLink &quot;Datasource/registerFunction:method&quot;}}{{/crossLink}}
+        for more information.
+
+            // Requesting currency conversion
+            ...
+
+            ds.request({
+                method: &quot;POST&quot;,
+                name: &quot;convertCurrency&quot;,
+                data: {
+                    fromCurrency: &quot;EUR&quot;,
+                    amount: &quot;100&quot;
+                }
+            }).then(callback).catch(error);
+
+        @method request
+        @param {Object} Payload
+        @param {String} payload.name Name of feather or registered function
+        @param {String} payload.method Method to perform: &#x60;GET&#x60;, &#x60;POST&#x60;,
+        &#x60;PUT&#x60;, &#x60;PATCH&#x60; or &#x60;DELETE&#x60;
+        @param {String} [payload.id] Identifier for &#x60;GET&#x60;, &#x60;PATCH&#x60; and &#x60;DELETE&#x60;
+        @param {String} [payload.data] Required for &#x60;POST&#x60; and &#x60;PATCH&#x60;
+        calls
+        @param {Filter} [payload.filter] Filter for &#x60;GET&#x60; requests
+        @param {Client} [payload.client] Database client. If undefined one
+        will be intialized by default and wrapped in a transaction if necessary.
+        @param {Boolean} [isSuperUser] Bypass authorization checks.
+        Default false.
+        @return {Promise}
+    */
+    that.request = function (obj, isSuperUser) {
+        return new Promise(function (resolve, reject) {
+            isSuperUser = (
+                isSuperUser === undefined
+                ? false
+                : isSuperUser
+            );
+
+            let client;
+            let done;
+            let transaction;
+            let isChild;
+            let catalog = (
+                settings.data.catalog
+                ? settings.data.catalog.data
+                : {}
+            );
+            let isExternalClient = false;
+            let wrap = false;
+            let isTriggering = (
+                obj.client
+                ? obj.client.isTriggering()
+                : false
+            );
+
+            // Cache original request that may get changed by triggers
+            if (obj.data) {
+                obj.cache = Object.freeze(f.copy(obj.data));
+            }
+
+            function begin() {
+                return new Promise(function (resolve, reject) {
+                    if (!client.wrapped()) {
+                        db.getClient(client).query(&quot;BEGIN;&quot;).then(function () {
+                            client.wrapped(true);
+                            resolve();
+                        }).catch(reject);
+                        return;
+                    }
+                    resolve();
+                });
+            }
+
+            // Add old/new record objects for convenience
+            function doPrepareTrigger(obj) {
+                return new Promise(function (resolve, reject) {
+                    function setRec(result) {
+                        obj.oldRec = result;
+                        resolve();
+                    }
+
+                    function setRecs(result) {
+                        obj.oldRec = result;
+                        obj.newRec = f.copy(result);
+                        jsonpatch.applyPatch(obj.newRec, obj.data);
+                        resolve();
+                    }
+
+                    if (!obj.newRec &amp;&amp; !obj.oldRec) {
+                        switch (obj.method) {
+                        case &quot;POST&quot;:
+                            obj.newRec = f.copy(obj.data);
+                            resolve();
+                            break;
+                        case &quot;PATCH&quot;:
+                            obj.newRec = f.copy(obj.data);
+                            begin().then(
+                                getOld.bind(null, client, obj)
+                            ).then(setRecs).catch(reject);
+                            break;
+                        case &quot;DELETE&quot;:
+                            begin().then(
+                                getOld.bind(null, client, obj)
+                            ).then(setRec).catch(reject);
+                            break;
+                        default:
+                            throw &quot;Unknown trigger method &quot; + obj.method;
+                        }
+
+                        return;
+                    }
+
+                    client.isTriggering(true);
+
+                    resolve();
+                });
+            }
+
+            function close(resp) {
+                return new Promise(function (resolve) {
+                    //console.log(&quot;CLOSING&quot;);
+                    client.currentUser(undefined);
+                    done();
+                    resolve(resp);
+                });
+            }
+
+            function error(err) {
+                //console.log(&quot;ERROR-&gt;&quot;, obj.name, obj.method);
+                // Passed client will handle it&#x27;s own connection
+                console.error(err);
+                if (typeof err === &quot;string&quot;) {
+                    err = new Error(err);
+                }
+
+                if (!err.statusCode) {
+                    err.statusCode = 500;
+                }
+
+                if (!isExternalClient) {
+                    done();
+                }
+
+                return err;
+            }
+
+            function commit(resp) {
+                return new Promise(function (resolve, reject) {
+                    // Forget about committing if recursive
+                    if (isTriggering || isExternalClient) {
+                        resolve(resp);
+                        return;
+                    }
+
+                    if (client.wrapped()) {
+                        //console.log(&quot;COMMIT-&gt;&quot;, obj.name, obj.method);
+                        db.getClient(client).query(&quot;COMMIT;&quot;, function (err) {
+                            client.currentUser(undefined);
+                            client.wrapped(false);
+                            if (err) {
+                                reject(error(err));
+                                return;
+                            }
+
+                            //console.log(&quot;COMMITED&quot;);
+                            resolve(resp);
+                        });
+                        return;
+                    }
+
+                    resolve(resp);
+                });
+            }
+
+            function rollback(err, callback) {
+                // If external, let caller deal with transaction
+                if (isExternalClient) {
+                    callback(error(err));
+                    return;
+                }
+
+                //console.log(&quot;ROLLBACK-&gt;&quot;, obj.name, obj.method);
+
+                if (client.wrapped()) {
+                    db.getClient(client).query(&quot;ROLLBACK;&quot;, function () {
+                        //console.log(&quot;ROLLED BACK&quot;);
+                        client.currentUser(undefined);
+                        client.wrapped(false);
+                        callback(error(err));
+                        return;
+                    });
+                    return;
+                }
+
+                callback(err);
+
+                return;
+            }
+
+            function doExecute() {
+                // console.log(&quot;EXECUTE-&gt;&quot;, obj.name, obj.method);
+                return new Promise(function (resolve, reject) {
+                    if (wrap &amp;&amp; !isTriggering) {
+                        begin().then(function () {
+                            transaction(obj, false, isSuperUser).then(
+                                resolve
+                            ).catch(
+                                reject
+                            );
+                        }).catch(reject);
+                        return;
+                    }
+
+                    // Passed client must handle its own transaction wrapping
+                    transaction(obj, isChild, isSuperUser).then(
+                        resolve
+                    ).catch(
+                        function (err) {
+                            reject(err);
+                        }
+                    );
+                });
+            }
+
+            function doMethod(name, trigger) {
+                // console.log(&quot;METHOD-&gt;&quot;, obj.name, obj.method, name);
+                return new Promise(function (resolve, reject) {
+                    wrap = !obj.client &amp;&amp; obj.method !== &quot;GET&quot;;
+                    obj.data = obj.data || {};
+                    obj.data.id = obj.data.id || obj.id;
+                    obj.client = client;
+                    transaction = (
+                        trigger
+                        ? registered[obj.method][name][trigger]
+                        : registered[obj.method][name]
+                    );
+
+                    Promise.resolve().then(
+                        doExecute
+                    ).then(
+                        resolve
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            function clearTriggerStatus() {
+                // console.log(&quot;CLEAR_TRIGGER-&gt;&quot;, obj.name, obj.method);
+                return new Promise(function (resolve) {
+                    if (!isTriggering) {
+                        client.isTriggering(false);
+                    }
+
+                    resolve();
+                });
+            }
+
+            function doTraverseAfter(name) {
+                // console.log(&quot;TRAVERSE_AFTER-&gt;&quot;, obj.name, obj.method, name);
+                return new Promise(function (resolve, reject) {
+                    let feather = settings.data.catalog.data[name];
+                    let parent = feather.inherits || &quot;Object&quot;;
+
+                    function doTrigger() {
+                        if (name === &quot;Object&quot;) {
+                            Promise.resolve().then(
+                                doMethod.bind(null, name, TRIGGER_AFTER)
+                            ).then(
+                                clearTriggerStatus
+                            ).then(
+                                commit
+                            ).then(
+                                resolve
+                            ).catch(
+                                reject
+                            );
+                            return;
+                        }
+
+                        Promise.resolve().then(
+                            doMethod.bind(null, name, TRIGGER_AFTER)
+                        ).then(
+                            clearTriggerStatus
+                        ).then(
+                            doTraverseAfter.bind(null, parent)
+                        ).then(
+                            resolve
+                        ).catch(
+                            reject
+                        );
+                    }
+
+                    // If business logic defined, do it
+                    if (isRegistered(obj.method, name, TRIGGER_AFTER)) {
+                        doPrepareTrigger(obj).then(
+                            doTrigger
+                        ).catch(
+                            reject
+                        );
+
+                    // If traversal done, finish transaction
+                    } else if (name === &quot;Object&quot;) {
+                        commit(obj.response).then(resolve).catch(reject);
+
+                        // If no logic, but parent, traverse up the tree
+                    } else {
+                        doTraverseAfter(parent).then(resolve).catch(reject);
+                    }
+                });
+            }
+
+            function doQuery() {
+                // console.log(&quot;QUERY-&gt;&quot;, obj.name, obj.method);
+                return new Promise(function (resolve, reject) {
+                    obj.client = client;
+                    isChild = false;
+
+                    switch (obj.method) {
+                    case &quot;GET&quot;:
+                        crud.doSelect(obj, false, isSuperUser).then(
+                            resolve
+                        ).catch(
+                            reject
+                        );
+                        return;
+                    case &quot;POST&quot;:
+                        transaction = crud.doInsert;
+                        break;
+                    case &quot;PATCH&quot;:
+                        transaction = crud.doUpdate;
+                        break;
+                    case &quot;DELETE&quot;:
+                        transaction = crud.doDelete;
+                        break;
+                    default:
+                        reject(error(&quot;method \&quot;&quot; + obj.method + &quot;\&quot; unknown&quot;));
+                        return;
+                    }
+
+                    doExecute().then(
+                        function (resp) {
+                            obj.response = resp;
+                            doTraverseAfter(obj.name).then(
+                                resolve
+                            ).catch(
+                                reject
+                            );
+                        }
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            function doTraverseBefore(name) {
+                // console.log(&quot;TRAVERSE_BEFORE-&gt;&quot;, obj.name, obj.method, name);
+                return new Promise(function (resolve, reject) {
+                    let feather = settings.data.catalog.data[name];
+                    let parent = feather.inherits || &quot;Object&quot;;
+
+                    function doTrigger() {
+                        if (name === &quot;Object&quot;) {
+                            Promise.resolve().then(
+                                doMethod.bind(null, name, TRIGGER_BEFORE)
+                            ).then(
+                                clearTriggerStatus
+                            ).then(
+                                doQuery
+                            ).then(
+                                resolve
+                            ).catch(
+                                reject
+                            );
+                            return;
+                        }
+
+                        Promise.resolve().then(
+                            doMethod.bind(null, name, TRIGGER_BEFORE)
+                        ).then(
+                            clearTriggerStatus
+                        ).then(
+                            doTraverseBefore.bind(null, parent)
+                        ).then(
+                            resolve
+                        ).catch(
+                            reject
+                        );
+                    }
+
+                    // If business logic defined, do it
+                    if (isRegistered(obj.method, name, TRIGGER_BEFORE)) {
+                        doPrepareTrigger(obj).then(
+                            doTrigger
+                        ).catch(
+                            reject
+                        );
+
+                    // Traversal done
+                    } else if (name === &quot;Object&quot;) {
+                        // Accept any changes made by triggers
+                        if (obj.newRec) {
+                            switch (obj.method) {
+                            case &quot;POST&quot;:
+                                obj.data = obj.newRec;
+                                break;
+                            case &quot;PATCH&quot;:
+                                obj.data = jsonpatch.compare(
+                                    obj.oldRec,
+                                    obj.newRec
+                                );
+                                break;
+                            }
+                        }
+
+                        doQuery().then(resolve).catch(reject);
+
+                        // If no logic, but parent, traverse up the tree
+                    } else {
+                        doTraverseBefore(parent).then(resolve).catch(reject);
+                    }
+                });
+            }
+
+            // Determine with POST with id is insert or update
+            function doUpsert() {
+                return new Promise(function (resolve, reject) {
+                    let payload = {
+                        id: obj.id,
+                        name: obj.name,
+                        client: obj.client
+                    };
+
+                    // Apply properties of a new record over the top of an
+                    // existing record assuming not all feather properties
+                    // may be present. This is so jsonpatch doesn&#x27;t remove
+                    // properties not specified
+                    function overlay(newRec, oldRec) {
+                        let n;
+
+                        oldRec = f.copy(oldRec);
+
+                        Object.keys(oldRec).forEach(function (key) {
+                            if (Array.isArray(oldRec[key])) {
+                                if (
+                                    newRec[key] === undefined ||
+                                    newRec[key] === null
+                                ) {
+                                    newRec[key] = oldRec[key];
+                                    return;
+                                }
+
+                                if (!Array.isArray(newRec[key])) {
+                                    throw new Error(
+                                        &quot;Array expected for property \&quot;&quot; + key +
+                                        &quot;\&quot; on &quot; + oldRec.objectType +
+                                        &quot; record with id &quot; +
+                                        oldRec.id
+                                    );
+                                }
+
+                                // We want old array rows deleted if they
+                                // no longer exist in the new record
+                                if (oldRec.length &gt; newRec.length) {
+                                    oldRec.length = newRec.length;
+                                }
+
+                                // Update children in array
+                                n = 0;
+                                oldRec[key].forEach(function (oldChild) {
+                                    if (newRec[key][n] !== undefined) {
+                                        overlay(newRec[key][n], oldChild);
+                                    } else {
+                                        newRec[key][n] = null;
+                                    }
+                                    n += 1;
+                                });
+                            } else if (newRec[key] === undefined) {
+                                newRec[key] = oldRec[key];
+                            }
+                        });
+                    }
+
+                    function callback(resp) {
+                        if (resp) {
+                            overlay(obj.data, resp);
+                            obj.method = &quot;PATCH&quot;;
+                            obj.data = jsonpatch.compare(
+                                resp,
+                                obj.data
+                            );
+                        } else {
+                            obj.data.id = obj.id;
+                        }
+
+                        resolve();
+                    }
+
+                    crud.doSelect(payload, false, isSuperUser).then(
+                        callback
+                    ).catch(
+                        reject
+                    );
+                });
+            }
+
+            function doRequest(resp) {
+                if (!isExternalClient) {
+                    // Disallow SQL calls directly from db services by
+                    // making client simply a reference object.
+                    client = resp.client;
+                    done = resp.done;
+                }
+
+                //console.log(&quot;REQUEST-&gt;&quot;, obj.name, obj.method);
+                return new Promise(function (resolve, reject) {
+                    let msg;
+
+                    if (!client.currentUser() &amp;&amp; !obj.user) {
+                        msg = &quot;User undefined. &quot; + obj.method + &quot; &quot; + obj.name;
+                        reject(msg);
+                        return;
+                    }
+
+                    if (!client.currentUser()) {
+                        client.currentUser(obj.user);
+                    }
+
+                    if (obj.subscription) {
+                        obj.subscription.nodeId = db.nodeId;
+                    }
+
+                    // If alter data, process it
+                    if (catalog[obj.name]) {
+                        if (obj.method === &quot;GET&quot;) {
+                            doQuery().then(function (resp) {
+                                if (!client.wrapped()) {
+                                    client.currentUser(undefined);
+                                }
+                                resolve(resp);
+                            }).catch(reject);
+                        } else if (obj.method === &quot;POST&quot; &amp;&amp; obj.id) {
+                            begin().then(
+                                doUpsert
+                            ).then(
+                                doTraverseBefore.bind(null, obj.name)
+                            ).then(
+                                resolve
+                            ).catch(
+                                function (err) {
+                                    rollback(err, reject);
+                                }
+                            );
+                        } else {
+                            if (!isExternalClient) {
+                                wrap = true;
+                            }
+
+                            doTraverseBefore(obj.name).then(
+                                resolve
+                            ).catch(
+                                function (err) {
+                                    rollback(err, reject);
+                                }
+                            );
+                        }
+
+                    // If function, execute it
+                    } else if (isRegistered(obj.method, obj.name)) {
+                        Promise.resolve().then(
+                            doMethod.bind(null, obj.name)
+                        ).then(
+                            commit
+                        ).then(
+                            resolve
+                        ).catch(
+                            function (err) {
+                                rollback(err, reject);
+                            }
+                        );
+
+                    // Young fool, now you will die.
+                    } else {
+                        msg = &quot;Function &quot; + obj.method + &quot; &quot;;
+                        msg += obj.name + &quot; is not registered.&quot;;
+                        throw new Error(msg);
+                    }
+                });
+            }
+
+            if (obj.client) {
+                isExternalClient = true;
+                client = obj.client;
+                Promise.resolve().then(
+                    doRequest
+                ).then(
+                    resolve
+                ).catch(
+                    reject
+                );
+                return;
+            }
+
+            Promise.resolve().then(
+                db.connect.bind(null, true)
+            ).then(
+                doRequest
+            ).then(
+                close
+            ).then(
+                resolve
+            ).catch(
+                reject
+            );
+        });
+    };
+
+    /**
+        Register a function that can be called as a service by a
+        {{#crossLink &quot;Datasource/request:method&quot;}}{{/crossLink}}
+        so that data services can be made available to other data services
+        added via data service scripts. As a rule, all
+        functions must accept one {{#crossLink &quot;Object&quot;}}{{/crossLink}}
+        as an argument whose properties can be used as arguments within the
+        target function. The
+        {{#crossLink &quot;Datasource/request:method&quot;}}{{/crossLink}} will
+        automatically append its
+        {{#crossLink &quot;Client&quot;}}{{/crossLink}}
+        to the object argument to use
+        for executing queries or other requests within the target function.
+
+        The function should return a {{#crossLink &quot;Promise&quot;}}{{/crossLink}}
+        that resolves to the result of the function, if any.
+
+        Function names should be camel case which distinquishes them from
+        {{#crossLinkModule &quot;CRUD&quot;}}{{/crossLinkModule}} requests
+        where a capitalized feather name is used.
+
+        The following is list of functions that come pre-registered from hard
+        coded services:
+        * __GET__
+          * {{#crossLink &quot;Services.Currency/baseCurrency:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Currency/convertCurrency:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Tools/getAuthorizations:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Feathers/getFeather:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Profile/getProfile:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Routes/getRoutes:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Services/getServices:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Settings/getSettings:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Settings/getSettingsRow:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Settings/getSettingsDefinition:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Workbooks/getWorkbook:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Workbooks/getWorkbooks:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Feathers/isAuthorized:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Tools/isSuperUser:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Workbooks/workbookIsAuthorized:method&quot;}}
+          {{/crossLink}}
+        * __PUT__
+          * {{#crossLink &quot;Services.Feathers/saveAuthorization:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Feathers/saveFeather:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Profile/saveProfile:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Settings/saveSettings:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Workbooks/saveWorkbook:method&quot;}}
+          {{/crossLink}}
+        * __POST__
+          * {{#crossLink &quot;Services.Role/changeRoleLogin:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Role/changeRolePassword:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Role/createRole:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Role/dropRole:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Role/grantMembership:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Role/revokeMembership:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Feathers/saveAuthorization:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Events/subscribe:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Events/unsubscribe:method&quot;}}
+          {{/crossLink}}
+        * __PATCH__
+          * {{#crossLink &quot;Services.Profile/patchProfile:method&quot;}}
+          {{/crossLink}}
+        * __DELETE__
+          * {{#crossLink &quot;Services.Feathers/deleteFeather:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Installer/deleteModule:method&quot;}}
+          {{/crossLink}}
+          * {{#crossLink &quot;Services.Workbooks/deleteWorkbook:method&quot;}}
+          {{/crossLink}}
+
+        @example
+            // Create a function that updates something specific
+            // (Assumed here to be executed within a data service script)
+            function fn (obj) { // Note the single object argument
+                return new Promise(function (resolve, reject) {
+                    function callback() {
+                        resolve(true); // Success results in boolean
+                    }
+
+                    // &quot;f&quot; is the global variable available in scripts
+                    f.datasource.request({
+                        method: &quot;PATCH&quot;,
+                        name: &quot;Foo&quot;, // Capitalized name indicates CRUD request
+                        client: obj.client, // Client is automatically included
+                        id: obj.id, // Id is unique argument for this function
+                        data: [{
+                            op: &quot;replace&quot;,
+                            path: &quot;/status&quot;,
+                            value: &quot;Closed&quot;
+                        }]
+                    }).then(callback).catch(reject);
+                });
+            }
+
+            // Register the function
+            f.datasource.registerFunction(&quot;POST&quot;, &quot;closeFoo&quot;, fn);
+
+            // Define a callback to use when calling our function
+            function callback (resp) {
+                console.log(&quot;Response-&gt;&quot;, resp);
+            }
+
+            // Trap for errors
+            function error (err) {
+                console.error(&quot;Erorr-&gt;&quot;, err);
+            }
+
+            // Execute a request that calls our function and sends a response
+            // via the callback
+            datasource.request({
+                method: &quot;POST&quot;,
+                name: &quot;closeFoo&quot;,
+                data: {
+                    id: &quot;HTJ28n&quot;
+                }
+            }).then(callback).catch(error);
+
+        @method registerFunction
+        @param {String} method &#x60;GET&#x60;, &#x60;POST&#x60;, &#x60;PUT&#x60;, &#x60;PATCH&#x60;, or &#x60;DELETE&#x60;
+        @param {String} name Camel case function name
+        @param {Function} func
+        @return {Object} Receiver
+        @chainable
+    */
+    /**
+        When a trigger is included as an argument in &#x60;registerFunction&#x60;,
+        then the registered function is executed before or after a feather
+        {{#crossLinkModule &quot;CRUD&quot;}}{{/crossLinkModule}}
+        {{#crossLink &quot;Datasource/request:method&quot;}}{{/crossLink}}
+        according to the method and trigger type. The &#x60;method&#x60;
+        determines whether the function applies to a &#x60;POST&#x60;, &#x60;PATCH&#x60; or &#x60;DELETE&#x60;
+        {{#crossLinkModule &quot;CRUD&quot;}}{{/crossLinkModule}}
+        {{#crossLink &quot;Datasource/request:method&quot;}}{{/crossLink}},
+        and the &#x60;trigger&#x60; determines whether the function is
+        executed before or after the
+        {{#crossLinkModule &quot;CRUD&quot;}}{{/crossLinkModule}}
+        request is processed. The function must take in one
+        {{#crossLink &quot;Object&quot;}}{{/crossLink}} as its sole argument
+        and return a {{#crossLink &quot;Promise&quot;}}{{/crossLink}}.
+
+        The following types of declarative business logic can be executed by
+        registered triggers:
+        * Validate values
+        * Change values before processig (&#x60;before&#x60; trigger only)
+        * Make data requests that create, update or delete other records.
+
+        The design is meant to work similar to database triggers, except that
+        object inheritence is honored so triggers will also be inherited by
+        feather sub classes. Note this logic is declarative by definition, where
+        a change caused by one trigger can potentially cascade to many other
+        records which also have triggers.
+
+        The function called in a trigger will be passed an
+        object argument that includes the property &#x60;newRec&#x60; for &#x60;POST&#x60; and
+        &#x60;PATCH&#x60; requests that contains new record properties that will be
+        committed, and &#x60;oldRec&#x60; for &#x60;PATCH&#x60; and &#x60;DELETE&#x60; calls that contains
+        the property values of the record before the request was made.
+
+        To handle an invalid request, simply throw an error and
+        the entire originating request transaction will be rolled back.
+
+            let ds = f.datasource;
+
+            function (obj) {
+                return new Promise(function (resolve) {
+                    if (newRec.lowest &gt;= newRec.highest) {
+                        throw new Error(
+                            &quot;&#x27;Lowest&#x27; value must be less than &#x27;highest&#x27;&quot;
+                        );
+                    }
+
+                    resolve(); // Make sure to always resolve your promises!
+                });
+            }
+
+            // Apply on &#x60;POST&#x60; record creation...
+            ds.registerFunction(&quot;POST&quot;, &quot;Foo&quot;, fn, ds.TRIGGER_BEFORE);
+
+        If values on &#x60;newRec&#x60; are changed in a &#x60;before&#x60; trigger, those
+        values are what will be committed, which provides a way to intercept
+        and change values on proposed requests.
+
+            let ds = f.datasource;
+
+            function (obj) {
+                return new Promise(function (resolve) {
+                    if (newRec.lowest &gt;= newRec.highest) {
+                        newRec.highest = newRec.lowest + 1;
+                    }
+
+                    resolve();
+                });
+            }
+
+            // We can run this same logic on both &#x60;POST&#x60; and &#x60;PATCH&#x60;
+            ds.registerFunction(&quot;POST&quot;, &quot;Foo&quot;, fn, ds.TRIGGER_BEFORE);
+            ds.registerFunction(&quot;PATCH&quot;, &quot;Foo&quot;, fn, ds.TRIGGER_BEFORE);
+
+        If applicable, Properties can be compared between &#x60;oldRec&#x60; and &#x60;newRec&#x60;
+        to determine if changes have been proposed.
+
+            let ds = f.datasource;
+
+            function (obj) {
+                return new Promise(function (resolve) {
+                    if (newRec.name !== oldRec.name) {
+                        throw new Error(&quot;Name cannot be changed&quot;);
+                    }
+
+                    resolve();
+                });
+            }
+
+            // Note this one applies only to &#x60;PATCH&#x60; updates
+            ds.registerFunction(&quot;PATCH&quot;, &quot;Foo&quot;, fn, ds.TRIGGER_BEFORE);
+
+        If other records will be changed as a consequence of a request, it is
+        a good practice to do this in an &#x60;after&#x60; trigger after all proposed
+        property changes, including default values, have already been
+        proceessed.
+
+            let ds = f.datasource;
+
+            function (obj) {
+                return new Promise(function (resolve, reject) {
+                    let msg;
+
+                    // Create a log of some change. Note the updated
+                    // time and user aren&#x27;t set until after the update
+                    // has been completed, so must use &#x60;after&#x60; trigger
+                    if (newRec.description !== oldRec.description) {
+                        msg = (
+                            &quot;Description changed from &#x27;&quot; +
+                            oldRec.description + &quot;&#x27; to &#x27;&quot; +
+                            newRec.description + &quot;&#x27; by &quot; +
+                            newRec.updatedBy + &quot;.&quot;
+                        );
+                        fs.request({
+                            method: &quot;POST&quot;,
+                            name: &quot;FooLog&quot;,
+                            client: obj.client,
+                            data: {
+                                message: msg,
+                                logTime: newRec.updated
+                            }
+                        }).then(resolve).catch(reject);
+
+                        return;
+                    }
+
+                    resolve();
+                });
+            }
+
+            // Note this one applies only to &#x60;PATCH&#x60; updates
+            ds.registerFunction(&quot;PATCH&quot;, &quot;Foo&quot;, fn, ds.TRIGGER_AFTER);
+
+        Note any particular feather only supports one registered function per
+        method and trigger type.
+
+        @method registerFunction
+        @param {String} method &#x60;POST&#x60;, &#x60;PATCH&#x60;, or &#x60;DELETE&#x60;
+        @param {String} name Upper case feather name
+        @param {Function} func
+        @param {Integer} trigger {{#crossLink
+        &quot;Datasource/TRIGGER_BEFORE:property&quot;}}{{/crossLink}} or
+        {{#crossLink &quot;Datasource/TRIGGER_AFTER:property&quot;}}{{/crossLink}}
+        @return {Object} Receiver
+        @chainable
+    */
+    that.registerFunction = function (method, name, func, trigger) {
+        if (trigger) {
+            if (!registered[method][name]) {
+                registered[method][name] = {};
+            }
+            registered[method][name][trigger] = func;
+        } else {
+            registered[method][name] = func;
+        }
+        return that;
+    };
+
+    /**
+        @method registeredFunctions
+        @return {Object} Object listing registered functions
+    */
+    that.registeredFunctions = function () {
+        let keys = Object.keys(registered);
+        let result = {};
+
+        keys.forEach(function (key) {
+            result[key] = Object.keys(registered[key]);
+        });
+
+        return result;
+    };
+
+    /**
+        @method settings
+        @return {Settings} Internal settings object maintained by service
+    */
+    that.settings = function () {
+        return settings;
+    };
+
+    // Set properties on exports
+    Object.keys(that).forEach(function (key) {
+        exports[key] = that[key];
+    });
+
+    // Register certain functions
+    that.registerFunction(&quot;GET&quot;, &quot;baseCurrency&quot;, currency.baseCurrency);
+    that.registerFunction(&quot;GET&quot;, &quot;convertCurrency&quot;, currency.convertCurrency);
+    that.registerFunction(&quot;GET&quot;, &quot;getServices&quot;, services.getServices);
+    that.registerFunction(&quot;GET&quot;, &quot;getFeather&quot;, feathers.getFeather);
+    that.registerFunction(&quot;GET&quot;, &quot;getProfile&quot;, profile.getProfile);
+    that.registerFunction(&quot;GET&quot;, &quot;getRoutes&quot;, routes.getRoutes);
+    that.registerFunction(&quot;GET&quot;, &quot;getSettings&quot;, settings.getSettings);
+    that.registerFunction(&quot;GET&quot;, &quot;getSettingsRow&quot;, settings.getSettingsRow);
+    that.registerFunction(
+        &quot;GET&quot;,
+        &quot;getSettingsDefinition&quot;,
+        settings.getSettingsDefinition
+    );
+    that.registerFunction(&quot;GET&quot;, &quot;getWorkbook&quot;, workbooks.getWorkbook);
+    that.registerFunction(&quot;GET&quot;, &quot;getWorkbooks&quot;, workbooks.getWorkbooks);
+    that.registerFunction(
+        &quot;GET&quot;,
+        &quot;workbookIsAuthorized&quot;,
+        workbooks.workbookIsAuthorized
+    );
+    that.registerFunction(&quot;GET&quot;, &quot;isAuthorized&quot;, feathers.isAuthorized);
+    that.registerFunction(&quot;GET&quot;, &quot;isSuperUser&quot;, tools.isSuperUser);
+    that.registerFunction(&quot;GET&quot;, &quot;getAuthorizations&quot;, tools.getAuthorizations);
+    that.registerFunction(&quot;PATCH&quot;, &quot;patchProfile&quot;, profile.patchProfile);
+    that.registerFunction(&quot;POST&quot;, &quot;changeRoleLogin&quot;, role.changeRoleLogin);
+    that.registerFunction(
+        &quot;POST&quot;,
+        &quot;changeRolePassword&quot;,
+        role.changeRolePassword
+    );
+    that.registerFunction(&quot;POST&quot;, &quot;createRole&quot;, role.createRole);
+    that.registerFunction(&quot;POST&quot;, &quot;dropRole&quot;, role.dropRole);
+    that.registerFunction(&quot;POST&quot;, &quot;grantMembership&quot;, role.grantMembership);
+    that.registerFunction(&quot;POST&quot;, &quot;revokeMembership&quot;, role.revokeMembership);
+    that.registerFunction(
+        &quot;POST&quot;,
+        &quot;saveAuthorization&quot;,
+        feathers.saveAuthorization
+    );
+    that.registerFunction(&quot;POST&quot;, &quot;subscribe&quot;, subscribe);
+    that.registerFunction(&quot;POST&quot;, &quot;unsubscribe&quot;, unsubscribe);
+    that.registerFunction(
+        &quot;PUT&quot;,
+        &quot;saveAuthorization&quot;,
+        feathers.saveAuthorization
+    );
+    that.registerFunction(&quot;PUT&quot;, &quot;saveFeather&quot;, feathers.saveFeather);
+    that.registerFunction(&quot;PUT&quot;, &quot;saveProfile&quot;, profile.saveProfile);
+    that.registerFunction(&quot;PUT&quot;, &quot;saveSettings&quot;, settings.saveSettings);
+    that.registerFunction(&quot;PUT&quot;, &quot;saveWorkbook&quot;, workbooks.saveWorkbook);
+    that.registerFunction(&quot;DELETE&quot;, &quot;deleteFeather&quot;, feathers.deleteFeather);
+    that.registerFunction(&quot;DELETE&quot;, &quot;deleteModule&quot;, installer.deleteModule);
+    that.registerFunction(&quot;DELETE&quot;, &quot;deleteWorkbook&quot;, workbooks.deleteWorkbook);
+
+}(exports));
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

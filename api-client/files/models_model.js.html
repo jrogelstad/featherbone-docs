@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>models\model.js - Featherbone Client</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-client.png" title="Featherbone Client"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Catalog.html">Catalog</a></li>
+                                <li><a href="../classes/Components.AccountMenu.html">Components.AccountMenu</a></li>
+                                <li><a href="../classes/Components.AddressRelation.html">Components.AddressRelation</a></li>
+                                <li><a href="../classes/Components.AutoNumber.html">Components.AutoNumber</a></li>
+                                <li><a href="../classes/Components.Button.html">Components.Button</a></li>
+                                <li><a href="../classes/Components.Checkbox.html">Components.Checkbox</a></li>
+                                <li><a href="../classes/Components.ChildFormPage.html">Components.ChildFormPage</a></li>
+                                <li><a href="../classes/Components.ChildTable.html">Components.ChildTable</a></li>
+                                <li><a href="../classes/Components.ContactRelation.html">Components.ContactRelation</a></li>
+                                <li><a href="../classes/Components.DataList.html">Components.DataList</a></li>
+                                <li><a href="../classes/Components.DataType.html">Components.DataType</a></li>
+                                <li><a href="../classes/Components.Dialog.html">Components.Dialog</a></li>
+                                <li><a href="../classes/Components.FilterDialog.html">Components.FilterDialog</a></li>
+                                <li><a href="../classes/Components.FormDialog.html">Components.FormDialog</a></li>
+                                <li><a href="../classes/Components.FormPage.html">Components.FormPage</a></li>
+                                <li><a href="../classes/Components.FormWidget.html">Components.FormWidget</a></li>
+                                <li><a href="../classes/Components.MoneyRelation.html">Components.MoneyRelation</a></li>
+                                <li><a href="../classes/Components.NavigatorMenu.html">Components.NavigatorMenu</a></li>
+                                <li><a href="../classes/Components.RelationWidget.html">Components.RelationWidget</a></li>
+                                <li><a href="../classes/Components.SearchInput.html">Components.SearchInput</a></li>
+                                <li><a href="../classes/Components.SearchPage.html">Components.SearchPage</a></li>
+                                <li><a href="../classes/Components.SettingsPage.html">Components.SettingsPage</a></li>
+                                <li><a href="../classes/Components.SortDialog.html">Components.SortDialog</a></li>
+                                <li><a href="../classes/Components.TableDialog.html">Components.TableDialog</a></li>
+                                <li><a href="../classes/Components.TableWidget.html">Components.TableWidget</a></li>
+                                <li><a href="../classes/Components.WorkbookPage.html">Components.WorkbookPage</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/List.html">List</a></li>
+                                <li><a href="../classes/Model.html">Model</a></li>
+                                <li><a href="../classes/Models.Address.html">Models.Address</a></li>
+                                <li><a href="../classes/Models.BaseCurrency.html">Models.BaseCurrency</a></li>
+                                <li><a href="../classes/Models.Comment.html">Models.Comment</a></li>
+                                <li><a href="../classes/Models.Contact.html">Models.Contact</a></li>
+                                <li><a href="../classes/Models.ContactAddress.html">Models.ContactAddress</a></li>
+                                <li><a href="../classes/Models.ContactEmail.html">Models.ContactEmail</a></li>
+                                <li><a href="../classes/Models.ContactPhone.html">Models.ContactPhone</a></li>
+                                <li><a href="../classes/Models.ContactSocialAccount.html">Models.ContactSocialAccount</a></li>
+                                <li><a href="../classes/Models.Country.html">Models.Country</a></li>
+                                <li><a href="../classes/Models.Currency.html">Models.Currency</a></li>
+                                <li><a href="../classes/Models.CurrencyConversion.html">Models.CurrencyConversion</a></li>
+                                <li><a href="../classes/Models.CurrencyUnit.html">Models.CurrencyUnit</a></li>
+                                <li><a href="../classes/Models.CurrencyUnitConversion.html">Models.CurrencyUnitConversion</a></li>
+                                <li><a href="../classes/Models.DataListOption.html">Models.DataListOption</a></li>
+                                <li><a href="../classes/Models.DataService.html">Models.DataService</a></li>
+                                <li><a href="../classes/Models.Document.html">Models.Document</a></li>
+                                <li><a href="../classes/Models.Feather.html">Models.Feather</a></li>
+                                <li><a href="../classes/Models.FeatherAuthorization.html">Models.FeatherAuthorization</a></li>
+                                <li><a href="../classes/Models.FeatherOverload.html">Models.FeatherOverload</a></li>
+                                <li><a href="../classes/Models.FeatherProperty.html">Models.FeatherProperty</a></li>
+                                <li><a href="../classes/Models.Form.html">Models.Form</a></li>
+                                <li><a href="../classes/Models.FormAttr.html">Models.FormAttr</a></li>
+                                <li><a href="../classes/Models.FormAttrColumn.html">Models.FormAttrColumn</a></li>
+                                <li><a href="../classes/Models.FormTab.html">Models.FormTab</a></li>
+                                <li><a href="../classes/Models.Honorific.html">Models.Honorific</a></li>
+                                <li><a href="../classes/Models.Kind.html">Models.Kind</a></li>
+                                <li><a href="../classes/Models.Layout.html">Models.Layout</a></li>
+                                <li><a href="../classes/Models.Log.html">Models.Log</a></li>
+                                <li><a href="../classes/Models.Module.html">Models.Module</a></li>
+                                <li><a href="../classes/Models.ModuleDependency.html">Models.ModuleDependency</a></li>
+                                <li><a href="../classes/Models.Object.html">Models.Object</a></li>
+                                <li><a href="../classes/Models.ObjectAuthorization.html">Models.ObjectAuthorization</a></li>
+                                <li><a href="../classes/Models.RelationSearchColumn.html">Models.RelationSearchColumn</a></li>
+                                <li><a href="../classes/Models.RelationWidget.html">Models.RelationWidget</a></li>
+                                <li><a href="../classes/Models.Role.html">Models.Role</a></li>
+                                <li><a href="../classes/Models.RoleMembership.html">Models.RoleMembership</a></li>
+                                <li><a href="../classes/Models.Route.html">Models.Route</a></li>
+                                <li><a href="../classes/Models.Script.html">Models.Script</a></li>
+                                <li><a href="../classes/Models.SocialNetwork.html">Models.SocialNetwork</a></li>
+                                <li><a href="../classes/Models.State.html">Models.State</a></li>
+                                <li><a href="../classes/Models.Style.html">Models.Style</a></li>
+                                <li><a href="../classes/Models.Unit.html">Models.Unit</a></li>
+                                <li><a href="../classes/Models.UserAccount.html">Models.UserAccount</a></li>
+                                <li><a href="../classes/Models.Workbook.html">Models.Workbook</a></li>
+                                <li><a href="../classes/Models.WorkbookAuthorization.html">Models.WorkbookAuthorization</a></li>
+                                <li><a href="../classes/Models.WorkbookChild.html">Models.WorkbookChild</a></li>
+                                <li><a href="../classes/Models.WorkbookDefaultConfig.html">Models.WorkbookDefaultConfig</a></li>
+                                <li><a href="../classes/Models.WorkbookLocalConfig.html">Models.WorkbookLocalConfig</a></li>
+                                <li><a href="../classes/Property.html">Property</a></li>
+                                <li><a href="../classes/State.html">State</a></li>
+                                <li><a href="../classes/State.define.html">State.define</a></li>
+                                <li><a href="../classes/ViewModels.AccountMenu.html">ViewModels.AccountMenu</a></li>
+                                <li><a href="../classes/ViewModels.AddressRelation.html">ViewModels.AddressRelation</a></li>
+                                <li><a href="../classes/ViewModels.AutoNumber.html">ViewModels.AutoNumber</a></li>
+                                <li><a href="../classes/ViewModels.Button.html">ViewModels.Button</a></li>
+                                <li><a href="../classes/ViewModels.Checkbox.html">ViewModels.Checkbox</a></li>
+                                <li><a href="../classes/ViewModels.ChildFormPage.html">ViewModels.ChildFormPage</a></li>
+                                <li><a href="../classes/ViewModels.ChildTable.html">ViewModels.ChildTable</a></li>
+                                <li><a href="../classes/ViewModels.ContactRelation.html">ViewModels.ContactRelation</a></li>
+                                <li><a href="../classes/ViewModels.DataList.html">ViewModels.DataList</a></li>
+                                <li><a href="../classes/ViewModels.DataType.html">ViewModels.DataType</a></li>
+                                <li><a href="../classes/ViewModels.Dialog.html">ViewModels.Dialog</a></li>
+                                <li><a href="../classes/ViewModels.FilterDialog.html">ViewModels.FilterDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormDialog.html">ViewModels.FormDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormPage.html">ViewModels.FormPage</a></li>
+                                <li><a href="../classes/ViewModels.FormWidget.html">ViewModels.FormWidget</a></li>
+                                <li><a href="../classes/ViewModels.MoneyRelation.html">ViewModels.MoneyRelation</a></li>
+                                <li><a href="../classes/ViewModels.NavigatorMenu.html">ViewModels.NavigatorMenu</a></li>
+                                <li><a href="../classes/ViewModels.RelationWidget.html">ViewModels.RelationWidget</a></li>
+                                <li><a href="../classes/ViewModels.SearchInput.html">ViewModels.SearchInput</a></li>
+                                <li><a href="../classes/ViewModels.SearchPage.html">ViewModels.SearchPage</a></li>
+                                <li><a href="../classes/ViewModels.SettingsPage.html">ViewModels.SettingsPage</a></li>
+                                <li><a href="../classes/ViewModels.SortDialog.html">ViewModels.SortDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableDialog.html">ViewModels.TableDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableWidget.html">ViewModels.TableWidget</a></li>
+                                <li><a href="../classes/ViewModels.WorkbookPage.html">ViewModels.WorkbookPage</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/AccountMenu.html">AccountMenu</a></li>
+                                <li><a href="../modules/AddressRelation.html">AddressRelation</a></li>
+                                <li><a href="../modules/AutoNumber.html">AutoNumber</a></li>
+                                <li><a href="../modules/Button.html">Button</a></li>
+                                <li><a href="../modules/Catalog.html">Catalog</a></li>
+                                <li><a href="../modules/Checkbox.html">Checkbox</a></li>
+                                <li><a href="../modules/ChildFormPage.html">ChildFormPage</a></li>
+                                <li><a href="../modules/ChildTable.html">ChildTable</a></li>
+                                <li><a href="../modules/ContactRelation.html">ContactRelation</a></li>
+                                <li><a href="../modules/Core.html">Core</a></li>
+                                <li><a href="../modules/DataList.html">DataList</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/DataType.html">DataType</a></li>
+                                <li><a href="../modules/Dialog.html">Dialog</a></li>
+                                <li><a href="../modules/FilterDialog.html">FilterDialog</a></li>
+                                <li><a href="../modules/FormDialog.html">FormDialog</a></li>
+                                <li><a href="../modules/FormPage.html">FormPage</a></li>
+                                <li><a href="../modules/FormWidget.html">FormWidget</a></li>
+                                <li><a href="../modules/List.html">List</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/MoneyRelation.html">MoneyRelation</a></li>
+                                <li><a href="../modules/NavigatorMenu.html">NavigatorMenu</a></li>
+                                <li><a href="../modules/Property.html">Property</a></li>
+                                <li><a href="../modules/RelationWidget.html">RelationWidget</a></li>
+                                <li><a href="../modules/SearchInput.html">SearchInput</a></li>
+                                <li><a href="../modules/SearchPage.html">SearchPage</a></li>
+                                <li><a href="../modules/SettingsPage.html">SettingsPage</a></li>
+                                <li><a href="../modules/SortDialog.html">SortDialog</a></li>
+                                <li><a href="../modules/State.html">State</a></li>
+                                <li><a href="../modules/TableDialog.html">TableDialog</a></li>
+                                <li><a href="../modules/TableWidget.html">TableWidget</a></li>
+                                <li><a href="../modules/Workbook.html">Workbook</a></li>
+                                <li><a href="../modules/WorkbookPage.html">WorkbookPage</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: models\model.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint this, browser*/
+/**
+    @module Model
+*/
+import createProperty from &quot;../property.js&quot;;
+import datasource from &quot;../datasource.js&quot;;
+import catalog from &quot;./catalog.js&quot;;
+import State from &quot;../state.js&quot;;
+
+const f = window.f;
+const jsonpatch = window.jsonpatch;
+const Qs = window.Qs;
+
+const store = catalog.store();
+
+// ..........................................................
+// PRIVATE
+//
+
+/**
+    @private
+    @method onFetching
+*/
+function onFetching() {
+    this.state().goto(&quot;/Busy/Fetching&quot;);
+}
+
+/**
+    @private
+    @method onFetched
+*/
+function onFetched() {
+    this.state().goto(&quot;/Ready/Fetched&quot;);
+}
+
+/**
+    Function to extend child array
+    @private
+    @method extendArray
+*/
+function extendArray(model, prop, name, onChange, onChanged) {
+    let state = model.state();
+    let isNew = true;
+    let cache = [];
+    let ary = prop();
+
+    // Bind parent events to array
+    state.resolve(&quot;/Ready/New&quot;).enter(function (context) {
+        if (context &amp;&amp; context.clear === false) {
+            return;
+        }
+        isNew = true;
+        ary.clear();
+    });
+
+    state.resolve(&quot;/Ready/Fetched&quot;).enter(function () {
+        isNew = false;
+    });
+
+    // Extend array
+    ary.add = function (value) {
+        let result;
+
+        prop.state().send(&quot;change&quot;);
+        if (value &amp;&amp; value.isModel) {
+            result = value;
+        } else {
+            // Create an instance
+            result = catalog.store().models()[name](value);
+        }
+
+        result.parent(model);
+
+        // Add bindings to change events
+        if (onChange[prop.key]) {
+            onChange[prop.key].forEach(function (item) {
+                result.onChange(item.name, item.callback);
+            });
+        }
+
+        if (onChanged[prop.key]) {
+            onChanged[prop.key].forEach(function (item) {
+                result.onChanged(item.name, item.callback);
+            });
+        }
+
+        // Synchronize statechart
+        state.resolve(&quot;/Busy/Fetching&quot;).enter(onFetching.bind(result));
+        state.resolve(&quot;/Ready/Fetched&quot;).enter(onFetched.bind(result));
+
+        // Remove original enter response on child
+        result.state().resolve(&quot;/Busy/Fetching&quot;).enters.shift();
+        result.state().resolve(&quot;/Ready/Fetched/Locking&quot;).enters.shift();
+        result.state().resolve(&quot;/Delete&quot;).enters.shift();
+
+        // Disable save event on child
+        result.state().resolve(&quot;/Ready/New&quot;).event(&quot;save&quot;);
+        result.state().resolve(&quot;/Ready/Fetched/Dirty&quot;).event(&quot;save&quot;);
+
+        // Notify parent if child becomes dirty
+        result.state().resolve(&quot;/Ready/Fetched/Locking&quot;).enter(function () {
+            this.goto(&quot;../Dirty&quot;);
+        });
+        result.state().resolve(&quot;/Ready/Fetched/Dirty&quot;).enter(function () {
+            state.send(&quot;changed&quot;);
+        });
+        result.state().resolve(&quot;/Delete&quot;).enter(function () {
+            prop.state().send(&quot;change&quot;);
+            prop.state().send(&quot;changed&quot;);
+        });
+        result.state().resolve(&quot;/Ready&quot;).enter(function () {
+            prop.state().send(&quot;change&quot;);
+            prop.state().send(&quot;changed&quot;);
+        });
+
+        // Notify parent properties changed
+        ary.push(result);
+        cache.push(result);
+        prop.state().send(&quot;changed&quot;);
+
+        return result;
+    };
+
+    ary.canAdd = createProperty(true);
+
+    ary.clear = function () {
+        prop.state().send(&quot;change&quot;);
+        ary.length = 0;
+        cache.length = 0;
+        prop.state().send(&quot;changed&quot;);
+    };
+
+    ary.remove = function (value) {
+        let result;
+        let idx;
+        let find;
+
+        find = function (item, i) {
+            if (value.id() === item.id()) {
+                idx = i;
+                return true;
+            }
+        };
+
+        if (ary.some(find)) {
+            prop.state().send(&quot;change&quot;);
+            result = ary.splice(idx, 1)[0];
+            cache.some(find); // Find index on cache
+            if (isNew) {
+                cache.splice(idx, 1);
+            } else {
+                delete cache[idx];
+            }
+            prop.state().send(&quot;changed&quot;);
+        }
+
+        return result;
+    };
+
+    ary.toJSON = function () {
+        let item;
+        let value;
+        let isNotDeleting;
+        let result = [];
+        let len = cache.length;
+        let i = 0;
+
+        while (i &lt; len) {
+            item = cache[i];
+            isNotDeleting = (item &amp;&amp; item.state().current()[0] !== &quot;/Delete&quot;);
+            value = (
+                isNotDeleting
+                ? item.toJSON()
+                : undefined
+            );
+            result.push(value);
+            i += 1;
+        }
+
+        return result;
+    };
+}
+
+/**
+    @private
+    @method handleDefault
+*/
+function handleDefault(prop, frmt) {
+    if (!prop.default &amp;&amp; !frmt) {
+        return;
+    }
+    frmt = frmt || {};
+    let def;
+
+    // Handle default
+    if (prop.default !== undefined &amp;&amp; (
+        prop.default !== null ||
+        prop.type === &quot;object&quot; ||
+        prop.type === &quot;array&quot; ||
+        prop.format === &quot;date&quot; ||
+        prop.format === &quot;dateTime&quot;
+    )) {
+        def = prop.default;
+    } else if (typeof frmt.default === &quot;function&quot;) {
+        def = frmt.default();
+    } else {
+        def = frmt.default;
+    }
+
+    // Handle default that is a function
+    if (
+        typeof def === &quot;string&quot; &amp;&amp;
+        def.match(/\(\)$/)
+    ) {
+        def = f[def.replace(/\(\)$/, &quot;&quot;)];
+    }
+
+    return def;
+}
+
+/**
+    @private
+    @method isChild
+    @param {Function} Property
+*/
+function isChild(p) {
+    return p.type &amp;&amp; typeof p.type === &quot;object&quot; &amp;&amp; p.type.childOf;
+}
+
+/**
+    @private
+    @method isToOne
+    @param {Function} Property
+*/
+function isToOne(p) {
+    return (
+        p.type &amp;&amp; typeof p.type === &quot;object&quot; &amp;&amp;
+        !p.type.childOf &amp;&amp; !p.type.parentOf
+    );
+}
+
+/**
+    @private
+    @method isToMany
+    @param {Function} Property
+*/
+function isToMany(p) {
+    return p.type &amp;&amp; typeof p.type === &quot;object&quot; &amp;&amp; p.type.parentOf;
+}
+
+/**
+    A data persistence object based on a definition defined by a &#x60;feather&#x60;.
+
+    @class Model
+    @static
+*/
+function createModel(data, feather) {
+    feather = (
+        feather
+        ? f.copy(feather)
+        : {}
+    );
+    feather.overloads = feather.overloads || {};
+    feather.inherits = feather.inherits || &quot;Object&quot;;
+
+    let model;
+    let subcriptionId;
+    let d;
+    let doClear;
+    let doDelete;
+    let doError;
+    let doFetch;
+    let doInit;
+    let doPatch;
+    let doPost;
+    let doSend;
+    let doFreeze;
+    let doThaw;
+    let doRevert;
+    let doLock;
+    let doUnlock;
+    let lastError;
+    let state;
+    let superclass;
+    let errHandlers = [];
+    let validators = [];
+    let deleteChecks = [];
+    let stateMap = {};
+    let lastFetched = {};
+    let onChange = {};
+    let onChanged = {};
+    let isFrozen = false;
+    let naturalKey;
+    let canUpdate;
+    let canDelete;
+
+    // Inherit parent logic via traversal
+    if (feather.inherits &amp;&amp; feather.inherits !== &quot;Object&quot;) {
+        superclass = catalog.getFeather(feather.inherits);
+        feather.inherits = superclass.inherits || &quot;Object&quot;;
+        return store.models()[superclass.name.toCamelCase()](
+            data,
+            feather
+        );
+    }
+
+    data = data || {};
+
+    /**
+        Holder of getter/setter functions for all model data attributes as
+        defined by the feather passed in.
+
+        @example
+            let instance;
+            let catalog = f.catalog();
+            let data = {
+                name: &quot;foo&quot;
+            };
+            let feather = {
+                name: &quot;MyFeather&quot;,
+                properties: {
+                    name: {
+                        type: &quot;string&quot;
+                    }
+                }
+            }
+
+            instance = f.model(data, feather);
+            instance.data.name(); // foo
+            instance.data.name(&quot;bar&quot;); // bar
+            instance.data.name(); // bar
+
+        @property data
+        @type Object
+    */
+    model = {
+        data: {}
+    };
+
+    d = model.data;
+
+    // ..........................................................
+    // PUBLIC
+    //
+
+    /**
+        Add a calculated property to &quot;data.&quot;
+
+        @method addCalculated
+        @for Model
+        @param {Object} options Options
+        @param {String} options.name Name
+        @param {String} [options.description] Description
+        @param {Function} options.function Function
+        @param {String} [options.type] Return type (default &quot;string&quot;)
+        @param {String} [options.format] Return format
+        @param {Boolean} [options.isReadOnly] Read only (default true)
+        @param {String} [options.style] Style name
+        @chainable
+        @return {Object}
+    */
+    model.addCalculated = function (options) {
+        let fn = options.function;
+
+        fn.isCalculated = true;
+        fn.isChild = createProperty(false);
+        fn.isParent = createProperty(false);
+        fn.key = options.name;
+        fn.description = options.description || &quot;&quot;;
+        fn.type = options.type || &quot;string&quot;;
+        fn.format = options.format;
+        fn.isRequired = createProperty(false);
+        fn.isReadOnly = createProperty(options.isReadOnly || false);
+        fn.isToMany = isToMany.bind(null, fn);
+        fn.isToOne = isToOne.bind(null, fn);
+        fn.style = createProperty(options.style || &quot;&quot;);
+        d[options.name] = fn;
+
+        return this;
+    };
+
+    /**
+        Check whether changes in model can be saved in its
+        current state.
+
+        @method canSave
+        @return {Boolean}
+    */
+    model.canSave = function () {
+        return state.resolve(state.current()[0]).canSave();
+    };
+
+    /**
+        Check whether model can undo changes in its current state.
+
+        @method canUndo
+        @return {Boolean}
+    */
+    model.canUndo = function () {
+        return state.resolve(state.current()[0]).canUndo();
+    };
+
+    /**
+        Check whether model can be updated according to
+        authorization check.
+
+        @method canUpdate
+        @return {Boolean}
+    */
+    model.canUpdate = () =&gt; canUpdate;
+
+    /**
+        Check whether model can be deleted in its current state.
+
+        @method canSave
+        @return {Boolean}
+    */
+    model.canDelete = function () {
+        return deleteChecks.every(function (check) {
+            return check();
+        });
+    };
+
+    /**
+        Perform an authorization check whether the model
+        can be deleted form the server. The result of
+        &#x60;canCheck&#x60; will be based on the response of this query.
+
+        @method checkDelete
+    */
+    model.checkDelete = function () {
+        if (canDelete === undefined) {
+            model.onCanDelete(function () {
+                return Boolean(canDelete);
+            });
+
+            catalog.isAuthorized({
+                id: model.id(),
+                action: &quot;canDelete&quot;
+            }).then(function (resp) {
+                canDelete = resp;
+            }).catch(doError);
+        }
+    };
+
+    /**
+        Will freeze model until it is confirmed the current user has
+        authorization to update it. Without this action, editing will
+        seem to be allowed until saving when an error will be thrown by
+        the server. We wait as long as possible to check this to reduce
+        overhead since most records fetched are not going to be updated.
+
+        @method checkUpdate
+    */
+    model.checkUpdate = function () {
+        let wasFrozen = model.isFrozen();
+
+        if (canUpdate === undefined) {
+            if (model.isReadOnly()) {
+                canUpdate = false;
+                return;
+            }
+
+            if (!wasFrozen) {
+                doFreeze();
+                catalog.isAuthorized({
+                    id: model.id(),
+                    action: &quot;canUpdate&quot;
+                }).then(function (resp) {
+                    if (model.isReadOnly()) {
+                        canUpdate = false;
+                        return;
+                    }
+                    canUpdate = resp;
+
+                    if (canUpdate &amp;&amp; !wasFrozen) {
+                        doThaw();
+                    }
+                }).catch(doError);
+            }
+        }
+    };
+
+    /**
+        Send event to clear properties on the object and set it to
+        &quot;/Ready/New&quot; state.
+
+        @method clear
+    */
+    model.clear = function () {
+        state.send(&quot;clear&quot;);
+    };
+
+    /**
+        Send event to delete the current object from the server.
+        Returns a promise with a boolean passed back as the value.
+
+        @method delete
+        @param {Boolean} autoSave Automatically commit. Default false.
+        @return {Promise}
+    */
+    model.delete = function (autoSave) {
+        state.send(&quot;delete&quot;);
+        if (autoSave) {
+            return doSend(&quot;save&quot;);
+        }
+        return new Promise(function (resolve) {
+            resolve(true);
+        });
+    };
+
+    /**
+        Send event to fetch data based on the current id from the server.
+        Returns a promise with model.data passed back as the value.
+
+        @method fetch
+        @return {Promise}
+    */
+    model.fetch = function () {
+        return doSend(&quot;fetch&quot;);
+    };
+
+    /**
+        Return the unique identifier value for the model.
+
+        @method id
+        @return {String}
+    */
+    model.id = function (...args) {
+        let prop = model.idProperty();
+
+        if (args.length) {
+            return d[prop](args[0]);
+        }
+
+        return d[prop]();
+    };
+
+    /**
+        The data property that is the unique identifier for the model.
+        Default is &quot;id&quot;.
+
+        @method idProperty
+        @param {String} property Id property
+        @return {String}
+    */
+    model.idProperty = createProperty(&quot;id&quot;);
+
+    /**
+        Indicates if model is in  a frozen state.
+
+        @method isFrozen
+        @return {Boolen}
+    */
+    model.isFrozen = function () {
+        return isFrozen;
+    };
+
+    /**
+        Property that indicates object is a model instance.
+
+        @property isModel
+        @default true
+        @type boolean
+    */
+    model.isModel = true;
+
+    /**
+        Indicates whether the model is read only.
+
+        @method isReadOnly
+        @param {Boolean} isReadyOnly Read only flag
+        @return {Boolean}
+    */
+    model.isReadOnly = createProperty(feather.isReadOnly === true);
+
+    /**
+        Returns whether the object is in a valid state to save.
+        &#x60;lastError&#x60; value will be set by this if any are found.
+
+        @method isValid
+        @return {Boolean}
+    */
+    model.isValid = function () {
+        try {
+            validators.forEach(function (validator) {
+                validator();
+            });
+        } catch (e) {
+            doError(e);
+            return false;
+        }
+
+        lastError = &quot;&quot;;
+        return true;
+    };
+
+    /**
+        Return the last error raised.
+
+        @method lastError
+        @return {String}
+    */
+    model.lastError = function () {
+        return lastError;
+    };
+
+    /**
+        Lock record. To be applied when notification of locked status.
+        Prevents other users from editing the record.
+
+        @method lock
+        @param {Object} object Lock object
+        @return {Promise}
+    */
+    model.lock = function (lock) {
+        state.send(&quot;lock&quot;, lock);
+    };
+
+    /**
+        Feather name of model.
+
+        @property name
+        @type String
+    */
+    model.name = feather.name || &quot;Object&quot;;
+
+    /**
+        Returns natural key property name.
+
+        @method naturalKey
+        @return {String}
+    */
+    model.naturalKey = function () {
+        if (naturalKey === undefined) {
+            naturalKey = Object.keys(feather.properties).find(
+                function (key) {
+                    if (feather.properties[key].isNaturalKey) {
+                        return true;
+                    }
+                }
+            );
+            if (!naturalKey) {
+                naturalKey = false;
+                return &quot;&quot;;
+            }
+        } else if (naturalKey === false) {
+            return &quot;&quot;;
+        }
+
+        return model.data[naturalKey]();
+    };
+
+    /**
+        Add a function that returns a boolean to execute when the
+        &#x60;canDelete&#x60; function is called. The function should validate
+        whether a record will be allowed to be deleted.
+
+        @example
+            let catalog = f.catalog();
+
+            function contact(data, feather) {
+                feather = feather || catalog.getFeather(&quot;Contact&quot;);
+                let model = f.model(data, feather);
+
+                function deleteCheck () =&gt; !model.data.isPosted();
+
+                // Add a check
+                model.onCanDelete(deleteCheck);
+            }
+
+        @method onCanDelete
+        @param {Function} callback Test function
+        @chainable
+        @return {Object}
+    */
+    model.onCanDelete = function (callback) {
+        deleteChecks.push(callback);
+
+        return this;
+    };
+
+    /**
+        Add an event binding to a property that will be triggered before a
+        property change. Pass a callback in and the property will be
+        passed to the callback. The property will be passed to the
+        callback as the first argument. Dot notation is supported to
+        traverse child properties.
+
+        @example
+            let catalog = f.catalog();
+            let msg;
+            let instance;
+
+            function contact(data, feather) {
+                feather = feather || catalog.getFeather(&quot;Contact&quot;);
+                let model = f.model(data, feather);
+
+                // Add a change event to a property
+                model.onChange(&quot;firstName&quot;, function (prop) {
+                    msg = (
+                        &quot;First name changing from &quot; +
+                        (prop.oldValue() || &quot;nothing&quot;) + &quot; to &quot; +
+                        prop.newValue() + &quot;!&quot;
+                    );
+                    console.log(msg);
+                });
+            }
+
+            instance = contact();
+            instance.data.firstName(&quot;Fred&quot;);
+            // Contact changing from nothing to Fred
+
+        @method onChange
+        @param {String} name Property name to call on cahnge
+        @param {Function} callback Callback function to call on change
+        @chainable
+        @return {Object}
+    */
+    model.onChange = function (name, callback) {
+        let attr;
+        let idx = name.indexOf(&quot;.&quot;);
+
+        function func() {
+            callback(this);
+        }
+
+        if (idx &gt; -1) {
+            attr = name.slice(0, idx);
+            if (!onChange[attr]) {
+                onChange[attr] = [];
+            }
+            onChange[attr].push({
+                name: name.slice(idx + 1),
+                callback: callback
+            });
+            return this;
+        }
+
+        stateMap[name].substateMap.Changing.enter(func.bind(d[name]));
+
+        return this;
+    };
+
+    /**
+        Add an event binding to a property that will be triggered after
+        a property change. Pass a callback in and the property will be
+        passed to the callback. The property will be passed to the
+        callback as the first argument. Dot notation is supported to
+        traverse child properties.
+
+        @example
+            let instance;
+            let catalog = f.catalog();
+
+            function contact(data, feather) {
+                feather = feather || catalog.getFeather(&quot;Contact&quot;);
+                let model = f.model(data, feather);
+
+                // Add a changed event to a property
+                model.onChanged(&quot;firstName&quot;, function (prop) {
+                    console.log(&quot;First name is now &quot; + prop() + &quot;!&quot;);
+                });
+            }
+
+            instance = contact();
+            instance.data.name(&quot;Aiden&quot;); // First name is now Aiden!
+
+        @method onChanged
+        @param {String} name Property name to call on cahnge
+        @param {Function} callback Callback function to call on change
+        @chainable
+        @return {Object}
+    */
+    model.onChanged = function (name, callback) {
+        let attr;
+        let idx = name.indexOf(&quot;.&quot;);
+
+        function func() {
+            callback(this);
+        }
+
+        if (idx &gt; -1) {
+            attr = name.slice(0, idx);
+            if (!onChanged[attr]) {
+                onChanged[attr] = [];
+            }
+            onChanged[attr].push({
+                name: name.slice(idx + 1),
+                callback: callback
+            });
+            return this;
+        }
+
+        stateMap[name].substateMap.Changing.exit(func.bind(d[name]));
+
+        return this;
+    };
+
+    /**
+        Add an error handler binding to the object. Pass a callback
+        in and the error will be passed as an argument.
+
+        @example
+            let instance;
+            let catalog = f.catalog();
+
+            function contact(data, feather) {
+                feather = feather || catalog.getFeather(&quot;Contact&quot;);
+                let model = f.model(data, shared);
+
+                model.onValidate(function () {
+                    if (model.data.phone().length &lt;&gt; 12) {
+                        throw new Error(&quot;Phone number must be 12 characters&quot;);
+                    }
+                });
+
+                // Add an error handler
+                model.onError(function (err) {
+                    console.log(&quot;Error-&gt;&quot;, err);
+                });
+            }
+
+            instance = contact();
+            instance.data.phone(&quot;555-1212&quot;);
+            instance.isValid(); // False
+            // Error-&gt;Phone number must be 12 characters
+
+        @method onError
+        @param {Function} callback Callback to execute on error
+        @chainable
+        @return {Object}
+    */
+    model.onError = function (callback) {
+        errHandlers.push(callback);
+
+        return this;
+    };
+
+    /**
+        Execute a function whenever the state changes to &#x60;Ready/Fetched/Clean&#x60;
+        or in other words right after model data has been fetched and loaded.
+
+        @method onLoad
+        @param {Function} callback Callback function to execute on load
+        @chainable
+        @return {Object}
+    */
+    model.onLoad = function (callback) {
+        model.state().resolve(&quot;/Ready/Fetched/Clean&quot;).enter(callback);
+
+        return this;
+    };
+
+    /**
+        Add a validator to execute when the &#x60;isValid&#x60; function is
+        called, which is also called after saving events. Errors thrown
+        by the validator will be caught and passed through &#x60;onError&#x60;
+        callback(s). The most recent error may also be access via
+        &#x60;lastError&#x60;.
+
+        @example
+            let instance;
+            let catalog = f.catalog();
+
+            function contact(data, feather) {
+                feather = feather || catalog.getFeather(&quot;Contact&quot;);
+                let model = f.model(data, shared);
+
+                model.onValidate(function () {
+                    if (model.data.phone().length &lt;&gt; 12) {
+                        throw new Error(&quot;Phone number must be 12 characters&quot;);
+                    }
+                });
+            }
+
+            instance = contact();
+            instance.data.phone(&quot;555-1212&quot;);
+            instance.isValid(); // False
+            instance.lastError(); // Phone number must be 12 characters
+
+        @method onValidate
+        @param {Function} callback Callback to execute when validating
+        @chainable
+        @return {Object}
+    */
+    model.onValidate = function (callback) {
+        validators.push(callback);
+
+        return this;
+    };
+
+    /**
+        Returns parent object if applicable.
+
+        @method parent
+        @return {Object}
+    */
+    model.parent = createProperty();
+
+    /**
+        Returns a path to execute server requests.
+
+        @method path
+        @param {String} name Name
+        @param {String} [id] Id
+        @return {String}
+    */
+    model.path = function (name, id) {
+        let ret = &quot;/data/&quot; + name.toSpinalCase();
+
+        if (id) {
+            ret += &quot;/&quot; + id;
+        }
+
+        return ret;
+    };
+
+    /**
+        Plural name of feather.
+
+        @property plural
+        @type String
+    */
+    model.plural = feather.plural;
+
+    /**
+        Send the save event to persist current data to the server.
+        Only results in action in the &quot;/Ready/Fetched/Dirty&quot; and
+        &quot;/Ready/New&quot; states.
+
+        Returns a promise with model.data as the value.
+
+        @method save
+        @return {Promise}
+    */
+    model.save = function () {
+        return doSend(&quot;save&quot;);
+    };
+
+    /**
+        Send an event to all properties.
+
+        @method sendToProperties
+        @param {String} str Event name.
+        @chainable
+        @return {Object}
+    */
+    model.sendToProperties = function (str) {
+        let keys = Object.keys(d);
+
+        keys.forEach(function (key) {
+            if (d[key].state) {
+                d[key].state().send(str);
+            }
+        });
+
+        return this;
+    };
+
+    /**
+        Set properties to the values of a passed object. In
+        other words deserialize an object.
+
+        @method set
+        @param {Object} data Data to set
+        @param {Boolean} [silent] Silence change events
+        @param {Boolean} [isLastFetched] Flag set from fetch
+        @chainable
+        @return {Object}
+    */
+    model.set = function (data, silent, islastFetched) {
+        data = data || {};
+        let keys;
+        let climateChange = islastFetched &amp;&amp; model.isFrozen();
+
+        if (islastFetched) {
+            lastFetched = data;
+        }
+
+        if (typeof data === &quot;object&quot;) {
+            if (climateChange) {
+                doThaw();
+            }
+
+            keys = Object.keys(data);
+
+            // Silence events if applicable
+            if (silent) {
+                model.sendToProperties(&quot;silence&quot;);
+            }
+
+            // Loop through each attribute and assign
+            keys.forEach(function (key) {
+                if (typeof d[key] === &quot;function&quot;) {
+                    d[key](data[key]);
+                }
+            });
+
+            model.sendToProperties(&quot;report&quot;);
+
+            if (climateChange) {
+                doFreeze();
+            }
+        }
+
+        return this;
+    };
+
+    /**
+        Model statechart.
+
+        @method state
+        @param {Object} state Statechart
+        @return {State}
+    */
+    model.state = function (...args) {
+        if (args.length) {
+            state = args[0];
+        }
+
+        return state;
+    };
+
+    /**
+        The style of the model when displayed in rows. Should be the
+        name of a style.
+
+        @method style
+        @param {String} style Style name
+        @return {String}
+    */
+    model.style = createProperty(&quot;&quot;);
+
+    /**
+        Subscribe or unsubscribe model to external events. If no flag
+        passed and already subscribed, subscription id returned.
+
+        @method subscribe
+        @param {Boolean} Flag whether or not to subscribe to events.
+        @return {Boolean | String} False or subscription id.
+    */
+    model.subscribe = function (...args) {
+        let query;
+        let url;
+        let payload;
+        let flag = args[0];
+
+        if (!args.length) {
+            if (subcriptionId) {
+                return subcriptionId;
+            }
+            return false;
+        }
+
+        if (flag) {
+            subcriptionId = f.createId();
+
+            query = Qs.stringify({
+                id: model.id(),
+                subscription: {
+                    id: subcriptionId,
+                    eventKey: catalog.eventKey()
+                }
+            });
+
+            catalog.register(&quot;subscriptions&quot;, subcriptionId, [model]);
+
+            url = &quot;/do/subscribe/&quot; + query;
+            payload = {
+                method: &quot;POST&quot;,
+                path: url
+            };
+
+            datasource.request(payload).catch(doError);
+        } else if (flag === false &amp;&amp; subcriptionId) {
+            catalog.unregister(&quot;subscriptions&quot;, subcriptionId);
+
+            // Let the server know we&#x27;re unsubscribing
+            query = {
+                subscription: {
+                    id: subcriptionId
+                }
+            };
+
+            query = Qs.stringify(query);
+            url = &quot;/do/unsubscribe/&quot; + query;
+            payload = {
+                method: &quot;POST&quot;,
+                path: url
+            };
+
+            datasource.request(payload).catch(doError);
+
+            subcriptionId = undefined;
+            return false;
+        }
+    };
+
+    /**
+        Serialize data to a simple JavaScript object.
+
+        @method toJSON
+        @return {Object}
+    */
+    model.toJSON = function () {
+        let keys = Object.keys(d);
+        let result = {};
+
+        keys.forEach(function (key) {
+            if (!d[key].isCalculated) {
+                result[key] = d[key].toJSON();
+            }
+        });
+
+        return result;
+    };
+
+    /**
+        Undo changes since last fetch.
+
+        @method undo
+    */
+    model.undo = function () {
+        state.send(&quot;undo&quot;);
+    };
+
+    /**
+        Unlock record. To be applied when notification of unlocked status.
+
+        @method unlock
+        @return {Promise}
+    */
+    model.unlock = function () {
+        state.send(&quot;unlock&quot;);
+    };
+
+    // ..........................................................
+    // PRIVATE
+    //
+
+    doClear = function (context) {
+        let keys = Object.keys(model.data);
+        let values = {};
+
+        // Bail if event that sent us here doesn&#x27;t want to clear
+        if (context &amp;&amp; context.clear === false) {
+            return;
+        }
+
+        // If first entry here with user data, clear for next time and bail
+        if (data) {
+            context.clear = false;
+            data = undefined;
+            return;
+        }
+
+        keys.forEach(function (key) {
+            if (!model.data[key].isCalculated) {
+                let value = model.data[key].default;
+
+                values[key] = (
+                    typeof value === &quot;function&quot;
+                    ? value()
+                    : value
+                );
+            }
+        });
+
+        model.set(values, true); // Uses silent option
+    };
+
+    doDelete = function (context) {
+        let payload;
+
+        function callback(result) {
+            model.set(result, true, true);
+            state.send(&quot;deleted&quot;);
+            context.resolve(true);
+        }
+
+        payload = {
+            method: &quot;DELETE&quot;,
+            path: model.path(model.name, model.id()),
+            data: {
+                eventKey: catalog.eventKey()
+            }
+        };
+
+        datasource.request(payload).then(
+            callback
+        ).catch(
+            doError.bind(context)
+        );
+    };
+
+    doError = function (err) {
+        if (err.message &amp;&amp; err.message.slice(0, 1) === &quot;\&quot;&quot;) {
+            err.message = err.message.slice(1, err.message.length - 1);
+        }
+
+        lastError = err;
+        errHandlers.forEach(function (handler) {
+            handler(err);
+        });
+        state.send(&quot;error&quot;);
+
+        if (this &amp;&amp; this.reject) {
+            this.reject(err);
+        }
+    };
+
+    doFetch = function (context) {
+        let payload = {
+            method: &quot;GET&quot;,
+            path: model.path(model.name, model.id())
+        };
+
+        function callback(result) {
+            model.set(result, true, true);
+            state.send(&quot;fetched&quot;);
+            context.resolve(d);
+        }
+
+        datasource.request(payload).then(
+            callback
+        ).catch(
+            doError.bind(context)
+        );
+    };
+
+    doFreeze = function () {
+        let keys = Object.keys(d);
+
+        // Make all props read only, but remember previous state
+        keys.forEach(function (key) {
+            let prop = d[key];
+            let value = prop();
+
+            if (prop.isToMany() &amp;&amp; !prop.isCalculated) {
+                value.forEach(function (item) {
+                    item.state().goto(&quot;/Ready/Fetched/ReadOnly&quot;);
+                });
+                return;
+            }
+
+            if (prop.state) {
+                prop.state().send(&quot;disable&quot;);
+            }
+        });
+
+        isFrozen = true;
+    };
+
+    doLock = function () {
+        let lock;
+        let query;
+        let payload;
+
+        function callback() {
+            lock = {
+                created: f.now()
+            };
+            state.send(&quot;locked&quot;, {
+                context: lock
+            });
+        }
+
+        function error(err) {
+            doError(err);
+            state.send(&quot;clean&quot;);
+        }
+
+        lock = {
+            id: model.id(),
+            eventKey: catalog.eventKey()
+        };
+        query = Qs.stringify(lock);
+        payload = {
+            method: &quot;POST&quot;,
+            path: &quot;/do/lock/&quot; + query
+        };
+
+        datasource.request(payload).then(callback).catch(error);
+    };
+
+    doUnlock = function () {
+        let unlock;
+        let query;
+        let payload;
+
+        function callback() {
+            d.lock(null);
+            state.send(&quot;unlocked&quot;);
+        }
+
+        function error(err) {
+            doError(err);
+            state.send(&quot;error&quot;);
+        }
+
+        unlock = {
+            id: model.id(),
+            eventKey: catalog.eventKey()
+        };
+        query = Qs.stringify(unlock);
+        payload = {
+            method: &quot;POST&quot;,
+            path: &quot;/do/unlock/&quot; + query
+        };
+
+        datasource.request(payload).then(callback).catch(error);
+    };
+
+    doPatch = function (context) {
+        let patch = jsonpatch.compare(lastFetched, model.toJSON());
+        let payload = {
+            method: &quot;PATCH&quot;,
+            path: model.path(model.name, model.id()),
+            data: patch
+        };
+
+        function callback(result) {
+            // Update to sent changes
+            jsonpatch.applyPatch(lastFetched, patch);
+            // Update server side changes
+            jsonpatch.applyPatch(lastFetched, result);
+            model.set(lastFetched, true);
+            state.send(&quot;fetched&quot;);
+            context.resolve(d);
+        }
+
+        if (model.isValid()) {
+            datasource.request(payload).then(
+                callback
+            ).catch(
+                doError.bind(context)
+            );
+        }
+    };
+
+    doPost = function (context) {
+        let cache = model.toJSON();
+        let payload = {
+            method: &quot;POST&quot;,
+            path: model.path(model.name),
+            data: cache
+        };
+
+        function callback(result) {
+            jsonpatch.applyPatch(cache, result);
+            model.set(cache, true, true);
+            state.send(&quot;fetched&quot;);
+            context.resolve(d);
+        }
+
+        if (model.isValid()) {
+            datasource.request(payload).then(
+                callback
+            ).catch(
+                doError.bind(context)
+            );
+        }
+    };
+
+    doRevert = function () {
+        model.set(lastFetched, true);
+    };
+
+    doSend = function (evt) {
+        return new Promise(function (resolve, reject) {
+            state.send(evt, {
+                resolve: resolve,
+                reject: reject
+            });
+        });
+    };
+
+    doThaw = function () {
+        let keys = Object.keys(d);
+
+        // Return read only props to previous state
+        keys.forEach(function (key) {
+            let prop = d[key];
+            let value = prop();
+
+            if (prop.isToMany() &amp;&amp; !prop.isCalculated) {
+                value.forEach(function (item) {
+                    item.state().goto(&quot;/Ready/Fetched/Clean&quot;);
+                });
+            }
+
+            if (prop.state) {
+                prop.state().send(&quot;enable&quot;);
+            }
+        });
+
+        isFrozen = false;
+    };
+
+    doInit = function (data) {
+        let props = feather.properties;
+        let overloads = feather.overloads;
+        let keys = Object.keys(props || {});
+
+        // Loop through each model property and instantiate a data property
+        keys.forEach(function (key) {
+            let prop;
+            let defaultValue;
+            let name;
+            let cFeather;
+            let cKeys;
+            let cArray;
+            let relation;
+            let toType;
+            let scale;
+            let overload = overloads[key] || {};
+            let alias = overload.alias || props[key].alias || key;
+            let p = props[key];
+            let min = p.min;
+            let max = p.max;
+            let type = p.type;
+            let value = data[key];
+            let formatter = {};
+
+            p.default = overload.default || p.default;
+            alias = alias.toName();
+
+            // Create properties for relations
+            if (typeof p.type === &quot;object&quot;) {
+                if (isChild(p)) {
+                    return;
+                } // Ignore child properties on client level
+
+                relation = type.relation;
+                name = relation.toCamelCase();
+
+                if (isToOne(p)) {
+
+                    // Need to to make sure transform knows to ignore
+                    // inapplicable props
+                    if (type.properties &amp;&amp; type.properties.length) {
+                        cFeather = f.copy(catalog.getFeather(relation));
+                        cKeys = Object.keys(cFeather.properties);
+                        cKeys.forEach(function (key) {
+                            if (
+                                type.properties.indexOf(key) === -1 &amp;&amp;
+                                key !== &quot;id&quot;
+                            ) {
+                                delete cFeather.properties[key];
+                            }
+                        });
+                        delete cFeather.inherits;
+                    }
+
+                    // Create a model instance if not already
+                    formatter.toType = function (value) {
+                        let result;
+
+                        if (value === undefined || value === null) {
+                            return null;
+                        }
+                        if (value &amp;&amp; value.isModel) {
+                            value = value.toJSON();
+                        }
+
+                        // Special instantiation
+                        if (cFeather) {
+                            result = createModel(value, cFeather);
+                        // Get regular model
+                        } else {
+                            result = catalog.store().models()[name](value);
+                        }
+
+                        // Synchronize statechart
+                        state.resolve(&quot;/Busy/Fetching&quot;).enter(
+                            onFetching.bind(result)
+                        );
+                        state.resolve(&quot;/Ready/Fetched&quot;).enter(
+                            onFetched.bind(result)
+                        );
+
+                        // Remove original do fetch event on child
+                        result.state().resolve(
+                            &quot;/Busy/Fetching&quot;
+                        ).enters.shift();
+
+                        // Disable save event on children
+                        result.state().resolve(
+                            &quot;/Ready/New&quot;
+                        ).event(&quot;save&quot;);
+                        result.state().resolve(
+                            &quot;/Ready/Fetched/Dirty&quot;
+                        ).event(&quot;save&quot;);
+
+                        return result;
+                    };
+
+                    defaultValue = handleDefault(p);
+                    if (value === undefined) {
+                        value = (
+                            typeof defaultValue === &quot;function&quot;
+                            ? defaultValue()
+                            : defaultValue
+                        );
+                    }
+
+                    // Create property
+                    prop = createProperty(value, formatter);
+
+                    // Define format for to-many
+                } else if (isToMany(p)) {
+                    cArray = [];
+
+                    // Create an instance for each relation if
+                    // not already
+                    formatter.toType = function (value) {
+                        let msg;
+
+                        value = value || [];
+
+                        if (!Array.isArray(value)) {
+                            msg = &quot;Value assignment for &quot; + key;
+                            msg += &quot; must be an array.&quot;;
+                            throw new Error(msg);
+                        }
+
+                        if (value !== cArray) {
+                            cArray.clear();
+                            value.forEach(function (item) {
+                                cArray.add(item);
+                            });
+                        }
+
+                        return cArray;
+                    };
+
+                    // Create property
+                    prop = createProperty(cArray, formatter);
+                    extendArray(model, prop, name, onChange, onChanged);
+                    prop(value);
+                }
+
+                // Resolve formatter to standard type
+            } else {
+                if (p.type === &quot;number&quot;) {
+                    scale = (
+                        (p.scale === undefined || p.scale === -1)
+                        ? f.SCALE_DEFAULT
+                        : p.scale
+                    );
+                    formatter = {};
+                    formatter.fromType = function (value) {
+                        return value.toLocaleString(undefined, {
+                            maximumFractionDigits: scale
+                        });
+                    };
+                    toType = (
+                        f.formats()[p.format]
+                        ? f.formats()[p.format].toType
+                        : f.types[p.type].toType
+                    );
+
+                    formatter.toType = function (value) {
+                        let result = toType(value);
+
+                        return result.round(scale);
+                    };
+                    formatter.default = 0;
+                } else {
+                    formatter = (
+                        f.formats()[p.format] ||
+                        f.types[p.type] || {}
+                    );
+                }
+
+                defaultValue = handleDefault(p, formatter);
+
+                if (value === undefined) {
+                    value = (
+                        typeof defaultValue === &quot;function&quot;
+                        ? defaultValue()
+                        : defaultValue
+                    );
+                }
+
+                // Create property
+                prop = createProperty(value, formatter);
+            }
+
+            // Carry other property definitions forward
+            prop.key = key; // Use of &#x27;name&#x27; property is not allowed here
+            prop.description = overload.description || p.description;
+            prop.type = p.type;
+            if (overload.type) {
+                prop.type.relation = overload.type.relation;
+            }
+            prop.format = p.format;
+            prop.default = defaultValue;
+            prop.isRequired(p.isRequired);
+            prop.isReadOnly(p.isReadOnly);
+            prop.isCalculated = false;
+            prop.alias(alias);
+            prop.dataList = overload.dataList || p.dataList;
+            prop.min = min;
+            prop.max = max;
+            prop.style = createProperty(&quot;&quot;);
+
+            // Add state to map for event helper functions
+            stateMap[key] = prop.state();
+
+            // Report property changed event up to model
+            model.onChanged(key, function () {
+                state.send(&quot;changed&quot;);
+            });
+
+            d[key] = prop;
+        });
+    };
+
+    // Define state
+    state = State.define(function () {
+        this.enter(doInit.bind(null, data));
+
+        this.state(&quot;Ready&quot;, {
+            H: &quot;*&quot;
+        }, function () {
+            this.event(&quot;fetch&quot;, function (context) {
+                this.goto(&quot;/Busy&quot;, {
+                    context: context
+                });
+            });
+
+            this.state(&quot;New&quot;, function () {
+                this.enter(doClear);
+                this.event(&quot;clear&quot;, function () {
+                    this.goto(&quot;/Ready/New&quot;, {
+                        force: true
+                    });
+                });
+                this.event(&quot;save&quot;, function (context) {
+                    this.goto(&quot;/Busy/Saving&quot;, {
+                        context: context
+                    });
+                });
+                this.event(&quot;delete&quot;, function () {
+                    this.goto(&quot;/Deleted&quot;);
+                });
+                this.canDelete = createProperty(true);
+                this.canSave = model.isValid;
+                this.canUndo = createProperty(false);
+            });
+
+            this.state(&quot;Fetched&quot;, function () {
+                this.c = this.C; // Squelch jslint complaint
+                this.c(function () {
+                    if (model.isReadOnly()) {
+                        return &quot;./ReadOnly&quot;;
+                    }
+                });
+                this.enter(function () {
+                    if (d.lock &amp;&amp; d.lock() &amp;&amp; d.lock().username) {
+                        this.goto(&quot;../../Locked&quot;);
+                    }
+                });
+                this.event(&quot;clear&quot;, function () {
+                    this.goto(&quot;/Ready/New&quot;);
+                });
+                this.event(&quot;delete&quot;, function () {
+                    this.goto(&quot;/Delete&quot;);
+                });
+
+                this.state(&quot;Clean&quot;, function () {
+                    this.event(&quot;changed&quot;, function () {
+                        this.goto(&quot;../Locking&quot;);
+                    });
+                    this.event(&quot;lock&quot;, function (lock) {
+                        this.goto(&quot;../../../Locked&quot;, {
+                            context: lock
+                        });
+                    });
+                    this.canDelete = createProperty(true);
+                    this.canSave = createProperty(false);
+                    this.canUndo = createProperty(false);
+                });
+                this.state(&quot;ReadOnly&quot;, function () {
+                    this.enter(function () {
+                        model.isReadOnly(true);
+                        doFreeze();
+                    });
+                    this.exit(function () {
+                        model.isReadOnly(false);
+                        doThaw();
+                    });
+                    this.canDelete = createProperty(false);
+                    this.canSave = createProperty(false);
+                    this.canUndo = createProperty(false);
+                });
+
+                this.state(&quot;Locking&quot;, function () {
+                    this.enter(doLock);
+                    this.event(&quot;save&quot;, function (context) {
+                        this.goto(&quot;/Busy/Saving/Patching&quot;, {
+                            context: context
+                        });
+                    });
+                    this.event(&quot;locked&quot;, function (context) {
+                        if (context &amp;&amp; context.lock) {
+                            d.lock(context.lock);
+                        }
+                        this.goto(&quot;../Dirty&quot;);
+                    });
+                    this.canDelete = createProperty(false);
+                    this.canSave = createProperty(false);
+                    this.canUndo = createProperty(true);
+                });
+
+                this.state(&quot;Unlocking&quot;, function () {
+                    this.enter(doUnlock);
+                    this.event(&quot;unlocked&quot;, function () {
+                        this.goto(&quot;../Clean&quot;);
+                    });
+                    this.canDelete = createProperty(false);
+                    this.canSave = createProperty(false);
+                    this.canUndo = createProperty(false);
+                });
+
+                this.state(&quot;Dirty&quot;, function () {
+                    this.event(&quot;undo&quot;, function () {
+                        doRevert();
+                        this.goto(&quot;../Unlocking&quot;);
+                    });
+                    this.event(&quot;save&quot;, function (context) {
+                        this.goto(&quot;/Busy/Saving/Patching&quot;, {
+                            context: context
+                        });
+                    });
+                    this.canDelete = createProperty(false);
+                    this.canSave = model.isValid;
+                    this.canUndo = createProperty(true);
+                });
+            });
+        });
+
+        this.state(&quot;Busy&quot;, function () {
+            this.state(&quot;Fetching&quot;, function () {
+                this.enter(doFetch);
+                this.canDelete = createProperty(false);
+                this.canSave = createProperty(false);
+                this.canUndo = createProperty(false);
+                this.event(&quot;fetched&quot;, function () {
+                    this.goto(&quot;/Ready/Fetched&quot;);
+                });
+            });
+            this.state(&quot;Saving&quot;, function () {
+                this.event(&quot;fetched&quot;, function () {
+                    this.goto(&quot;/Ready/Fetched/Clean&quot;);
+                });
+                this.state(&quot;Posting&quot;, function () {
+                    this.enter(doPost);
+                    this.canDelete = createProperty(false);
+                    this.canSave = createProperty(false);
+                    this.canUndo = createProperty(false);
+                });
+                this.state(&quot;Patching&quot;, function () {
+                    this.enter(doPatch);
+                    this.canDelete = createProperty(false);
+                    this.canSave = createProperty(false);
+                    this.canUndo = createProperty(false);
+                });
+                this.canDelete = createProperty(false);
+                this.canSave = createProperty(false);
+                this.canUndo = createProperty(false);
+            });
+            this.state(&quot;Deleting&quot;, function () {
+                this.enter(doDelete);
+
+                this.event(&quot;deleted&quot;, function () {
+                    this.goto(&quot;/Deleted&quot;);
+                });
+                this.canDelete = createProperty(false);
+                this.canSave = createProperty(false);
+                this.canUndo = createProperty(false);
+            });
+            this.event(&quot;error&quot;, function () {
+                this.goto(&quot;/Ready&quot;, {
+                    context: {
+                        clear: false
+                    }
+                });
+            });
+        });
+
+        this.state(&quot;Locked&quot;, function () {
+            this.enter(function (context) {
+                if (context) {
+                    d.lock(context);
+                }
+                doFreeze();
+            });
+
+            this.event(&quot;unlock&quot;, function () {
+                doThaw();
+                d.lock(null);
+                this.goto(&quot;/Ready&quot;);
+            });
+
+            this.canDelete = createProperty(false);
+            this.canSave = createProperty(false);
+            this.canUndo = createProperty(false);
+        });
+
+        this.state(&quot;Delete&quot;, function () {
+            this.enter(doLock);
+            this.enter(doFreeze);
+
+            this.event(&quot;save&quot;, function (context) {
+                this.goto(&quot;/Busy/Deleting&quot;, {
+                    context: context
+                });
+            });
+
+            this.event(&quot;undo&quot;, function () {
+                doUnlock();
+            });
+            this.event(&quot;unlocked&quot;, function () {
+                doThaw();
+                this.goto(&quot;/Ready&quot;);
+            });
+            this.canDelete = createProperty(false);
+            this.canSave = createProperty(false);
+            this.canUndo = createProperty(true);
+        });
+
+        this.state(&quot;Deleted&quot;, function () {
+            this.event(&quot;clear&quot;, function () {
+                this.goto(&quot;/Ready/New&quot;);
+            });
+            this.canDelete = createProperty(false);
+            this.canSave = createProperty(false);
+            this.canUndo = createProperty(false);
+        });
+
+        this.state(&quot;Deleting&quot;, function () {
+            this.enter(doDelete);
+
+            this.event(&quot;deleted&quot;, function () {
+                this.goto(&quot;/Deleted&quot;);
+            });
+            this.canDelete = createProperty(false);
+            this.canSave = createProperty(false);
+            this.canUndo = createProperty(false);
+        });
+    });
+
+    // Add standard validator that checks required properties
+    // and validates children
+    model.onValidate(function () {
+        let name;
+        let keys = Object.keys(d);
+
+        function requiredIsNull(key) {
+            let prop = d[key];
+            if (
+                prop.isRequired() &amp;&amp; (prop() === null || (
+                    prop.type === &quot;string&quot; &amp;&amp; !prop()
+                ))
+            ) {
+                name = prop.alias();
+                return true;
+            }
+
+            // Recursively validate children
+            if (prop.isToMany() &amp;&amp; prop().length) {
+                prop().forEach(function (child) {
+                    if (!child.isValid()) {
+                        throw child.lastError();
+                    }
+                });
+            }
+        }
+
+        // Validate required values
+        if (keys.some(requiredIsNull)) {
+            throw &quot;\&quot;&quot; + name + &quot;\&quot; is required&quot;;
+        }
+    });
+
+
+    // Add standard check for &#x27;canDelete&#x27;
+    model.onCanDelete(function () {
+        return state.resolve(state.current()[0]).canDelete();
+    });
+
+    // Initialize
+    state.goto({
+        context: {}
+    });
+
+    return model;
+
+}
+
+createModel.static = createProperty({});
+
+export default Object.freeze(createModel);
+
+/**
+    @class Object
+    @static
+    @namespace Models
+    @extends Model
+*/
+/**
+    Surrogate key.
+
+    __Type:__ &#x60;String&#x60;
+
+    @property data.id
+    @type Property
+*/
+
+/**
+    Create time of the record.
+
+    __Type:__ &#x60;String&#x60;
+
+    __Format:__ &#x60;DateTime&#x60;
+
+    __Read Only__
+
+    @property data.created
+    @type Property
+*/
+
+/**
+    User who created the record.
+
+    __Type:__ &#x60;String&#x60;
+
+    __Read Only__
+
+    @property data.createdBy
+    @type Property
+*/
+
+/**
+    Flag whether object is soft deleted.
+
+    __Type:__ &#x60;Boolean&#x60;
+
+    __Read Only__
+
+    @property data.isDeleted
+    @type Property
+*/
+
+/**
+    Flag whether object is soft deleted.
+
+    __Type:__ &#x60;Object&#x60;
+
+    __Read Only__
+
+    @property data.lock
+    @type Property
+*/
+
+/**
+    Discriminates which inherited object type the object represents
+
+    __Type:__ &#x60;String&#x60;
+
+    __Read Only__
+
+    @property data.objectType
+    @type Property
+*/
+
+/**
+    Last time the record was updated.
+
+    __Type:__ &#x60;String&#x60;
+
+    __Format:__ &#x60;DateTime&#x60;
+
+    __Read Only__
+
+    @property data.updated
+    @type Property
+*/
+
+/**
+    User who last updated the record.
+
+    __Type:__   &#x60;String&#x60;
+
+    __Read Only__
+
+    @property data.updatedBy
+    @type Property
+*/
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

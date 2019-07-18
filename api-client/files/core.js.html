@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>core.js - Featherbone Client</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-client.png" title="Featherbone Client"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Catalog.html">Catalog</a></li>
+                                <li><a href="../classes/Components.AccountMenu.html">Components.AccountMenu</a></li>
+                                <li><a href="../classes/Components.AddressRelation.html">Components.AddressRelation</a></li>
+                                <li><a href="../classes/Components.AutoNumber.html">Components.AutoNumber</a></li>
+                                <li><a href="../classes/Components.Button.html">Components.Button</a></li>
+                                <li><a href="../classes/Components.Checkbox.html">Components.Checkbox</a></li>
+                                <li><a href="../classes/Components.ChildFormPage.html">Components.ChildFormPage</a></li>
+                                <li><a href="../classes/Components.ChildTable.html">Components.ChildTable</a></li>
+                                <li><a href="../classes/Components.ContactRelation.html">Components.ContactRelation</a></li>
+                                <li><a href="../classes/Components.DataList.html">Components.DataList</a></li>
+                                <li><a href="../classes/Components.DataType.html">Components.DataType</a></li>
+                                <li><a href="../classes/Components.Dialog.html">Components.Dialog</a></li>
+                                <li><a href="../classes/Components.FilterDialog.html">Components.FilterDialog</a></li>
+                                <li><a href="../classes/Components.FormDialog.html">Components.FormDialog</a></li>
+                                <li><a href="../classes/Components.FormPage.html">Components.FormPage</a></li>
+                                <li><a href="../classes/Components.FormWidget.html">Components.FormWidget</a></li>
+                                <li><a href="../classes/Components.MoneyRelation.html">Components.MoneyRelation</a></li>
+                                <li><a href="../classes/Components.NavigatorMenu.html">Components.NavigatorMenu</a></li>
+                                <li><a href="../classes/Components.RelationWidget.html">Components.RelationWidget</a></li>
+                                <li><a href="../classes/Components.SearchInput.html">Components.SearchInput</a></li>
+                                <li><a href="../classes/Components.SearchPage.html">Components.SearchPage</a></li>
+                                <li><a href="../classes/Components.SettingsPage.html">Components.SettingsPage</a></li>
+                                <li><a href="../classes/Components.SortDialog.html">Components.SortDialog</a></li>
+                                <li><a href="../classes/Components.TableDialog.html">Components.TableDialog</a></li>
+                                <li><a href="../classes/Components.TableWidget.html">Components.TableWidget</a></li>
+                                <li><a href="../classes/Components.WorkbookPage.html">Components.WorkbookPage</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/List.html">List</a></li>
+                                <li><a href="../classes/Model.html">Model</a></li>
+                                <li><a href="../classes/Models.Address.html">Models.Address</a></li>
+                                <li><a href="../classes/Models.BaseCurrency.html">Models.BaseCurrency</a></li>
+                                <li><a href="../classes/Models.Comment.html">Models.Comment</a></li>
+                                <li><a href="../classes/Models.Contact.html">Models.Contact</a></li>
+                                <li><a href="../classes/Models.ContactAddress.html">Models.ContactAddress</a></li>
+                                <li><a href="../classes/Models.ContactEmail.html">Models.ContactEmail</a></li>
+                                <li><a href="../classes/Models.ContactPhone.html">Models.ContactPhone</a></li>
+                                <li><a href="../classes/Models.ContactSocialAccount.html">Models.ContactSocialAccount</a></li>
+                                <li><a href="../classes/Models.Country.html">Models.Country</a></li>
+                                <li><a href="../classes/Models.Currency.html">Models.Currency</a></li>
+                                <li><a href="../classes/Models.CurrencyConversion.html">Models.CurrencyConversion</a></li>
+                                <li><a href="../classes/Models.CurrencyUnit.html">Models.CurrencyUnit</a></li>
+                                <li><a href="../classes/Models.CurrencyUnitConversion.html">Models.CurrencyUnitConversion</a></li>
+                                <li><a href="../classes/Models.DataListOption.html">Models.DataListOption</a></li>
+                                <li><a href="../classes/Models.DataService.html">Models.DataService</a></li>
+                                <li><a href="../classes/Models.Document.html">Models.Document</a></li>
+                                <li><a href="../classes/Models.Feather.html">Models.Feather</a></li>
+                                <li><a href="../classes/Models.FeatherAuthorization.html">Models.FeatherAuthorization</a></li>
+                                <li><a href="../classes/Models.FeatherOverload.html">Models.FeatherOverload</a></li>
+                                <li><a href="../classes/Models.FeatherProperty.html">Models.FeatherProperty</a></li>
+                                <li><a href="../classes/Models.Form.html">Models.Form</a></li>
+                                <li><a href="../classes/Models.FormAttr.html">Models.FormAttr</a></li>
+                                <li><a href="../classes/Models.FormAttrColumn.html">Models.FormAttrColumn</a></li>
+                                <li><a href="../classes/Models.FormTab.html">Models.FormTab</a></li>
+                                <li><a href="../classes/Models.Honorific.html">Models.Honorific</a></li>
+                                <li><a href="../classes/Models.Kind.html">Models.Kind</a></li>
+                                <li><a href="../classes/Models.Layout.html">Models.Layout</a></li>
+                                <li><a href="../classes/Models.Log.html">Models.Log</a></li>
+                                <li><a href="../classes/Models.Module.html">Models.Module</a></li>
+                                <li><a href="../classes/Models.ModuleDependency.html">Models.ModuleDependency</a></li>
+                                <li><a href="../classes/Models.Object.html">Models.Object</a></li>
+                                <li><a href="../classes/Models.ObjectAuthorization.html">Models.ObjectAuthorization</a></li>
+                                <li><a href="../classes/Models.RelationSearchColumn.html">Models.RelationSearchColumn</a></li>
+                                <li><a href="../classes/Models.RelationWidget.html">Models.RelationWidget</a></li>
+                                <li><a href="../classes/Models.Role.html">Models.Role</a></li>
+                                <li><a href="../classes/Models.RoleMembership.html">Models.RoleMembership</a></li>
+                                <li><a href="../classes/Models.Route.html">Models.Route</a></li>
+                                <li><a href="../classes/Models.Script.html">Models.Script</a></li>
+                                <li><a href="../classes/Models.SocialNetwork.html">Models.SocialNetwork</a></li>
+                                <li><a href="../classes/Models.State.html">Models.State</a></li>
+                                <li><a href="../classes/Models.Style.html">Models.Style</a></li>
+                                <li><a href="../classes/Models.Unit.html">Models.Unit</a></li>
+                                <li><a href="../classes/Models.UserAccount.html">Models.UserAccount</a></li>
+                                <li><a href="../classes/Models.Workbook.html">Models.Workbook</a></li>
+                                <li><a href="../classes/Models.WorkbookAuthorization.html">Models.WorkbookAuthorization</a></li>
+                                <li><a href="../classes/Models.WorkbookChild.html">Models.WorkbookChild</a></li>
+                                <li><a href="../classes/Models.WorkbookDefaultConfig.html">Models.WorkbookDefaultConfig</a></li>
+                                <li><a href="../classes/Models.WorkbookLocalConfig.html">Models.WorkbookLocalConfig</a></li>
+                                <li><a href="../classes/Property.html">Property</a></li>
+                                <li><a href="../classes/State.html">State</a></li>
+                                <li><a href="../classes/State.define.html">State.define</a></li>
+                                <li><a href="../classes/ViewModels.AccountMenu.html">ViewModels.AccountMenu</a></li>
+                                <li><a href="../classes/ViewModels.AddressRelation.html">ViewModels.AddressRelation</a></li>
+                                <li><a href="../classes/ViewModels.AutoNumber.html">ViewModels.AutoNumber</a></li>
+                                <li><a href="../classes/ViewModels.Button.html">ViewModels.Button</a></li>
+                                <li><a href="../classes/ViewModels.Checkbox.html">ViewModels.Checkbox</a></li>
+                                <li><a href="../classes/ViewModels.ChildFormPage.html">ViewModels.ChildFormPage</a></li>
+                                <li><a href="../classes/ViewModels.ChildTable.html">ViewModels.ChildTable</a></li>
+                                <li><a href="../classes/ViewModels.ContactRelation.html">ViewModels.ContactRelation</a></li>
+                                <li><a href="../classes/ViewModels.DataList.html">ViewModels.DataList</a></li>
+                                <li><a href="../classes/ViewModels.DataType.html">ViewModels.DataType</a></li>
+                                <li><a href="../classes/ViewModels.Dialog.html">ViewModels.Dialog</a></li>
+                                <li><a href="../classes/ViewModels.FilterDialog.html">ViewModels.FilterDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormDialog.html">ViewModels.FormDialog</a></li>
+                                <li><a href="../classes/ViewModels.FormPage.html">ViewModels.FormPage</a></li>
+                                <li><a href="../classes/ViewModels.FormWidget.html">ViewModels.FormWidget</a></li>
+                                <li><a href="../classes/ViewModels.MoneyRelation.html">ViewModels.MoneyRelation</a></li>
+                                <li><a href="../classes/ViewModels.NavigatorMenu.html">ViewModels.NavigatorMenu</a></li>
+                                <li><a href="../classes/ViewModels.RelationWidget.html">ViewModels.RelationWidget</a></li>
+                                <li><a href="../classes/ViewModels.SearchInput.html">ViewModels.SearchInput</a></li>
+                                <li><a href="../classes/ViewModels.SearchPage.html">ViewModels.SearchPage</a></li>
+                                <li><a href="../classes/ViewModels.SettingsPage.html">ViewModels.SettingsPage</a></li>
+                                <li><a href="../classes/ViewModels.SortDialog.html">ViewModels.SortDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableDialog.html">ViewModels.TableDialog</a></li>
+                                <li><a href="../classes/ViewModels.TableWidget.html">ViewModels.TableWidget</a></li>
+                                <li><a href="../classes/ViewModels.WorkbookPage.html">ViewModels.WorkbookPage</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/AccountMenu.html">AccountMenu</a></li>
+                                <li><a href="../modules/AddressRelation.html">AddressRelation</a></li>
+                                <li><a href="../modules/AutoNumber.html">AutoNumber</a></li>
+                                <li><a href="../modules/Button.html">Button</a></li>
+                                <li><a href="../modules/Catalog.html">Catalog</a></li>
+                                <li><a href="../modules/Checkbox.html">Checkbox</a></li>
+                                <li><a href="../modules/ChildFormPage.html">ChildFormPage</a></li>
+                                <li><a href="../modules/ChildTable.html">ChildTable</a></li>
+                                <li><a href="../modules/ContactRelation.html">ContactRelation</a></li>
+                                <li><a href="../modules/Core.html">Core</a></li>
+                                <li><a href="../modules/DataList.html">DataList</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/DataType.html">DataType</a></li>
+                                <li><a href="../modules/Dialog.html">Dialog</a></li>
+                                <li><a href="../modules/FilterDialog.html">FilterDialog</a></li>
+                                <li><a href="../modules/FormDialog.html">FormDialog</a></li>
+                                <li><a href="../modules/FormPage.html">FormPage</a></li>
+                                <li><a href="../modules/FormWidget.html">FormWidget</a></li>
+                                <li><a href="../modules/List.html">List</a></li>
+                                <li><a href="../modules/Model.html">Model</a></li>
+                                <li><a href="../modules/MoneyRelation.html">MoneyRelation</a></li>
+                                <li><a href="../modules/NavigatorMenu.html">NavigatorMenu</a></li>
+                                <li><a href="../modules/Property.html">Property</a></li>
+                                <li><a href="../modules/RelationWidget.html">RelationWidget</a></li>
+                                <li><a href="../modules/SearchInput.html">SearchInput</a></li>
+                                <li><a href="../modules/SearchPage.html">SearchPage</a></li>
+                                <li><a href="../modules/SettingsPage.html">SettingsPage</a></li>
+                                <li><a href="../modules/SortDialog.html">SortDialog</a></li>
+                                <li><a href="../modules/State.html">State</a></li>
+                                <li><a href="../modules/TableDialog.html">TableDialog</a></li>
+                                <li><a href="../modules/TableWidget.html">TableWidget</a></li>
+                                <li><a href="../modules/Workbook.html">Workbook</a></li>
+                                <li><a href="../modules/WorkbookPage.html">WorkbookPage</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: core.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint this, browser*/
+/**
+    @module Core
+*/
+import createProperty from &quot;./property.js&quot;;
+import createModel from &quot;./models/model.js&quot;;
+import createList from &quot;./models/list.js&quot;;
+import catalog from &quot;./models/catalog.js&quot;;
+import datasource from &quot;./datasource.js&quot;;
+import State from &quot;./state.js&quot;;
+
+const m = window.m;
+const f = window.f;
+const console = window.console;
+const CodeMirror = window.CodeMirror;
+const exclusions = [
+    &quot;id&quot;,
+    &quot;isDeleted&quot;,
+    &quot;lock&quot;,
+    &quot;created&quot;,
+    &quot;createdBy&quot;,
+    &quot;updated&quot;,
+    &quot;updatedBy&quot;,
+    &quot;objectType&quot;,
+    &quot;etag&quot;
+];
+const formats = {};
+
+let styles;
+
+// ..........................................................
+// PRIVATE
+//
+
+let message;
+let appState;
+
+/**
+    Auto-build a form definition based on feather properties.
+
+    @private
+    @method buildForm
+    @param {String | Object} Feather
+    @return {Object} Form definition
+*/
+function buildForm(feather) {
+    let props;
+    let keys;
+    let found;
+    let attrs = [];
+
+    if (typeof feather === &quot;string&quot;) {
+        feather = catalog.getFeather(feather);
+    }
+
+    props = f.copy(feather.properties);
+    keys = Object.keys(props);
+
+    // Make sure key attributes are first
+    found = keys.find((key) =&gt; props[key].isNaturalKey);
+    if (found) {
+        attrs.push({attr: found});
+        keys.splice(keys.indexOf(found), 1);
+    }
+
+    found = keys.find((key) =&gt; props[key].isLabelKey);
+    if (found) {
+        attrs.push({attr: found});
+        keys.splice(keys.indexOf(found), 1);
+    }
+
+    // Build config with remaining keys
+    keys.forEach(function (key) {
+        let value = {attr: key};
+        let p;
+        let k;
+
+        if (exclusions.indexOf(key) !== -1) {
+            return;
+        }
+
+        if (
+            props[key].type === &quot;object&quot; &amp;&amp;
+            !props[key].format
+        ) {
+            return;
+        }
+
+        if (
+            typeof props[key].type === &quot;object&quot; &amp;&amp; (
+                props[key].type.childOf || props[key].type.parentOf
+            )
+        ) {
+            p = catalog.getFeather(props[key].type.relation).properties;
+            k = Object.keys(p);
+            k = k.filter(function (key) {
+                return (
+                    exclusions.indexOf(key) === -1 &amp;&amp;
+                    (typeof p[key] !== &quot;object&quot; || !p[key].type.childOf)
+                );
+            });
+            value.columns = k.map(function (key) {
+                return {attr: key};
+            });
+            value.height = &quot;200px&quot;;
+        }
+
+        attrs.push(value);
+    });
+
+    return {attrs: attrs};
+}
+
+/**
+    @private
+    @method column
+*/
+function column(item) {
+    return {attr: item};
+}
+
+/**
+    @private
+    @method createRelationWidgetFromFeather
+    @return {Object}
+*/
+function createRelationWidgetFromFeather(type, featherName) {
+    let name = featherName + &quot;$&quot; + type.relation + &quot;Relation&quot;;
+    let widget = catalog.store().components()[name];
+
+    if (widget) {
+        return widget;
+    }
+
+    let relationWidget = catalog.store().components().relationWidget;
+    let feather = catalog.getFeather(type.relation);
+    let keys = Object.keys(feather.properties);
+    let naturalKey = keys.find((key) =&gt; feather.properties[key].isNaturalKey);
+    let labelKey = keys.find((key) =&gt; feather.properties[key].isLabelKey);
+    let properties = f.copy(type.properties);
+
+    if (!naturalKey) {
+        console.error(
+            &quot;No natural key defined on &#x27;&quot; + type.relation +
+            &quot;&#x27; to create relation widget&quot;
+        );
+        return;
+    }
+
+    // If no explicit properties, use all non-object properties on relation
+    if (!properties) {
+        properties = Object.keys(feather.properties).filter(
+            (key) =&gt; exclusions.indexOf(key) === -1
+        );
+    } else {
+        properties = properties.filter((key) =&gt; key !== &quot;id&quot;);
+    }
+
+    widget = {
+        oninit: function (vnode) {
+            let oninit = relationWidget.oninit.bind(this);
+            let form = f.getForm({feather: type.relation});
+
+            vnode.attrs.valueProperty = naturalKey;
+            vnode.attrs.labelProperty = labelKey;
+            vnode.attrs.form = form;
+            vnode.attrs.list = {
+                columns: properties.map(column)
+            };
+            oninit(vnode);
+        },
+        view: relationWidget.view
+    };
+
+    // Memoize
+    catalog.register(&quot;components&quot;, name, widget);
+
+    return widget;
+}
+
+/**
+    @private
+    @method buildSelector
+*/
+function buildSelector(obj, opts) {
+    let id = opts.id;
+    let vm = obj.viewModel;
+    let selectComponents = vm.selectComponents();
+    let value = opts.prop();
+    let values = obj.dataList.map((item) =&gt; item.value).join();
+
+    value = (
+        value === &quot;&quot;
+        ? undefined
+        : value
+    );
+
+    if (opts.class) {
+        opts.class = &quot;fb-input &quot; + opts.class;
+    } else {
+        opts.class = &quot;fb-input&quot;;
+    }
+
+    if (selectComponents[id]) {
+        if (
+            selectComponents[id].value === value &amp;&amp;
+            selectComponents[id].readonly === opts.readonly &amp;&amp;
+            selectComponents[id].values === values
+        ) {
+            return selectComponents[id].content;
+        }
+    } else {
+        selectComponents[id] = {};
+    }
+
+    if (obj.dataList.length &amp;&amp; obj.dataList[0].value) {
+        obj.dataList.unshift({
+            value: &quot;&quot;,
+            label: &quot;&quot;
+        });
+    }
+
+    selectComponents[id].value = value;
+    selectComponents[id].readonly = opts.readonly;
+    selectComponents[id].values = values;
+    selectComponents[id].content = m(&quot;select&quot;, {
+        id: id,
+        key: id,
+        onchange: (e) =&gt; opts.prop(e.target.value),
+        oncreate: opts.oncreate,
+        onremove: opts.onremove,
+        value: value,
+        readonly: opts.readonly,
+        disabled: opts.readonly,
+        class: opts.class,
+        style: opts.style
+    }, obj.dataList.map(function (item) {
+        return m(&quot;option&quot;, {
+            value: item.value,
+            key: id + &quot;$&quot; + item.value
+        }, item.label);
+    }));
+
+    return selectComponents[id].content;
+}
+
+/**
+    @private
+    @method buildRelationWidgetFromLayout
+*/
+function buildRelationWidgetFromLayout(id) {
+    let widget = catalog.store().components()[id];
+
+    if (widget) {
+        return widget;
+    }
+
+    let relationWidget = catalog.store().components().relationWidget;
+    let layout = catalog.store().data().relationWidgets().find(
+        (row) =&gt; row.id() === id
+    );
+
+    if (!layout) {
+        console.error(
+            &quot;No layout found for relation widget &#x27;&quot; + id + &quot;&#x27;&quot;
+        );
+        return;
+    }
+
+    widget = {
+        oninit: function (vnode) {
+            let oninit = relationWidget.oninit.bind(this);
+
+            vnode.attrs.valueProperty = (
+                layout.data.valueProperty()
+            );
+            vnode.attrs.labelProperty = (
+                layout.data.labelProperty()
+            );
+            vnode.attrs.form = (
+                layout.data.form()
+                ? f.getForm(layout.data.form().id())
+                : undefined
+            );
+            vnode.attrs.list = {
+                columns: layout.data.searchColumns().toJSON()
+            };
+            oninit(vnode);
+        },
+        view: relationWidget.view
+    };
+
+    // Memoize
+    catalog.register(&quot;components&quot;, id, widget);
+
+    return widget;
+}
+
+// Resize according to surroundings
+/**
+    @private
+    @method resizeEditor
+*/
+function resizeEditor(editor) {
+    let containerHeight;
+    let bottomHeight;
+    let yPosition;
+    let e = editor.getWrapperElement();
+
+    yPosition = f.getElementPosition(e).y;
+    containerHeight = (
+        document.body.offsetHeight +
+        f.getElementPosition(document.body).y
+    );
+    bottomHeight = (
+        containerHeight - yPosition - e.offsetHeight
+    );
+    editor.setSize(null, window.innerHeight - yPosition - bottomHeight);
+}
+
+function input(type, options) {
+    let prop = options.prop;
+    let opts = {
+        class: options.class,
+        readonly: options.readonly,
+        id: options.id,
+        required: options.required,
+        style: options.style,
+        type: type,
+        onchange: (e) =&gt; prop(e.target.value),
+        oncreate: options.onCreate,
+        onremove: options.onRemove,
+        value: prop()
+    };
+
+    if (opts.class) {
+        opts.class = &quot;fb-input &quot; + opts.class;
+    } else {
+        opts.class = &quot;fb-input&quot;;
+    }
+
+    return m(&quot;input&quot;, opts);
+}
+
+formats.string = {
+    default: &quot;&quot;,
+    toType: (value) =&gt; value.toString()
+};
+formats.date = {
+    type: &quot;string&quot;,
+    toType: function (value) {
+        let month;
+        let ret = &quot;&quot;;
+
+        if (
+            value &amp;&amp;
+            value.constructor.name === &quot;Date&quot;
+        ) {
+            month = value.getUTCMonth() + 1;
+            ret += value.getUTCFullYear() + &quot;-&quot;;
+            ret += month.pad(2, &quot;0&quot;) + &quot;-&quot;;
+            ret += value.getUTCDate().pad(2, &quot;0&quot;);
+        } else {
+            ret = value;
+        }
+        return ret;
+    },
+    default: () =&gt; f.today()
+};
+formats.dateTime = {
+    type: &quot;string&quot;,
+    default: () =&gt; f.now(),
+    fromType: (value) =&gt; new Date(value).toLocalDateTime(),
+    toType: function (value) {
+        if (
+            value &amp;&amp;
+            value.constructor.name === &quot;Date&quot;
+        ) {
+            return new Date(value).toISOString();
+        }
+        return value;
+    }
+};
+formats.password = {
+    type: &quot;string&quot;,
+    default: &quot;&quot;,
+    fromType: () =&gt; &quot;*****&quot;
+};
+formats.tel = {
+    type: &quot;string&quot;,
+    default: &quot;&quot;
+};
+formats.email = {
+    type: &quot;string&quot;,
+    default: &quot;&quot;
+};
+formats.url = {
+    type: &quot;string&quot;,
+    default: &quot;&quot;
+};
+formats.color = {
+    type: &quot;string&quot;,
+    default: &quot;#000000&quot;
+};
+formats.textArea = {
+    type: &quot;string&quot;,
+    default: &quot;&quot;
+};
+formats.script = {
+    type: &quot;string&quot;,
+    default: &quot;&quot;
+};
+formats.money = {
+    type: &quot;object&quot;,
+    default: () =&gt; f.money(),
+    fromType: function (value) {
+        let style;
+        let amount = value.amount || 0;
+        let currency = value.currency;
+        let curr = f.getCurrency(value.currency);
+        let hasDisplayUnit = curr.data.hasDisplayUnit();
+        let minorUnit = (
+            hasDisplayUnit
+            ? curr.data.displayUnit().data.minorUnit()
+            : curr.data.minorUnit()
+        );
+
+        style = {
+            minimumFractionDigits: minorUnit,
+            maximumFractionDigits: minorUnit
+        };
+
+        if (hasDisplayUnit) {
+            curr.data.conversions().some(function (conv) {
+                if (conv.data.toUnit().id() === curr.data.displayUnit().id()) {
+                    amount = amount.div(conv.data.ratio()).round(minorUnit);
+                    return true;
+                }
+            });
+
+            currency = curr.data.displayUnit().data.code();
+        }
+
+        return {
+            amount: amount.toLocaleString(undefined, style),
+            currency: currency,
+            effective: (
+                value.effective === null
+                ? null
+                : f.formats().dateTime.fromType(value.effective)
+            ),
+            baseAmount: (
+                value.baseAmount === null
+                ? null
+                : f.types.number.fromType(value.baseAmount)
+            )
+        };
+    },
+    toType: function (value) {
+        value = value || f.money();
+        let amount = f.types.number.toType(value.amount);
+        let currency = f.formats().string.toType(value.currency);
+        let curr = f.getCurrency(value.currency);
+
+        if (curr.data.hasDisplayUnit() &amp;&amp; currency !== curr.data.code()) {
+            curr.data.conversions().some(function (conv) {
+                if (conv.data.toUnit().id() === curr.data.displayUnit().id()) {
+                    amount = amount.times(
+                        conv.data.ratio().round(curr.data.minorUnit())
+                    );
+                    return true;
+                }
+            });
+
+            currency = curr.data.code();
+        }
+
+        value = {
+            amount: amount,
+            currency: currency,
+            effective: (
+                value.effective === null
+                ? null
+                : f.formats().dateTime.toType(value.effective)
+            ),
+            baseAmount: (
+                value.baseAmount === null
+                ? null
+                : f.types.number.toType(value.baseAmount)
+            )
+        };
+
+        return Object.freeze(value);
+    }
+};
+formats.enum = {
+    type: &quot;string&quot;,
+    default: &quot;&quot;
+};
+formats.lock = {
+    type: &quot;object&quot;
+};
+formats.dataType = {
+    type: &quot;object&quot;
+};
+formats.icon = {
+    type: &quot;string&quot;,
+    default: &quot;&quot;
+};
+
+formats.autonumber = {
+    type: &quot;object&quot;
+};
+formats.autonumber.editor = function (options) {
+    return m(catalog.store().components().autonumber, options);
+};
+
+formats.autonumber.tableData = function (obj) {
+    let value = obj.value;
+    let content = value;
+    let title = value;
+
+    if (typeof value === &quot;object&quot; &amp;&amp; value !== null) {
+        content = &quot;relation: &quot; + obj.value.relation;
+        title = content;
+    }
+
+    obj.options.title = title;
+
+    return content;
+};
+
+formats.color.editor = input.bind(null, &quot;color&quot;);
+formats.color.tableData = function (obj) {
+    if (obj.value) {
+        return m(&quot;i&quot;, {
+            style: {
+                color: obj.value
+            },
+            class: &quot;fa fa-square&quot;
+        });
+    }
+};
+
+formats.date.editor = input.bind(null, &quot;date&quot;);
+formats.date.tableData = function (obj) {
+    if (obj.value) {
+        // Turn into date adjusting time for
+        // current timezone
+        obj.value = new Date(obj.value + f.now().slice(10));
+        return obj.value.toLocaleDateString();
+    }
+};
+
+formats.dateTime.editor = input.bind(null, &quot;datetime-local&quot;);
+formats.dateTime.tableData = function (obj) {
+    obj.value = (
+        obj.value
+        ? new Date(obj.value)
+        : &quot;&quot;
+    );
+
+    return (
+        obj.value
+        ? obj.value.toLocaleString()
+        : &quot;&quot;
+    );
+};
+
+formats.dataType.editor = function (options) {
+    return m(catalog.store().components().dataType, options);
+};
+
+formats.dataType.tableData = function (obj) {
+    let value = obj.value;
+    let content = value;
+    let title = value;
+
+    if (typeof value === &quot;object&quot; &amp;&amp; value !== null) {
+        content = &quot;relation: &quot; + obj.value.relation;
+        title = content + &quot;\n&quot;;
+        if (value.childOf) {
+            title += &quot;child of: &quot; + value.childOf;
+        } else if (value.parentOf) {
+            title += &quot;parent of: &quot; + value.parentOf;
+        } else {
+            title += &quot;properties: &quot; + value.properties.toString();
+        }
+    }
+
+    obj.options.title = title;
+
+    return content;
+};
+
+formats.enum.tableData = function (obj) {
+    let found;
+    if (typeof obj.prop.dataList[0] === &quot;object&quot;) {
+        found = obj.prop.dataList.find(function (item) {
+            return item.value === obj.value;
+        });
+        if (found) {
+            return found.label;
+        } else {
+            return &quot;invalid value &quot; + obj.value;
+        }
+    }
+
+    return obj.value;
+};
+
+formats.icon.tableData = function (obj) {
+    if (obj.value) {
+        return m(&quot;i&quot;, {
+            class: &quot;fa fa-&quot; + obj.value
+        });
+    }
+};
+
+formats.money.editor = function (options) {
+    return m(catalog.store().components().moneyRelation, options);
+};
+formats.money.tableData = function (obj) {
+    let value = obj.value;
+    let options = obj.options;
+    let curr = f.getCurrency(value.currency);
+    let du;
+    let symbol;
+    let minorUnit = 2;
+    let content;
+
+    if (curr) {
+        if (curr.data.hasDisplayUnit()) {
+            du = curr.data.displayUnit();
+            symbol = du.data.symbol();
+            minorUnit = du.data.minorUnit();
+        } else {
+            symbol = curr.data.symbol();
+            minorUnit = curr.data.minorUnit();
+        }
+    }
+
+    content = value.amount.toLocaleString(
+        undefined,
+        {
+            minimumFractionDigits: minorUnit,
+            maximumFractionDigits: minorUnit
+        }
+    );
+
+    if (value.amount &lt; 0) {
+        content = &quot;(&quot; + Math.abs(content) + &quot;)&quot;;
+    }
+
+    options.style.textAlign = &quot;right&quot;;
+
+    return symbol + content;
+};
+
+formats.overloadType = {
+    type: &quot;object&quot;
+};
+formats.overloadType.editor = function (options) {
+    options.isOverload = true;
+
+    return m(catalog.store().components().dataType, options);
+};
+formats.overloadType.tableData = function (obj) {
+    let value = obj.value;
+    let content = value;
+    let title = value;
+
+    if (typeof value === &quot;object&quot; &amp;&amp; value !== null) {
+        content = &quot;relation: &quot; + obj.value.relation;
+        title = content;
+    }
+
+    obj.options.title = title;
+
+    return content;
+};
+
+formats.password.editor = input.bind(null, &quot;password&quot;);
+
+formats.role = {
+    type: &quot;string&quot;
+};
+
+function roleNames() {
+    let roles = catalog.store().data().roles().slice();
+    let result;
+
+    result = roles.map((role) =&gt; role.data.name()).sort();
+    result = result.map(function (role) {
+        return {
+            value: role,
+            label: role
+        };
+    });
+    result.unshift({
+        value: &quot;&quot;,
+        label: &quot;&quot;
+    });
+    return result;
+}
+
+function selectEditor(dataList, options) {
+    let obj = {
+        viewModel: options.parentViewModel,
+        dataList: dataList()
+    };
+    let opts = {
+        id: options.id,
+        prop: options.prop,
+        class: options.class,
+        readonly: options.readonly,
+        oncreate: options.onCreate,
+        onremove: options.onRemove,
+        style: options.style,
+        isCell: options.isCell
+    };
+    return buildSelector(obj, opts);
+}
+
+formats.role.editor = selectEditor.bind(null, roleNames);
+
+formats.tel.editor = input.bind(null, &quot;tel&quot;);
+
+formats.textArea.editor = function (options) {
+    let prop = options.prop;
+    let opts = {
+        readonly: options.readonly,
+        id: options.id,
+        required: options.required,
+        style: options.style,
+        onchange: (e) =&gt; prop(e.target.value),
+        oncreate: options.onCreate,
+        onremove: options.onRemove,
+        value: prop(),
+        rows: options.rows || 4
+    };
+
+    return m(&quot;textarea&quot;, opts);
+};
+
+formats.script.editor = function (options) {
+    let prop = options.prop;
+    let model = options.model;
+    let opts = {
+        readonly: options.readonly,
+        id: options.id,
+        required: options.required,
+        onchange: (e) =&gt; prop(e.target.value),
+        value: prop()
+    };
+
+    opts.oncreate = function () {
+        let editor;
+        let lint;
+        let state = model.state();
+        let e = document.getElementById(options.id);
+        let config = {
+            value: prop(),
+            lineNumbers: true,
+            mode: {
+                name: &quot;javascript&quot;,
+                json: true
+            },
+            theme: &quot;neat&quot;,
+            indentUnit: 4,
+            extraKeys: {
+                Tab: function (cm) {
+                    cm.replaceSelection(&quot;    &quot;, &quot;end&quot;);
+                }
+            },
+            autoFocus: false,
+            gutters: [&quot;CodeMirror-lint-markers&quot;],
+            lint: true
+        };
+
+        editor = CodeMirror.fromTextArea(e, config);
+        lint = editor.state.lint;
+        lint.options.globals = [&quot;f&quot;, &quot;m&quot;];
+        resizeEditor(editor);
+
+        // Populate on fetch
+        state.resolve(&quot;/Ready/Fetched/Clean&quot;).enter(
+            function () {
+                function notify() {
+                    state.send(&quot;changed&quot;);
+                    m.redraw();
+                    editor.off(&quot;change&quot;, notify);
+                }
+                editor.setValue(prop());
+                editor.on(&quot;change&quot;, notify);
+            }
+        );
+
+        editor.on(&quot;change&quot;, m.redraw);
+        lint.options.onUpdateLinting = function (annotations) {
+            // Let model reference lint annoations
+            model.data.annotations(annotations);
+            m.redraw();
+        };
+
+        // Send changed text back to model
+        editor.on(&quot;blur&quot;, function () {
+            editor.save();
+            prop(e.value);
+            m.redraw();
+        });
+
+        this.editor = editor;
+    };
+
+    opts.onupdate = function () {
+        resizeEditor(this.editor);
+    };
+
+    return m(&quot;textarea&quot;, opts);
+};
+
+formats.url.editor = input.bind(null, &quot;url&quot;);
+formats.url.tableData = function (obj) {
+    let url = (
+        obj.value.slice(0, 4) === &quot;http&quot;
+        ? obj.value
+        : &quot;http://&quot; + obj.value
+    );
+
+    return m(&quot;a&quot;, {
+        href: url,
+        target: &quot;_blank&quot;,
+        onclick: function () {
+            obj.viewModel.canToggle(false);
+        }
+    }, obj.value);
+};
+
+formats.userAccount = {
+    type: &quot;string&quot;
+};
+function userAccountNames() {
+    let roles = catalog.store().data().roles().slice();
+    let result;
+
+    result = roles.filter((r) =&gt; r.data.objectType() === &quot;UserAccount&quot;);
+    result = result.map((role) =&gt; role.data.name()).sort();
+    result = result.map(function (role) {
+        return {
+            value: role,
+            label: role
+        };
+    });
+    result.unshift({
+        value: &quot;&quot;,
+        label: &quot;&quot;
+    });
+    return result;
+}
+formats.userAccount.editor = selectEditor.bind(null, userAccountNames);
+
+/**
+    Return system catalog.
+
+    @method catalog
+    @for f
+    @return {catalog}
+*/
+f.catalog = function () {
+    return catalog;
+};
+
+/**
+    Call the constructor for a registered view model.
+
+    @method createViewModel
+    @param {String} View model class name
+    @param {Object} [options] See class definition for options
+    @return {Object} View model
+*/
+f.createViewModel = function (name, options) {
+    return catalog.store().viewModels()[name.toCamelCase()](options);
+};
+
+/**
+    Return system datasource.
+
+    @method datasource
+    @for f
+    @return {Datasource}
+*/
+f.datasource = function () {
+    return datasource;
+};
+
+/**
+    Get a registered component.
+
+    @method getComponent
+    @param {String} Component class name
+    @return {Object}
+*/
+f.getComponent = function (name) {
+    return catalog.store().components()[name.toCamelCase()];
+};
+
+/**
+    Return the matching currency object.
+
+    @method getCurrency
+    @for f
+    @param {String} Currency code
+    @return {Object}
+*/
+f.getCurrency = function (code) {
+    return catalog.store().data().currencies().find(function (curr) {
+        return (
+            curr.data.code() === code || (
+                curr.data.hasDisplayUnit() &amp;&amp;
+                curr.data.displayUnit().data.code() === code
+            )
+        );
+    });
+};
+
+/**
+    Return a form based on a form id or a feather. If multiple forms exist,
+    the first one will be used. If none exist one will be built based
+    on feather definition.
+
+    The form returned is not a form model,  but simply a regular
+    javascript object.
+
+    @method getForm
+    @param {Object} Options
+    @param {String} [options.form] Form id
+    @param {String} [options.feather] Feather name
+    @return {Object} Form
+*/
+f.getForm = function (options) {
+    let form;
+    let forms = catalog.store().data().forms();
+
+    // Get the form that was specified
+    if (options.form) {
+        form = forms.find(
+            (row) =&gt; (
+                row.id === options.form &amp;&amp;
+                row.isActive
+            )
+        );
+    }
+
+    // If none specified, find one with a matching feather
+    if (!form) {
+        form = forms.find(
+            (row) =&gt; (
+                row.feather === options.feather &amp;&amp;
+                row.isActive
+            )
+        );
+    }
+
+    // If none found, make one up based on feather definition
+    if (!form) {
+        form = buildForm(options.feather);
+    }
+
+    return form;
+};
+
+/**
+    Object to define what input type to use for data
+
+    @property inputMap
+    @type Object
+*/
+f.inputMap = {
+    integer: &quot;number&quot;,
+    number: &quot;text&quot;,
+    string: &quot;text&quot;,
+    date: &quot;date&quot;,
+    dateTime: &quot;datetime-local&quot;,
+    boolean: &quot;checkbox&quot;,
+    password: &quot;text&quot;,
+    tel: &quot;tel&quot;,
+    email: &quot;email&quot;,
+    url: &quot;url&quot;,
+    color: &quot;color&quot;,
+    textArea: undefined,
+    script: undefined,
+    money: &quot;number&quot;,
+    icon: &quot;text&quot;
+};
+
+/**
+    Return an array of feathers organized as options.
+    Useful for models that need to offer a selection
+    of feathers.
+
+    @method feathers
+    @return {Array}
+*/
+f.feathers = function () {
+    let tables = catalog.store().feathers();
+    let keys = Object.keys(tables).sort();
+
+    return keys.map(function (key) {
+        return {
+            value: key,
+            label: key
+        };
+    });
+};
+
+/**
+    Find the top most parent model in a model heiarchy.
+    For example from an order line find the parent order.
+
+    @method findRoot
+    @param {Object} Model
+    @return {Object} Parent model
+*/
+f.findRoot = function (model) {
+    let parent = model.parent();
+
+    return (
+        parent
+        ? f.findRoot(parent)
+        : model
+    );
+};
+
+function byEffective(a, b) {
+    let aEffect = a.data.effective();
+    let bEffect = b.data.effective();
+
+    return (
+        aEffect &gt; bEffect
+        ? -1
+        : 1
+    );
+}
+
+f.baseCurrency = function (effective) {
+    effective = (
+        effective
+        ? new Date(effective)
+        : new Date()
+    );
+
+    let current;
+    let currs = catalog.store().data().currencies();
+    let baseCurrs = catalog.store().data().baseCurrencies();
+
+    baseCurrs.sort(byEffective);
+    current = baseCurrs.find(function (item) {
+        return new Date(item.data.effective.toJSON()) &lt;= effective;
+    });
+
+    // If effective date older than earliest base currency, take oldest
+    if (!current) {
+        current = baseCurrs[0];
+    }
+
+    current = current.data.currency().data.code();
+
+    return currs.find(function (currency) {
+        return currency.data.code() === current;
+    });
+};
+
+/**
+    Return an array of models of the feather name passed.
+
+    @method createList
+    @param {String} feather Feather name
+    @param {Object} [options]
+    @param {Boolean} [options.fetch] Automatically fetch on creation
+    @param {Boolean} [options.subscribe] Subscribe to events
+    @param {Boolean} [options.showDeleted] Show deleted
+    @param {Object} [options.filter] Filter
+    @return {List}
+*/
+f.createList = (feather, options) =&gt; createList(feather)(options)();
+
+/**
+    Create a model instance with a specific feather definition. Use for
+    extending the Model class.
+    @example
+        let createMyModel = function (data, feather) {
+            // Assume here feather has been created
+            feather = feather || catalog.getFeather(&quot;MyModel&quot;);
+            let model = f.createModel(data, feather);
+
+            // Do something interesting that a feather can&#x27;t do alone
+            model.onValidate(function () {
+                if (
+                    model.data.foo() === &quot;&quot; &amp;&amp;
+                    model.data.bar() === &quot;&quot;
+                ) {
+                    throw new Error(&quot;Either foo or bar must have a value&quot;);
+                };
+            });
+        });
+
+        catalog.registerModel(&quot;MyModel&quot;, createMyModel);
+
+        f.createModel(&quot;MyModel&quot;); // Returns instance of MyModel
+    @method createModel
+    @param {Object} [data] Data
+    @param {Object} feather Feather definition
+    @return {Model}
+*/
+/**
+    Create a model instance based on the name of a registered feather.
+    @example
+        let data = {
+            firstName: &quot;John&quot;,
+            lastName: &quot;Doe&quot;
+        }
+        let model = f.createModel(&quot;Contact&quot;, data);
+        model.save(); // Persists newly created contact
+    @method createModel
+    @param {String} feather Feather name
+    @param {Object} [data] Data
+    @return {Model}
+*/
+f.createModel = function (arg1, arg2) {
+    let model;
+
+    if (typeof arg1 === &quot;string&quot;) {
+        model = catalog.store().models()[arg1.toCamelCase()];
+
+        if (!model) {
+            throw new Error(&quot;Model &quot; + arg1 + &quot; not registered.&quot;);
+        }
+        return model(arg2);
+    }
+
+    return createModel(arg1, arg2);
+};
+/**
+    Formats for property data types used in a
+    {{#crossLink &quot;Model&quot;}}{{/crossLink}}.
+
+    Formats over-ride type handling when a specific format is referenced
+    on a {{#crossLink &quot;Model&quot;}}{{/crossLink}} property, such as an
+    alternative default value, or an editor
+    in the user interface. Wherever a format property is not explicitly defined
+    featherbone will fall back to the default handling for the type.
+
+    The following properties are supported on formats:
+    * **type**: JSON type format applies to.
+    * **default:** Default value or function.
+    * **fromType:** Function to convert a JSON type to another format in the
+    client. For example converting a string to a &#x60;Date&#x60; object.
+    * **toType:** Function to convert a value on the client to a JSON type for
+    example converting a &#x60;Date&#x60; object to a string.
+    * **tableData:** Function to convert property&#x27;s value to Mithril view
+    content for a {{#crossLinkModule &quot;TableWidget&quot;}}{{/crossLinkModule}} cell.
+    For example process as a hyperlink, or present selected object properties on
+    an object value as a string.
+    * **editor:** Function to return Mithril hyperscript used for editing the
+    value in in the user interface.
+
+    @example
+        // Format a string type as an array
+        let format = {
+            type: &quot;string&quot;,
+            default: [],
+            fromType: (value) = value.split(&quot;,&quot;),
+            toType: (value) =&gt; value.toString(),
+            editor: function () {
+                let c = // component code here...
+                let vm = // view model code here...
+                return m(c, {viewModel: vm});
+            }
+        };
+
+        f.formats().myFormat = format;
+
+    @method formats
+    @return {Object}
+*/
+f.formats = () =&gt; formats;
+/**
+    Return a money object.
+
+    @method money
+    @param {Number} Amount.
+    @param {String} Currency code.
+    @param {Date} Effective date.
+    @param {Number} Base amount.
+    @return {Object}
+*/
+f.money = function (amount, currency, effective, baseAmount) {
+    let ret = {
+        amount: amount || 0,
+        currency: currency || f.baseCurrency().data.code(),
+        effective: effective || null,
+        baseAmount: baseAmount || null
+    };
+
+    return ret;
+};
+
+f.types.address = {};
+f.types.address.tableData = function (obj) {
+    let value = obj.value;
+    let content = &quot;&quot;;
+    let cr = &quot;\n&quot;;
+    let title = &quot;&quot;;
+    let d;
+
+    if (value) {
+        d = value.data;
+
+        content = d.city() + &quot;, &quot; + d.state() + &quot; &quot; + d.postalCode();
+
+        title = d.street();
+
+        if (d.unit()) {
+            title += cr + d.unit();
+        }
+
+        title += cr + d.city() + &quot;, &quot;;
+        title += d.state() + &quot; &quot; + d.postalCode();
+        title += cr + d.country();
+
+        obj.options.title = title;
+    }
+
+    return content;
+};
+
+f.types.array.editor = function (options) {
+    return m(catalog.store().components().dataList, options);
+};
+
+f.types.array.tableData = function (obj) {
+    let value = obj.value;
+    let content;
+
+    if (value &amp;&amp; value.length) {
+        if (typeof value[0] === &quot;object&quot;) {
+            content = value.map((item) =&gt; item.label).toString();
+        } else {
+            content = value.toString();
+        }
+
+        obj.options.title = content;
+    }
+
+    return content;
+};
+
+f.types.boolean.default = false;
+f.types.boolean.toType = (value) =&gt; Boolean(value);
+f.types.boolean.editor = function (options) {
+    let prop = options.prop;
+    let opts = {
+        id: options.id,
+        onCreate: options.onCreate,
+        onRemove: options.onRemove,
+        required: options.required,
+        readonly: options.readonly,
+        style: options.style,
+        onclick: prop,
+        value: prop()
+    };
+
+    return m(catalog.store().components().checkbox, opts);
+};
+f.types.boolean.tableData = function (obj) {
+    if (obj.value) {
+        return m(&quot;i&quot;, {
+            onclick: obj.onclick,
+            class: &quot;fa fa-check&quot;
+        });
+    }
+};
+
+f.types.number.editor = function (options) {
+    let prop = options.prop;
+    let opts = {
+        class: options.class,
+        readonly: options.readonly,
+        id: options.id,
+        required: options.required,
+        style: options.style,
+        type: options.type || &quot;text&quot;,
+        oncreate: options.onCreate,
+        onremove: options.onRemove,
+        onchange: (e) =&gt; prop(e.target.value),
+        value: prop()
+    };
+
+    if (prop.min !== undefined) {
+        opts.min = prop.min;
+    }
+    if (prop.max !== undefined) {
+        opts.max = prop.max;
+    }
+
+    if (opts.class) {
+        opts.class = &quot;fb-input &quot; + opts.class;
+    } else {
+        opts.class = &quot;fb-input&quot;;
+    }
+
+    opts.class += &quot; fb-input-number&quot;;
+
+    return m(&quot;input&quot;, opts);
+};
+
+f.types.number.tableData = function (obj) {
+    obj.options.style.textAlign = &quot;right&quot;;
+
+    return obj.value.toLocaleString();
+};
+
+f.types.integer.editor = function (options) {
+    options.type = &quot;number&quot;;
+
+    return f.types.number.editor(options);
+};
+f.types.integer.tableData = f.types.number.tableData;
+f.types.integer.toType = (value) =&gt; parseInt(value, 10);
+
+f.types.string.editor = input.bind(null, &quot;text&quot;);
+f.types.string.tableData = function (obj) {
+    obj.options.title = obj.value;
+
+    return obj.value;
+};
+
+f.findRelationWidget = function (relation, isTop) {
+    let name = relation.toCamelCase() + &quot;Relation&quot;;
+    let components = catalog.store().components();
+    let ret = components[name];
+    let inherits;
+
+    if (ret || relation === &quot;Object&quot;) {
+        return ret;
+    }
+
+    inherits = catalog.getFeather(relation).inherits || &quot;Object&quot;;
+    ret = f.findRelationWidget(inherits);
+
+    if (ret &amp;&amp; isTop) {
+        components[name] = ret; // Memoize
+    }
+
+    return ret;
+};
+
+/**
+    Factory for building input elements
+
+    @method createEditor
+    @param {Object} [options] Options object
+    @param {Object} [options.model] Model
+    @param {String} [options.key] Property key
+    @param {Object} [options.viewModel] View Model
+    @param {Array} [options.dataList] Array for input lists
+*/
+f.createEditor = function (obj) {
+    let w;
+    let featherName;
+    let key = obj.key;
+    let isPath = key.indexOf(&quot;.&quot;) !== -1;
+    let prop = f.resolveProperty(obj.model, key);
+    let editor;
+
+    obj.options.id = obj.options.id || key;
+
+    // Handle input types
+    if (typeof prop.type === &quot;string&quot; || isPath) {
+
+        if (isPath || prop.isReadOnly()) {
+            obj.options.readonly = true;
+        } else {
+            obj.options.readonly = false;
+        }
+
+        if (prop.isRequired()) {
+            obj.options.required = true;
+        }
+
+        obj.options.prop = prop;
+
+        if (obj.dataList) {
+            return buildSelector(obj, obj.options);
+        }
+
+        if (prop.format &amp;&amp; f.formats()[prop.format].editor) {
+            editor = f.formats()[prop.format].editor;
+        } else if (f.types[prop.type] &amp;&amp; f.types[prop.type].editor) {
+            editor = f.types[prop.type].editor;
+        } else {
+            editor = f.types.string.editor;
+        }
+
+        return editor({
+            class: obj.options.class,
+            readonly: obj.options.readonly,
+            disableCurrency: obj.options.fCurrency,
+            filter: obj.options.filter,
+            id: obj.options.id,
+            isCell: obj.options.isCell,
+            onCreate: obj.options.oncreate,
+            onRemove: obj.options.onremove,
+            model: obj.model,
+            parentProperty: key,
+            parentViewModel: obj.viewModel,
+            prop: prop,
+            required: obj.options.required,
+            style: obj.options.style || {},
+            showCurrency: obj.options.showCurrency
+        });
+    }
+
+    // Handle relations
+    if (prop.isToOne()) {
+        featherName = obj.viewModel.model().name.toCamelCase();
+
+        if (obj.widget) {
+            // Relation widget defined by form layout
+            w = buildRelationWidgetFromLayout(obj.widget.id);
+        } else {
+            // See if we have one defined somewhere
+            w = f.findRelationWidget(prop.type.relation, true);
+        }
+
+        if (!w) {
+            // Nothing specific, deduce from feather definition
+            w = createRelationWidgetFromFeather(prop.type, featherName);
+        }
+
+        if (w) {
+            return m(w, {
+                parentViewModel: obj.viewModel,
+                parentProperty: key,
+                filter: obj.filter,
+                isCell: obj.options.isCell,
+                style: obj.options.style,
+                onCreate: obj.options.oncreate,
+                onRemove: obj.options.onremove,
+                id: obj.options.id,
+                isReadOnly: prop.isReadOnly
+            });
+        }
+    }
+
+    if (prop.isToMany()) {
+        w = catalog.store().components().childTable;
+        if (w) {
+            return m(w, {
+                parentViewModel: obj.viewModel,
+                parentProperty: key,
+                height: obj.options.height
+            });
+        }
+    }
+
+    console.log(&quot;Widget for property &#x27;&quot; + key + &quot;&#x27; is undefined&quot;);
+};
+
+/**
+    Build a relation widget from a feather definition
+
+    @method createRelationWidget
+    @param {Object} type Type from Property
+    @param {String} feather Parent feather name
+    @return {Object}
+*/
+f.createRelationWidget = createRelationWidgetFromFeather;
+
+/**
+  Returns the exact x, y coordinents of an HTML element.
+
+  Thanks to:
+  http://www.kirupa.com/html5/get_element_position_using_javascript.htm
+
+  @method getElementPosition
+  @param {Object} Element
+  @return {Object}
+*/
+f.getElementPosition = function (element) {
+    let xPosition = 0;
+    let yPosition = 0;
+
+    while (element) {
+        xPosition += (
+            element.offsetLeft -
+            element.scrollLeft +
+            element.clientLeft
+        );
+        yPosition += (
+            element.offsetTop -
+            element.scrollTop +
+            element.clientTop
+        );
+        element = element.offsetParent;
+    }
+
+    return {
+        x: xPosition,
+        y: yPosition
+    };
+};
+
+/**
+    Get a style by name. Returns an object with style elements.
+
+    @method getStyle
+    @param {String} Name
+    @return {Object}
+*/
+f.getStyle = function (name) {
+    // Reformat and memoize for fast lookup
+    if (!styles) {
+        styles = {};
+        catalog.store().data().styles().forEach(function (style) {
+            let d = style.data;
+
+            styles[style.data.name()] = {
+                color: (
+                    d.hasColor()
+                    ? d.color()
+                    : &quot;inherit&quot;
+                ),
+                backgroundColor: (
+                    d.hasBackgroundColor()
+                    ? d.backgroundColor()
+                    : &quot;inherit&quot;
+                ),
+                fontWeight: d.fontWeight(),
+                textDecoration: &quot;underline &quot; + d.underline()
+            };
+        });
+    }
+
+    return styles[name];
+};
+
+/**
+    Creates a property getter setter function with a default value.
+    Includes state.
+
+    @method prop
+    @param {Any} store Initial
+    @param {Object} [formatter] Formatter. Optional
+    @param {Any} [formatter.default] Function or value returned
+        by default.
+    @param {Function} [formatter.toType] Converts input to internal type.
+    @param {Function} [formatter.fromType] Formats internal
+        value for output.
+    @return {Property}
+*/
+f.prop = createProperty;
+
+/**
+    Helper function to resolve property dot notation.
+
+    @method resolveAlias
+    @for f
+    @param {Object} Feather
+    @param {String} Attribute name
+    @return {String}
+*/
+f.resolveAlias = function (feather, attr) {
+    let prefix;
+    let suffix;
+    let ret;
+    let overload = (
+        feather.overloads
+        ? feather.overloads[attr] || {}
+        : {}
+    );
+    let idx = attr.indexOf(&quot;.&quot;);
+
+    if (idx &gt; -1) {
+        prefix = attr.slice(0, idx);
+        suffix = attr.slice(idx + 1, attr.length);
+        feather = catalog.getFeather(
+            feather.properties[prefix].type.relation
+        );
+        return f.resolveAlias(feather, suffix);
+    }
+
+    if (!feather.properties[attr]) {
+        return attr.toName();
+    }
+
+    ret = overload.alias || feather.properties[attr].alias || attr;
+    return ret.toName();
+};
+
+/**
+    Helper function to resolve property dot notation. Traverses
+    model relations to return child property if dot notation present.
+
+        prop = f.resolveProperty(contact, &quot;address.city&quot;);
+        console.log(prop()); // &quot;Philadephia&quot;
+
+    @method resolveProperty
+    @param {Object} Model
+    @param {String} Property name
+    @return {Function} Property function
+*/
+f.resolveProperty = function (model, property) {
+    let prefix;
+    let suffix;
+    let idx = property.indexOf(&quot;.&quot;);
+
+    if (!model) {
+        return f.prop(null);
+    }
+
+    if (idx &gt; -1) {
+        prefix = property.slice(0, idx);
+        suffix = property.slice(idx + 1, property.length);
+        return f.resolveProperty(model.data[prefix](), suffix);
+    }
+
+    if (!model.data[property]) {
+        return f.prop(&quot;Unknown attribute &#x27;&quot; + property + &quot;&#x27;&quot;);
+    }
+
+    return model.data[property];
+};
+
+// Define application state
+f.currentUser = f.prop();
+message = f.prop(&quot;&quot;);
+appState = State.define(function () {
+    this.state(&quot;Uninitialized&quot;, function () {
+        this.event(&quot;preauthorized&quot;, function () {
+            this.goto(&quot;../SignedIn&quot;);
+        });
+        this.event(&quot;signIn&quot;, function () {
+            this.goto(&quot;../SignedOut&quot;);
+        });
+        this.message = () =&gt; &quot;&quot;;
+    });
+    this.state(&quot;SignedOut&quot;, function () {
+        this.event(&quot;authenticate&quot;, function () {
+            let user = document.getElementById(
+                &quot;username&quot;
+            ).value;
+
+            this.goto(&quot;../Authenticating&quot;, {
+                context: {
+                    username: user,
+                    password: document.getElementById(
+                        &quot;password&quot;
+                    ).value
+                }
+            });
+        });
+        this.enter(function () {
+            f.currentUser(undefined);
+            m.route.set(&quot;/sign-in&quot;);
+        });
+        this.message = message;
+    });
+    this.state(&quot;SignedIn&quot;, function () {
+        this.event(&quot;signOut&quot;, function () {
+            this.goto(&quot;../SignedOut&quot;);
+        });
+        this.message = () =&gt; &quot;&quot;;
+        this.exit(function () {
+            datasource.request({
+                method: &quot;POST&quot;,
+                path: &quot;/sign-out&quot;
+            }).then(() =&gt; location.reload());
+        });
+    });
+    this.state(&quot;Authenticating&quot;, function () {
+        this.event(&quot;success&quot;, function () {
+            this.goto(&quot;../SignedIn&quot;);
+            m.route.set(&quot;/home&quot;);
+        });
+        this.event(&quot;failed&quot;, function () {
+            this.goto(&quot;../SignedOut&quot;);
+        });
+        this.enter(function (context) {
+            datasource.request({
+                method: &quot;POST&quot;,
+                path: &quot;/sign-in&quot;,
+                data: {
+                    username: context.username,
+                    password: context.password
+                }
+            }).then(function (resp) {
+                f.currentUser(resp);
+                message(&quot;&quot;);
+                f.state().send(&quot;success&quot;);
+            }).catch(function (err) {
+                message(err.message.replace(/&quot;/g, &quot;&quot;));
+                f.state().send(&quot;failed&quot;);
+            });
+        });
+        this.message = () =&gt; &quot;&quot;;
+    });
+});
+appState.goto();
+
+/**
+    Application statechart. States are &#x60;SignedIn&#x60;, &#x60;SignedOut&#x60;
+    and &#x60;Authenticating.&#x60;
+
+    @method state
+    @for f
+    @return {Object} statechart
+*/
+f.state = function () {
+    return appState;
+};
+
+/**
+    State constructor.
+    @method State
+    @return {State}
+*/
+f.State = State;
+
+export default Object.freeze(f);
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
