@@ -12,7 +12,7 @@ From your browser navigate to:
 
 By default the API definitions are populated based on the base featherbone installation. However, if a featherbone repository is cloned and installed adjacent to featherbone-docs, the Open API specification will automatically be updated to whatever is installed in the featherbone installation.
 
-You may also update the Client and Server API documentation according to your current featherbone installation as follows by installing and running `yuidoc` as follows.
+You may also update the Client and Server API documentation to match to your current featherbone installation by installing and running `yuidoc` as follows:
 
 ```text
 $ npm yuidoc -g
