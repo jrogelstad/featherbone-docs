@@ -19,12 +19,9 @@
 (function () {
     "use strict";
     const express = require("express");
-    const cors = require("cors");
 
     let app = express();
     let port = 10002;
-
-    app.use(cors());
 
     // static pages
     app.use(express.static(__dirname));
