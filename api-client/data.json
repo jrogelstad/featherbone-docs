@@ -778,7 +778,7 @@
             },
             "tag": "module",
             "file": "components\\account-menu.js",
-            "line": 46
+            "line": 182
         },
         "AddressRelation": {
             "name": "AddressRelation",
@@ -1417,7 +1417,7 @@
             "module": "AccountMenu",
             "namespace": "Components",
             "file": "components\\account-menu.js",
-            "line": 46,
+            "line": 182,
             "static": 1
         },
         "ViewModels.AddressRelation": {
@@ -4197,9 +4197,40 @@
         },
         {
             "file": "components\\account-menu.js",
-            "line": 36,
+            "line": 40,
             "itemtype": "method",
             "name": "showMenuAccount",
+            "params": [
+                {
+                    "name": "flag",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "ViewModels.AccountMenu",
+            "module": "AccountMenu",
+            "namespace": "ViewModels"
+        },
+        {
+            "file": "components\\account-menu.js",
+            "line": 46,
+            "itemtype": "method",
+            "name": "changePasswordDialog",
+            "params": [
+                {
+                    "name": "dialog",
+                    "description": "",
+                    "type": "ViewModels.Dialog"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "ViewModels.Dialog"
+            },
             "class": "ViewModels.AccountMenu",
             "module": "AccountMenu",
             "namespace": "ViewModels"
@@ -4208,6 +4239,26 @@
             "file": "components\\account-menu.js",
             "line": 52,
             "itemtype": "method",
+            "name": "errorDialog",
+            "params": [
+                {
+                    "name": "dialog",
+                    "description": "",
+                    "type": "ViewModels.Dialog"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "ViewModels.Dialog"
+            },
+            "class": "ViewModels.AccountMenu",
+            "module": "AccountMenu",
+            "namespace": "ViewModels"
+        },
+        {
+            "file": "components\\account-menu.js",
+            "line": 188,
+            "itemtype": "method",
             "name": "oninit",
             "class": "Components.AccountMenu",
             "module": "AccountMenu",
@@ -4215,7 +4266,7 @@
         },
         {
             "file": "components\\account-menu.js",
-            "line": 59,
+            "line": 195,
             "itemtype": "method",
             "name": "view",
             "return": {
@@ -16067,6 +16118,17 @@
             "description": "Contact information.\n\n__Type:__ {{#crossLink \"Contact\"}}{{/crossLink}}",
             "itemtype": "property",
             "name": "data.contact",
+            "type": "PropertyRole",
+            "class": "Models.UserAccount",
+            "module": "Core",
+            "namespace": "Models"
+        },
+        {
+            "file": "api.js",
+            "line": 2042,
+            "description": "Allow user to log in.\n\n__Type:__ `Boolean`",
+            "itemtype": "property",
+            "name": "data.isActive",
             "type": "PropertyRole",
             "class": "Models.UserAccount",
             "module": "Core",

@@ -189,6 +189,10 @@
 
                     <ul class="index-list methods">
                             <li class="index-item method">
+                                <a href="#method_changeOwnPassword">changeOwnPassword</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#method_changeRoleLogin">changeRoleLogin</a>
 
                             </li>
@@ -222,6 +226,117 @@
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
 
+<div id="method_changeOwnPassword" class="method item">
+    <h3 class="name"><code>changeOwnPassword</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>payload</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/services_role.js.html#l40"><code>services\role.js:40</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Used for user to update their own password. Requires both
+old password and new password.</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">payload</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                        <ul class="params-list">
+                            <li class="param">
+                                    <code class="param-name">client</code>
+                                    <span class="type"><a href="../classes/Client.html" class="crosslink">Client</a></span>
+
+                                <div class="param-description">
+                                    
+                                </div>
+
+                            </li>
+                            <li class="param">
+                                    <code class="param-name">data</code>
+                                    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+
+                                <div class="param-description">
+                                    <p>Data</p>
+
+                                </div>
+
+                                    <ul class="params-list">
+                                        <li class="param">
+                                                <code class="param-name">name</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+                                            <div class="param-description">
+                                                Role name
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">oldPassword</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+                                            <div class="param-description">
+                                                Old password
+                                            </div>
+                                        </li>
+                                        <li class="param">
+                                                <code class="param-name">newPassword</code>
+                                                <span class="type"><a href="../classes/String.html" class="crosslink">String</a></span>
+
+                                            <div class="param-description">
+                                                New password
+                                            </div>
+                                        </li>
+                                    </ul>
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+            </div>
+        </div>
+
+
+</div>
 <div id="method_changeRoleLogin" class="method item">
     <h3 class="name"><code>changeRoleLogin</code></h3>
 
@@ -258,7 +373,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/services_role.js.html#l40"><code>services\role.js:40</code></a>
+        <a href="../files/services_role.js.html#l81"><code>services\role.js:81</code></a>
         </p>
 
 
@@ -368,7 +483,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/services_role.js.html#l73"><code>services\role.js:73</code></a>
+        <a href="../files/services_role.js.html#l114"><code>services\role.js:114</code></a>
         </p>
 
 
@@ -470,7 +585,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/services_role.js.html#l103"><code>services\role.js:103</code></a>
+        <a href="../files/services_role.js.html#l144"><code>services\role.js:144</code></a>
         </p>
 
 
@@ -589,7 +704,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/services_role.js.html#l156"><code>services\role.js:156</code></a>
+        <a href="../files/services_role.js.html#l197"><code>services\role.js:197</code></a>
         </p>
 
 
@@ -682,7 +797,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/services_role.js.html#l183"><code>services\role.js:183</code></a>
+        <a href="../files/services_role.js.html#l224"><code>services\role.js:224</code></a>
         </p>
 
 
@@ -783,7 +898,7 @@
     <div class="meta">
                 <p>
                 Defined in
-        <a href="../files/services_role.js.html#l203"><code>services\role.js:203</code></a>
+        <a href="../files/services_role.js.html#l244"><code>services\role.js:244</code></a>
         </p>
 
 

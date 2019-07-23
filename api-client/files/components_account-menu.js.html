@@ -247,8 +247,8 @@
     @module AccountMenu
 */
 import f from &quot;../core.js&quot;;
-import catalog from &quot;../models/catalog.js&quot;;
 
+const catalog = f.catalog();
 const m = window.m;
 const accountMenu = {};
 
@@ -259,11 +259,147 @@ const accountMenu = {};
 */
 accountMenu.viewModel = function () {
     const vm = {};
+    let oldPwd = f.prop(&quot;&quot;);
+    let newPwd = f.prop(&quot;&quot;);
+    let cnfPwd = f.prop(&quot;&quot;);
+    let pwdView;
 
     /**
         @method showMenuAccount
+        @param {Boolean} flag
+        @return {Boolean}
     */
     vm.showMenuAccount = f.prop(false);
+     /**
+        @method changePasswordDialog
+        @param {ViewModels.Dialog} dialog
+        @return {ViewModels.Dialog}
+    */
+    vm.changePasswordDialog = f.prop();
+     /**
+        @method errorDialog
+        @param {ViewModels.Dialog} dialog
+        @return {ViewModels.Dialog}
+    */
+    vm.errorDialog = f.prop();
+
+    // ..........................................................
+    // PRIVATE
+    //
+    vm.changePasswordDialog(f.createViewModel(&quot;Dialog&quot;, {
+        title: &quot;Change Password&quot;,
+        icon: &quot;key&quot;,
+        onOk: function () {
+            m.request({
+                method: &quot;POST&quot;,
+                url: &quot;do/change-password&quot;,
+                data: {
+                    oldPassword: oldPwd(),
+                    newPassword: newPwd()
+                }
+            }).catch(function (err) {
+                vm.errorDialog().message(err.message);
+                vm.errorDialog().show();
+            });
+            oldPwd(&quot;&quot;);
+            newPwd(&quot;&quot;);
+            cnfPwd(&quot;&quot;);
+        },
+        onCancel: function () {
+            oldPwd(&quot;&quot;);
+            newPwd(&quot;&quot;);
+            cnfPwd(&quot;&quot;);
+        }
+    }));
+
+    pwdView = m(&quot;form&quot;, {
+        class: &quot;pure-form pure-form-aligned&quot;,
+        id: &quot;changePasswordDialogForm&quot;
+    }, [
+        m(&quot;fieldset&quot;, [
+            m(&quot;div&quot;, {
+                class: &quot;pure-control-group&quot;,
+                id: &quot;changePasswordDialogGrp1&quot;
+            }, [
+                m(&quot;label&quot;, {
+                    id: &quot;oldPasswordLabel&quot;,
+                    for: &quot;oldPassword&quot;
+                }, &quot;Old Password:&quot;),
+                m(&quot;input&quot;, {
+                    type: &quot;password&quot;,
+                    id: &quot;oldPassword&quot;,
+                    value: oldPwd() ,
+                    onchange: (e) =&gt; oldPwd(e.target.value)
+                })
+            ]),
+            m(&quot;div&quot;, {
+                class: &quot;pure-control-group&quot;,
+                id: &quot;changePasswordDialogGrp2&quot;
+            }, [
+                m(&quot;label&quot;, {
+                    for: &quot;newPassword&quot;,
+                    id: &quot;newPaswordLabel&quot;
+                }, &quot;New Password:&quot;),
+                m(&quot;input&quot;, {
+                    type: &quot;password&quot;,
+                    id: &quot;newPassword&quot;,
+                    value: newPwd(),
+                    onchange: (e) =&gt; newPwd(e.target.value)
+                })
+            ]),
+            m(&quot;div&quot;, {
+                class: &quot;pure-control-group&quot;,
+                id: &quot;changePasswordDialogGrp3&quot;
+            }, [
+                m(&quot;label&quot;, {
+                    for: &quot;confirmPassword&quot;,
+                    id: &quot;confirmPasswordLabel&quot;
+                }, &quot;Confirm Password:&quot;),
+                m(&quot;input&quot;, {
+                    type: &quot;password&quot;,
+                    id: &quot;confirmPassword&quot;,
+                    value: cnfPwd(),
+                    onchange: (e) =&gt; cnfPwd(e.target.value)
+                })
+            ])
+        ])
+    ]);
+
+    vm.changePasswordDialog().content = () =&gt; pwdView;
+
+    vm.errorDialog(f.createViewModel(&quot;Dialog&quot;, {
+        title: &quot;Error&quot;,
+        icon: &quot;times&quot;
+    }));
+
+    function validate() {
+        let dlg = vm.changePasswordDialog();
+        let msg;
+
+        dlg.okDisabled(true);
+
+        if (!oldPwd().length) {
+            msg = &quot;Old password cannot be blank&quot;;
+        } else if (!newPwd().length) {
+            msg = &quot;New password cannot be blank&quot;;
+        } else if (newPwd() !== cnfPwd()) {
+            msg = &quot;New password is not the same as confirmed password&quot;;
+        } else if (newPwd() === oldPwd()) {
+            msg = &quot;New password cannot be the same as old password&quot;;
+        }
+
+        if (msg) {
+            dlg.okTitle(msg);
+        } else {
+            dlg.okTitle(&quot;&quot;);
+            dlg.okDisabled(false);
+        }
+    }
+
+    // Validate when fields edited
+    oldPwd.state().resolve(&quot;/Changing&quot;).exit(validate);
+    newPwd.state().resolve(&quot;/Changing&quot;).exit(validate);
+    cnfPwd.state().resolve(&quot;/Changing&quot;).exit(validate);
 
     return vm;
 };
@@ -271,7 +407,7 @@ accountMenu.viewModel = function () {
 catalog.register(&quot;viewModels&quot;, &quot;accountMenu&quot;, accountMenu.viewModel);
 
 /**
-    @class AccountMenu
+    @class AccountMenu  
     @static
     @namespace Components
 */
@@ -289,6 +425,8 @@ accountMenu.component = {
     */
     view: function () {
         const vm = this.viewModel;
+        const dlg = f.getComponent(&quot;Dialog&quot;);
+        const dlgState = vm.changePasswordDialog().state().current()[0];
 
         return m(&quot;div&quot;, {
             id: &quot;nav-account-div&quot;,
@@ -297,7 +435,15 @@ accountMenu.component = {
                 &quot;custom-restricted-width &quot; +
                 &quot;fb-menu fb-menu-setup&quot;
             ),
-            onclick: vm.showMenuAccount.bind(null, true),
+            onclick: function (e) {
+                if (
+                    dlgState === &quot;/Display/Closed&quot; &amp;&amp;
+                    e.srcElement.nodeName !== &quot;BUTTON&quot; &amp;&amp;
+                    e.target.parentElement.nodeName !== &quot;BUTTON&quot;
+                ) {
+                    vm.showMenuAccount(true);
+                }
+            },
             onmouseout: function (ev) {
                 if (
                     !ev || !ev.toElement ||
@@ -310,6 +456,12 @@ accountMenu.component = {
                 }
             }
         }, [
+            m(dlg, {
+                viewModel: vm.changePasswordDialog()
+            }),
+            m(dlg, {
+                viewModel: vm.errorDialog()
+            }),
             m(&quot;span&quot;, {
                 id: &quot;nav-account-button&quot;,
                 title: &quot;Signed in as: &quot; + (
@@ -351,8 +503,13 @@ accountMenu.component = {
                     class: (
                         &quot;pure-menu-link &quot;
                     ),
-                    title: &quot;Change password&quot;
-                    //onclick: vm.goSettings
+                    title: &quot;Change password&quot;,
+                    onclick: function () {
+                        let dlg = vm.changePasswordDialog();
+
+                        dlg.okDisabled(true);
+                        dlg.show();
+                    }
                 }, [m(&quot;i&quot;, {
                     id: &quot;nav-account-password-icon&quot;,
                     class: &quot;fa fa-key fb-menu-list-icon&quot;
@@ -364,10 +521,7 @@ accountMenu.component = {
                         &quot;fb-menu-list-separator&quot;
                     ),
                     title: &quot;Sign out of application&quot;,
-                    onclick: function () {
-                        vm.showMenuAccount(false);
-                        f.state().send(&quot;signOut&quot;);
-                    }
+                    onclick: () =&gt; f.state().send(&quot;signOut&quot;)
                 }, [m(&quot;i&quot;, {
                     id: &quot;nav-account-signout-icon&quot;,
                     class: (

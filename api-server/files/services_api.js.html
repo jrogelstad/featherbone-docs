@@ -752,16 +752,18 @@
                     // Save api file
                     fs.writeFile(
                         &quot;../featherbone-docs/api-rest/api.json&quot;,
-                        api, 
+                        api,
                         function (err) {
                             if (err) {
                                 console.error(
                                     &quot;Cannot write Open API specification as &quot; +
-                                    &quot;featherbone-docs repository is not present.&quot;
+                                    &quot;featherbone-docs repository is not &quot; +
+                                    &quot;present.&quot;
                                 );
                             }
                             resolve();
-                        });
+                        }
+                    );
                 }
 
                 // Real work starts here

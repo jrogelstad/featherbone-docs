@@ -1612,6 +1612,8 @@
           * {{#crossLink &quot;Services.Workbooks/saveWorkbook:method&quot;}}
           {{/crossLink}}
         * __POST__
+          * {{#crossLink &quot;Services.Role/changeOwnPassword:method&quot;}}
+          {{/crossLink}}
           * {{#crossLink &quot;Services.Role/changeRoleLogin:method&quot;}}
           {{/crossLink}}
           * {{#crossLink &quot;Services.Role/changeRolePassword:method&quot;}}
@@ -1906,6 +1908,7 @@
     that.registerFunction(&quot;GET&quot;, &quot;isSuperUser&quot;, tools.isSuperUser);
     that.registerFunction(&quot;GET&quot;, &quot;getAuthorizations&quot;, tools.getAuthorizations);
     that.registerFunction(&quot;PATCH&quot;, &quot;patchProfile&quot;, profile.patchProfile);
+    that.registerFunction(&quot;POST&quot;, &quot;changeOwnPassword&quot;, role.changeOwnPassword);
     that.registerFunction(&quot;POST&quot;, &quot;changeRoleLogin&quot;, role.changeRoleLogin);
     that.registerFunction(
         &quot;POST&quot;,
