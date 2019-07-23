@@ -7,6 +7,49 @@
         "logo": "../featherbone-client.png"
     },
     "files": {
+        "..\\common\\core.js": {
+            "name": "..\\common\\core.js",
+            "modules": {},
+            "classes": {
+                "Filter": 1,
+                "f": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\common\\date.js": {
+            "name": "..\\common\\date.js",
+            "modules": {
+                "Date": 1
+            },
+            "classes": {
+                "Date": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\common\\number.js": {
+            "name": "..\\common\\number.js",
+            "modules": {
+                "Number": 1
+            },
+            "classes": {
+                "Number": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "..\\common\\string.js": {
+            "name": "..\\common\\string.js",
+            "modules": {
+                "String": 1
+            },
+            "classes": {
+                "String": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "components\\account-menu.js": {
             "name": "components\\account-menu.js",
             "modules": {
@@ -613,6 +656,113 @@
         }
     },
     "modules": {
+        "Core": {
+            "name": "Core",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Filter": 1,
+                "f": 1,
+                "Models.DataService": 1,
+                "Models.Feather": 1,
+                "Models.FeatherOverload": 1,
+                "Models.FeatherProperty": 1,
+                "Models.Form": 1,
+                "Models.FormAttr": 1,
+                "Models.FormAttrColumn": 1,
+                "Models.Object": 1,
+                "Models.RoleMembership": 1,
+                "Models.Route": 1,
+                "Models.Script": 1,
+                "Models.Address": 1,
+                "Models.BaseCurrency": 1,
+                "Models.Comment": 1,
+                "Models.Contact": 1,
+                "Models.ContactAddress": 1,
+                "Models.ContactEmail": 1,
+                "Models.ContactPhone": 1,
+                "Models.ContactSocialAccount": 1,
+                "Models.Country": 1,
+                "Models.Currency": 1,
+                "Models.CurrencyConversion": 1,
+                "Models.CurrencyUnit": 1,
+                "Models.CurrencyUnitConversion": 1,
+                "Models.Document": 1,
+                "Models.FeatherAuthorization": 1,
+                "Models.FormTab": 1,
+                "Models.Honorific": 1,
+                "Models.Kind": 1,
+                "Models.Layout": 1,
+                "Models.Log": 1,
+                "Models.Module": 1,
+                "Models.ModuleDependency": 1,
+                "Models.RelationSearchColumn": 1,
+                "Models.RelationWidget": 1,
+                "Models.Role": 1,
+                "Models.SocialNetwork": 1,
+                "Models.State": 1,
+                "Models.Style": 1,
+                "Models.Unit": 1,
+                "Models.UserAccount": 1
+            },
+            "fors": {
+                "Models.DataService": 1,
+                "Models.Feather": 1,
+                "Models.FeatherOverload": 1,
+                "Models.FeatherProperty": 1,
+                "Models.Form": 1,
+                "Models.FormAttr": 1,
+                "Models.FormAttrColumn": 1,
+                "Models.Route": 1,
+                "Models.Script": 1,
+                "f": 1
+            },
+            "namespaces": {
+                "Models": 1
+            },
+            "tag": "module",
+            "file": "api.js",
+            "line": 2007
+        },
+        "Date": {
+            "name": "Date",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Date": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "..\\common\\date.js",
+            "line": 24
+        },
+        "Number": {
+            "name": "Number",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "Number": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "..\\common\\number.js",
+            "line": 26
+        },
+        "String": {
+            "name": "String",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "String": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "..\\common\\string.js",
+            "line": 24
+        },
         "AccountMenu": {
             "name": "AccountMenu",
             "submodules": {},
@@ -1057,73 +1207,6 @@
             "file": "models\\catalog.js",
             "line": 125
         },
-        "Core": {
-            "name": "Core",
-            "submodules": {},
-            "elements": {},
-            "classes": {
-                "Models.DataService": 1,
-                "Models.Feather": 1,
-                "Models.FeatherOverload": 1,
-                "Models.FeatherProperty": 1,
-                "Models.Form": 1,
-                "Models.FormAttr": 1,
-                "Models.FormAttrColumn": 1,
-                "Models.Object": 1,
-                "Models.RoleMembership": 1,
-                "Models.Route": 1,
-                "Models.Script": 1,
-                "Models.Address": 1,
-                "Models.BaseCurrency": 1,
-                "Models.Comment": 1,
-                "Models.Contact": 1,
-                "Models.ContactAddress": 1,
-                "Models.ContactEmail": 1,
-                "Models.ContactPhone": 1,
-                "Models.ContactSocialAccount": 1,
-                "Models.Country": 1,
-                "Models.Currency": 1,
-                "Models.CurrencyConversion": 1,
-                "Models.CurrencyUnit": 1,
-                "Models.CurrencyUnitConversion": 1,
-                "Models.Document": 1,
-                "Models.FeatherAuthorization": 1,
-                "Models.FormTab": 1,
-                "Models.Honorific": 1,
-                "Models.Kind": 1,
-                "Models.Layout": 1,
-                "Models.Log": 1,
-                "Models.Module": 1,
-                "Models.ModuleDependency": 1,
-                "Models.RelationSearchColumn": 1,
-                "Models.RelationWidget": 1,
-                "Models.Role": 1,
-                "Models.SocialNetwork": 1,
-                "Models.State": 1,
-                "Models.Style": 1,
-                "Models.Unit": 1,
-                "Models.UserAccount": 1,
-                "f": 1
-            },
-            "fors": {
-                "Models.DataService": 1,
-                "Models.Feather": 1,
-                "Models.FeatherOverload": 1,
-                "Models.FeatherProperty": 1,
-                "Models.Form": 1,
-                "Models.FormAttr": 1,
-                "Models.FormAttrColumn": 1,
-                "Models.Route": 1,
-                "Models.Script": 1,
-                "f": 1
-            },
-            "namespaces": {
-                "Models": 1
-            },
-            "tag": "module",
-            "file": "api.js",
-            "line": 2007
-        },
         "List": {
             "name": "List",
             "submodules": {},
@@ -1222,6 +1305,93 @@
         }
     },
     "classes": {
+        "Filter": {
+            "name": "Filter",
+            "shortname": "Filter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Core",
+            "namespace": "",
+            "file": "..\\common\\core.js",
+            "line": 28,
+            "description": "JSON object that defines filter criteria that can be passed to the\nserver to define result sets to return in a query.\n\n__Example__\n\n    // Filter to return records with\n    // * Age of 10, name starts with \"T\"\n    // * Sort by name ascending\n    // * Return records 60-90\n    let filter = {\n        criteria: [{\n            property: \"age\"\n            value: 10\n        }, {\n            property: \"name\",\n            operator: \"~*\",\n            value: \"^T\"\n        ]\n        sort: [{\n            property: \"name\"\n        }],\n        offset: 60,\n        limit: 30\n    }",
+            "static": 1
+        },
+        "f": {
+            "name": "f",
+            "shortname": "f",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Core",
+            "namespace": "",
+            "file": "..\\common\\core.js",
+            "line": 112,
+            "description": "Featherbone global object.",
+            "static": 1
+        },
+        "Date": {
+            "name": "Date",
+            "shortname": "Date",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Date",
+            "namespace": "",
+            "file": "..\\common\\date.js",
+            "line": 24,
+            "description": "Helper functions added to JavaScript\n<a href='https://developer.mozilla.org/\nen-US/docs/Web/JavaScript/Reference/\nGlobal_Objects/Date'>Date</a> prototype.",
+            "is_constructor": 1,
+            "return": {
+                "description": "",
+                "type": "Date"
+            }
+        },
+        "Number": {
+            "name": "Number",
+            "shortname": "Number",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Number",
+            "namespace": "",
+            "file": "..\\common\\number.js",
+            "line": 26,
+            "description": "Helper functions added to JavaScript\n<a href='https://developer.mozilla.org/\nen-US/docs/Web/JavaScript/Reference/\nGlobal_Objects/Number'>Number</a> prototype.",
+            "is_constructor": 1,
+            "return": {
+                "description": "",
+                "type": "Number"
+            }
+        },
+        "String": {
+            "name": "String",
+            "shortname": "String",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "String",
+            "namespace": "",
+            "file": "..\\common\\string.js",
+            "line": 24,
+            "description": "Helper functions added to JavaScript\n<a href='https://developer.mozilla.org/\nen-US/docs/Web/JavaScript/Reference/\nGlobal_Objects/String'>String</a> prototype.",
+            "is_constructor": 1,
+            "return": {
+                "description": "",
+                "type": "String"
+            }
+        },
         "ViewModels.AccountMenu": {
             "name": "ViewModels.AccountMenu",
             "shortname": "ViewModels.AccountMenu",
@@ -3496,17 +3666,6 @@
             "static": 1,
             "extends": "Models.Role"
         },
-        "f": {
-            "name": "f",
-            "shortname": "f",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "Core",
-            "namespace": ""
-        },
         "Datasource": {
             "name": "Datasource",
             "shortname": "Datasource",
@@ -3621,6 +3780,421 @@
     },
     "elements": {},
     "classitems": [
+        {
+            "file": "..\\common\\core.js",
+            "line": 56,
+            "description": "Filter criteria that is array of objects with `property`, `value`\nand optional `operator` which, if left out, defaults to `=`.\nSupported operators are:\n* __=__: Equals\n* __!=__: Not equals\n* __~__: Matches, case sensitive\n* __!~__: Not matches, case sensitive\n* __~*__: Matches, regular expressions supported\n* __!~*__: Not matches, regular expressions supported\n* __>__: Greater than\n* __<__: Less than,\n* __>=__: Greater than or equals\n* __<=__: Less than or equals\n* __IN__: In array",
+            "example": [
+                "\n    // Criteria for age equals 10 and name starts with \"T\"\n    let criteria = [{\n        property: \"age\"\n        value: 10\n    }, {\n        property: \"name\",\n        operator: \"~*\",\n        value: \"^T\"\n    }];"
+            ],
+            "itemtype": "property",
+            "name": "criteria",
+            "type": "Array",
+            "class": "Filter",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 85,
+            "description": "Number of records to return.",
+            "itemtype": "property",
+            "name": "limit",
+            "type": "integer",
+            "class": "Filter",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 90,
+            "description": "Offset number to start returning records for pagination.",
+            "itemtype": "property",
+            "name": "offset",
+            "type": "integer",
+            "optional": 1,
+            "class": "Filter",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 96,
+            "description": "Filter sort that is array of objects with `property` and optional\n`order` of `ASC` (ascending) or `DESC` (descending) which defaults\nto `ASC`.",
+            "example": [
+                "\n    // Sort by age descending, name ascending\n    let sort = [{\n        property: \"age\",\n        order: \"DESC\"\n    }, {\n        property: \"name\"\n    }];"
+            ],
+            "itemtype": "property",
+            "name": "sort",
+            "type": "Array",
+            "optional": 1,
+            "class": "Filter",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 122,
+            "description": "Make a deep copy of an object.",
+            "itemtype": "method",
+            "name": "copy",
+            "params": [
+                {
+                    "name": "Object",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "f",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 133,
+            "description": "Return a unique identifier string.\n\nModified from https://github.com/google/closure-library",
+            "author": "arv@google.com (Erik Arvidsson)\nhttp://www.apache.org/licenses/LICENSE-2.0",
+            "itemtype": "method",
+            "name": "createId",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "f",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 154,
+            "description": "Return a time in string format that is the current UTC time.",
+            "itemtype": "method",
+            "name": "now",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "f",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 164,
+            "description": "Allowable filter operators.",
+            "itemtype": "property",
+            "name": "operators",
+            "type": "Object",
+            "class": "f",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 184,
+            "description": "Parse date string \"YYYY-MM-DD\" to a date in a sensical way because\nhttps://stackoverflow.com/questions/2587345",
+            "itemtype": "method",
+            "name": "parseDate",
+            "params": [
+                {
+                    "name": "Date",
+                    "description": "string",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Date"
+            },
+            "class": "f",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 198,
+            "description": "Return a date in string format that is the current date.",
+            "itemtype": "method",
+            "name": "today",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "f",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 208,
+            "description": "Returns date string \"1970-01-01\".",
+            "itemtype": "method",
+            "name": "startOfTime",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "f",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\core.js",
+            "line": 218,
+            "description": "Allowed data types.",
+            "itemtype": "property",
+            "name": "types",
+            "type": "Object",
+            "class": "f",
+            "module": "Core"
+        },
+        {
+            "file": "..\\common\\date.js",
+            "line": 35,
+            "description": "Convert date to \"YYYY-MM-DDTHH:MM\" date time format.",
+            "itemtype": "method",
+            "name": "toLocalDateTime",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Date",
+            "module": "Date"
+        },
+        {
+            "file": "..\\common\\date.js",
+            "line": 52,
+            "description": "Convert date to \"YYYY-MM-DD\" format.",
+            "itemtype": "method",
+            "name": "toLocalDate",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Date",
+            "module": "Date"
+        },
+        {
+            "file": "..\\common\\date.js",
+            "line": 68,
+            "description": "Strip time off date",
+            "itemtype": "method",
+            "name": "toDate",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Date",
+            "module": "Date"
+        },
+        {
+            "file": "..\\common\\number.js",
+            "line": 37,
+            "description": "Add padding to a number.",
+            "example": [
+                "\n    let x = 9;\n\n    x.pad(3);      // \"009\";\n    x.pad(3, '-')  // \"--9\""
+            ],
+            "itemtype": "method",
+            "name": "pad",
+            "params": [
+                {
+                    "name": "Width",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "Pad",
+                    "description": "character, default 0",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Number",
+            "module": "Number"
+        },
+        {
+            "file": "..\\common\\number.js",
+            "line": 66,
+            "description": "Divide current number by another.",
+            "itemtype": "method",
+            "name": "div",
+            "params": [
+                {
+                    "name": "{Number)",
+                    "description": "Divisor"
+                }
+            ],
+            "chainable": 1,
+            "return": {
+                "description": "{Number)"
+            },
+            "class": "Number",
+            "module": "Number"
+        },
+        {
+            "file": "..\\common\\number.js",
+            "line": 78,
+            "description": "Subtract number from current number.",
+            "itemtype": "method",
+            "name": "minus",
+            "params": [
+                {
+                    "name": "{Number)",
+                    "description": "Subtrahend"
+                }
+            ],
+            "chainable": 1,
+            "return": {
+                "description": "{Number)"
+            },
+            "class": "Number",
+            "module": "Number"
+        },
+        {
+            "file": "..\\common\\number.js",
+            "line": 90,
+            "description": "Add number to current number.",
+            "itemtype": "method",
+            "name": "plus",
+            "params": [
+                {
+                    "name": "{Number)",
+                    "description": "Addend"
+                }
+            ],
+            "chainable": 1,
+            "return": {
+                "description": "{Number)"
+            },
+            "class": "Number",
+            "module": "Number"
+        },
+        {
+            "file": "..\\common\\number.js",
+            "line": 102,
+            "description": "Muliply by another number.",
+            "itemtype": "method",
+            "name": "times",
+            "chainable": 1,
+            "params": [
+                {
+                    "name": "{Number)",
+                    "description": "Multiplier"
+                }
+            ],
+            "return": {
+                "description": "{Number)"
+            },
+            "class": "Number",
+            "module": "Number"
+        },
+        {
+            "file": "..\\common\\number.js",
+            "line": 114,
+            "description": "Round number.",
+            "itemtype": "method",
+            "name": "round",
+            "params": [
+                {
+                    "name": "{Number)",
+                    "description": "Precision"
+                }
+            ],
+            "chainable": 1,
+            "return": {
+                "description": "{Number)"
+            },
+            "class": "Number",
+            "module": "Number"
+        },
+        {
+            "file": "..\\common\\string.js",
+            "line": 35,
+            "description": "Change string with underscores '_' or '-' to camel case.",
+            "example": [
+                "\n    let str = \"contact_name\"\n    str.toCamelCase() // \"contactName\""
+            ],
+            "itemtype": "method",
+            "name": "toCamelCase",
+            "params": [
+                {
+                    "name": "Convert",
+                    "description": "first character to upper case. Default false.",
+                    "type": "Boolean"
+                }
+            ],
+            "chainable": 1,
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "String",
+            "module": "String"
+        },
+        {
+            "file": "..\\common\\string.js",
+            "line": 65,
+            "description": "Change a path to a capitalized name.",
+            "example": [
+                "\n     let str = \"contact.name\"\n     str.toName() // \"Contact Name\""
+            ],
+            "itemtype": "method",
+            "name": "toName",
+            "chainable": 1,
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "String",
+            "module": "String"
+        },
+        {
+            "file": "..\\common\\string.js",
+            "line": 80,
+            "description": "Change a camel case string to proper case.",
+            "example": [
+                "\n    let str = \"contactName\"\n    str.toProperCase() // \"Contact Name\""
+            ],
+            "itemtype": "method",
+            "name": "toProperCase",
+            "chainable": 1,
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "String",
+            "module": "String"
+        },
+        {
+            "file": "..\\common\\string.js",
+            "line": 96,
+            "description": "Change a camel case string to snake case.",
+            "example": [
+                "\n    let str = \"contactName\"\n    str.toSnakeCase() // \"contact_name\""
+            ],
+            "itemtype": "method",
+            "name": "toSnakeCase",
+            "chainable": 1,
+            "return": {
+                "description": "The argument modified",
+                "type": "String"
+            },
+            "class": "String",
+            "module": "String"
+        },
+        {
+            "file": "..\\common\\string.js",
+            "line": 111,
+            "description": "Change a camel case string to spinal case.",
+            "example": [
+                "\n     let str = \"contactName\"\n     str.toSpinalCase() // \"contact-name\""
+            ],
+            "itemtype": "method",
+            "name": "toSpinalCase",
+            "chainable": 1,
+            "return": {
+                "description": "The argument modified",
+                "type": "String"
+            },
+            "class": "String",
+            "module": "String"
+        },
         {
             "file": "components\\account-menu.js",
             "line": 36,
@@ -16744,5 +17318,14 @@
             "module": "State"
         }
     ],
-    "warnings": []
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\common\\date.js:24"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ..\\common\\string.js:24"
+        }
+    ]
 }

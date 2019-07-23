@@ -28,6 +28,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "Components.TableWidget",
         "Components.WorkbookPage",
         "Datasource",
+        "Date",
+        "Filter",
         "List",
         "Model",
         "Models.Address",
@@ -78,9 +80,11 @@ YUI.add("yuidoc-meta", function(Y) {
         "Models.WorkbookChild",
         "Models.WorkbookDefaultConfig",
         "Models.WorkbookLocalConfig",
+        "Number",
         "Property",
         "State",
         "State.define",
+        "String",
         "ViewModels.AccountMenu",
         "ViewModels.AddressRelation",
         "ViewModels.AutoNumber",
@@ -122,6 +126,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "DataList",
         "DataType",
         "Datasource",
+        "Date",
         "Dialog",
         "FilterDialog",
         "FormDialog",
@@ -131,6 +136,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Model",
         "MoneyRelation",
         "NavigatorMenu",
+        "Number",
         "Property",
         "RelationWidget",
         "SearchInput",
@@ -138,6 +144,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "SettingsPage",
         "SortDialog",
         "State",
+        "String",
         "TableDialog",
         "TableWidget",
         "Workbook",
@@ -197,6 +204,10 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "DataType"
         },
         {
+            "displayName": "Date",
+            "name": "Date"
+        },
+        {
             "displayName": "Dialog",
             "name": "Dialog"
         },
@@ -233,6 +244,10 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "NavigatorMenu"
         },
         {
+            "displayName": "Number",
+            "name": "Number"
+        },
+        {
             "displayName": "Property",
             "name": "Property"
         },
@@ -259,6 +274,10 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "State",
             "name": "State"
+        },
+        {
+            "displayName": "String",
+            "name": "String"
         },
         {
             "displayName": "TableDialog",

@@ -5,7 +5,10 @@ YUI.add("yuidoc-meta", function(Y) {
         "Connection",
         "Database",
         "Datasource",
+        "Date",
+        "Filter",
         "Money",
+        "Number",
         "Services.API",
         "Services.CRUD",
         "Services.Currency",
@@ -29,18 +32,22 @@ YUI.add("yuidoc-meta", function(Y) {
     "modules": [
         "API",
         "CRUD",
+        "Core",
         "Currency",
         "Database",
         "Datasource",
+        "Date",
         "Events",
         "Feathers",
         "IO",
         "Installer",
+        "Number",
         "Packager",
         "Profile",
         "Role",
         "Routes",
         "Settings",
+        "String",
         "Tools",
         "Workbooks"
     ],
@@ -49,6 +56,11 @@ YUI.add("yuidoc-meta", function(Y) {
             "displayName": "API",
             "name": "API",
             "description": "API file generator methods called during installation."
+        },
+        {
+            "displayName": "Core",
+            "name": "Core",
+            "description": "Core module"
         },
         {
             "displayName": "CRUD",
@@ -69,6 +81,10 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "Datasource"
         },
         {
+            "displayName": "Date",
+            "name": "Date"
+        },
+        {
             "displayName": "Events",
             "name": "Events"
         },
@@ -84,6 +100,10 @@ YUI.add("yuidoc-meta", function(Y) {
             "displayName": "IO",
             "name": "IO",
             "description": "Import and export"
+        },
+        {
+            "displayName": "Number",
+            "name": "Number"
         },
         {
             "displayName": "Packager",
@@ -104,6 +124,10 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "Settings",
             "name": "Settings"
+        },
+        {
+            "displayName": "String",
+            "name": "String"
         },
         {
             "displayName": "Tools",

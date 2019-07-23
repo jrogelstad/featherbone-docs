@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>..\common\core.js - Featherbone Server</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\featherbone-server.png" title="Featherbone Server"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 0.1.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/Client.html">Client</a></li>
+                                <li><a href="../classes/Connection.html">Connection</a></li>
+                                <li><a href="../classes/Database.html">Database</a></li>
+                                <li><a href="../classes/Datasource.html">Datasource</a></li>
+                                <li><a href="../classes/Date.html">Date</a></li>
+                                <li><a href="../classes/f.html">f</a></li>
+                                <li><a href="../classes/Filter.html">Filter</a></li>
+                                <li><a href="../classes/Money.html">Money</a></li>
+                                <li><a href="../classes/Number.html">Number</a></li>
+                                <li><a href="../classes/Services.API.html">Services.API</a></li>
+                                <li><a href="../classes/Services.CRUD.html">Services.CRUD</a></li>
+                                <li><a href="../classes/Services.Currency.html">Services.Currency</a></li>
+                                <li><a href="../classes/Services.Events.html">Services.Events</a></li>
+                                <li><a href="../classes/Services.Exporter.html">Services.Exporter</a></li>
+                                <li><a href="../classes/Services.Feathers.html">Services.Feathers</a></li>
+                                <li><a href="../classes/Services.Importer.html">Services.Importer</a></li>
+                                <li><a href="../classes/Services.Installer.html">Services.Installer</a></li>
+                                <li><a href="../classes/Services.Packager.html">Services.Packager</a></li>
+                                <li><a href="../classes/Services.Profile.html">Services.Profile</a></li>
+                                <li><a href="../classes/Services.Role.html">Services.Role</a></li>
+                                <li><a href="../classes/Services.Routes.html">Services.Routes</a></li>
+                                <li><a href="../classes/Services.Services.html">Services.Services</a></li>
+                                <li><a href="../classes/Services.Settings.html">Services.Settings</a></li>
+                                <li><a href="../classes/Services.Tools.html">Services.Tools</a></li>
+                                <li><a href="../classes/Services.Workbooks.html">Services.Workbooks</a></li>
+                                <li><a href="../classes/String.html">String</a></li>
+                                <li><a href="../classes/User.html">User</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/API.html">API</a></li>
+                                <li><a href="../modules/Core.html">Core</a></li>
+                                <li><a href="../modules/CRUD.html">CRUD</a></li>
+                                <li><a href="../modules/Currency.html">Currency</a></li>
+                                <li><a href="../modules/Database.html">Database</a></li>
+                                <li><a href="../modules/Datasource.html">Datasource</a></li>
+                                <li><a href="../modules/Date.html">Date</a></li>
+                                <li><a href="../modules/Events.html">Events</a></li>
+                                <li><a href="../modules/Feathers.html">Feathers</a></li>
+                                <li><a href="../modules/Installer.html">Installer</a></li>
+                                <li><a href="../modules/IO.html">IO</a></li>
+                                <li><a href="../modules/Number.html">Number</a></li>
+                                <li><a href="../modules/Packager.html">Packager</a></li>
+                                <li><a href="../modules/Profile.html">Profile</a></li>
+                                <li><a href="../modules/Role.html">Role</a></li>
+                                <li><a href="../modules/Routes.html">Routes</a></li>
+                                <li><a href="../modules/Settings.html">Settings</a></li>
+                                <li><a href="../modules/String.html">String</a></li>
+                                <li><a href="../modules/Tools.html">Tools</a></li>
+                                <li><a href="../modules/Workbooks.html">Workbooks</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: ..\common\core.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+    Framework for building object relational database apps
+    Copyright (C) 2019  John Rogelstad
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+*/
+/*jslint this, devel, bitwise, browser*/
+/*global window, require, module*/
+
+(function () {
+    &quot;use strict&quot;;
+    /**
+        Core module
+
+        @module Core
+    */
+    /**
+        JSON object that defines filter criteria that can be passed to the
+        server to define result sets to return in a query.
+
+        __Example__
+
+            // Filter to return records with
+            // * Age of 10, name starts with &quot;T&quot;
+            // * Sort by name ascending
+            // * Return records 60-90
+            let filter = {
+                criteria: [{
+                    property: &quot;age&quot;
+                    value: 10
+                }, {
+                    property: &quot;name&quot;,
+                    operator: &quot;~*&quot;,
+                    value: &quot;^T&quot;
+                ]
+                sort: [{
+                    property: &quot;name&quot;
+                }],
+                offset: 60,
+                limit: 30
+            }
+        @class Filter
+        @static
+    */
+    /**
+        Filter criteria that is array of objects with &#x60;property&#x60;, &#x60;value&#x60;
+        and optional &#x60;operator&#x60; which, if left out, defaults to &#x60;=&#x60;.
+        Supported operators are:
+        * __=__: Equals
+        * __!=__: Not equals
+        * __~__: Matches, case sensitive
+        * __!~__: Not matches, case sensitive
+        * __~*__: Matches, regular expressions supported
+        * __!~*__: Not matches, regular expressions supported
+        * __&gt;__: Greater than
+        * __&lt;__: Less than,
+        * __&gt;=__: Greater than or equals
+        * __&lt;=__: Less than or equals
+        * __IN__: In array
+
+        @example
+            // Criteria for age equals 10 and name starts with &quot;T&quot;
+            let criteria = [{
+                property: &quot;age&quot;
+                value: 10
+            }, {
+                property: &quot;name&quot;,
+                operator: &quot;~*&quot;,
+                value: &quot;^T&quot;
+            }];
+        @property criteria
+        @type Array
+    */
+    /**
+        Number of records to return.
+        @property limit
+        @type integer
+    */
+    /**
+        Offset number to start returning records for pagination.
+        @property offset
+        @type integer
+        @optional
+    */
+    /**
+        Filter sort that is array of objects with &#x60;property&#x60; and optional
+        &#x60;order&#x60; of &#x60;ASC&#x60; (ascending) or &#x60;DESC&#x60; (descending) which defaults
+        to &#x60;ASC&#x60;.
+        @example
+            // Sort by age descending, name ascending
+            let sort = [{
+                property: &quot;age&quot;,
+                order: &quot;DESC&quot;
+            }, {
+                property: &quot;name&quot;
+            }];
+        @property sort
+        @type Array
+        @optional
+    */
+    /**
+        Featherbone global object.
+
+        @class f
+        @static
+    */
+    const that = {
+        PRECISION_DEFAULT: 18,
+        SCALE_DEFAULT: 8,
+
+        /**
+            Make a deep copy of an object.
+
+            @method copy
+            @param {Object} Object
+            @return {Object}
+        */
+        copy: function (obj) {
+            return JSON.parse(JSON.stringify(obj));
+        },
+
+        /**
+            Return a unique identifier string.
+
+            Modified from https://github.com/google/closure-library
+            @author arv@google.com (Erik Arvidsson)
+            http://www.apache.org/licenses/LICENSE-2.0
+
+            @method createId
+            @return {String}
+        */
+        createId: function () {
+            let x = 2147483648;
+            let d = new Date();
+            let result;
+
+            result = Math.floor(Math.random() * x).toString(36);
+            result += Math.abs(Math.floor(Math.random() * x) ^ d).toString(36);
+
+            return result;
+        },
+
+        /**
+            Return a time in string format that is the current UTC time.
+
+            @method now
+            @return {String}
+        */
+        now: function () {
+            return (new Date()).toISOString();
+        },
+
+        /**
+            Allowable filter operators.
+
+            @property operators
+            @type Object
+        */
+        operators: {
+            &quot;=&quot;: &quot;equals&quot;,
+            &quot;!=&quot;: &quot;not equals&quot;,
+            &quot;~&quot;: &quot;matches (case sensitive)&quot;,
+            &quot;!~&quot;: &quot;not matches (case sensitive)&quot;,
+            &quot;~*&quot;: &quot;matches&quot;,
+            &quot;!~*&quot;: &quot;not matches&quot;,
+            &quot;&gt;&quot;: &quot;greater than&quot;,
+            &quot;&lt;&quot;: &quot;less than&quot;,
+            &quot;&gt;=&quot;: &quot;greater than or equals&quot;,
+            &quot;&lt;=&quot;: &quot;less than or equals&quot;,
+            IN: &quot;in list&quot;
+        },
+
+        /**
+            Parse date string &quot;YYYY-MM-DD&quot; to a date in a sensical way because
+            https://stackoverflow.com/questions/2587345
+
+            @method parseDate
+            @param {String} Date string
+            @return {Date}
+        */
+        parseDate: function parseDate(input) {
+            let parts = input.split(&quot;-&quot;);
+
+            return new Date(parts[0], parts[1] - 1, parts[2]);
+        },
+
+        /**
+          Return a date in string format that is the current date.
+
+            @method today
+            @return {String}
+        */
+        today: function () {
+            return new Date().toDate().toLocalDate();
+        },
+
+        /**
+            Returns date string &quot;1970-01-01&quot;.
+
+            @method startOfTime
+            @return {String}
+        */
+        startOfTime: function () {
+            return &quot;1970-01-01&quot;;
+        },
+
+        /**
+            Allowed data types.
+
+            @property types
+            @type Object
+        */
+        types: {
+            array: {
+                default: function () {
+                    return [];
+                }
+            },
+            boolean: {
+                default: false,
+                toType: function (value) {
+                    return Boolean(value);
+                }
+            },
+            integer: {
+                default: 0,
+                toType: function (value) {
+                    return parseInt(value, 10);
+                }
+            },
+            number: {
+                default: 0,
+                fromType: function (value) {
+                    return (
+                        value === null
+                        ? null
+                        : value.toLocaleString()
+                    );
+                },
+                toType: function (value) {
+                    let result;
+
+                    if (typeof value === &quot;string&quot;) {
+                        result = Number(value.replace(/[^\d.\-eE+]/g, &quot;&quot;));
+                    } else {
+                        result = Number(value);
+                    }
+                    return (
+                        Number.isNaN(result)
+                        ? null
+                        : result
+                    );
+                }
+            },
+            object: {
+                default: function () {
+                    return {};
+                }
+            },
+            string: {
+                default: &quot;&quot;,
+                toType: function (value) {
+                    return (
+                        value === null
+                        ? null
+                        : value.toString()
+                    );
+                }
+            }
+        }
+    };
+
+    let test = typeof module;
+
+    if (test !== &quot;undefined&quot;) {
+        module.exports = that;
+    } else {
+        window.f = that;
+    }
+}());
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
