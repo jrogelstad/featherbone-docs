@@ -4190,7 +4190,7 @@
             "file": "database.js",
             "line": 297,
             "itemtype": "property",
-            "name": "email",
+            "name": "firstName",
             "type": "String",
             "class": "User",
             "module": "Database"
@@ -4199,7 +4199,7 @@
             "file": "database.js",
             "line": 301,
             "itemtype": "property",
-            "name": "phone",
+            "name": "lastName",
             "type": "String",
             "class": "User",
             "module": "Database"
@@ -4207,6 +4207,24 @@
         {
             "file": "database.js",
             "line": 305,
+            "itemtype": "property",
+            "name": "email",
+            "type": "String",
+            "class": "User",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 309,
+            "itemtype": "property",
+            "name": "phone",
+            "type": "String",
+            "class": "User",
+            "module": "Database"
+        },
+        {
+            "file": "database.js",
+            "line": 313,
             "description": "Return user data.",
             "itemtype": "method",
             "name": "deserializeUser",
@@ -4226,7 +4244,7 @@
         },
         {
             "file": "database.js",
-            "line": 344,
+            "line": 361,
             "description": "Resolve a reference {{#crossLink \"Client\"}}{{/crossLink}}\nto an actual\n<a href='https://node-postgres.com/api/client'>postgres client</a>\nto execute SQL.",
             "itemtype": "method",
             "name": "getClient",
@@ -4246,7 +4264,7 @@
         },
         {
             "file": "database.js",
-            "line": 355,
+            "line": 372,
             "description": "Resolve to a\n<a href='https://node-postgres.com/api/pool'>connection pool</a>\nfrom which to request a connection.",
             "itemtype": "method",
             "name": "getPool",
@@ -4284,6 +4302,53 @@
         {
             "file": "datasource.js",
             "line": 156,
+            "description": "Update user's own info.",
+            "itemtype": "method",
+            "name": "changeUserInfo",
+            "params": [
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "name",
+                            "description": "Role name",
+                            "type": "String"
+                        },
+                        {
+                            "name": "firstName",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "lastName",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "email",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "phone",
+                            "description": "",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "Datasource",
+            "module": "Datasource"
+        },
+        {
+            "file": "datasource.js",
+            "line": 276,
             "description": "Fetch feather catalog.",
             "itemtype": "method",
             "name": "getCatalog",
@@ -4296,7 +4361,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 181,
+            "line": 301,
             "description": "Fetch array of all services.",
             "itemtype": "method",
             "name": "getServices",
@@ -4309,7 +4374,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 203,
+            "line": 323,
             "description": "Fetch array of all routes.",
             "itemtype": "method",
             "name": "getRoutes",
@@ -4322,7 +4387,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 225,
+            "line": 345,
             "description": "Initialize listener. Message is passed to callback.\nExposes {{#crossLink \"Services.Events/listen:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "listen",
@@ -4342,7 +4407,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 262,
+            "line": 382,
             "description": "Unsubcribe from object or by type.\nExposes\n{{#crossLink \"Services.Events/unsubscribe:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "unsubscribe",
@@ -4367,7 +4432,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 307,
+            "line": 427,
             "description": "Lock record. Resolves to `true` if successful.\nExposes {{#crossLink \"Services.CRUD/lock:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "lock",
@@ -4397,7 +4462,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 354,
+            "line": 474,
             "description": "Unlock one or more records.\nExposes {{#crossLink \"Services.CRUD/unlock:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "unlock",
@@ -4435,7 +4500,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 399,
+            "line": 519,
             "description": "Install a module from a specified manifest file name.\nExposes {{#crossLink \"Services.Installer/install:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "install",
@@ -4460,7 +4525,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 444,
+            "line": 564,
             "description": "Package a module.\nExposes {{#crossLink \"Services.Packager/package:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "package",
@@ -4485,7 +4550,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 488,
+            "line": 608,
             "description": "Export data.\nExposes {{#crossLink \"Services.Exporter\"}}{{/crossLink}} via datasource.",
             "itemtype": "method",
             "name": "export",
@@ -4531,7 +4596,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 553,
+            "line": 673,
             "description": "Import data.\nExposes {{#crossLink \"Services.Importer\"}}{{/crossLink}} via\ndatasource.",
             "itemtype": "method",
             "name": "import",
@@ -4566,7 +4631,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 603,
+            "line": 723,
             "description": "Check user and password.\nExposes {{#crossLink \"Database/authenticate:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "authenticate",
@@ -4591,7 +4656,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 615,
+            "line": 735,
             "description": "Resolves to {{#crossLink \"User\"}}{{/crossLink}} for passport\nmanagement. Exposes\n{{#crossLink \"Database/deserializeUser:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "deserializeUser",
@@ -4611,7 +4676,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 627,
+            "line": 747,
             "description": "Return a configured postgres pool. Exposes\n{{#crossLink \"Database/getPool:method\"}}{{/crossLink}}\nvia datasource.",
             "itemtype": "method",
             "name": "getPool",
@@ -4624,7 +4689,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 648,
+            "line": 768,
             "description": "This function is the gateway for all\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}} requests and data\nservice function calls. {{#crossLink \"Datasource\"}}{{/crossLink}} is\nattached to the `f` global variable in scripts to expose this\ncapability.\n\n### CRUD Methods\nThese requests include the capitalized feather as the `name` argument.\nThe following methods are supported:\n\n#### POST (Create)\nUse this method to insert new records. Any properties not included\nwill be populated by default values. The\n{{#crossLink \"Promise\"}}{{/crossLink}} will resolve to a `PATCH` array\ndescribing all changes made on the server side due to feather defaults\nand changes caused by triggers. This `PATCH` can be applied by the\noriginating requestor to ensure its own copy of the record exactly\nmatches the server.The `id` will be checked for uniqueness, along with\nany properties on the feather set for `isUnique` equals `true`.\n\n    let ds = f.datasource;\n\n    function callback (resp) {\n        console.log(\"PATCH->\", resp);\n    }\n\n    function error (err) {\n        console.error(\"ERROR->\", err);\n    }\n\n    ds.request({\n        method: \"POST\",\n        name: \"Contact\",\n        data: {\n            id: \"m7akxiwvz22a\",\n            firstName: \"Caleb\",\n            lastName: \"Johnstone\"\n        }\n    }).then(callback).catch(error);\n\nIf the code above is run twice an error will be thrown because of\na unique id violation, however, if the record id is included\nin a `POST` request, the request will be treated as an \"Upsert\" call,\nwhich is to say if a record with that id is not found it will be\ninserted, if one is found the values included in the data will be\nupdated on the existing record. Post requests that include `id`\nare therefore idempotent.\n\n    ...\n\n    ds.request({\n        method: \"POST\",\n        name: \"Contact\",\n        id: \"m7akxiwvz22a\", // Indicate upsert behavior\n        data: {\n            firstName: \"Caleb\",\n            lastName: \"Johnstone\"\n        }\n    }).then(callback).catch(error);\n\n#### GET (Read)\nUse `GET` to retreive one or more records.\n\nRetreive one result by refering to the record id\n\n    ...\n\n    f.datasource.request({\n        method: \"GET\",\n        name: \"Contact\",\n        id: \"m7akxiwvz22a\"\n    }).then(callback).catch(error);\n\nExcluding the `id` will return all records\n\n    ...\n\n    f.datasource.request({\n        method: \"GET\",\n        name: \"Contact\"\n    }).then(callback).catch(error);\n\nRequests can be paginated so records are returned in small groups\nusing the {{#crossLink \"Filter\"}}{{/crossLink}} property.\n\n    ...\n\n    f.datasource.request({\n        method: \"GET\",\n        name: \"Contact\",\n        filter: {\n            offset: 20, // Start page\n            limit: 10   // Page length\n        }\n    }).then(callback).catch(error);\n\nOf course filters can also logically limit and sort\n\n    ...\n\n    f.datasource.request({\n        method: \"GET\",\n        name: \"Contact\",\n        filter: {\n            criteria: [{\n                property: \"lastName\",\n                operation: \"equals\",\n                criteria: \"Doe\"\n            }],\n            sort: [{\n                property: \"firstName\",\n                order: \"ASC\"\n            }]\n        }\n    }).then(callback).catch(error);\n\n#### PATCH (Update)\n\nUpdate records using `PATCH` where the `data` argument follows the\n<a href='https://tools.ietf.org/html/rfc6902'>rfc 6092</a>\nspecification for JSON patch updates. As with `POST`, any property\nvalues that are updated as a side effect or wind up with different\nvalues than requested will be returned in a patch containing all\nthe differences.\n\n    ...\n\n    ds.request({\n        method: \"PATCH\",\n        name: \"Contact\",\n        id: \"m7akxiwvz22a\", // Which record to patch\n        data: [{\n            op: \"replace\",\n            path: \"/firstName\",\n            value: \"Joshua\"\n        }]\n    }).then(callback).catch(error);\n\n#### DELETE\n\nDelete a record simply by referencing the `id`.\n\n    ...\n\n    ds.request({\n        method: \"DELETE\",\n        name: \"Contact\",\n        id: \"m7akxiwvz22a\"\n    }).then(callback).catch(error);\n\n### Calling Registered Functions\n\nRequests can also call registered functions to run procedural logic.\nThey are differentiated from CRUD requests by use of a camel case\nname argument. See\n{{#crossLink \"Datasource/registerFunction:method\"}}{{/crossLink}}\nfor more information.\n\n    // Requesting currency conversion\n    ...\n\n    ds.request({\n        method: \"POST\",\n        name: \"convertCurrency\",\n        data: {\n            fromCurrency: \"EUR\",\n            amount: \"100\"\n        }\n    }).then(callback).catch(error);",
             "itemtype": "method",
             "name": "request",
@@ -4684,7 +4749,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 1421,
+            "line": 1541,
             "description": "Register a function that can be called as a service by a\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}}\nso that data services can be made available to other data services\nadded via data service scripts. As a rule, all\nfunctions must accept one {{#crossLink \"Object\"}}{{/crossLink}}\nas an argument whose properties can be used as arguments within the\ntarget function. The\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}} will\nautomatically append its\n{{#crossLink \"Client\"}}{{/crossLink}}\nto the object argument to use\nfor executing queries or other requests within the target function.\n\nThe function should return a {{#crossLink \"Promise\"}}{{/crossLink}}\nthat resolves to the result of the function, if any.\n\nFunction names should be camel case which distinquishes them from\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}} requests\nwhere a capitalized feather name is used.\n\nThe following is list of functions that come pre-registered from hard\ncoded services:\n* __GET__\n  * {{#crossLink \"Services.Currency/baseCurrency:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Currency/convertCurrency:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Tools/getAuthorizations:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Feathers/getFeather:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Profile/getProfile:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Routes/getRoutes:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Services/getServices:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Settings/getSettings:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Settings/getSettingsRow:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Settings/getSettingsDefinition:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/getWorkbook:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/getWorkbooks:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Feathers/isAuthorized:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Tools/isSuperUser:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/workbookIsAuthorized:method\"}}\n  {{/crossLink}}\n* __PUT__\n  * {{#crossLink \"Services.Feathers/saveAuthorization:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Feathers/saveFeather:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Profile/saveProfile:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Settings/saveSettings:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/saveWorkbook:method\"}}\n  {{/crossLink}}\n* __POST__\n  * {{#crossLink \"Services.Role/changeOwnPassword:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/changeRoleLogin:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/changeRolePassword:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/createRole:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/dropRole:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/grantMembership:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Role/revokeMembership:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Feathers/saveAuthorization:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Events/subscribe:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Events/unsubscribe:method\"}}\n  {{/crossLink}}\n* __PATCH__\n  * {{#crossLink \"Services.Profile/patchProfile:method\"}}\n  {{/crossLink}}\n* __DELETE__\n  * {{#crossLink \"Services.Feathers/deleteFeather:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Installer/deleteModule:method\"}}\n  {{/crossLink}}\n  * {{#crossLink \"Services.Workbooks/deleteWorkbook:method\"}}\n  {{/crossLink}}",
             "example": [
                 "\n    // Create a function that updates something specific\n    // (Assumed here to be executed within a data service script)\n    function fn (obj) { // Note the single object argument\n        return new Promise(function (resolve, reject) {\n            function callback() {\n                resolve(true); // Success results in boolean\n            }\n\n            // \"f\" is the global variable available in scripts\n            f.datasource.request({\n                method: \"PATCH\",\n                name: \"Foo\", // Capitalized name indicates CRUD request\n                client: obj.client, // Client is automatically included\n                id: obj.id, // Id is unique argument for this function\n                data: [{\n                    op: \"replace\",\n                    path: \"/status\",\n                    value: \"Closed\"\n                }]\n            }).then(callback).catch(reject);\n        });\n    }\n\n    // Register the function\n    f.datasource.registerFunction(\"POST\", \"closeFoo\", fn);\n\n    // Define a callback to use when calling our function\n    function callback (resp) {\n        console.log(\"Response->\", resp);\n    }\n\n    // Trap for errors\n    function error (err) {\n        console.error(\"Erorr->\", err);\n    }\n\n    // Execute a request that calls our function and sends a response\n    // via the callback\n    datasource.request({\n        method: \"POST\",\n        name: \"closeFoo\",\n        data: {\n            id: \"HTJ28n\"\n        }\n    }).then(callback).catch(error);"
@@ -4718,7 +4783,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 1572,
+            "line": 1692,
             "description": "When a trigger is included as an argument in `registerFunction`,\nthen the registered function is executed before or after a feather\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}}\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}}\naccording to the method and trigger type. The `method`\ndetermines whether the function applies to a `POST`, `PATCH` or `DELETE`\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}}\n{{#crossLink \"Datasource/request:method\"}}{{/crossLink}},\nand the `trigger` determines whether the function is\nexecuted before or after the\n{{#crossLinkModule \"CRUD\"}}{{/crossLinkModule}}\nrequest is processed. The function must take in one\n{{#crossLink \"Object\"}}{{/crossLink}} as its sole argument\nand return a {{#crossLink \"Promise\"}}{{/crossLink}}.\n\nThe following types of declarative business logic can be executed by\nregistered triggers:\n* Validate values\n* Change values before processig (`before` trigger only)\n* Make data requests that create, update or delete other records.\n\nThe design is meant to work similar to database triggers, except that\nobject inheritence is honored so triggers will also be inherited by\nfeather sub classes. Note this logic is declarative by definition, where\na change caused by one trigger can potentially cascade to many other\nrecords which also have triggers.\n\nThe function called in a trigger will be passed an\nobject argument that includes the property `newRec` for `POST` and\n`PATCH` requests that contains new record properties that will be\ncommitted, and `oldRec` for `PATCH` and `DELETE` calls that contains\nthe property values of the record before the request was made.\n\nTo handle an invalid request, simply throw an error and\nthe entire originating request transaction will be rolled back.\n\n    let ds = f.datasource;\n\n    function (obj) {\n        return new Promise(function (resolve) {\n            if (newRec.lowest >= newRec.highest) {\n                throw new Error(\n                    \"'Lowest' value must be less than 'highest'\"\n                );\n            }\n\n            resolve(); // Make sure to always resolve your promises!\n        });\n    }\n\n    // Apply on `POST` record creation...\n    ds.registerFunction(\"POST\", \"Foo\", fn, ds.TRIGGER_BEFORE);\n\nIf values on `newRec` are changed in a `before` trigger, those\nvalues are what will be committed, which provides a way to intercept\nand change values on proposed requests.\n\n    let ds = f.datasource;\n\n    function (obj) {\n        return new Promise(function (resolve) {\n            if (newRec.lowest >= newRec.highest) {\n                newRec.highest = newRec.lowest + 1;\n            }\n\n            resolve();\n        });\n    }\n\n    // We can run this same logic on both `POST` and `PATCH`\n    ds.registerFunction(\"POST\", \"Foo\", fn, ds.TRIGGER_BEFORE);\n    ds.registerFunction(\"PATCH\", \"Foo\", fn, ds.TRIGGER_BEFORE);\n\nIf applicable, Properties can be compared between `oldRec` and `newRec`\nto determine if changes have been proposed.\n\n    let ds = f.datasource;\n\n    function (obj) {\n        return new Promise(function (resolve) {\n            if (newRec.name !== oldRec.name) {\n                throw new Error(\"Name cannot be changed\");\n            }\n\n            resolve();\n        });\n    }\n\n    // Note this one applies only to `PATCH` updates\n    ds.registerFunction(\"PATCH\", \"Foo\", fn, ds.TRIGGER_BEFORE);\n\nIf other records will be changed as a consequence of a request, it is\na good practice to do this in an `after` trigger after all proposed\nproperty changes, including default values, have already been\nproceessed.\n\n    let ds = f.datasource;\n\n    function (obj) {\n        return new Promise(function (resolve, reject) {\n            let msg;\n\n            // Create a log of some change. Note the updated\n            // time and user aren't set until after the update\n            // has been completed, so must use `after` trigger\n            if (newRec.description !== oldRec.description) {\n                msg = (\n                    \"Description changed from '\" +\n                    oldRec.description + \"' to '\" +\n                    newRec.description + \"' by \" +\n                    newRec.updatedBy + \".\"\n                );\n                fs.request({\n                    method: \"POST\",\n                    name: \"FooLog\",\n                    client: obj.client,\n                    data: {\n                        message: msg,\n                        logTime: newRec.updated\n                    }\n                }).then(resolve).catch(reject);\n\n                return;\n            }\n\n            resolve();\n        });\n    }\n\n    // Note this one applies only to `PATCH` updates\n    ds.registerFunction(\"PATCH\", \"Foo\", fn, ds.TRIGGER_AFTER);\n\nNote any particular feather only supports one registered function per\nmethod and trigger type.",
             "itemtype": "method",
             "name": "registerFunction",
@@ -4754,7 +4819,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 1730,
+            "line": 1850,
             "itemtype": "method",
             "name": "registeredFunctions",
             "return": {
@@ -4766,7 +4831,7 @@
         },
         {
             "file": "datasource.js",
-            "line": 1745,
+            "line": 1865,
             "itemtype": "method",
             "name": "settings",
             "return": {

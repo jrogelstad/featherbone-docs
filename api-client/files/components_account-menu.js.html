@@ -262,7 +262,13 @@ accountMenu.viewModel = function () {
     let oldPwd = f.prop(&quot;&quot;);
     let newPwd = f.prop(&quot;&quot;);
     let cnfPwd = f.prop(&quot;&quot;);
+    let user = f.currentUser();
+    let firstName = f.prop(user.firstName);
+    let lastName = f.prop(user.lastName);
+    let phone = f.prop(user.phone);
+    let email = f.prop(user.email);
     let pwdView;
+    let infoView;
 
     /**
         @method showMenuAccount
@@ -277,11 +283,144 @@ accountMenu.viewModel = function () {
     */
     vm.changePasswordDialog = f.prop();
      /**
+        @method changePasswordDialog
+        @param {ViewModels.Dialog} dialog
+        @return {ViewModels.Dialog}
+    */
+    vm.changeUserInfoDialog = f.prop();
+     /**
         @method errorDialog
         @param {ViewModels.Dialog} dialog
         @return {ViewModels.Dialog}
     */
     vm.errorDialog = f.prop();
+    /**
+        Create content for change password dialog.
+        @method createPasswordContent
+    */
+    vm.createPasswordContent = function () {
+        pwdView = m(&quot;form&quot;, {
+            class: &quot;pure-form pure-form-aligned&quot;,
+            id: &quot;changePasswordDialogForm&quot;
+        }, [
+            m(&quot;fieldset&quot;, [
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;,
+                    id: &quot;changePasswordDialogGrp1&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        id: &quot;oldPasswordLabel&quot;,
+                        for: &quot;oldPassword&quot;
+                    }, &quot;Old Password:&quot;),
+                    m(&quot;input&quot;, {
+                        type: &quot;password&quot;,
+                        id: &quot;oldPassword&quot;,
+                        value: oldPwd(),
+                        onchange: (e) =&gt; oldPwd(e.target.value)
+                    })
+                ]),
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;,
+                    id: &quot;changePasswordDialogGrp2&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        for: &quot;newPassword&quot;,
+                        id: &quot;newPaswordLabel&quot;
+                    }, &quot;New Password:&quot;),
+                    m(&quot;input&quot;, {
+                        type: &quot;password&quot;,
+                        id: &quot;newPassword&quot;,
+                        value: newPwd(),
+                        onchange: (e) =&gt; newPwd(e.target.value)
+                    })
+                ]),
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;,
+                    id: &quot;changePasswordDialogGrp3&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        for: &quot;confirmPassword&quot;,
+                        id: &quot;confirmPasswordLabel&quot;
+                    }, &quot;Confirm Password:&quot;),
+                    m(&quot;input&quot;, {
+                        type: &quot;password&quot;,
+                        id: &quot;confirmPassword&quot;,
+                        value: cnfPwd(),
+                        onchange: (e) =&gt; cnfPwd(e.target.value)
+                    })
+                ])
+            ])
+        ]);
+    };
+
+    vm.createUserInfoContent = function () {
+        infoView = m(&quot;form&quot;, {
+            class: &quot;pure-form pure-form-aligned&quot;,
+            id: &quot;changeUserInfoDialogForm&quot;
+        }, [
+            m(&quot;fieldset&quot;, [
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;,
+                    id: &quot;changeUserInfoDialogGrp1&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        id: &quot;userInfoFirstNameLabel&quot;,
+                        for: &quot;userInfoFirstName&quot;
+                    }, &quot;First Name:&quot;),
+                    m(&quot;input&quot;, {
+                        id: &quot;userInfoFirstName&quot;,
+                        value: firstName(),
+                        onchange: (e) =&gt; firstName(e.target.value)
+                    })
+                ]),
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;,
+                    id: &quot;changeUserInfoDialogGrp2&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        id: &quot;userInfoLastNameLabel&quot;,
+                        for: &quot;userInfoLastName&quot;
+                    }, &quot;Last Name:&quot;),
+                    m(&quot;input&quot;, {
+                        id: &quot;userInfoLastName&quot;,
+                        required: true,
+                        value: lastName(),
+                        onchange: (e) =&gt; lastName(e.target.value)
+                    })
+                ]),
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;,
+                    id: &quot;changeUserInfoDialogGrp3&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        id: &quot;userInfoEmailLabel&quot;,
+                        for: &quot;userInfoEmail&quot;
+                    }, &quot;Email:&quot;),
+                    m(&quot;input&quot;, {
+                        type: &quot;email&quot;,
+                        id: &quot;userInfoEmail&quot;,
+                        value: email(),
+                        onchange: (e) =&gt; email(e.target.value)
+                    })
+                ]),
+                m(&quot;div&quot;, {
+                    class: &quot;pure-control-group&quot;,
+                    id: &quot;changeUserInfoDialogGrp3&quot;
+                }, [
+                    m(&quot;label&quot;, {
+                        id: &quot;userInfoPhoneLabel&quot;,
+                        for: &quot;userInfoPhone&quot;
+                    }, &quot;Phone:&quot;),
+                    m(&quot;input&quot;, {
+                        type: &quot;tel&quot;,
+                        id: &quot;userInfoPhone&quot;,
+                        value: phone(),
+                        onchange: (e) =&gt; phone(e.target.value)
+                    })
+                ])
+            ])
+        ]);
+    };
 
     // ..........................................................
     // PRIVATE
@@ -312,67 +451,47 @@ accountMenu.viewModel = function () {
         }
     }));
 
-    pwdView = m(&quot;form&quot;, {
-        class: &quot;pure-form pure-form-aligned&quot;,
-        id: &quot;changePasswordDialogForm&quot;
-    }, [
-        m(&quot;fieldset&quot;, [
-            m(&quot;div&quot;, {
-                class: &quot;pure-control-group&quot;,
-                id: &quot;changePasswordDialogGrp1&quot;
-            }, [
-                m(&quot;label&quot;, {
-                    id: &quot;oldPasswordLabel&quot;,
-                    for: &quot;oldPassword&quot;
-                }, &quot;Old Password:&quot;),
-                m(&quot;input&quot;, {
-                    type: &quot;password&quot;,
-                    id: &quot;oldPassword&quot;,
-                    value: oldPwd() ,
-                    onchange: (e) =&gt; oldPwd(e.target.value)
-                })
-            ]),
-            m(&quot;div&quot;, {
-                class: &quot;pure-control-group&quot;,
-                id: &quot;changePasswordDialogGrp2&quot;
-            }, [
-                m(&quot;label&quot;, {
-                    for: &quot;newPassword&quot;,
-                    id: &quot;newPaswordLabel&quot;
-                }, &quot;New Password:&quot;),
-                m(&quot;input&quot;, {
-                    type: &quot;password&quot;,
-                    id: &quot;newPassword&quot;,
-                    value: newPwd(),
-                    onchange: (e) =&gt; newPwd(e.target.value)
-                })
-            ]),
-            m(&quot;div&quot;, {
-                class: &quot;pure-control-group&quot;,
-                id: &quot;changePasswordDialogGrp3&quot;
-            }, [
-                m(&quot;label&quot;, {
-                    for: &quot;confirmPassword&quot;,
-                    id: &quot;confirmPasswordLabel&quot;
-                }, &quot;Confirm Password:&quot;),
-                m(&quot;input&quot;, {
-                    type: &quot;password&quot;,
-                    id: &quot;confirmPassword&quot;,
-                    value: cnfPwd(),
-                    onchange: (e) =&gt; cnfPwd(e.target.value)
-                })
-            ])
-        ])
-    ]);
-
     vm.changePasswordDialog().content = () =&gt; pwdView;
+
+    vm.changeUserInfoDialog(f.createViewModel(&quot;Dialog&quot;, {
+        title: &quot;Edit my contact information&quot;,
+        icon: &quot;address-book&quot;,
+        onOk: function () {
+            m.request({
+                method: &quot;POST&quot;,
+                url: &quot;do/change-user-info&quot;,
+                data: {
+                    firstName: firstName(),
+                    lastName: lastName(),
+                    email: email(),
+                    phone: phone()
+                }
+            }).then(function () {
+                user.firstName = firstName();
+                user.lastName = lastName();
+                user.email = email();
+                user.phone = phone();
+            }).catch(function (err) {
+                vm.errorDialog().message(err.message);
+                vm.errorDialog().show();
+            });
+        },
+        onCancel: function () {
+            firstName(user.firstName);
+            lastName(user.lastName);
+            email(user.email);
+            phone(user.phone);
+        }
+    }));
+
+    vm.changeUserInfoDialog().content = () =&gt; infoView;
 
     vm.errorDialog(f.createViewModel(&quot;Dialog&quot;, {
         title: &quot;Error&quot;,
         icon: &quot;times&quot;
     }));
 
-    function validate() {
+    function validatePassword() {
         let dlg = vm.changePasswordDialog();
         let msg;
 
@@ -397,9 +516,33 @@ accountMenu.viewModel = function () {
     }
 
     // Validate when fields edited
-    oldPwd.state().resolve(&quot;/Changing&quot;).exit(validate);
-    newPwd.state().resolve(&quot;/Changing&quot;).exit(validate);
-    cnfPwd.state().resolve(&quot;/Changing&quot;).exit(validate);
+    oldPwd.state().resolve(&quot;/Changing&quot;).exit(validatePassword);
+    newPwd.state().resolve(&quot;/Changing&quot;).exit(validatePassword);
+    cnfPwd.state().resolve(&quot;/Changing&quot;).exit(validatePassword);
+
+    function validateInfo() {
+        let dlg = vm.changeUserInfoDialog();
+        let msg;
+
+        dlg.okDisabled(true);
+
+        if (!lastName()) {
+            msg = &quot;Last name cannot be blank&quot;;
+        }
+
+        if (msg) {
+            dlg.okTitle(msg);
+        } else {
+            dlg.okTitle(&quot;&quot;);
+            dlg.okDisabled(false);
+        }
+    }
+
+    // Validate when fields edited
+    firstName.state().resolve(&quot;/Changing&quot;).exit(validateInfo);
+    lastName.state().resolve(&quot;/Changing&quot;).exit(validateInfo);
+    email.state().resolve(&quot;/Changing&quot;).exit(validateInfo);
+    phone.state().resolve(&quot;/Changing&quot;).exit(validateInfo);
 
     return vm;
 };
@@ -407,7 +550,7 @@ accountMenu.viewModel = function () {
 catalog.register(&quot;viewModels&quot;, &quot;accountMenu&quot;, accountMenu.viewModel);
 
 /**
-    @class AccountMenu  
+    @class AccountMenu
     @static
     @namespace Components
 */
@@ -460,6 +603,9 @@ accountMenu.component = {
                 viewModel: vm.changePasswordDialog()
             }),
             m(dlg, {
+                viewModel: vm.changeUserInfoDialog()
+            }),
+            m(dlg, {
                 viewModel: vm.errorDialog()
             }),
             m(&quot;span&quot;, {
@@ -489,8 +635,14 @@ accountMenu.component = {
                 m(&quot;li&quot;, {
                     id: &quot;nav-account-myinfo&quot;,
                     class: &quot;pure-menu-link&quot;,
-                    title: &quot;Edit my contact information&quot;
-                    //onclick: vm.revert
+                    title: &quot;Edit my contact information&quot;,
+                    onclick: function () {
+                        let cdlg = vm.changeUserInfoDialog();
+
+                        vm.createUserInfoContent();
+                        cdlg.okDisabled(true);
+                        cdlg.show();
+                    }
                 }, [m(&quot;i&quot;, {
                     id: &quot;nav-account-myinfo-icon&quot;,
                     class: (
@@ -505,10 +657,11 @@ accountMenu.component = {
                     ),
                     title: &quot;Change password&quot;,
                     onclick: function () {
-                        let dlg = vm.changePasswordDialog();
+                        let cdlg = vm.changePasswordDialog();
 
-                        dlg.okDisabled(true);
-                        dlg.show();
+                        vm.createPasswordContent();
+                        cdlg.okDisabled(true);
+                        cdlg.show();
                     }
                 }, [m(&quot;i&quot;, {
                     id: &quot;nav-account-password-icon&quot;,

@@ -778,7 +778,7 @@
             },
             "tag": "module",
             "file": "components\\account-menu.js",
-            "line": 182
+            "line": 325
         },
         "AddressRelation": {
             "name": "AddressRelation",
@@ -1417,7 +1417,7 @@
             "module": "AccountMenu",
             "namespace": "Components",
             "file": "components\\account-menu.js",
-            "line": 182,
+            "line": 325,
             "static": 1
         },
         "ViewModels.AddressRelation": {
@@ -4197,7 +4197,7 @@
         },
         {
             "file": "components\\account-menu.js",
-            "line": 40,
+            "line": 46,
             "itemtype": "method",
             "name": "showMenuAccount",
             "params": [
@@ -4217,7 +4217,7 @@
         },
         {
             "file": "components\\account-menu.js",
-            "line": 46,
+            "line": 52,
             "itemtype": "method",
             "name": "changePasswordDialog",
             "params": [
@@ -4237,7 +4237,27 @@
         },
         {
             "file": "components\\account-menu.js",
-            "line": 52,
+            "line": 58,
+            "itemtype": "method",
+            "name": "changePasswordDialog",
+            "params": [
+                {
+                    "name": "dialog",
+                    "description": "",
+                    "type": "ViewModels.Dialog"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "ViewModels.Dialog"
+            },
+            "class": "ViewModels.AccountMenu",
+            "module": "AccountMenu",
+            "namespace": "ViewModels"
+        },
+        {
+            "file": "components\\account-menu.js",
+            "line": 64,
             "itemtype": "method",
             "name": "errorDialog",
             "params": [
@@ -4257,7 +4277,17 @@
         },
         {
             "file": "components\\account-menu.js",
-            "line": 188,
+            "line": 70,
+            "description": "Create content for change password dialog.",
+            "itemtype": "method",
+            "name": "createPasswordContent",
+            "class": "ViewModels.AccountMenu",
+            "module": "AccountMenu",
+            "namespace": "ViewModels"
+        },
+        {
+            "file": "components\\account-menu.js",
+            "line": 331,
             "itemtype": "method",
             "name": "oninit",
             "class": "Components.AccountMenu",
@@ -4266,7 +4296,7 @@
         },
         {
             "file": "components\\account-menu.js",
-            "line": 195,
+            "line": 338,
             "itemtype": "method",
             "name": "view",
             "return": {
