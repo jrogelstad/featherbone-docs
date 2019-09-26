@@ -8,7 +8,7 @@
   "license": "GPL v3",
   "repository": {
     "type": "git",
-    "url": "http://github.com/jrogelstad/canary.git"
+    "url": "http://github.com/jrogelstad/featherbone-docs.git"
   },
   "dependencies": {
     "express": "^4.17.1",
