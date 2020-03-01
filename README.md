@@ -15,7 +15,7 @@ By default the API definitions are populated based on the base featherbone insta
 You may also update the Client and Server API documentation to match to your current featherbone installation by installing and running `yuidoc` as follows:
 
 ```text
-$ npm yuidoc -g
+$ npm install -g yuidocjs
 $ cd ..\featherbone\client
 $ yuidoc .
 $ cd ..\server
