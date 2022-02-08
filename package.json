@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "redoc": "^2.0.0-rc.10"
+    "redoc": "^2.0.0-rc.63"
   }
 }
